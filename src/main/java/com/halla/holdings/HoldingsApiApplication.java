@@ -21,7 +21,6 @@ import java.time.format.DateTimeFormatter;
 @PropertySource(value = {"classpath:account.properties"})
 @CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
 public class HoldingsApiApplication extends SpringBootServletInitializer {
-
     public static DateTimeFormatter dateFormatString = DateTimeFormatter.ofPattern("yyyyMMdd");
     public static DateTimeFormatter timeFormatString = DateTimeFormatter.ofPattern("HHmm");
 
