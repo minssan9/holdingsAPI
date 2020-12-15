@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.halla.holdings.inv.mapper">
+
+<resultMap id="inv_dto_sample" type="com.halla.holdings.inv.dto.InvSampleDto">
+    <result property="num" column="NUM"/>
+    <result property="name" column="NAME"/>
+    <result property="title" column="TITLE"/>
+    <result property="content" column="CONTENT"/>
+    <result property="readCount" column="READ_COUNT"/>
+    <result property="writeDate" column="WRITE_DATE"/>
+</resultMap>
+
+    <select id="sampleMapper" resultType="com.halla.holdings.inv.domain.InvSample" parameterType="inv_dto_sample">
+		<![CDATA[
+				SELECT * FROM  CSTPLT WHERE STAT != 'C'  AND FILL1 = #{userid}
+	  ]]>
+	</select>
+
+    <insert id="insertSample" parameterType="inv_dto_sample">
+		<![CDATA[
+				insert into xxxxx (1,2,3,4) values (#{userid}, #{userid}, #{userid}, #{userid})
+	  ]]>
+	</insert>
+
+</mapper>
+
