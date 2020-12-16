@@ -1,4 +1,4 @@
-package com.halla.holdings;
+package halla.holdings;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

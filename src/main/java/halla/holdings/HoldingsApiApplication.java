@@ -1,4 +1,4 @@
-package com.halla.holdings;
+package halla.holdings;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

@@ -1,4 +1,4 @@
-package com.halla.holdings.inv.domain;
+package halla.holdings.inv.domain;
 
 import lombok.Data;
 

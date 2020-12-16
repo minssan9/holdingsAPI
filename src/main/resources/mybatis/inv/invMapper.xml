@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.halla.holdings.inv.mapper">
+<mapper namespace="halla.holdings.inv.mapper">
 
-<resultMap id="inv_dto_sample" type="com.halla.holdings.inv.dto.InvSampleDto">
-    <result property="num" column="NUM"/>
-    <result property="name" column="NAME"/>
-    <result property="title" column="TITLE"/>
-    <result property="content" column="CONTENT"/>
-    <result property="readCount" column="READ_COUNT"/>
-    <result property="writeDate" column="WRITE_DATE"/>
-</resultMap>
+    <parameterMap id="inv_dto_sample" type=""></parameterMap>
 
-    <select id="sampleMapper" resultType="com.halla.holdings.inv.domain.InvSample" parameterType="inv_dto_sample">
+    <select id="sampleMapper" resultType="halla.holdings.inv.domain.InvSample" parameterType="halla.holdings.inv.dto.InvSampleDto">
 		<![CDATA[
 				SELECT * FROM  CSTPLT WHERE STAT != 'C'  AND FILL1 = #{userid}
 	  ]]>
 	</select>
 
-    <insert id="insertSample" parameterType="inv_dto_sample">
+    <insert id="insertSample" parameterType="halla.holdings.inv.dto.InvSampleDto">
 		<![CDATA[
-				insert into xxxxx (1,2,3,4) values (#{userid}, #{userid}, #{userid}, #{userid})
+				INSERT INTO XXE_INV_PUR_DISABLED_HISTORY
+				(ITEM_NUMBER, SEQ, CREATION_DATE, PURCHASING_ENABLED_STATUS, DESCRITION, LAST_UPDATED_BY)
+                SELECT B.ITEM_NUMBER, NVL(MAX(SEQ),0)+1, SYSDATE,'Y','구매통제 해제 일괄 작업 수행'||TO_CHAR(SYSDATE,'YYYYMMDD'), V_USER_ID
+                FROM XXE_INV_PUR_DISABLED_HISTORY A
+                ,    XXE_INV_PUR_DISABLED_LIST b
+                WHERE A.ITEM_NUMBER(+) = B.ITEM_NUMBER
+                  AND B.ITEM_NUMBER = C_CUR.ITEM_NUMBER
+                GROUP BY b.ITEM_NUMBER;
 	  ]]>
 	</insert>
 

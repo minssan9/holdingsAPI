@@ -1,9 +1,8 @@
-package com.halla.holdings.inv.controller;
+package halla.holdings.inv.controller;
 
-import com.halla.holdings.inv.domain.InvSample;
-import com.halla.holdings.inv.dto.InvSampleDto;
-import com.halla.holdings.inv.mapper.InvMapper;
-import com.halla.holdings.inv.service.InvService;
+import halla.holdings.inv.dto.InvSampleDto;
+import halla.holdings.inv.mapper.InvMapper;
+import halla.holdings.inv.service.InvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

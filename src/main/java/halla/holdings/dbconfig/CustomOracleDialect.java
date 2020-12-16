@@ -1,7 +1,6 @@
-package com.halla.holdings.config;
+package halla.holdings.dbconfig;
 
 import org.hibernate.dialect.Oracle12cDialect;
-import org.hibernate.tool.schema.extract.spi.SequenceInformationExtractor;
 
 @SuppressWarnings("unused")
 public class CustomOracleDialect extends Oracle12cDialect {

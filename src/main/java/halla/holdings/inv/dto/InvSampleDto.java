@@ -1,4 +1,4 @@
-package com.halla.holdings.inv.dto;
+package halla.holdings.inv.dto;
 
 public class InvSampleDto {
     private String num;
