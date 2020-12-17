@@ -5,7 +5,7 @@
 
     <parameterMap id="inv_dto_sample" type=""></parameterMap>
 
-    <select id="sampleMapper" resultType="halla.holdings.inv.domain.InvSample" parameterType="halla.holdings.inv.dto.InvSampleDto">
+    <select id="sampleMapper" resultType="halla.holdings.inv.od.Xxe_inv_pur_disabled_history" parameterType="halla.holdings.inv.dto.InvSampleDto">
 		<![CDATA[
 				SELECT * FROM  CSTPLT WHERE STAT != 'C'  AND FILL1 = #{userid}
 	  ]]>

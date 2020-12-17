@@ -1,11 +1,10 @@
-package halla.holdings.inv.domain;
+package halla.holdings.inv.od;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.sql.Time;
 
-//@Entity
-@Table(name = "Xxe_inv_pur_disabled_history", schema = "APPS", catalog = "")
+
 public class Xxe_inv_pur_disabled_history {
 
     private String itemNumber;
