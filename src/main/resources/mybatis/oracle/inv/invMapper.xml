@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="halla.holdings.inv.mapper">
+<mapper namespace="halla.holdings.oracle.inv.mapper">
 
     <parameterMap id="inv_dto_sample" type=""></parameterMap>
 
-    <select id="sampleMapper" resultType="halla.holdings.inv.od.Xxe_inv_pur_disabled_history" parameterType="halla.holdings.inv.dto.InvSampleDto">
+    <select id="sampleMapper" resultType="halla.holdings.oracle.inv.od.Xxe_inv_pur_disabled_history" parameterType="halla.holdings.oracle.inv.dto.InvSampleDto">
 		<![CDATA[
 				SELECT * FROM  CSTPLT WHERE STAT != 'C'  AND FILL1 = #{userid}
 	  ]]>
 	</select>
 
-    <insert id="insertSample" parameterType="halla.holdings.inv.dto.InvSampleDto">
+    <insert id="insertSample" parameterType="halla.holdings.oracle.inv.dto.InvSampleDto">
 		<![CDATA[
 				INSERT INTO XXE_INV_PUR_DISABLED_HISTORY
 				(ITEM_NUMBER, SEQ, CREATION_DATE, PURCHASING_ENABLED_STATUS, DESCRITION, LAST_UPDATED_BY)

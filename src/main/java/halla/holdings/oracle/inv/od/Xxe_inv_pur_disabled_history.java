@@ -1,7 +1,5 @@
-package halla.holdings.inv.od;
+package halla.holdings.oracle.inv.od;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.sql.Time;
 
 

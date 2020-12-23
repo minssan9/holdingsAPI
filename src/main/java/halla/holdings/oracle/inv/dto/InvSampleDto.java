@@ -1,4 +1,4 @@
-package halla.holdings.inv.dto;
+package halla.holdings.oracle.inv.dto;
 
 public class InvSampleDto {
     private String num;

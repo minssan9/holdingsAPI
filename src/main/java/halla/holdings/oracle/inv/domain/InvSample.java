@@ -1,12 +1,10 @@
-package halla.holdings.inv.domain;
+package halla.holdings.oracle.inv.domain;
 
 import lombok.Data;
 
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Time;
 import java.time.LocalDateTime;
 
 @Data

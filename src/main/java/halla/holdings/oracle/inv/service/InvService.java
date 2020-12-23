@@ -1,8 +1,8 @@
-package halla.holdings.inv.service;
+package halla.holdings.oracle.inv.service;
 
-import halla.holdings.inv.domain.InvSample;
-import halla.holdings.inv.dto.InvSampleDto;
-import halla.holdings.inv.mapper.InvMapper;
+import halla.holdings.oracle.inv.domain.InvSample;
+import halla.holdings.oracle.inv.dto.InvSampleDto;
+import halla.holdings.oracle.inv.mapper.InvMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
