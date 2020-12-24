@@ -22,8 +22,8 @@ import java.util.Objects;
 //@ConfigurationProperties(value = "spring.oracle")
 @EnableJpaRepositories(
         entityManagerFactoryRef = "oracleEntityManagerFactory",
-        transactionManagerRef = "oracleTransactionManager"
-//        basePackages = {"halla.holdings.oracle.*.repository"}
+        transactionManagerRef = "oracleTransactionManager",
+        basePackages = {"halla.holdings.oracle.*.repository"}
         )
 public class OracleDatabaseConfig {
 
@@ -52,7 +52,7 @@ public class OracleDatabaseConfig {
 //        return new SqlSessionTemplate(oracleSqlSessionFactory);
 //    }
 
-    @Bean(name = "oracleEntityManagerFactory")
+    @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(EntityManagerFactoryBuilder builder) {
 //        var properties = oracleHibernateProperties.determineHibernateProperties(
@@ -64,12 +64,12 @@ public class OracleDatabaseConfig {
 
         return builder.dataSource(oraDataSource())
                 .properties(propertiesHashMap)
-                .packages("halla.holdings.oracle.*.domain.*")
+                .packages("halla.holdings.oracle.*.domain")
                 .persistenceUnit("oracle")
                 .build();
     }
 
-    @Bean(name = "oracleTransactionManager")
+    @Bean
     @Primary
     public PlatformTransactionManager oracleTransactionManager(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(Objects.requireNonNull(oracleEntityManagerFactory(builder).getObject()));

@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Table(name = "fnd_user" )
 public class Account {
     @Id
-    private String user_id;
+    @Column(name = "user_id")
+    private String userId;
     private String user_name;
     private String last_update_date;
     private String last_updated_by;

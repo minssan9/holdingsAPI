@@ -13,7 +13,8 @@ import java.util.Date;
 @Table(name = "FND_RESPONSIBILITY_VL", schema = "apps")
 public class FndResponsibility {
     @Id
-    private String row_id	;
+    @Column(name = "row_id")
+    private String rowId	;
     private String responsibility_name	;
     private String description	;
     private String web_host_name	;

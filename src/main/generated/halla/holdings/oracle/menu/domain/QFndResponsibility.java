@@ -52,7 +52,7 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public final StringPath responsibility_name = createString("responsibility_name");
 
-    public final StringPath row_id = createString("row_id");
+    public final StringPath rowId = createString("rowId");
 
     public final DateTimePath<java.util.Date> start_date = createDateTime("start_date", java.util.Date.class);
 

@@ -18,8 +18,8 @@ public class UserPermission implements Serializable {
     private Account account	;
 
     @Id
-    @ManyToOne
-    @Column(columnDefinition = "responsibility_id")
+    @ManyToOne( fetch = FetchType.EAGER)
+    @JoinColumn(name= "responsibility_id")
     private FndResponsibility fndResponsibilities;
 
     private int responsibility_application_id;
