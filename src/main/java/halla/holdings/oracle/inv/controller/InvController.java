@@ -1,7 +1,6 @@
 package halla.holdings.oracle.inv.controller;
 
 import halla.holdings.oracle.inv.dto.InvSampleDto;
-import halla.holdings.oracle.inv.mapper.InvMapper;
 import halla.holdings.oracle.inv.service.InvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,18 +8,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/inv")
 class InvController {
-    @Autowired
-    private InvMapper invMapper;
+//    @Autowired
+//    private InvMapper invMapper;
 
     @Autowired
     private InvService invService;
 
 
-    @GetMapping("/params")
-    public ResponseEntity getAllList(@PathVariable String qDate) throws Exception {
-        return new ResponseEntity(invMapper.findSampleList(qDate), HttpStatus.OK);
-    }
+//    @GetMapping("/params")
+//    public ResponseEntity getAllList(@PathVariable String qDate) throws Exception {
+//        return new ResponseEntity(invMapper.findSampleList(qDate), HttpStatus.OK);
+//    }
 
 //    @GetMapping("{rtime}")
 //    public  ResponseEntity getOneItDamage(@PathVariable String rtime) throws Exception {
@@ -31,10 +31,10 @@ class InvController {
 //        return new ResponseEntity(itDamageService.update(itDamage), HttpStatus.OK);
 //    }
 
-    @PostMapping
-    public ResponseEntity createItDamage(@RequestBody InvSampleDto invSampleDto)  throws Exception {
-//		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/"+itDamageCreated.getRtime()	).buildAndExpand(itDamageCreated.getRtime()).toUri();
-        return new ResponseEntity(invMapper.insertSample(invSampleDto), HttpStatus.OK);
-    }
+//    @PostMapping
+//    public ResponseEntity createItDamage(@RequestBody InvSampleDto invSampleDto)  throws Exception {
+////		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/"+itDamageCreated.getRtime()	).buildAndExpand(itDamageCreated.getRtime()).toUri();
+//        return new ResponseEntity(invMapper.insertSample(invSampleDto), HttpStatus.OK);
+//    }
 
 }

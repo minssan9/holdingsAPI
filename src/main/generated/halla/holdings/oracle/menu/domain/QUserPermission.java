@@ -32,7 +32,7 @@ public class QUserPermission extends EntityPathBase<UserPermission> {
 
     public final SimplePath<oracle.sql.DATE> end_date = createSimple("end_date", oracle.sql.DATE.class);
 
-    public final QFndResponsibility fndResponsibility;
+    public final QFndResponsibility fndResponsibilities;
 
     public final SimplePath<oracle.sql.DATE> last_update_date = createSimple("last_update_date", oracle.sql.DATE.class);
 
@@ -65,7 +65,7 @@ public class QUserPermission extends EntityPathBase<UserPermission> {
     public QUserPermission(Class<? extends UserPermission> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.account = inits.isInitialized("account") ? new halla.holdings.oracle.account.domain.QAccount(forProperty("account")) : null;
-        this.fndResponsibility = inits.isInitialized("fndResponsibility") ? new QFndResponsibility(forProperty("fndResponsibility")) : null;
+        this.fndResponsibilities = inits.isInitialized("fndResponsibilities") ? new QFndResponsibility(forProperty("fndResponsibilities"), inits.get("fndResponsibilities")) : null;
     }
 
 }

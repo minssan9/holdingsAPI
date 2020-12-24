@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -16,6 +17,8 @@ import com.querydsl.core.types.Path;
 public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     private static final long serialVersionUID = 175977783L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QFndResponsibility fndResponsibility = new QFndResponsibility("fndResponsibility");
 
@@ -53,6 +56,8 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public final DateTimePath<java.util.Date> start_date = createDateTime("start_date", java.util.Date.class);
 
+    public final QUserPermission userPermission;
+
     public final StringPath version = createString("version");
 
     public final StringPath web_agent_name = createString("web_agent_name");
@@ -60,15 +65,24 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
     public final StringPath web_host_name = createString("web_host_name");
 
     public QFndResponsibility(String variable) {
-        super(FndResponsibility.class, forVariable(variable));
+        this(FndResponsibility.class, forVariable(variable), INITS);
     }
 
     public QFndResponsibility(Path<? extends FndResponsibility> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QFndResponsibility(PathMetadata metadata) {
-        super(FndResponsibility.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QFndResponsibility(PathMetadata metadata, PathInits inits) {
+        this(FndResponsibility.class, metadata, inits);
+    }
+
+    public QFndResponsibility(Class<? extends FndResponsibility> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.userPermission = inits.isInitialized("userPermission") ? new QUserPermission(forProperty("userPermission"), inits.get("userPermission")) : null;
     }
 
 }

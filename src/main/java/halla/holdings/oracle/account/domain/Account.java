@@ -3,13 +3,9 @@ package halla.holdings.oracle.account.domain;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
-@Builder
 @Entity
 @Table(name = "fnd_user" )
 public class Account {

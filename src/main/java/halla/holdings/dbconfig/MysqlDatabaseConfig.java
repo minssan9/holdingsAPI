@@ -1,6 +1,6 @@
 package halla.holdings.dbconfig;
 
-import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
@@ -17,41 +17,41 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:account.properties"})
-@EnableJpaRepositories(entityManagerFactoryRef = "mysqlEntityManagerFactory", transactionManagerRef = "mysqlTransactionManager", basePackages = {"halla.holdings.mysql.*.domain"})
+@ConfigurationProperties(value = "spring.mysql")
+@EnableJpaRepositories(
+        entityManagerFactoryRef = "mysqlEntityManagerFactory",
+        transactionManagerRef = "mysqlTransactionManager"
+//        asePackages = {"halla.holdings.mysql.*.repository"}
+        )
 public class MysqlDatabaseConfig {
-    private final JpaProperties jpaProperties;
-    private final HibernateProperties hibernateProperties;
 
-    public MysqlDatabaseConfig(JpaProperties jpaProperties, HibernateProperties hibernateProperties) {
-        this.jpaProperties = jpaProperties;
-        this.hibernateProperties = hibernateProperties;
-    }
-
-    @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.mysql")
-    public DataSource mysqlDataSource() {
-        return DataSourceBuilder.create().type(HikariDataSource.class).build();
-    }
-
-    @Bean
-    public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-        var properties = hibernateProperties.determineHibernateProperties(
-                jpaProperties.getProperties(), new HibernateSettings());
-
-        return builder.dataSource(mysqlDataSource())
-                .properties(properties)
-                .packages("halla.holdings.*.domain")
-                .persistenceUnit("mysql")
-                .build();
-    }
-
-    @Bean
-    public PlatformTransactionManager mysqlTransactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(Objects.requireNonNull(mysqlEntityManagerFactory(builder).getObject()));
-    }
+//    @Bean
+//    @ConfigurationProperties(value = "spring.mysql.datasource")
+//    public DataSource mysqlDataSource() {
+//        return DataSourceBuilder.create().build();
+//    }
+//
+//    @Bean(name = "mysqlEntityManagerFactory")
+//    public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory(EntityManagerFactoryBuilder builder) {
+//        Map<String, String> propertiesHashMap = new HashMap<>();
+//        propertiesHashMap.put("hibernate.dialect","org.hibernate.dialect.MySQL8Dialect");
+//
+//        return builder.dataSource(mysqlDataSource())
+//                .properties(propertiesHashMap)
+//                .packages("halla.holdings.*.domain")
+//                .persistenceUnit("mysql")
+//                .build();
+//    }
+//
+//    @Bean(name = "mysqlTransactionManager")
+//    public PlatformTransactionManager mysqlTransactionManager(EntityManagerFactoryBuilder builder) {
+//        return new JpaTransactionManager(Objects.requireNonNull(mysqlEntityManagerFactory(builder).getObject()));
+//    }
 }

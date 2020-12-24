@@ -1,6 +1,9 @@
 package halla.holdings.oracle.menu.domain;
 
 import lombok.Data;
+import oracle.sql.DATE;
+import oracle.sql.NUMBER;
+import oracle.sql.ROWID;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,6 +19,9 @@ public class FndResponsibility {
     private String web_host_name	;
     private String web_agent_name	;
     private int application_id	;
+
+    @ManyToOne
+    private UserPermission userPermission;
     private String responsibility_key	;
     private Date last_update_date;
     private int last_updated_by	;
@@ -30,4 +36,26 @@ public class FndResponsibility {
     private int group_application_id	;
     private int request_group_id	;
     private String version	;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
