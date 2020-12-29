@@ -16,7 +16,6 @@ public class UserPermission implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(columnDefinition= "user_id")
     private Account account	;
-
     @Id
     @ManyToOne( fetch = FetchType.EAGER)
     @JoinColumn(name= "responsibility_id")

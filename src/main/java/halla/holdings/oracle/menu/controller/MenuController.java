@@ -1,6 +1,7 @@
 package halla.holdings.oracle.menu.controller;
 
 import halla.holdings.oracle.menu.repository.FndResponsibilityRepository;
+import halla.holdings.oracle.menu.repository.UserPermissionRepository;
 import halla.holdings.oracle.menu.repository.UserPermissionRepositorySupport;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class MenuController {
     @Autowired
     private UserPermissionRepositorySupport userPermissionRepositorySupport;
 
+    @Autowired
+    private UserPermissionRepository userPermissionRepository;
 //    @Autowired
 //    FndResponsibilityRepository fndResponsibilityRepository;
 
@@ -26,6 +29,7 @@ public class MenuController {
     public ResponseEntity getAllList(@PathVariable String respName) {
 //        log.debug(fndResponsibilityRepository.findByRow_id(respName).toString());
 //        return new ResponseEntity( fndResponsibilityRepository.findByRow_id(respName), HttpStatus.OK);
+        log.debug(userPermissionRepository.findByPermissionName(respName).toString());
         log.debug(userPermissionRepositorySupport.findByName(respName).toString());
         return new ResponseEntity(userPermissionRepositorySupport.findByName(respName), HttpStatus.OK);
 //        return new ResponseEntity(userPermissionRepository.findByFndResponsibility_Responsibility_name(respName), HttpStatus.OK);
