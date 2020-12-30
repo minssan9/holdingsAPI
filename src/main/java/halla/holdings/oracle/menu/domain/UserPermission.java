@@ -1,34 +1,50 @@
 package halla.holdings.oracle.menu.domain;
 
 import halla.holdings.oracle.account.domain.Account;
-import oracle.sql.DATE;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+import java.time.LocalDate;
 
+@Data
 @Entity
 @Table(name = "FND_USER_RESP_GROUPS_DIRECT")
 @IdClass(UserPermission.class)
 public class UserPermission implements Serializable {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(columnDefinition= "user_id")
-    private Account account	;
-    @Id
-    @ManyToOne( fetch = FetchType.EAGER)
-    @JoinColumn(name= "responsibility_id")
-    private FndResponsibility fndResponsibilities;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name= "user_id")
+//    private Account account	;
+    @Column(name= "user_id")
+    private String user_id;
 
+    @Id
+//    @ManyToOne( fetch = FetchType.EAGER)
+//    @JoinColumn(name= "responsibility_id")
+//    private FndResponsibility fndResponsibilities;
+    @Column(name= "responsibility_id")
+    private String responsibility_id;
+
+    @Column(name= "responsibility_application_id")
     private int responsibility_application_id;
+    @Column(name= "security_group_id")
     private int security_group_id;
-    private DATE start_date;
-    private DATE end_date;
+    @Column(name= "start_date")
+    private LocalDate start_date;
+    @Column(name= "end_date")
+    private LocalDate end_date;
+    @Column(name= "created_by")
     private int created_by	;
-    private DATE creation_date;
+    @Column(name= "creation_date")
+    private LocalDate creation_date;
+    @Column(name= "last_updated_by")
     private int last_updated_by	;
-    private DATE last_update_date;
+    @Column(name= "last_update_date")
+    private LocalDate last_update_date;
+    @Column(name= "last_update_login")
     private int last_update_login	;
+    @Column(name= "description")
     private String description	;
 }

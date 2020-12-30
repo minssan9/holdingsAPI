@@ -9,10 +9,7 @@ import java.util.List;
 
 @Repository
 public interface UserPermissionRepository extends JpaRepository<UserPermission, Long> {
-    @Query( value = "select a.* from FND_USER_RESP_GROUPS_DIRECT a" +
-            " inner join FND_RESPONSIBILITY_VL r on a.responsibility_id=r.responsibility_id" +
-            " where RESPONSIBILITY_NAME like '%' || :respName ||'%' ", nativeQuery = true)
-    List<UserPermission> findByPermissionName(String respName);
+    List<UserPermission> findByDescriptionLike(String respName);
 
 //    List<UserPermission> findByFndResponsibility_Responsibility_name(String respName);
 

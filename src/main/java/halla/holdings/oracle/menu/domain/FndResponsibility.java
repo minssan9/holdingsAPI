@@ -1,11 +1,9 @@
 package halla.holdings.oracle.menu.domain;
 
 import lombok.Data;
-import oracle.sql.DATE;
-import oracle.sql.NUMBER;
-import oracle.sql.ROWID;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -24,16 +22,16 @@ public class FndResponsibility {
     @ManyToOne
     private UserPermission userPermission;
     private String responsibility_key	;
-    private Date last_update_date;
+    private LocalDateTime last_update_date;
     private int last_updated_by	;
-    private Date creation_date;
+    private LocalDateTime creation_date;
     private int created_by	;
     private int last_update_login	;
     private int data_group_application_id	;
     private int data_group_id	;
     private int menu_id	;
-    private Date start_date;
-    private Date end_date;
+    private LocalDateTime start_date;
+    private LocalDateTime end_date;
     private int group_application_id	;
     private int request_group_id	;
     private String version	;

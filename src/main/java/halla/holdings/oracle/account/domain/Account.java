@@ -12,7 +12,8 @@ public class Account {
     @Id
     @Column(name = "user_id")
     private String userId;
-    private String user_name;
+    @Column(name = "user_name")
+    private String userName;
     private String last_update_date;
     private String last_updated_by;
     private String creation_date;
