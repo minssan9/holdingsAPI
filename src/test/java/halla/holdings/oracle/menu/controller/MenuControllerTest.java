@@ -35,16 +35,10 @@ class MenuControllerTest {
 //        log.trace(userPermissionRepositorySupport.findByName("민상훈").toString());
         List<UserPermission> userPermissions = userPermissionRepositorySupport.findByName("민상훈");
 
-        log.trace(userPermissionRepository.findByDescriptionLike("%재고 재고관리자%").toString());
-        userPermissions = userPermissionRepository.findByDescriptionLike("%재고 재고관리자%");
         //QueryDsl
         log.trace(userPermissionRepositorySupport.findByPermissionName("재고").toString());
         userPermissions = userPermissionRepositorySupport.findByPermissionName("재고");
 
-        Assert.assertNotNull(
-                userPermissionRepository.findByDescriptionLike("재고 재고관리자")
-        );
-        log.trace(userPermissionRepository.findByDescriptionLike("재고 재고관리자").toString());
         Assert.assertNotNull(
                 userPermissionRepositorySupport.findByName(respName)
         );
