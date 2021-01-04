@@ -67,9 +67,9 @@ public class QAccount extends EntityPathBase<Account> {
 
     public final StringPath user_guid = createString("user_guid");
 
-    public final StringPath user_name = createString("user_name");
-
     public final StringPath userId = createString("userId");
+
+    public final StringPath userName = createString("userName");
 
     public final StringPath web_password = createString("web_password");
 

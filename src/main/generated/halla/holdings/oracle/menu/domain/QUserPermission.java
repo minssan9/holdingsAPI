@@ -7,7 +7,6 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
-import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -18,23 +17,17 @@ public class QUserPermission extends EntityPathBase<UserPermission> {
 
     private static final long serialVersionUID = -404505683L;
 
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QUserPermission userPermission = new QUserPermission("userPermission");
-
-    public final halla.holdings.oracle.account.domain.QAccount account;
 
     public final NumberPath<Integer> created_by = createNumber("created_by", Integer.class);
 
-    public final SimplePath<oracle.sql.DATE> creation_date = createSimple("creation_date", oracle.sql.DATE.class);
+    public final StringPath creation_date = createString("creation_date");
 
     public final StringPath description = createString("description");
 
-    public final SimplePath<oracle.sql.DATE> end_date = createSimple("end_date", oracle.sql.DATE.class);
+    public final StringPath end_date = createString("end_date");
 
-    public final QFndResponsibility fndResponsibilities;
-
-    public final SimplePath<oracle.sql.DATE> last_update_date = createSimple("last_update_date", oracle.sql.DATE.class);
+    public final StringPath last_update_date = createString("last_update_date");
 
     public final NumberPath<Integer> last_update_login = createNumber("last_update_login", Integer.class);
 
@@ -42,30 +35,24 @@ public class QUserPermission extends EntityPathBase<UserPermission> {
 
     public final NumberPath<Integer> responsibility_application_id = createNumber("responsibility_application_id", Integer.class);
 
+    public final StringPath responsibility_id = createString("responsibility_id");
+
     public final NumberPath<Integer> security_group_id = createNumber("security_group_id", Integer.class);
 
-    public final SimplePath<oracle.sql.DATE> start_date = createSimple("start_date", oracle.sql.DATE.class);
+    public final StringPath start_date = createString("start_date");
+
+    public final StringPath user_id = createString("user_id");
 
     public QUserPermission(String variable) {
-        this(UserPermission.class, forVariable(variable), INITS);
+        super(UserPermission.class, forVariable(variable));
     }
 
     public QUserPermission(Path<? extends UserPermission> path) {
-        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
+        super(path.getType(), path.getMetadata());
     }
 
     public QUserPermission(PathMetadata metadata) {
-        this(metadata, PathInits.getFor(metadata, INITS));
-    }
-
-    public QUserPermission(PathMetadata metadata, PathInits inits) {
-        this(UserPermission.class, metadata, inits);
-    }
-
-    public QUserPermission(Class<? extends UserPermission> type, PathMetadata metadata, PathInits inits) {
-        super(type, metadata, inits);
-        this.account = inits.isInitialized("account") ? new halla.holdings.oracle.account.domain.QAccount(forProperty("account")) : null;
-        this.fndResponsibilities = inits.isInitialized("fndResponsibilities") ? new QFndResponsibility(forProperty("fndResponsibilities"), inits.get("fndResponsibilities")) : null;
+        super(UserPermission.class, metadata);
     }
 
 }

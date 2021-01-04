@@ -17,7 +17,7 @@ class SwaggerConfig {
     Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.baegoony.springswaggerdemo"))
+                .apis(RequestHandlerSelectors.basePackage("halla.holdings.*.*.controller"))
                 .build()
                 .apiInfo(this.metaInfo());
     }

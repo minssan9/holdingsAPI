@@ -24,10 +24,10 @@ public class AccountController {
 
 
     @GetMapping("/{userId}")
-    public ResponseEntity getAllList(@PathVariable String userId) {
+    public ResponseEntity getOne(@PathVariable String userId) {
         List<Account> accounts =new ArrayList<>();
-//                accountRepository.findByUserId(userId);
-        return new ResponseEntity(accounts, HttpStatus.OK);
+        Account account = accountRepository.findByUserId(userId);
+        return new ResponseEntity(account, HttpStatus.OK);
 //        return new ResponseEntity(userPermissionRepository.findByFndResponsibility_Responsibility_name(respName), HttpStatus.OK);
     }
 }

@@ -48,10 +48,10 @@ class UserPermissionRepositorySupportTest {
 
 
         userPermissions = userPermissionRepositorySupport.findByName("민상훈");
-        userPermissions = userPermissionRepository.findByDescriptionLike("%재고%");
-
+        userPermissions = userPermissionRepository.findByDescriptionContaining("재고");
+//        userPermissions = userPermissionRepository.findByDescription("재고 일반사용자 권한");
         log.trace(userPermissions.toString());
-        assertNotNull(test);
+         assertNotNull(test);
     }
 
 }

@@ -26,7 +26,7 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public final NumberPath<Integer> created_by = createNumber("created_by", Integer.class);
 
-    public final DateTimePath<java.util.Date> creation_date = createDateTime("creation_date", java.util.Date.class);
+    public final DateTimePath<java.time.LocalDateTime> creation_date = createDateTime("creation_date", java.time.LocalDateTime.class);
 
     public final NumberPath<Integer> data_group_application_id = createNumber("data_group_application_id", Integer.class);
 
@@ -34,11 +34,11 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public final StringPath description = createString("description");
 
-    public final DateTimePath<java.util.Date> end_date = createDateTime("end_date", java.util.Date.class);
+    public final DateTimePath<java.time.LocalDateTime> end_date = createDateTime("end_date", java.time.LocalDateTime.class);
 
     public final NumberPath<Integer> group_application_id = createNumber("group_application_id", Integer.class);
 
-    public final DateTimePath<java.util.Date> last_update_date = createDateTime("last_update_date", java.util.Date.class);
+    public final DateTimePath<java.time.LocalDateTime> last_update_date = createDateTime("last_update_date", java.time.LocalDateTime.class);
 
     public final NumberPath<Integer> last_update_login = createNumber("last_update_login", Integer.class);
 
@@ -54,7 +54,7 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public final StringPath rowId = createString("rowId");
 
-    public final DateTimePath<java.util.Date> start_date = createDateTime("start_date", java.util.Date.class);
+    public final DateTimePath<java.time.LocalDateTime> start_date = createDateTime("start_date", java.time.LocalDateTime.class);
 
     public final QUserPermission userPermission;
 
@@ -82,7 +82,7 @@ public class QFndResponsibility extends EntityPathBase<FndResponsibility> {
 
     public QFndResponsibility(Class<? extends FndResponsibility> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.userPermission = inits.isInitialized("userPermission") ? new QUserPermission(forProperty("userPermission"), inits.get("userPermission")) : null;
+        this.userPermission = inits.isInitialized("userPermission") ? new QUserPermission(forProperty("userPermission")) : null;
     }
 
 }

@@ -9,7 +9,9 @@ import java.util.List;
 
 @Repository
 public interface UserPermissionRepository extends JpaRepository<UserPermission, Long> {
-    List<UserPermission> findByDescriptionLike(String respName);
+    List<UserPermission> findByDescriptionContaining(String respName);
+
+    List<UserPermission> findByDescription(String 재고_일반사용자_권한);
 
 //    List<UserPermission> findByFndResponsibility_Responsibility_name(String respName);
 
