@@ -30,4 +30,8 @@ public class InvSample {
     private String status;
     @NonNull
     private String msg;
+
+    public InvSample() {
+
+    }
 }
