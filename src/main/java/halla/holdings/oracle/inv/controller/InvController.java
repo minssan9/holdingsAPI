@@ -16,7 +16,6 @@ class InvController {
     @Autowired
     private InvService invService;
 
-
 //    @GetMapping("/params")
 //    public ResponseEntity getAllList(@PathVariable String qDate) throws Exception {
 //        return new ResponseEntity(invMapper.findSampleList(qDate), HttpStatus.OK);

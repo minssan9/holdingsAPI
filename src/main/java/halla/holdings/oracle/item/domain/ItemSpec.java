@@ -1,19 +1,18 @@
-package halla.holdings.oracle.inv.domain;
+package halla.holdings.oracle.item.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "xxe_item_spec_info_tmp")
 @Data
 @AllArgsConstructor
 public class ItemSpec {
-    private String group_id;
     @Id
     private String item_number;
+    private String group_id;
     private String before_number;
     private String before_compatible;
     private String before_effective_date;
