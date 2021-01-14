@@ -1,50 +1,41 @@
-package halla.holdings.oracle.item.controller;
+package halla.holdings.oracle.inv.service;
 
-import halla.holdings.oracle.item.repository.ItemSpecRepository;
-import halla.holdings.oracle.item.domain.ItemSpec;
+import halla.holdings.oracle.inv.domain.XxeItemSpecInfoTmp;
+import halla.holdings.oracle.inv.repository.XxeItemSpecInfoTmpRepository;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-@RequestMapping("/item")
-public class ItemController {
+import static halla.holdings.HoldingsApiApplication.dateFormatString;
+
+@Service
+public class ItemSpecServiceImpl implements ItemSpecService {
     @Autowired
-    ItemSpecRepository itemSpecRepository;
+    XxeItemSpecInfoTmpRepository xxeItemSpecInfoTmpRepository;
 
-    @GetMapping
-    public ResponseEntity getItemList() throws IOException {
-        return ResponseEntity.ok(itemSpecRepository.findAll());
-    }
-
-    @PostMapping(value = "/import")
-    public ResponseEntity importItemExcelFile(@RequestParam("file") MultipartFile files) throws IOException {
-
+    public List<XxeItemSpecInfoTmp> uploadItemsFromExcel(MultipartFile files) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook(files.getInputStream());
         XSSFSheet worksheet = workbook.getSheetAt(0);
-        List<ItemSpec> itemSpecs = new ArrayList<>();
+        List<XxeItemSpecInfoTmp> itemSpecs = new ArrayList<>();
         for (int index = 0; index < worksheet.getPhysicalNumberOfRows(); index++) {
             if (index > 0) {
                 XSSFRow row = worksheet.getRow(index);
 
-                ItemSpec itemSpec = new ItemSpec();
+                XxeItemSpecInfoTmp itemSpec = new XxeItemSpecInfoTmp();
                 // Setter  로 만들기
-                itemSpec.setItem_number(row.getCell(1, row.CREATE_NULL_AS_BLANK).getStringCellValue());
+                itemSpec.setItemNumber(row.getCell(1, row.CREATE_NULL_AS_BLANK).getStringCellValue());
 //                itemSpec.set(row.getCell(8).getNumericCellValue());
                 itemSpec.setIfflag(row.getCell(8, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                itemSpec.setCreation_date(row.getCell(9,row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                itemSpec.setLast_update_date(row.getCell(11, row.CREATE_NULL_AS_BLANK).getStringCellValue());
+                itemSpec.setCreationDate(LocalDateTime.parse(row.getCell(9,row.CREATE_NULL_AS_BLANK).getStringCellValue(), dateFormatString));
+                itemSpec.setLastUpdateDate(LocalDateTime.parse(row.getCell(11, row.CREATE_NULL_AS_BLANK).getStringCellValue(), dateFormatString));
 
                 // 생성자로 만들기
 //                (
@@ -74,11 +65,9 @@ public class ItemController {
 //                );
 
                 itemSpecs.add(itemSpec);
-                itemSpecRepository.save(itemSpec);
+                xxeItemSpecInfoTmpRepository.save(itemSpec);
             }
         }
-        ;
-
-        return new ResponseEntity(itemSpecs, HttpStatus.OK);
+        return itemSpecs;
     }
 }
