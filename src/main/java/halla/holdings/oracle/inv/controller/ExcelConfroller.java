@@ -50,8 +50,8 @@ public class ExcelConfroller {
 
                 // Setter  로 만들기
                 xxeItemSpecInfoTmp.setItemNumber(row.getCell(1, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemSpecInfoTmp.set(row.getCell(3, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                //                invSample.set(row.getCell(2).getNumericCellValue());
+//                xxeItemSpecInfoTmp.set(row.getCell(3, row.CREATE_NULL_AS_BLANK).getStringCellValue());
+//                xxeItemSpecInfoTmp.set(row.getCell(2, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
 
                 xxeItemSpecInfoTmps.add(xxeItemSpecInfoTmp);
             }
