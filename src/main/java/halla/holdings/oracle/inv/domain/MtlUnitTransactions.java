@@ -1,16 +1,19 @@
 package halla.holdings.oracle.inv.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "MTL_UNIT_TRANSACTIONS", schema = "INV", catalog = "")
+@Data
 public class MtlUnitTransactions {
     @Id
     private long transactionId;
-    private Time lastUpdateDate;
+    private LocalDateTime lastUpdateDate;
     private long lastUpdatedBy;
-    private Time creationDate;
+    private LocalDateTime creationDate;
     private long createdBy;
     private Long lastUpdateLogin;
     private String serialNumber;
@@ -18,7 +21,7 @@ public class MtlUnitTransactions {
     private long organizationId;
     private String subinventoryCode;
     private Long locatorId;
-    private Time transactionDate;
+    private LocalDateTime transactionDate;
     private Long transactionSourceId;
     private long transactionSourceTypeId;
     private String transactionSourceName;
@@ -27,7 +30,7 @@ public class MtlUnitTransactions {
     private Long shipId;
     private String serialAttributeCategory;
     private String countryOfOrigin;
-    private Time originationDate;
+    private LocalDateTime originationDate;
     private String cAttribute1;
     private String cAttribute2;
     private String cAttribute3;
@@ -58,36 +61,36 @@ public class MtlUnitTransactions {
     private String cAttribute28;
     private String cAttribute29;
     private String cAttribute30;
-    private Time dAttribute1;
-    private Time dAttribute2;
-    private Time dAttribute3;
-    private Time dAttribute4;
-    private Time dAttribute5;
-    private Time dAttribute6;
-    private Time dAttribute7;
-    private Time dAttribute8;
-    private Time dAttribute9;
-    private Time dAttribute10;
-    private Time dAttribute11;
-    private Time dAttribute12;
-    private Time dAttribute13;
-    private Time dAttribute14;
-    private Time dAttribute15;
-    private Time dAttribute16;
-    private Time dAttribute17;
-    private Time dAttribute18;
-    private Time dAttribute19;
-    private Time dAttribute20;
-    private Time dAttribute21;
-    private Time dAttribute22;
-    private Time dAttribute23;
-    private Time dAttribute24;
-    private Time dAttribute25;
-    private Time dAttribute26;
-    private Time dAttribute27;
-    private Time dAttribute28;
-    private Time dAttribute29;
-    private Time dAttribute30;
+    private LocalDateTime dAttribute1;
+    private LocalDateTime dAttribute2;
+    private LocalDateTime dAttribute3;
+    private LocalDateTime dAttribute4;
+    private LocalDateTime dAttribute5;
+    private LocalDateTime dAttribute6;
+    private LocalDateTime dAttribute7;
+    private LocalDateTime dAttribute8;
+    private LocalDateTime dAttribute9;
+    private LocalDateTime dAttribute10;
+    private LocalDateTime dAttribute11;
+    private LocalDateTime dAttribute12;
+    private LocalDateTime dAttribute13;
+    private LocalDateTime dAttribute14;
+    private LocalDateTime dAttribute15;
+    private LocalDateTime dAttribute16;
+    private LocalDateTime dAttribute17;
+    private LocalDateTime dAttribute18;
+    private LocalDateTime dAttribute19;
+    private LocalDateTime dAttribute20;
+    private LocalDateTime dAttribute21;
+    private LocalDateTime dAttribute22;
+    private LocalDateTime dAttribute23;
+    private LocalDateTime dAttribute24;
+    private LocalDateTime dAttribute25;
+    private LocalDateTime dAttribute26;
+    private LocalDateTime dAttribute27;
+    private LocalDateTime dAttribute28;
+    private LocalDateTime dAttribute29;
+    private LocalDateTime dAttribute30;
     private Long nAttribute1;
     private Long nAttribute2;
     private Long nAttribute3;
@@ -162,11 +165,11 @@ public class MtlUnitTransactions {
 
     @Basic
     @Column(name = "LAST_UPDATE_DATE", nullable = false)
-    public Time getLastUpdateDate() {
+    public LocalDateTime getLastUpdateDate() {
         return lastUpdateDate;
     }
 
-    public void setLastUpdateDate(Time lastUpdateDate) {
+    public void setLastUpdateDate(LocalDateTime lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
     }
 
@@ -182,11 +185,11 @@ public class MtlUnitTransactions {
 
     @Basic
     @Column(name = "CREATION_DATE", nullable = false)
-    public Time getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Time creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -262,11 +265,11 @@ public class MtlUnitTransactions {
 
     @Basic
     @Column(name = "TRANSACTION_DATE", nullable = false)
-    public Time getTransactionDate() {
+    public LocalDateTime getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(Time transactionDate) {
+    public void setTransactionDate(LocalDateTime transactionDate) {
         this.transactionDate = transactionDate;
     }
 
@@ -352,11 +355,11 @@ public class MtlUnitTransactions {
 
     @Basic
     @Column(name = "ORIGINATION_DATE", nullable = true)
-    public Time getOriginationDate() {
+    public LocalDateTime getOriginationDate() {
         return originationDate;
     }
 
-    public void setOriginationDate(Time originationDate) {
+    public void setOriginationDate(LocalDateTime originationDate) {
         this.originationDate = originationDate;
     }
 
@@ -662,301 +665,301 @@ public class MtlUnitTransactions {
 
     @Basic
     @Column(name = "D_ATTRIBUTE1", nullable = true)
-    public Time getdAttribute1() {
+    public LocalDateTime getdAttribute1() {
         return dAttribute1;
     }
 
-    public void setdAttribute1(Time dAttribute1) {
+    public void setdAttribute1(LocalDateTime dAttribute1) {
         this.dAttribute1 = dAttribute1;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE2", nullable = true)
-    public Time getdAttribute2() {
+    public LocalDateTime getdAttribute2() {
         return dAttribute2;
     }
 
-    public void setdAttribute2(Time dAttribute2) {
+    public void setdAttribute2(LocalDateTime dAttribute2) {
         this.dAttribute2 = dAttribute2;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE3", nullable = true)
-    public Time getdAttribute3() {
+    public LocalDateTime getdAttribute3() {
         return dAttribute3;
     }
 
-    public void setdAttribute3(Time dAttribute3) {
+    public void setdAttribute3(LocalDateTime dAttribute3) {
         this.dAttribute3 = dAttribute3;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE4", nullable = true)
-    public Time getdAttribute4() {
+    public LocalDateTime getdAttribute4() {
         return dAttribute4;
     }
 
-    public void setdAttribute4(Time dAttribute4) {
+    public void setdAttribute4(LocalDateTime dAttribute4) {
         this.dAttribute4 = dAttribute4;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE5", nullable = true)
-    public Time getdAttribute5() {
+    public LocalDateTime getdAttribute5() {
         return dAttribute5;
     }
 
-    public void setdAttribute5(Time dAttribute5) {
+    public void setdAttribute5(LocalDateTime dAttribute5) {
         this.dAttribute5 = dAttribute5;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE6", nullable = true)
-    public Time getdAttribute6() {
+    public LocalDateTime getdAttribute6() {
         return dAttribute6;
     }
 
-    public void setdAttribute6(Time dAttribute6) {
+    public void setdAttribute6(LocalDateTime dAttribute6) {
         this.dAttribute6 = dAttribute6;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE7", nullable = true)
-    public Time getdAttribute7() {
+    public LocalDateTime getdAttribute7() {
         return dAttribute7;
     }
 
-    public void setdAttribute7(Time dAttribute7) {
+    public void setdAttribute7(LocalDateTime dAttribute7) {
         this.dAttribute7 = dAttribute7;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE8", nullable = true)
-    public Time getdAttribute8() {
+    public LocalDateTime getdAttribute8() {
         return dAttribute8;
     }
 
-    public void setdAttribute8(Time dAttribute8) {
+    public void setdAttribute8(LocalDateTime dAttribute8) {
         this.dAttribute8 = dAttribute8;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE9", nullable = true)
-    public Time getdAttribute9() {
+    public LocalDateTime getdAttribute9() {
         return dAttribute9;
     }
 
-    public void setdAttribute9(Time dAttribute9) {
+    public void setdAttribute9(LocalDateTime dAttribute9) {
         this.dAttribute9 = dAttribute9;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE10", nullable = true)
-    public Time getdAttribute10() {
+    public LocalDateTime getdAttribute10() {
         return dAttribute10;
     }
 
-    public void setdAttribute10(Time dAttribute10) {
+    public void setdAttribute10(LocalDateTime dAttribute10) {
         this.dAttribute10 = dAttribute10;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE11", nullable = true)
-    public Time getdAttribute11() {
+    public LocalDateTime getdAttribute11() {
         return dAttribute11;
     }
 
-    public void setdAttribute11(Time dAttribute11) {
+    public void setdAttribute11(LocalDateTime dAttribute11) {
         this.dAttribute11 = dAttribute11;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE12", nullable = true)
-    public Time getdAttribute12() {
+    public LocalDateTime getdAttribute12() {
         return dAttribute12;
     }
 
-    public void setdAttribute12(Time dAttribute12) {
+    public void setdAttribute12(LocalDateTime dAttribute12) {
         this.dAttribute12 = dAttribute12;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE13", nullable = true)
-    public Time getdAttribute13() {
+    public LocalDateTime getdAttribute13() {
         return dAttribute13;
     }
 
-    public void setdAttribute13(Time dAttribute13) {
+    public void setdAttribute13(LocalDateTime dAttribute13) {
         this.dAttribute13 = dAttribute13;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE14", nullable = true)
-    public Time getdAttribute14() {
+    public LocalDateTime getdAttribute14() {
         return dAttribute14;
     }
 
-    public void setdAttribute14(Time dAttribute14) {
+    public void setdAttribute14(LocalDateTime dAttribute14) {
         this.dAttribute14 = dAttribute14;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE15", nullable = true)
-    public Time getdAttribute15() {
+    public LocalDateTime getdAttribute15() {
         return dAttribute15;
     }
 
-    public void setdAttribute15(Time dAttribute15) {
+    public void setdAttribute15(LocalDateTime dAttribute15) {
         this.dAttribute15 = dAttribute15;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE16", nullable = true)
-    public Time getdAttribute16() {
+    public LocalDateTime getdAttribute16() {
         return dAttribute16;
     }
 
-    public void setdAttribute16(Time dAttribute16) {
+    public void setdAttribute16(LocalDateTime dAttribute16) {
         this.dAttribute16 = dAttribute16;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE17", nullable = true)
-    public Time getdAttribute17() {
+    public LocalDateTime getdAttribute17() {
         return dAttribute17;
     }
 
-    public void setdAttribute17(Time dAttribute17) {
+    public void setdAttribute17(LocalDateTime dAttribute17) {
         this.dAttribute17 = dAttribute17;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE18", nullable = true)
-    public Time getdAttribute18() {
+    public LocalDateTime getdAttribute18() {
         return dAttribute18;
     }
 
-    public void setdAttribute18(Time dAttribute18) {
+    public void setdAttribute18(LocalDateTime dAttribute18) {
         this.dAttribute18 = dAttribute18;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE19", nullable = true)
-    public Time getdAttribute19() {
+    public LocalDateTime getdAttribute19() {
         return dAttribute19;
     }
 
-    public void setdAttribute19(Time dAttribute19) {
+    public void setdAttribute19(LocalDateTime dAttribute19) {
         this.dAttribute19 = dAttribute19;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE20", nullable = true)
-    public Time getdAttribute20() {
+    public LocalDateTime getdAttribute20() {
         return dAttribute20;
     }
 
-    public void setdAttribute20(Time dAttribute20) {
+    public void setdAttribute20(LocalDateTime dAttribute20) {
         this.dAttribute20 = dAttribute20;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE21", nullable = true)
-    public Time getdAttribute21() {
+    public LocalDateTime getdAttribute21() {
         return dAttribute21;
     }
 
-    public void setdAttribute21(Time dAttribute21) {
+    public void setdAttribute21(LocalDateTime dAttribute21) {
         this.dAttribute21 = dAttribute21;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE22", nullable = true)
-    public Time getdAttribute22() {
+    public LocalDateTime getdAttribute22() {
         return dAttribute22;
     }
 
-    public void setdAttribute22(Time dAttribute22) {
+    public void setdAttribute22(LocalDateTime dAttribute22) {
         this.dAttribute22 = dAttribute22;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE23", nullable = true)
-    public Time getdAttribute23() {
+    public LocalDateTime getdAttribute23() {
         return dAttribute23;
     }
 
-    public void setdAttribute23(Time dAttribute23) {
+    public void setdAttribute23(LocalDateTime dAttribute23) {
         this.dAttribute23 = dAttribute23;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE24", nullable = true)
-    public Time getdAttribute24() {
+    public LocalDateTime getdAttribute24() {
         return dAttribute24;
     }
 
-    public void setdAttribute24(Time dAttribute24) {
+    public void setdAttribute24(LocalDateTime dAttribute24) {
         this.dAttribute24 = dAttribute24;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE25", nullable = true)
-    public Time getdAttribute25() {
+    public LocalDateTime getdAttribute25() {
         return dAttribute25;
     }
 
-    public void setdAttribute25(Time dAttribute25) {
+    public void setdAttribute25(LocalDateTime dAttribute25) {
         this.dAttribute25 = dAttribute25;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE26", nullable = true)
-    public Time getdAttribute26() {
+    public LocalDateTime getdAttribute26() {
         return dAttribute26;
     }
 
-    public void setdAttribute26(Time dAttribute26) {
+    public void setdAttribute26(LocalDateTime dAttribute26) {
         this.dAttribute26 = dAttribute26;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE27", nullable = true)
-    public Time getdAttribute27() {
+    public LocalDateTime getdAttribute27() {
         return dAttribute27;
     }
 
-    public void setdAttribute27(Time dAttribute27) {
+    public void setdAttribute27(LocalDateTime dAttribute27) {
         this.dAttribute27 = dAttribute27;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE28", nullable = true)
-    public Time getdAttribute28() {
+    public LocalDateTime getdAttribute28() {
         return dAttribute28;
     }
 
-    public void setdAttribute28(Time dAttribute28) {
+    public void setdAttribute28(LocalDateTime dAttribute28) {
         this.dAttribute28 = dAttribute28;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE29", nullable = true)
-    public Time getdAttribute29() {
+    public LocalDateTime getdAttribute29() {
         return dAttribute29;
     }
 
-    public void setdAttribute29(Time dAttribute29) {
+    public void setdAttribute29(LocalDateTime dAttribute29) {
         this.dAttribute29 = dAttribute29;
     }
 
     @Basic
     @Column(name = "D_ATTRIBUTE30", nullable = true)
-    public Time getdAttribute30() {
+    public LocalDateTime getdAttribute30() {
         return dAttribute30;
     }
 
-    public void setdAttribute30(Time dAttribute30) {
+    public void setdAttribute30(LocalDateTime dAttribute30) {
         this.dAttribute30 = dAttribute30;
     }
 
