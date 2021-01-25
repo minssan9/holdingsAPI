@@ -1,9 +1,9 @@
 package halla.holdings.dbconfig;
 
-import org.hibernate.dialect.Oracle12cDialect;
+import org.hibernate.dialect.Oracle10gDialect;
 
 @SuppressWarnings("unused")
-public class CustomOracleDialect extends Oracle12cDialect {
+public class CustomOracleDialect extends Oracle10gDialect {
     @Override
     public String getQuerySequencesString() {
         return "select * from user_sequences";
