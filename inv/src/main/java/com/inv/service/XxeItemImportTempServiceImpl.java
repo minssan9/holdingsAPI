@@ -1,13 +1,13 @@
 package com.inv.service;
 
-import com.inv.domain.XxeItemsImportTemp;
+import com.inv.domain.MtlSystemItemsInterface;
+import com.inv.repository.MtlSystemItemsBRepository;
 import com.inv.repository.MtlSystemItemsInterfaceRepository;
 import com.inv.repository.XxeItemsImportTempRepo;
+import com.sun.media.sound.InvalidDataException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.NamedStoredProcedureQuery;
-import javax.persistence.ParameterMode;
-import javax.persistence.StoredProcedureParameter;
+import javax.transaction.Transactional;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,16 +16,31 @@ import org.springframework.stereotype.Service;
 public class XxeItemImportTempServiceImpl implements XxeItemImportTempService {
 
     @Autowired
+    MtlSystemItemsBRepository mtlSystemItemsBRepository;
+    @Autowired
+    MtlSystemItemsInterfaceRepository mtlSystemItemsInterfaceRepository;
+    @Autowired
     XxeItemsImportTempRepo xxeItemsImportTempRepo;
 
-    public List<XxeItemsImportTemp> importItems(XSSFSheet worksheet) {
-        List<XxeItemsImportTemp> xxeItemsImportTemps = new ArrayList<>();
+    @Transactional
+    public List<MtlSystemItemsInterface> importItems(XSSFSheet worksheet) throws Exception {
+//        List<XxeItemsImportTemp> xxeItemsImportTemps = new ArrayList<>();
+//        for (int index = 1; index < worksheet.getPhysicalNumberOfRows(); index++) {
+//            xxeItemsImportTemps.add(new XxeItemsImportTemp(worksheet.getRow(index)));
+//        }
+//        xxeItemsImportTempRepo.saveAll(xxeItemsImportTemps);
+
+        List<MtlSystemItemsInterface> mtlSystemItemsInterfaces = new ArrayList<>();
         for (int index = 1; index < worksheet.getPhysicalNumberOfRows(); index++) {
-            xxeItemsImportTemps.add(new XxeItemsImportTemp(worksheet.getRow(index)));
-//            xxeItemsImportTemps.add(new XxeItemsImportTemp(worksheet.getRow(index)));
-//            xxeItemsImportTemps.add(new XxeItemsImportTemp(worksheet.getRow(index)));
+            MtlSystemItemsInterface mtlSystemItemsInterface =  new MtlSystemItemsInterface(worksheet.getRow(index));
+
+            mtlSystemItemsBRepository.findByOrganizationIdAndSegment1(mtlSystemItemsInterface.getOrganizationId(), mtlSystemItemsInterface.getSegment1());
+            if(!mtlSystemItemsInterface.getEngItemFlag().equals("Y") && !mtlSystemItemsInterface.getEngItemFlag().equals("N"))
+                throw new InvalidDataException();
+
+            mtlSystemItemsInterfaces.add(mtlSystemItemsInterface );
         }
-        xxeItemsImportTempRepo.saveAll(xxeItemsImportTemps);
+        mtlSystemItemsInterfaceRepository.saveAll(mtlSystemItemsInterfaces);
 
 //        -- VALIDATION.OP_CODE 유효입력 확인
 //        -- 1. CREATE -> 이미 존재 / 2. UPDATE -> 미 존재 유형 확인
@@ -98,7 +113,7 @@ public class XxeItemImportTempServiceImpl implements XxeItemImportTempService {
 //        V_VALID_MSG  := V_VALID_MSG||' 유효하지 않은 조직.';
 //        END IF;
         xxeItemsImportTempRepo.executeConcurrent("INV", "INCOIN", 87, 7232);
-        return xxeItemsImportTemps;
+        return mtlSystemItemsInterfaces;
     }
 
 

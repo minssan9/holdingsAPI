@@ -1,14 +1,9 @@
 package com.service.controller.inv;
 
-import com.inv.domain.XxeItemsImportTemp;
-import com.inv.repository.XxeItemSpecInfoTmpRepository;
+import com.inv.domain.MtlSystemItemsInterface;
 import com.inv.repository.XxeItemsImportTempRepo;
 import com.inv.service.ItemSpecService;
 import com.inv.service.XxeItemImportTempService;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,18 +26,9 @@ public class ItemUploadController {
     @Autowired
     XxeItemImportTempService xxeItemImportTempService;
     @Autowired
-    XxeItemSpecInfoTmpRepository xxeItemSpecInfoTmpRepository;
-
-    @Autowired
     XxeItemsImportTempRepo xxeItemsImportTempRepo;
 
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public static class ResourceNotFoundException extends RuntimeException {
 
-        public ResourceNotFoundException(String message) {
-            super(message);
-        }
-    }
 
     @GetMapping
     public ResponseEntity getUploadItemList(Pageable pageable) throws IOException {
@@ -51,10 +37,10 @@ public class ItemUploadController {
 
     @RequestMapping(value = "/files")
     @PostMapping
-    public ResponseEntity importExcelFile(@RequestParam MultipartFile file) throws IOException {
+    public ResponseEntity importExcelFile(@RequestParam MultipartFile file) throws Exception {
         XSSFSheet worksheet = new XSSFWorkbook(file.getInputStream()).getSheetAt(0);
-        List<XxeItemsImportTemp> xxeItemsImportTemps = xxeItemImportTempService.importItems(worksheet);
-        return new ResponseEntity(xxeItemsImportTemps, HttpStatus.OK);
+        List<MtlSystemItemsInterface> mtlSystemItemsInterfaces = xxeItemImportTempService.importItems(worksheet);
+        return new ResponseEntity(mtlSystemItemsInterfaces, HttpStatus.OK);
     }
 
 

@@ -10,10 +10,6 @@ import lombok.NoArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
-@Entity
-@Table(name = "XXE_ITEMS_IMPORT_TEMP", schema = "APPS", catalog = "")
-@Data
-@NoArgsConstructor
 @NamedStoredProcedureQuery(
     name = "getOrders",
     procedureName = "Orders.getOrders",
@@ -24,11 +20,20 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
         @StoredProcedureParameter(name = "out_curs", mode = ParameterMode.REF_CURSOR, type = void.class),
     }
 )
+@Entity
+@Table(name = "XXE_ITEMS_IMPORT_TEMP", schema = "APPS", catalog = "")
+@SequenceGenerator(
+    name="XXE_ITEMS_IMPORT_TEMP_SEQ_GEN", //시퀀스 제너레이터 이름
+    sequenceName="XXE_ITEMS_IMPORT_TEMP_SEQ", //시퀀스 이름
+    initialValue=1, //시작값
+    allocationSize=1 //메모리를 통해 할당할 범위 사이즈
+)
+@Data
+@NoArgsConstructor
 public class XxeItemsImportTemp {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,
-        generator = "XXE_ITEMS_IMPORT_TEMP_SEQ")
+        generator = "XXE_ITEMS_IMPORT_TEMP_SEQ_GEN")
     @Column(name = "SEQ")
     private long seq;
     @Column(name = "ORGANIZATION_ID")
@@ -156,6 +161,7 @@ public class XxeItemsImportTemp {
     private String statusFlag;
 
     public XxeItemsImportTemp(XSSFRow row) {
+        this.organizationId = (long) row.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue();
         this.segment1 = row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
         this.description = row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
         this.primaryUomCode = row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
@@ -165,15 +171,31 @@ public class XxeItemsImportTemp {
         this.unitWeight = row.getCell(7, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue();
         this.volumeUomCode = row.getCell(8, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
         this.unitVolume = row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue();
-//                    .(row.getCell(10, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(11, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(12, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(13, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(14, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(15, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(16, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(17, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
-//                    .(row.getCell(18, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
+        this.attribute1 = row.getCell(10, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute2 = row.getCell(11, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute3 = row.getCell(12, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute4 = row.getCell(13, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute5 = row.getCell(14, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute6 = row.getCell(15, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute7 = row.getCell(16, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute8 = row.getCell(17, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute9 = row.getCell(18, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+//        this.attribute10 = row.getCell(19, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute11 = row.getCell(19, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute12 = row.getCell(20, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute13 = row.getCell(21, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute14 = row.getCell(22, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+
+        this.attribute15 = row.getCell(24, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.globalAttribute1 = row.getCell(25, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.globalAttribute2 = row.getCell(26, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.globalAttribute3 = row.getCell(27, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+
+        this.transactionType = row.getCell(28, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.processFlag = (long) row.getCell(29, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue();
+
+        this.attribute1 = row.getCell(19, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        this.attribute1 = row.getCell(20, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
         this.creationDate=LocalDateTime.now();
         this.lastUpdateDate=LocalDateTime.now();
     }
