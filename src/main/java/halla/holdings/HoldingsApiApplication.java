@@ -21,11 +21,10 @@ import java.time.format.DateTimeFormatter;
 @PropertySource(value = {"classpath:account.properties"})
 @CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
 public class HoldingsApiApplication extends SpringBootServletInitializer {
-    public static DateTimeFormatter dateFormatString = DateTimeFormatter.ofPattern("yyyyMMdd");
-    public static DateTimeFormatter timeFormatString = DateTimeFormatter.ofPattern("HHmm");
-
-    public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    public static DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
+    public static final DateTimeFormatter dateFormatString = DateTimeFormatter.ofPattern("yyyyMMdd");
+    public static final DateTimeFormatter timeFormatString = DateTimeFormatter.ofPattern("HHmm");
+    public static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    public static final DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
 
 
 //    @Bean
