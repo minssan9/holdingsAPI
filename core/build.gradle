@@ -1,0 +1,20 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+group 'com.halla'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
+dependencies {
+}
