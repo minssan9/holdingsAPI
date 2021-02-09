@@ -1,4 +1,4 @@
-package halla.holdings.dbconfig;
+package halla.holdings.config.database;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -37,30 +37,12 @@ public class OracleDatabaseConfig {
         return DataSourceBuilder.create().build();
     }
 
-//    @Bean
-//    @Primary
-//    public SqlSessionFactory oracleSqlSessionFactory(DataSource dataSource, ApplicationContext applicationContext) throws Exception {
-//        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-//        sqlSessionFactoryBean.setDataSource(dataSource);
-//        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/oracle/*.xml"));
-//        return sqlSessionFactoryBean.getObject();
-//    }
-//
-//    @Bean
-//    @Primary
-//    public SqlSessionTemplate oracleSqlSessionTemplate(SqlSessionFactory oracleSqlSessionFactory) throws Exception {
-//        return new SqlSessionTemplate(oracleSqlSessionFactory);
-//    }
-
     @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-//        var properties = oracleHibernateProperties.determineHibernateProperties(
-//                oracleJpaProperties.getProperties(), new HibernateSettings());
-
         Map<String, String> propertiesHashMap = new HashMap<>();
         propertiesHashMap.put("hibernate.ejb.naming_strategy",DEFAULT_NAMING_STRATEGY);
-        propertiesHashMap.put("hibernate.dialect","halla.holdings.dbconfig.CustomOracleDialect");
+        propertiesHashMap.put("hibernate.dialect","halla.holdings.config.database.CustomOracleDialect");
 
         return builder.dataSource(oraDataSource())
                 .properties(propertiesHashMap)

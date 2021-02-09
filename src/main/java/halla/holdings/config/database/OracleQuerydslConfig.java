@@ -1,4 +1,4 @@
-package halla.holdings.dbconfig;
+package halla.holdings.config.database;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import oracle.jdbc.replay.OracleDataSourceFactory;
