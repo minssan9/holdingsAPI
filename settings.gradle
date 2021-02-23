@@ -1,5 +1,5 @@
 rootProject.name = 'holdings'
-//include 'api'
+include 'service'
 include 'batch'
 include 'core'
 

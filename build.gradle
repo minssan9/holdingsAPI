@@ -93,8 +93,8 @@ project(':batch') {
     bootJar.enabled = true
     jar.enabled = true
 }
-//project(':service') {
-//    bootJar.enabled = true
-//    jar.enabled = true
-//}
+project(':service') {
+    bootJar.enabled = true
+    jar.enabled = true
+}
 

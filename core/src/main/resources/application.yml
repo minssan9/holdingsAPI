@@ -1,0 +1,60 @@
+application:
+    name: charger
+
+server:
+    port: 53000
+
+    #Mongo
+spring:
+    profiles:
+        active: local
+    #  include: core
+    devtools:
+        livereload:
+            enabled: true
+    mvc:
+        throw-exception-if-no-handler-found: true
+    resources:
+        add-mappings: false
+    datasource:
+        #        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+        username: apps
+        password: apps
+    jpa:
+        show-sql: false
+        generate-ddl: true
+        hibernate:
+            ddl-auto: none
+            naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: org.hibernate.dialect.MySQL57Dialect
+    #    autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+    batch:
+        job:
+            enabled: true
+            names: ${job.name:NONE}
+        initialize-schema: never
+
+
+springdoc:
+    version: '1.0.0'
+    api-docs:
+        groups:
+            enabled: true
+    default-consumes-media-type: application/json
+    default-produces-media-type: application/json
+    swagger-ui:
+        operations-sorter: alpha
+        tags-sorter: alpha
+        path: /swagger-ui.html
+        disable-swagger-default-url: true
+        display-query-params-without-oauth2: true
+    paths-to-match: /**
+
+
+#app:
+ecos-api-key: A3KS6JOGXDYWDBC2XQ3Y

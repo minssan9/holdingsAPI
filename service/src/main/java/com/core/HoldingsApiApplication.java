@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 @SpringBootApplication
 @EnableScheduling
 @Configuration
+@PropertySource(value = {"classpath:account.properties"})
 @CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
 public class HoldingsApiApplication extends SpringBootServletInitializer {
     public static final DateTimeFormatter dateFormatString = DateTimeFormatter.ofPattern("yyyyMMdd");
