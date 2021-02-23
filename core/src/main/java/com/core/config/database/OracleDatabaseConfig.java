@@ -1,4 +1,4 @@
-package halla.holdings.config.database;
+package com.core.config.database;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -23,7 +23,7 @@ import java.util.Objects;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "oracleEntityManagerFactory",
         transactionManagerRef = "oracleTransactionManager",
-        basePackages = {"halla.holdings.oracle.*.repository"}
+        basePackages = {"com.core.oracle.*.repository"}
 )
 public class OracleDatabaseConfig {
 

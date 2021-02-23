@@ -1,8 +1,6 @@
-package halla.holdings.config;
+package com.core.config;
 
 import org.springframework.context.annotation.Configuration;
-
-import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class DateConfig {

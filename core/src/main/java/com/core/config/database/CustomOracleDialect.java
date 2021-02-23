@@ -1,4 +1,4 @@
-package halla.holdings.config.database;
+package com.core.config.database;
 
 import org.hibernate.dialect.Oracle12cDialect;
 
