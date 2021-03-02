@@ -4,6 +4,7 @@ package com.service.controller.inv;
 import com.core.file.service.FileStorageService;
 import com.core.oracle.inv.domain.XxeItemSpecInfoTmp;
 import com.core.oracle.inv.repository.XxeItemSpecInfoTmpRepository;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -49,7 +50,8 @@ public class ExcelConfroller {
 //                );
 
                 // Setter  로 만들기
-                xxeItemSpecInfoTmp.setItemNumber(row.getCell(1, row.CREATE_NULL_AS_BLANK).getStringCellValue());
+                xxeItemSpecInfoTmp.setItemNumber(row.getCell(1,
+                    Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
 //                xxeItemSpecInfoTmp.set(row.getCell(3, row.CREATE_NULL_AS_BLANK).getStringCellValue());
 //                xxeItemSpecInfoTmp.set(row.getCell(2, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
 

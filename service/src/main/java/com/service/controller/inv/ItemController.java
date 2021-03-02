@@ -26,7 +26,7 @@ public class ItemController {
     }
 
     @PostMapping(value = "/excel")
-    public ResponseEntity importItemExcelFile(@RequestParam("file") MultipartFile files) throws IOException {
+    public ResponseEntity importItemExcelFile(@RequestParam("file") MultipartFile files) throws Exception {
 
         List<XxeItemSpecInfoTmp> itemSpecs = itemSpecService.uploadItemsFromExcel(files);
 

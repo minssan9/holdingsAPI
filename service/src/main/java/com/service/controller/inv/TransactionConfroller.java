@@ -1,9 +1,16 @@
 package com.service.controller.inv;
 
 
+import static com.core.config.StaticConfig.DATE_STRING_FORMAT;
+
 import com.core.file.service.FileStorageService;
 import com.core.oracle.inv.domain.XxeErpOtherTrxs;
 import com.core.oracle.inv.repository.XxeErpOtherTrxsRepository;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -15,13 +22,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.core.HoldingsApiApplication.dateFormatString;
 
 @RestController
 @RequestMapping("/inv/trx")
@@ -46,18 +46,18 @@ public class TransactionConfroller {
                 XxeErpOtherTrxs xxeErpOtherTrx = new XxeErpOtherTrxs();
 
                 // Setter  로 만들기
-                xxeErpOtherTrx.setSeq((long) row.getCell(1, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setOrganizationId((long) row.getCell(3, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setGroupId(row.getCell(2, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setLineNum((long) row.getCell(1, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setSubinventoryCode(row.getCell(3, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setTransactionTypeId((long) row.getCell(2, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setTransactionActionId((long) row.getCell(3, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setTransactionDate(LocalDateTime.parse(row.getCell(9, row.CREATE_NULL_AS_BLANK).getStringCellValue(), dateFormatString));
-                xxeErpOtherTrx.setCodeCombinationId((long) row.getCell(3, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setDeptCode(row.getCell(2, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setItemCode(row.getCell(3, row.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setTransactionQuantity((long) row.getCell(2, row.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setSeq((long) row.getCell(1).getNumericCellValue());
+                xxeErpOtherTrx.setOrganizationId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setGroupId(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
+                xxeErpOtherTrx.setLineNum((long) row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setSubinventoryCode(row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
+                xxeErpOtherTrx.setTransactionTypeId((long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setTransactionActionId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setTransactionDate(LocalDateTime.parse(row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue(), DATE_STRING_FORMAT));
+                xxeErpOtherTrx.setCodeCombinationId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setDeptCode(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
+                xxeErpOtherTrx.setItemCode(row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
+                xxeErpOtherTrx.setTransactionQuantity((long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
 
                 xxeErpOtherTrxs.add(xxeErpOtherTrx);
             }

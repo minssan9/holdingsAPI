@@ -3,7 +3,7 @@ package com.service.controller;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.core.oracle.account.domain.Account;
-import com.core.oracle.account.repo.AccountRepository;
+import com.core.oracle.account.repository.AccountRepository;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import lombok.extern.slf4j.Slf4j;

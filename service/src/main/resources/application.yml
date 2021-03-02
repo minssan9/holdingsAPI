@@ -1,22 +1,45 @@
+
 # For local phase configurations
 server:
   port: 54000
-  
 spring:
   jpa:
     show-sql: false
-    generate-ddl: true
-    hibernate:
-      ddl-auto: none
-      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: com.holdings.dbconfig.CustomOracleDialect
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: none
+#      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: com.core.dbconfig.CustomOracleDialect
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+    username: apps
+    password: apps
   output:
     ansi:
       enabled: always
-      
+#  datasource:
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+#    username: apps
+#    password: apps
+
+oracle:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+    username: apps
+    password: apps
+  #    mysql:
+  #      driver-class-name: com.mysql.cj.jdbc.Driver
+  #      jdbcUrl: jdbc:mysql://shop.voyagerss.com:3306/charger?characterEncoding=utf8&serverTimezone=UTC&useUnicode=true&createDatabaseIfNotExist=true
+  #      username: charger
+  #      password: wjsrlck1@
+
+
 springdoc:
   version: '1.0.0'
   api-docs:
@@ -33,23 +56,16 @@ springdoc:
   paths-to-match: /**
   
 logging:
-  level: error
-  pattern:
-    file: %d %p %c{1.} [%t] %m%n
-    console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+  level:
+    "[org.hibernate]": error
+#  pattern:
+#    file: %d %p %c{1.} [%t] %m%n
+#    console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
   file:
     path: /logs/halla/service/holdingsAPI.log
----
-spring:
   config:
     activate:
       on-profile: dev
-  datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
-    username: apps
-    password: apps
-
 ---
 #spring:
 #  config:

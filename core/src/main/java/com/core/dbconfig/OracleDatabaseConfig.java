@@ -1,5 +1,9 @@
 package com.core.dbconfig;
 
+import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -15,47 +19,51 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-//@MapperScan(value = "halla.holdings.", sqlSessionFactoryRef = "oracleSqlSessionFactory")
-//@ConfigurationProperties(value = "spring.oracle")
+@EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "oracleEntityManagerFactory",
         transactionManagerRef = "oracleTransactionManager",
-        basePackages = {"com.core.oracle.*.repository"}
+        basePackages = "com.core.oracle.*.repository"
 )
 public class OracleDatabaseConfig {
 
-    private static final String DEFAULT_NAMING_STRATEGY
-            = "org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy";
+//    private final JpaProperties jpaProperties;
+//    private final HibernateProperties hibernateProperties;
+
+//    public OracleDatabaseConfig(JpaProperties jpaProperties,
+//        HibernateProperties hibernateProperties) {
+//        this.jpaProperties = jpaProperties;
+//        this.hibernateProperties = hibernateProperties;
+//    }
 
     @Bean
-    @Primary
-    @ConfigurationProperties(value = "spring.datasource")
-    public DataSource oraDataSource() {
+    @ConfigurationProperties(prefix = "oracle.datasource")
+    public DataSource oracleDataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    @Primary
     public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-        Map<String, String> propertiesHashMap = new HashMap<>();
-        propertiesHashMap.put("hibernate.ejb.naming_strategy", DEFAULT_NAMING_STRATEGY);
-        propertiesHashMap.put("hibernate.dialect", "halla.holdings.config.database.CustomOracleDialect");
+        Map<String,Object> properties = new HashMap<>();
+        CustomOracleDialect customOracleDialect = new CustomOracleDialect();
+        properties.put("hibernate.dialect", customOracleDialect);
 
-        return builder.dataSource(oraDataSource())
-                .properties(propertiesHashMap)
-                .packages("halla.holdings.oracle.*.domain")
+        return builder.dataSource(oracleDataSource())
+                .properties(properties)
+                .packages("com.core.oracle.*.domain")
                 .persistenceUnit("oracle")
                 .build();
     }
 
-    @Bean
-    @Primary
-    public PlatformTransactionManager oracleTransactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(Objects.requireNonNull(oracleEntityManagerFactory(builder).getObject()));
-    }
+//    @Bean
+//    @Primary
+//    public PlatformTransactionManager oracleTransactionManager(EntityManagerFactoryBuilder builder) {
+//        return new JpaTransactionManager(Objects.requireNonNull(oracleEntityManagerFactory(builder).getObject()));
+//    }
 
 
 }

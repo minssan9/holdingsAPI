@@ -1,7 +1,7 @@
 package com.service.controller;
 
 import com.core.oracle.account.domain.Account;
-import com.core.oracle.account.repo.AccountRepository;
+import com.core.oracle.account.repository.AccountRepository;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -13,9 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 @Slf4j
 public class AccountTest {
+
     @Autowired
     AccountRepository accountRepository;
-
     @Test
     void getAccountTest(){
         log.trace(accountRepository.findByUserName("P14394").toString());

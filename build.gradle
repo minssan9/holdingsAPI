@@ -47,9 +47,10 @@ allprojects {
 
         implementation 'org.slf4j:slf4j-api:1.7.25'
         implementation 'com.google.code.gson:gson'
-        implementation 'org.apache.poi:poi-ooxml:4.0.0'
+        implementation 'org.apache.poi:poi:4.1.0'
+        implementation 'org.apache.poi:poi-ooxml:4.1.0'
 
-        testImplementation 'junit:junit:4.11'
+        testImplementation 'junit:junit:4.12'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
     repositories {
