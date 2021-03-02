@@ -1,0 +1,21 @@
+application:
+  name: charger
+
+server:
+  port: 53000
+  
+  #Mongo
+spring:
+  batch:
+    job:
+      enabled: true
+      names: ${job.name:NONE}
+    initialize-schema: never
+
+logging:
+  level: error
+  pattern:
+    file: %d %p %c{1.} [%t] %m%n
+    console: %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+  file:
+    path: /logs/halla/batch/holdingsAPI.log

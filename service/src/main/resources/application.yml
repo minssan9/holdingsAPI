@@ -38,7 +38,7 @@ logging:
     file: %d %p %c{1.} [%t] %m%n
     console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
   file:
-    path: C:/logs/holdingsAPI/holdingsAPI.log
+    path: /logs/halla/service/holdingsAPI.log
 ---
 spring:
   config:

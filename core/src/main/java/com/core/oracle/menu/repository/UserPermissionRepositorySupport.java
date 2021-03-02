@@ -1,8 +1,8 @@
 package com.core.oracle.menu.repository;
 
 import com.core.oracle.menu.domain.UserPermission;
-import com.service.controller.account.domain.QAccount;
-import com.service.controller.menu.domain.QUserPermission;
+import com.core.oracle.account.domain.QAccount;
+import com.core.oracle.menu.domain.QUserPermission;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;

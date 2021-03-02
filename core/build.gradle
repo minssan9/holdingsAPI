@@ -3,7 +3,6 @@ plugins {
     id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 apply plugin: "com.ewerk.gradle.plugins.querydsl"
-
 group 'halla.hds.core'
 version '1.0'
 

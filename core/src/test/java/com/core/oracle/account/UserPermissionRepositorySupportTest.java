@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.core.oracle.menu.repository.UserPermissionRepository;
 import com.core.oracle.menu.repository.UserPermissionRepositorySupport;
-import com.service.controller.account.domain.QAccount;
-import com.service.controller.menu.domain.QUserPermission;
+import com.core.oracle.account.domain.QAccount;
+import com.core.oracle.menu.domain.QUserPermission;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.service.http.dto;
+package com.service.http;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

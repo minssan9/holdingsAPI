@@ -5,13 +5,11 @@ plugins {
 }
 
 bootJar.enabled = false
-
 repositories {
     mavenCentral()
     jcenter()
     maven { url "https://plugins.gradle.org/m2/" }
 }
-
 ext {
     projectGroup = 'halla.hds'
     lombokVersion = '1.18.18'
@@ -44,13 +42,14 @@ allprojects {
         testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         testImplementation "org.projectlombok:lombok:${lombokVersion}"
 
-        implementation 'oracle:ojdbc6:11.2.0.3'
+        implementation 'com.oracle:ojdbc6:11.2.0.3'
         implementation 'mysql:mysql-connector-java'
 
         implementation 'org.slf4j:slf4j-api:1.7.25'
-        testImplementation 'junit:junit:4.11'
-
         implementation 'com.google.code.gson:gson'
+        implementation 'org.apache.poi:poi-ooxml:4.0.0'
+
+        testImplementation 'junit:junit:4.11'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
     repositories {
@@ -64,3 +63,4 @@ allprojects {
     }
 
 }
+
