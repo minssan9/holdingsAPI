@@ -3,11 +3,6 @@ package com.service;
 import static com.core.config.StaticConfig.DATE_STRING_FORMAT;
 import static com.core.config.StaticConfig.TIME_STRING_FORMAT;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.util.Properties;
-import lombok.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,14 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.time.LocalDateTime;
 
 @SpringBootApplication
 @CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
+@ComponentScan(basePackages = "com.core.oracle.*.repository")
 public class HoldingsApiApplication extends SpringBootServletInitializer {
 
 //    @Bean

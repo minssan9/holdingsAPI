@@ -1,7 +1,6 @@
 package com.service.controller;
 
 import com.core.oracle.menu.domain.UserPermission;
-import com.core.oracle.menu.repository.UserPermissionRepository;
 import com.core.oracle.menu.repository.UserPermissionRepositorySupport;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -19,10 +18,9 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Slf4j
 class MenuControllerTest {
-
-
-    @Autowired UserPermissionRepository userPermissionRepository;
-    @Autowired UserPermissionRepositorySupport userPermissionRepositorySupport;
+//    @Autowired UserPermissionRepository  userPermissionRepository;
+    @Autowired
+    UserPermissionRepositorySupport userPermissionRepositorySupport;
 
     @BeforeEach
     void setUp() {

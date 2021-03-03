@@ -1,8 +1,8 @@
 package com.core.oracle.menu.repository;
 
-import com.core.oracle.menu.domain.UserPermission;
 import com.core.oracle.account.domain.QAccount;
 import com.core.oracle.menu.domain.QUserPermission;
+import com.core.oracle.menu.domain.UserPermission;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -10,21 +10,17 @@ import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Slf4j
-public class UserPermissionRepositorySupport extends QuerydslRepositorySupport   {
-    private final JPAQueryFactory queryFactory;
+public class UserPermissionRepositorySupport  extends QuerydslRepositorySupport   {
 
     QAccount account = QAccount.account;
     QUserPermission userPermission = QUserPermission.userPermission;
 
-    public UserPermissionRepositorySupport(JPAQueryFactory queryFactory) {
+    public UserPermissionRepositorySupport() {
         super(UserPermission.class);
-        this.queryFactory = queryFactory;
     }
 
     public List<UserPermission> findByName(String description) {
-        List<UserPermission> userPermissions =   queryFactory
-                .selectFrom(userPermission)
+        List<UserPermission> userPermissions =   from(userPermission)
                 .leftJoin(account).on(userPermission.user_id.eq(account.userId))
                 .where(account.description.eq(description))
                 .fetch();
@@ -33,8 +29,7 @@ public class UserPermissionRepositorySupport extends QuerydslRepositorySupport  
     }
 
     public List<UserPermission> findByPermissionName(String description) {
-        return queryFactory
-                .selectFrom(userPermission)
+        return from(userPermission)
                 .where(userPermission.description.like(description))
                 .fetch();
     }
