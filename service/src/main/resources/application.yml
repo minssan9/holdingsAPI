@@ -1,7 +1,7 @@
 
 # For local phase configurations
 server:
-  port: 54000
+  port: 34000
 #  context-path: /api
 spring:
   jpa:
@@ -56,14 +56,15 @@ springdoc:
     display-query-params-without-oauth2: true
   paths-to-match: /**
 
-logging:
-  level:
-    "[org.hibernate]": error
+#logging:
+#  level: error
+#  file:
+#    path: /logs/halla/service/holdingsAPI.log
+
 #  pattern:
 #    file: %d %p %c{1.} [%t] %m%n
 #    console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-  file:
-    path: /logs/halla/service/holdingsAPI.log
+
 ---
 #spring:
 #  config:

@@ -10,16 +10,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 //@CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
 //@ComponentScan(basePackages = {"com.core.oracle.*.repository"})
-public class HoldingsApiApplication  extends SpringBootServletInitializer {
+public class HoldingsApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HoldingsApiApplication.class, args);
     }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(HoldingsApiApplication.class);
-    }
 //    @Bean
 //    public ApplicationRunner applicationRunner() {
 //        return new ApplicationRunner() {

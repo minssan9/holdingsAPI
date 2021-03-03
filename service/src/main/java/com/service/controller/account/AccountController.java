@@ -19,7 +19,7 @@ public class AccountController {
     private AccountRepository accountRepository;
 
 
-    @GetMapping("{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity getOne(@PathVariable String userId) {
         List<Account> accounts = new ArrayList<>();
         Account account = accountRepository.findByUserId(userId);
