@@ -3,9 +3,10 @@ package com.service.controller.inv;
 
 import static com.core.config.StaticConfig.DATE_STRING_FORMAT;
 
-import com.core.file.service.FileStorageService;
+import com.service.file.service.FileStorageService;
 import com.core.oracle.inv.domain.XxeErpOtherTrxs;
 import com.core.oracle.inv.repository.XxeErpOtherTrxsRepository;
+//import io.swagger.v3.oas.annotations.tags.Tag;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,17 +21,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-@RestController
-@RequestMapping("/inv/trx")
+//@Tag(name = "Multiple data source example", description = "This controller is for the test")
+@RestController("/inv/trx")
 public class TransactionConfroller {
     @Autowired
     FileStorageService fileStorageService;
 
     @Autowired
     XxeErpOtherTrxsRepository xxeErpOtherTrxsRepository;
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public static class ResourceNotFoundException extends RuntimeException {
+        public ResourceNotFoundException(String message) {
+            super(message);
+        }
+    }
 
     @RequestMapping(value = "/import", method = RequestMethod.POST)
     public ResponseEntity importExcelFile(@RequestParam("file") MultipartFile files) throws IOException {

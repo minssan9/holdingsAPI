@@ -1,4 +1,4 @@
-package com.core.file.service;
+package com.service.file.service;
 
 
 import org.springframework.core.io.Resource;

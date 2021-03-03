@@ -1,4 +1,4 @@
-package com.core.file.service;
+package com.service.file.service;
 
 import java.nio.file.Path;
 import java.util.stream.Stream;

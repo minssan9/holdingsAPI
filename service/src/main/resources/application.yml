@@ -2,6 +2,7 @@
 # For local phase configurations
 server:
   port: 54000
+#  context-path: /api
 spring:
   jpa:
     show-sql: false
@@ -54,7 +55,7 @@ springdoc:
     disable-swagger-default-url: true
     display-query-params-without-oauth2: true
   paths-to-match: /**
-  
+
 logging:
   level:
     "[org.hibernate]": error
@@ -63,9 +64,6 @@ logging:
 #    console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
   file:
     path: /logs/halla/service/holdingsAPI.log
-  config:
-    activate:
-      on-profile: dev
 ---
 #spring:
 #  config:
@@ -79,6 +77,6 @@ logging:
 #    username: apps
 #    password: apps
 
-file:
-  upload-dir: C:\ftp
+#file:
+#  upload-dir: C:\ftp
 

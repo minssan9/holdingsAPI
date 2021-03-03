@@ -1,4 +1,4 @@
-package com.core.oracle.inv.service;
+package com.service.service;
 
 import static com.core.config.StaticConfig.DATE_STRING_FORMAT;
 

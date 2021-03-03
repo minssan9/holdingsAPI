@@ -3,12 +3,14 @@ package com.core.oracle.inv.domain;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "MTL_TRANSACTION_LOTS_INTERFACE", schema = "INV", catalog = "")
 public class MtlTransactionLotsInterface {
+    @Id
     private long transactionInterfaceId;
     private String sourceCode;
     private Long sourceLineId;

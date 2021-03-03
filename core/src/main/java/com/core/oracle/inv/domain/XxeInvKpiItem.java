@@ -1,15 +1,21 @@
 package com.core.oracle.inv.domain;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "XXE_INV_KPI_ITEM", schema = "XXE", catalog = "")
-public class XxeInvKpiItem {
+@IdClass(XxeInvKpiItem.class)
+public class XxeInvKpiItem  implements Serializable {
+    @Id
     private long organizationId;
+    @Id
     private String kpiType;
     private String periodType;
     private String categorySegment1;

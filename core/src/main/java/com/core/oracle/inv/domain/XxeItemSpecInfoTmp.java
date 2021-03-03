@@ -1,11 +1,14 @@
 package com.core.oracle.inv.domain;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "XXE_ITEM_SPEC_INFO_TMP", schema = "XXE", catalog = "")
-public class XxeItemSpecInfoTmp {
+@IdClass(XxeItemSpecInfoTmp.class)
+public class XxeItemSpecInfoTmp  implements Serializable {
+    @Id
     private Long groupId;
     @Id
     private String itemNumber;

@@ -1,16 +1,22 @@
 package com.core.oracle.inv.domain;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "XXE_INV_ITEM_INTERFACE", schema = "XXE", catalog = "")
-public class XxeInvItemInterface {
+@IdClass(XxeInvItemInterface.class)
+public class XxeInvItemInterface  implements Serializable {
     private String batchSource;
+    @Id
     private Long organizationId;
+    @Id
     private String segment1;
     private String description;
     private String templateName;

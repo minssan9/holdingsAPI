@@ -3,12 +3,14 @@ package com.core.oracle.inv.domain;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "MTL_SYSTEM_ITEMS_INTERFACE", schema = "INV", catalog = "")
 public class MtlSystemItemsInterface {
+    @Id
     private Long inventoryItemId;
     private Long organizationId;
     private Time lastUpdateDate;

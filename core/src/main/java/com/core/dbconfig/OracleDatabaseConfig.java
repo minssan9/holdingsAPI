@@ -1,12 +1,18 @@
 package com.core.dbconfig;
 
+import com.core.properties.OracleProperties;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import java.util.Properties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 import javax.sql.DataSource;
@@ -27,16 +33,27 @@ public class OracleDatabaseConfig {
 //    private final JpaProperties jpaProperties;
 //    private final HibernateProperties hibernateProperties;
 
-//    public OracleDatabaseConfig(JpaProperties jpaProperties,
-//        HibernateProperties hibernateProperties) {
-//        this.jpaProperties = jpaProperties;
-//        this.hibernateProperties = hibernateProperties;
-//    }
+    @Autowired
+    OracleProperties oracleProperties;
+
+    @Bean
+    @Primary
+    public Properties mysqlDBProperties() {
+        Properties mysqlProperties = new Properties();
+        mysqlProperties.put("jdbcUrl", this.oracleProperties.getUrl());
+        mysqlProperties.put("username", this.oracleProperties.getUsername());
+        mysqlProperties.put("password", this.oracleProperties.getPassword());
+        mysqlProperties.put("driverClassName" , this.oracleProperties.getDriverClassName());
+        return mysqlProperties;
+    }
 
     @Bean
     @ConfigurationProperties(prefix = "oracle.datasource")
     public DataSource oracleDataSource() {
-        return DataSourceBuilder.create().build();
+        HikariConfig config = new HikariConfig(mysqlDBProperties());
+        return new LazyConnectionDataSourceProxy(new HikariDataSource(config));
+//        DataSource dataSource = DataSourceBuilder.create().build();
+//        return DataSourceBuilder.create().build();
     }
 
     @Bean

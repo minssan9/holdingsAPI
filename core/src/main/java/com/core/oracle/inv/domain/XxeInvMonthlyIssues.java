@@ -1,15 +1,21 @@
 package com.core.oracle.inv.domain;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "XXE_INV_MONTHLY_ISSUES", schema = "XXE", catalog = "")
-public class XxeInvMonthlyIssues {
+@IdClass(XxeInvMonthlyIssues.class)
+public class XxeInvMonthlyIssues  implements Serializable {
+    @Id
     private long issueTransactionId;
+    @Id
     private long organizationId;
     private String balanceType;
     private long acctPeriodId;

@@ -1,11 +1,12 @@
 package com.core.oracle.inv.domain;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "XXE_INV_BALANCE_INTERFACE", schema = "XXE", catalog = "")
 @IdClass(XxeInvBalanceInterface.class)
-public class XxeInvBalanceInterface {
+public class XxeInvBalanceInterface implements Serializable {
     @Id
     private Long interfaceId;
     @Id

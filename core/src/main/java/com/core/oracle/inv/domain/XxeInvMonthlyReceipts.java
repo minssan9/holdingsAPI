@@ -3,12 +3,14 @@ package com.core.oracle.inv.domain;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "XXE_INV_MONTHLY_RECEIPTS", schema = "XXE", catalog = "")
 public class XxeInvMonthlyReceipts {
+    @Id
     private long receiptTransactionId;
     private long organizationId;
     private String balanceType;

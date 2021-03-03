@@ -3,12 +3,14 @@ package com.core.oracle.inv.domain;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
 
 @Entity
 @Table(name = "MTL_UNIT_TRANSACTIONS", schema = "INV", catalog = "")
 public class MtlUnitTransactions {
+    @Id
     private long transactionId;
     private Time lastUpdateDate;
     private long lastUpdatedBy;

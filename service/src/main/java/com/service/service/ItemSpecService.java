@@ -1,4 +1,4 @@
-package com.core.oracle.inv.service;
+package com.service.service;
 
 import com.core.oracle.inv.domain.XxeItemSpecInfoTmp;
 import com.core.oracle.inv.repository.XxeItemSpecInfoTmpRepository;
