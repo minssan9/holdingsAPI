@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InvService {
-//    @Autowired
-//    private InvMapper invMapper;
-
     public InvSample getInvSample (InvSampleDto invSampleDto)   {
         return new InvSample();
     }

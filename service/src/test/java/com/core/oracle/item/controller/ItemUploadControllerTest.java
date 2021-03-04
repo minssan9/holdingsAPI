@@ -2,7 +2,7 @@ package com.core.oracle.item.controller;
 
 import org.junit.jupiter.api.Test;
 
-class ItemControllerTest {
+class ItemUploadControllerTest {
 
     @Test
     void importItemExcelFile() {

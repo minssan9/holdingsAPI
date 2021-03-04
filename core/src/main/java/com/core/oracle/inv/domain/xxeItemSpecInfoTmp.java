@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "XXE_ITEM_SPEC_INFO_TMP", schema = "XXE", catalog = "")
-@IdClass(XxeItemSpecInfoTmp.class)
-public class XxeItemSpecInfoTmp  implements Serializable {
+@IdClass(xxeItemSpecInfoTmp.class)
+public class xxeItemSpecInfoTmp implements Serializable {
     @Id
     private Long groupId;
     @Id
@@ -269,7 +269,7 @@ public class XxeItemSpecInfoTmp  implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        XxeItemSpecInfoTmp that = (XxeItemSpecInfoTmp) o;
+        xxeItemSpecInfoTmp that = (xxeItemSpecInfoTmp) o;
 
         if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) return false;
         if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) return false;
