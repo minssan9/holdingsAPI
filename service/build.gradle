@@ -1,0 +1,22 @@
+plugins {
+}
+
+ext {
+}
+
+bootJar {
+    manifest {
+        attributes 'Start-Class': 'com.service.HoldingsApiApplication'
+    }
+}
+
+dependencies {
+    compile project(':core')
+
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.3'
+
+//        implementation 'org.springframework.boot:spring-boot-starter-security'
+
+}

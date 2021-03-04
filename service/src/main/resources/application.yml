@@ -1,0 +1,83 @@
+
+# For local phase configurations
+server:
+  port: 34000
+#  context-path: /api
+spring:
+  jpa:
+    show-sql: false
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: none
+#      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: com.core.dbconfig.CustomOracleDialect
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+    username: apps
+    password: apps
+  output:
+    ansi:
+      enabled: always
+#  datasource:
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+#    username: apps
+#    password: apps
+
+oracle:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.20.101.17:1531/test1
+    username: apps
+    password: apps
+  #    mysql:
+  #      driver-class-name: com.mysql.cj.jdbc.Driver
+  #      jdbcUrl: jdbc:mysql://shop.voyagerss.com:3306/charger?characterEncoding=utf8&serverTimezone=UTC&useUnicode=true&createDatabaseIfNotExist=true
+  #      username: charger
+  #      password: wjsrlck1@
+
+
+springdoc:
+  version: '1.0.0'
+  api-docs:
+    groups:
+      enabled: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+  paths-to-match: /**
+
+#logging:
+#  level: error
+#  file:
+#    path: /logs/halla/service/holdingsAPI.log
+
+#  pattern:
+#    file: %d %p %c{1.} [%t] %m%n
+#    console:  %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+
+---
+#spring:
+#  config:
+#    activate:
+#      on-profile: alpha
+#  profiles:
+#    include: test
+#  datasource:
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@merp2010a:1522/prod
+#    username: apps
+#    password: apps
+
+#file:
+#  upload-dir: C:\ftp
+
