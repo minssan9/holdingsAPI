@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InvService {
-    public InvSample getInvSample (InvSampleDto invSampleDto)   {
+
+    public InvSample getInvSample(InvSampleDto invSampleDto) {
         return new InvSample();
     }
 }

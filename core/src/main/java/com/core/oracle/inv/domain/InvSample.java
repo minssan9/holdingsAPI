@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @RequiredArgsConstructor
 public class InvSample {
+
     @Id
     @Column(name = "inv_sample_id")
     @GeneratedValue(strategy = GenerationType.AUTO)

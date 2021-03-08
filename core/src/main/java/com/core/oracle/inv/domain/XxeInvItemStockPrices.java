@@ -13,6 +13,7 @@ import java.sql.Time;
 @Table(name = "XXE_INV_ITEM_STOCK_PRICES", schema = "XXE", catalog = "")
 @IdClass(XxeInvItemStockPrices.class)
 public class XxeInvItemStockPrices implements Serializable {
+
     private String baseYyyymm;
     @Id
     private long organizationId;
@@ -95,18 +96,37 @@ public class XxeInvItemStockPrices implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         XxeInvItemStockPrices that = (XxeInvItemStockPrices) o;
 
-        if (organizationId != that.organizationId) return false;
-        if (inventoryItemId != that.inventoryItemId) return false;
-        if (createdBy != that.createdBy) return false;
-        if (baseYyyymm != null ? !baseYyyymm.equals(that.baseYyyymm) : that.baseYyyymm != null) return false;
-        if (stockPrice != null ? !stockPrice.equals(that.stockPrice) : that.stockPrice != null) return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (tailYyyymm != null ? !tailYyyymm.equals(that.tailYyyymm) : that.tailYyyymm != null) return false;
+        if (organizationId != that.organizationId) {
+            return false;
+        }
+        if (inventoryItemId != that.inventoryItemId) {
+            return false;
+        }
+        if (createdBy != that.createdBy) {
+            return false;
+        }
+        if (baseYyyymm != null ? !baseYyyymm.equals(that.baseYyyymm) : that.baseYyyymm != null) {
+            return false;
+        }
+        if (stockPrice != null ? !stockPrice.equals(that.stockPrice) : that.stockPrice != null) {
+            return false;
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
+            return false;
+        }
+        if (tailYyyymm != null ? !tailYyyymm.equals(that.tailYyyymm) : that.tailYyyymm != null) {
+            return false;
+        }
 
         return true;
     }

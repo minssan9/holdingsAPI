@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "XXE_INV_BALANCE_INTERFACE", schema = "XXE", catalog = "")
 @IdClass(XxeInvBalanceInterface.class)
 public class XxeInvBalanceInterface implements Serializable {
+
     @Id
     private Long interfaceId;
     @Id
@@ -223,40 +224,89 @@ public class XxeInvBalanceInterface implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         XxeInvBalanceInterface that = (XxeInvBalanceInterface) o;
 
-        if (interfaceId != null ? !interfaceId.equals(that.interfaceId) : that.interfaceId != null) return false;
-        if (organizationId != null ? !organizationId.equals(that.organizationId) : that.organizationId != null)
+        if (interfaceId != null ? !interfaceId.equals(that.interfaceId)
+            : that.interfaceId != null) {
             return false;
-        if (organizationCode != null ? !organizationCode.equals(that.organizationCode) : that.organizationCode != null)
+        }
+        if (organizationId != null ? !organizationId.equals(that.organizationId)
+            : that.organizationId != null) {
             return false;
-        if (balanceType != null ? !balanceType.equals(that.balanceType) : that.balanceType != null) return false;
-        if (closingMonth != null ? !closingMonth.equals(that.closingMonth) : that.closingMonth != null) return false;
-        if (acctPeriodId != null ? !acctPeriodId.equals(that.acctPeriodId) : that.acctPeriodId != null) return false;
-        if (concatenatedSegments != null ? !concatenatedSegments.equals(that.concatenatedSegments) : that.concatenatedSegments != null)
+        }
+        if (organizationCode != null ? !organizationCode.equals(that.organizationCode)
+            : that.organizationCode != null) {
             return false;
-        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId) : that.inventoryItemId != null)
+        }
+        if (balanceType != null ? !balanceType.equals(that.balanceType)
+            : that.balanceType != null) {
             return false;
-        if (itemRevision != null ? !itemRevision.equals(that.itemRevision) : that.itemRevision != null) return false;
-        if (primaryUom != null ? !primaryUom.equals(that.primaryUom) : that.primaryUom != null) return false;
-        if (beginingQuantity != null ? !beginingQuantity.equals(that.beginingQuantity) : that.beginingQuantity != null)
+        }
+        if (closingMonth != null ? !closingMonth.equals(that.closingMonth)
+            : that.closingMonth != null) {
             return false;
-        if (beginingAmount != null ? !beginingAmount.equals(that.beginingAmount) : that.beginingAmount != null)
+        }
+        if (acctPeriodId != null ? !acctPeriodId.equals(that.acctPeriodId)
+            : that.acctPeriodId != null) {
             return false;
-        if (receiptsQuantity != null ? !receiptsQuantity.equals(that.receiptsQuantity) : that.receiptsQuantity != null)
+        }
+        if (concatenatedSegments != null ? !concatenatedSegments.equals(that.concatenatedSegments)
+            : that.concatenatedSegments != null) {
             return false;
-        if (receiptsAmount != null ? !receiptsAmount.equals(that.receiptsAmount) : that.receiptsAmount != null)
+        }
+        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId)
+            : that.inventoryItemId != null) {
             return false;
-        if (issueQuantity != null ? !issueQuantity.equals(that.issueQuantity) : that.issueQuantity != null)
+        }
+        if (itemRevision != null ? !itemRevision.equals(that.itemRevision)
+            : that.itemRevision != null) {
             return false;
-        if (issueAmount != null ? !issueAmount.equals(that.issueAmount) : that.issueAmount != null) return false;
-        if (endingQuantity != null ? !endingQuantity.equals(that.endingQuantity) : that.endingQuantity != null)
+        }
+        if (primaryUom != null ? !primaryUom.equals(that.primaryUom) : that.primaryUom != null) {
             return false;
-        if (endingAmount != null ? !endingAmount.equals(that.endingAmount) : that.endingAmount != null) return false;
-        if (errorCode != null ? !errorCode.equals(that.errorCode) : that.errorCode != null) return false;
+        }
+        if (beginingQuantity != null ? !beginingQuantity.equals(that.beginingQuantity)
+            : that.beginingQuantity != null) {
+            return false;
+        }
+        if (beginingAmount != null ? !beginingAmount.equals(that.beginingAmount)
+            : that.beginingAmount != null) {
+            return false;
+        }
+        if (receiptsQuantity != null ? !receiptsQuantity.equals(that.receiptsQuantity)
+            : that.receiptsQuantity != null) {
+            return false;
+        }
+        if (receiptsAmount != null ? !receiptsAmount.equals(that.receiptsAmount)
+            : that.receiptsAmount != null) {
+            return false;
+        }
+        if (issueQuantity != null ? !issueQuantity.equals(that.issueQuantity)
+            : that.issueQuantity != null) {
+            return false;
+        }
+        if (issueAmount != null ? !issueAmount.equals(that.issueAmount)
+            : that.issueAmount != null) {
+            return false;
+        }
+        if (endingQuantity != null ? !endingQuantity.equals(that.endingQuantity)
+            : that.endingQuantity != null) {
+            return false;
+        }
+        if (endingAmount != null ? !endingAmount.equals(that.endingAmount)
+            : that.endingAmount != null) {
+            return false;
+        }
+        if (errorCode != null ? !errorCode.equals(that.errorCode) : that.errorCode != null) {
+            return false;
+        }
 
         return true;
     }

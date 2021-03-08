@@ -28,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 //@Tag(name = "Multiple data source example", description = "This controller is for the test")
 @RestController("/inv/trx")
 public class TransactionConfroller {
+
     @Autowired
     FileStorageService fileStorageService;
 
@@ -36,13 +37,15 @@ public class TransactionConfroller {
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public static class ResourceNotFoundException extends RuntimeException {
+
         public ResourceNotFoundException(String message) {
             super(message);
         }
     }
 
     @RequestMapping(value = "/import", method = RequestMethod.POST)
-    public ResponseEntity importExcelFile(@RequestParam("file") MultipartFile files) throws IOException {
+    public ResponseEntity importExcelFile(@RequestParam("file") MultipartFile files)
+        throws IOException {
         List<XxeErpOtherTrxs> xxeErpOtherTrxs = new ArrayList<>();
 
         XSSFWorkbook workbook = new XSSFWorkbook(files.getInputStream());
@@ -56,17 +59,38 @@ public class TransactionConfroller {
 
                 // Setter  로 만들기
                 xxeErpOtherTrx.setSeq((long) row.getCell(1).getNumericCellValue());
-                xxeErpOtherTrx.setOrganizationId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setGroupId(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setLineNum((long) row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setSubinventoryCode(row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setTransactionTypeId((long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setTransactionActionId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setTransactionDate(LocalDateTime.parse(row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue(), DATE_STRING_FORMAT));
-                xxeErpOtherTrx.setCodeCombinationId((long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeErpOtherTrx.setDeptCode(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setItemCode(row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeErpOtherTrx.setTransactionQuantity((long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeErpOtherTrx.setOrganizationId(
+                    (long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeErpOtherTrx.setGroupId(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                    .getStringCellValue());
+                xxeErpOtherTrx.setLineNum(
+                    (long) row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeErpOtherTrx.setSubinventoryCode(
+                    row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeErpOtherTrx.setTransactionTypeId(
+                    (long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeErpOtherTrx.setTransactionActionId(
+                    (long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeErpOtherTrx.setTransactionDate(LocalDateTime.parse(
+                    row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue(),
+                    DATE_STRING_FORMAT));
+                xxeErpOtherTrx.setCodeCombinationId(
+                    (long) row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeErpOtherTrx.setDeptCode(
+                    row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeErpOtherTrx.setItemCode(
+                    row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeErpOtherTrx.setTransactionQuantity(
+                    (long) row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
 
                 xxeErpOtherTrxs.add(xxeErpOtherTrx);
             }

@@ -1,15 +1,25 @@
 SELECT DISTINCT VENDOR_NAME,
                 ITEM_CODE,
-                SUM(CASE WHEN PERIOD_DATE < 0 THEN PO_PRICE * RP_QTY ELSE 0 END)                         당일입고,
-                SUM(CASE WHEN PERIOD_DATE >= 0 AND PERIOD_DATE <= 30 THEN PO_PRICE * RP_QTY ELSE 0 END)  D30,
-                SUM(CASE WHEN PERIOD_DATE > 30 AND PERIOD_DATE <= 45 THEN PO_PRICE * RP_QTY ELSE 0 END)  D45,
-                SUM(CASE WHEN PERIOD_DATE > 45 AND PERIOD_DATE <= 60 THEN PO_PRICE * RP_QTY ELSE 0 END)  D60,
-                SUM(CASE WHEN PERIOD_DATE > 60 AND PERIOD_DATE <= 90 THEN PO_PRICE * RP_QTY ELSE 0 END)  D90,
-                SUM(CASE WHEN PERIOD_DATE > 90 AND PERIOD_DATE <= 120 THEN PO_PRICE * RP_QTY ELSE 0 END) D120,
-                SUM(CASE WHEN PERIOD_DATE > 120 THEN PO_PRICE * RP_QTY ELSE 0 END)                       D120_OVER,
-                SUM(PO_PRICE * RM_QTY)                                                                   미입고,
-                SUM(PO_PRICE * RP_QTY)                                                                   합계,
-                SUM(CASE WHEN RP_QTY = 0 THEN 0 ELSE PO_PRICE * B.PO_QTY END)                            발주금액
+                SUM(CASE WHEN PERIOD_DATE < 0 THEN PO_PRICE * RP_QTY ELSE 0 END)   당일입고,
+                SUM(CASE
+                        WHEN PERIOD_DATE >= 0 AND PERIOD_DATE <= 30 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D30,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 30 AND PERIOD_DATE <= 45 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D45,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 45 AND PERIOD_DATE <= 60 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D60,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 60 AND PERIOD_DATE <= 90 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D90,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 90 AND PERIOD_DATE <= 120 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D120,
+                SUM(CASE WHEN PERIOD_DATE > 120 THEN PO_PRICE * RP_QTY ELSE 0 END) D120_OVER,
+                SUM(PO_PRICE * RM_QTY)                                             미입고,
+                SUM(PO_PRICE * RP_QTY)                                             합계,
+                SUM(CASE WHEN RP_QTY = 0 THEN 0 ELSE PO_PRICE * B.PO_QTY END)      발주금액
 FROM (
          SELECT A.LINE_LOCATION_ID,
                 VENDOR_NAME,
@@ -24,21 +34,22 @@ FROM (
                 RP_QTY                                               RP_QTY
          FROM (
                   SELECT DISTINCT PLLA.LINE_LOCATION_ID,
-                                  PVSA.VENDOR_SITE_CODE                                                    VENDOR_NAME,
-                                  MSIB.SEGMENT1                                                            ITEM_CODE,
-                                  TRUNC(PLLA.APPROVED_DATE)                                                APPROVED_DATE,
-                                  PLLA.NEED_BY_DATE                                                        NEED_BY_DATE,
+                                  PVSA.VENDOR_SITE_CODE                                    VENDOR_NAME,
+                                  MSIB.SEGMENT1                                            ITEM_CODE,
+                                  TRUNC(PLLA.APPROVED_DATE)                                APPROVED_DATE,
+                                  PLLA.NEED_BY_DATE                                        NEED_BY_DATE,
                                   PLLA.CANCEL_FLAG,
-                                  PLA.UNIT_PRICE                                                           PO_PRICE,
-                                  PLLA.QUANTITY                                                            PO_QTY,
+                                  PLA.UNIT_PRICE                                           PO_PRICE,
+                                  PLLA.QUANTITY                                            PO_QTY,
                                   NVL(DECODE(RT.TRANSACTION_TYPE,
                                              'RECEIVE', RT.PRIMARY_QUANTITY,
-                                             'RETURN TO VENDOR', -RT.PRIMARY_QUANTITY), 0)                 RP_QTY,
+                                             'RETURN TO VENDOR', -RT.PRIMARY_QUANTITY), 0) RP_QTY,
                                   PLLA.QUANTITY - NVL(DECODE(RT.TRANSACTION_TYPE,
                                                              'RECEIVE', RT.PRIMARY_QUANTITY,
-                                                             'RETURN TO VENDOR', -RT.PRIMARY_QUANTITY), 0) RM_QTY,
-                                  NVL(TO_CHAR(RT.TRANSACTION_DATE), '미입고')                                 RP_DATE,
-                                  NVL(TRUNC(RT.TRANSACTION_DATE - PLLA.APPROVED_DATE), 0)                  PERIOD_DATE
+                                                             'RETURN TO VENDOR',
+                                                             -RT.PRIMARY_QUANTITY), 0)     RM_QTY,
+                                  NVL(TO_CHAR(RT.TRANSACTION_DATE), '미입고')                 RP_DATE,
+                                  NVL(TRUNC(RT.TRANSACTION_DATE - PLLA.APPROVED_DATE), 0)  PERIOD_DATE
                   FROM PO_LINE_LOCATIONS_ALL PLLA,
                        PO_HEADERS_ALL PHA,
                        PO_VENDOR_SITES_ALL PVSA,

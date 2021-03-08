@@ -1,4 +1,3 @@
-
 # For local phase configurations
 server:
   port: 34000
@@ -6,14 +5,14 @@ server:
 spring:
   jpa:
     show-sql: false
-#    generate-ddl: true
-#    hibernate:
-#      ddl-auto: none
-#      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
-#    properties:
-#      hibernate:
-#        format_sql: true
-#        dialect: com.core.dbconfig.CustomOracleDialect
+  #    generate-ddl: true
+  #    hibernate:
+  #      ddl-auto: none
+  #      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+  #    properties:
+  #      hibernate:
+  #        format_sql: true
+  #        dialect: com.core.dbconfig.CustomOracleDialect
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@10.20.101.17:1531/test1

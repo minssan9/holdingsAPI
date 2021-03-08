@@ -27,9 +27,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "oracleEntityManagerFactory",
-        transactionManagerRef = "oracleTransactionManager",
-        basePackages = "com.core.oracle.*.repository"
+    entityManagerFactoryRef = "oracleEntityManagerFactory",
+    transactionManagerRef = "oracleTransactionManager",
+    basePackages = "com.core.oracle.*.repository"
 )
 public class OracleDatabaseConfig {
 
@@ -46,7 +46,7 @@ public class OracleDatabaseConfig {
         mysqlProperties.put("jdbcUrl", this.oracleProperties.getUrl());
         mysqlProperties.put("username", this.oracleProperties.getUsername());
         mysqlProperties.put("password", this.oracleProperties.getPassword());
-        mysqlProperties.put("driverClassName" , this.oracleProperties.getDriverClassName());
+        mysqlProperties.put("driverClassName", this.oracleProperties.getDriverClassName());
         return mysqlProperties;
     }
 
@@ -60,22 +60,25 @@ public class OracleDatabaseConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-        Map<String,Object> properties = new HashMap<>();
+    public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(
+        EntityManagerFactoryBuilder builder) {
+        Map<String, Object> properties = new HashMap<>();
         CustomOracleDialect customOracleDialect = new CustomOracleDialect();
         properties.put("hibernate.dialect", customOracleDialect);
 
         return builder.dataSource(oracleDataSource())
-                .properties(properties)
-                .packages("com.core.oracle.*.domain")
-                .persistenceUnit("oracle")
-                .build();
+            .properties(properties)
+            .packages("com.core.oracle.*.domain")
+            .persistenceUnit("oracle")
+            .build();
     }
 
     @Bean
     @Primary
-    public PlatformTransactionManager oracleTransactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(Objects.requireNonNull(oracleEntityManagerFactory(builder).getObject()));
+    public PlatformTransactionManager oracleTransactionManager(
+        EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(
+            Objects.requireNonNull(oracleEntityManagerFactory(builder).getObject()));
     }
 
 

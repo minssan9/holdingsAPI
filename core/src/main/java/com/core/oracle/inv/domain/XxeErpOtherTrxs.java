@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "XXE_ERP_OTHER_TRXS", schema = "APPS", catalog = "")
 public class XxeErpOtherTrxs {
+
     @Id
     private long seq;
     private long organizationId;
@@ -219,35 +220,80 @@ public class XxeErpOtherTrxs {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         XxeErpOtherTrxs that = (XxeErpOtherTrxs) o;
 
-        if (organizationId != that.organizationId) return false;
-        if (lineNum != that.lineNum) return false;
-        if (seq != that.seq) return false;
-        if (transactionTypeId != that.transactionTypeId) return false;
-        if (transactionActionId != that.transactionActionId) return false;
-        if (transactionQuantity != that.transactionQuantity) return false;
-        if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) return false;
-        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode) : that.subinventoryCode != null)
+        if (organizationId != that.organizationId) {
             return false;
-        if (transactionDate != null ? !transactionDate.equals(that.transactionDate) : that.transactionDate != null)
+        }
+        if (lineNum != that.lineNum) {
             return false;
-        if (codeCombinationId != null ? !codeCombinationId.equals(that.codeCombinationId) : that.codeCombinationId != null)
+        }
+        if (seq != that.seq) {
             return false;
-        if (deptCode != null ? !deptCode.equals(that.deptCode) : that.deptCode != null) return false;
-        if (itemCode != null ? !itemCode.equals(that.itemCode) : that.itemCode != null) return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) return false;
-        if (interfaceId != null ? !interfaceId.equals(that.interfaceId) : that.interfaceId != null) return false;
-        if (erpProcessSts != null ? !erpProcessSts.equals(that.erpProcessSts) : that.erpProcessSts != null)
+        }
+        if (transactionTypeId != that.transactionTypeId) {
             return false;
-        if (toSubinventoryCode != null ? !toSubinventoryCode.equals(that.toSubinventoryCode) : that.toSubinventoryCode != null)
+        }
+        if (transactionActionId != that.transactionActionId) {
             return false;
-        if (vendorSiteId != null ? !vendorSiteId.equals(that.vendorSiteId) : that.vendorSiteId != null) return false;
-        if (toOrgid != null ? !toOrgid.equals(that.toOrgid) : that.toOrgid != null) return false;
+        }
+        if (transactionQuantity != that.transactionQuantity) {
+            return false;
+        }
+        if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) {
+            return false;
+        }
+        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode)
+            : that.subinventoryCode != null) {
+            return false;
+        }
+        if (transactionDate != null ? !transactionDate.equals(that.transactionDate)
+            : that.transactionDate != null) {
+            return false;
+        }
+        if (codeCombinationId != null ? !codeCombinationId.equals(that.codeCombinationId)
+            : that.codeCombinationId != null) {
+            return false;
+        }
+        if (deptCode != null ? !deptCode.equals(that.deptCode) : that.deptCode != null) {
+            return false;
+        }
+        if (itemCode != null ? !itemCode.equals(that.itemCode) : that.itemCode != null) {
+            return false;
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
+            return false;
+        }
+        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) {
+            return false;
+        }
+        if (interfaceId != null ? !interfaceId.equals(that.interfaceId)
+            : that.interfaceId != null) {
+            return false;
+        }
+        if (erpProcessSts != null ? !erpProcessSts.equals(that.erpProcessSts)
+            : that.erpProcessSts != null) {
+            return false;
+        }
+        if (toSubinventoryCode != null ? !toSubinventoryCode.equals(that.toSubinventoryCode)
+            : that.toSubinventoryCode != null) {
+            return false;
+        }
+        if (vendorSiteId != null ? !vendorSiteId.equals(that.vendorSiteId)
+            : that.vendorSiteId != null) {
+            return false;
+        }
+        if (toOrgid != null ? !toOrgid.equals(that.toOrgid) : that.toOrgid != null) {
+            return false;
+        }
 
         return true;
     }

@@ -10,6 +10,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "MTL_SYSTEM_ITEMS_INTERFACE", schema = "INV", catalog = "")
 public class MtlSystemItemsInterface {
+
     @Id
     private Long inventoryItemId;
     private Long organizationId;
@@ -3952,643 +3953,1391 @@ public class MtlSystemItemsInterface {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         MtlSystemItemsInterface that = (MtlSystemItemsInterface) o;
 
-        if (setProcessId != that.setProcessId) return false;
-        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId) : that.inventoryItemId != null)
+        if (setProcessId != that.setProcessId) {
             return false;
-        if (organizationId != null ? !organizationId.equals(that.organizationId) : that.organizationId != null)
+        }
+        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId)
+            : that.inventoryItemId != null) {
             return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
+        }
+        if (organizationId != null ? !organizationId.equals(that.organizationId)
+            : that.organizationId != null) {
             return false;
-        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy) : that.lastUpdatedBy != null)
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
             return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin) : that.lastUpdateLogin != null)
+        }
+        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy)
+            : that.lastUpdatedBy != null) {
             return false;
-        if (summaryFlag != null ? !summaryFlag.equals(that.summaryFlag) : that.summaryFlag != null) return false;
-        if (enabledFlag != null ? !enabledFlag.equals(that.enabledFlag) : that.enabledFlag != null) return false;
-        if (startDateActive != null ? !startDateActive.equals(that.startDateActive) : that.startDateActive != null)
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
             return false;
-        if (endDateActive != null ? !endDateActive.equals(that.endDateActive) : that.endDateActive != null)
+        }
+        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) {
             return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (buyerId != null ? !buyerId.equals(that.buyerId) : that.buyerId != null) return false;
-        if (accountingRuleId != null ? !accountingRuleId.equals(that.accountingRuleId) : that.accountingRuleId != null)
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin)
+            : that.lastUpdateLogin != null) {
             return false;
-        if (invoicingRuleId != null ? !invoicingRuleId.equals(that.invoicingRuleId) : that.invoicingRuleId != null)
+        }
+        if (summaryFlag != null ? !summaryFlag.equals(that.summaryFlag)
+            : that.summaryFlag != null) {
             return false;
-        if (segment1 != null ? !segment1.equals(that.segment1) : that.segment1 != null) return false;
-        if (segment2 != null ? !segment2.equals(that.segment2) : that.segment2 != null) return false;
-        if (segment3 != null ? !segment3.equals(that.segment3) : that.segment3 != null) return false;
-        if (segment4 != null ? !segment4.equals(that.segment4) : that.segment4 != null) return false;
-        if (segment5 != null ? !segment5.equals(that.segment5) : that.segment5 != null) return false;
-        if (segment6 != null ? !segment6.equals(that.segment6) : that.segment6 != null) return false;
-        if (segment7 != null ? !segment7.equals(that.segment7) : that.segment7 != null) return false;
-        if (segment8 != null ? !segment8.equals(that.segment8) : that.segment8 != null) return false;
-        if (segment9 != null ? !segment9.equals(that.segment9) : that.segment9 != null) return false;
-        if (segment10 != null ? !segment10.equals(that.segment10) : that.segment10 != null) return false;
-        if (segment11 != null ? !segment11.equals(that.segment11) : that.segment11 != null) return false;
-        if (segment12 != null ? !segment12.equals(that.segment12) : that.segment12 != null) return false;
-        if (segment13 != null ? !segment13.equals(that.segment13) : that.segment13 != null) return false;
-        if (segment14 != null ? !segment14.equals(that.segment14) : that.segment14 != null) return false;
-        if (segment15 != null ? !segment15.equals(that.segment15) : that.segment15 != null) return false;
-        if (segment16 != null ? !segment16.equals(that.segment16) : that.segment16 != null) return false;
-        if (segment17 != null ? !segment17.equals(that.segment17) : that.segment17 != null) return false;
-        if (segment18 != null ? !segment18.equals(that.segment18) : that.segment18 != null) return false;
-        if (segment19 != null ? !segment19.equals(that.segment19) : that.segment19 != null) return false;
-        if (segment20 != null ? !segment20.equals(that.segment20) : that.segment20 != null) return false;
-        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory) : that.attributeCategory != null)
+        }
+        if (enabledFlag != null ? !enabledFlag.equals(that.enabledFlag)
+            : that.enabledFlag != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(that.attribute10) : that.attribute10 != null) return false;
-        if (attribute11 != null ? !attribute11.equals(that.attribute11) : that.attribute11 != null) return false;
-        if (attribute12 != null ? !attribute12.equals(that.attribute12) : that.attribute12 != null) return false;
-        if (attribute13 != null ? !attribute13.equals(that.attribute13) : that.attribute13 != null) return false;
-        if (attribute14 != null ? !attribute14.equals(that.attribute14) : that.attribute14 != null) return false;
-        if (attribute15 != null ? !attribute15.equals(that.attribute15) : that.attribute15 != null) return false;
-        if (purchasingItemFlag != null ? !purchasingItemFlag.equals(that.purchasingItemFlag) : that.purchasingItemFlag != null)
+        }
+        if (startDateActive != null ? !startDateActive.equals(that.startDateActive)
+            : that.startDateActive != null) {
             return false;
-        if (shippableItemFlag != null ? !shippableItemFlag.equals(that.shippableItemFlag) : that.shippableItemFlag != null)
+        }
+        if (endDateActive != null ? !endDateActive.equals(that.endDateActive)
+            : that.endDateActive != null) {
             return false;
-        if (customerOrderFlag != null ? !customerOrderFlag.equals(that.customerOrderFlag) : that.customerOrderFlag != null)
+        }
+        if (description != null ? !description.equals(that.description)
+            : that.description != null) {
             return false;
-        if (internalOrderFlag != null ? !internalOrderFlag.equals(that.internalOrderFlag) : that.internalOrderFlag != null)
+        }
+        if (buyerId != null ? !buyerId.equals(that.buyerId) : that.buyerId != null) {
             return false;
-        if (serviceItemFlag != null ? !serviceItemFlag.equals(that.serviceItemFlag) : that.serviceItemFlag != null)
+        }
+        if (accountingRuleId != null ? !accountingRuleId.equals(that.accountingRuleId)
+            : that.accountingRuleId != null) {
             return false;
-        if (inventoryItemFlag != null ? !inventoryItemFlag.equals(that.inventoryItemFlag) : that.inventoryItemFlag != null)
+        }
+        if (invoicingRuleId != null ? !invoicingRuleId.equals(that.invoicingRuleId)
+            : that.invoicingRuleId != null) {
             return false;
-        if (engItemFlag != null ? !engItemFlag.equals(that.engItemFlag) : that.engItemFlag != null) return false;
-        if (inventoryAssetFlag != null ? !inventoryAssetFlag.equals(that.inventoryAssetFlag) : that.inventoryAssetFlag != null)
+        }
+        if (segment1 != null ? !segment1.equals(that.segment1) : that.segment1 != null) {
             return false;
-        if (purchasingEnabledFlag != null ? !purchasingEnabledFlag.equals(that.purchasingEnabledFlag) : that.purchasingEnabledFlag != null)
+        }
+        if (segment2 != null ? !segment2.equals(that.segment2) : that.segment2 != null) {
             return false;
-        if (customerOrderEnabledFlag != null ? !customerOrderEnabledFlag.equals(that.customerOrderEnabledFlag) : that.customerOrderEnabledFlag != null)
+        }
+        if (segment3 != null ? !segment3.equals(that.segment3) : that.segment3 != null) {
             return false;
-        if (internalOrderEnabledFlag != null ? !internalOrderEnabledFlag.equals(that.internalOrderEnabledFlag) : that.internalOrderEnabledFlag != null)
+        }
+        if (segment4 != null ? !segment4.equals(that.segment4) : that.segment4 != null) {
             return false;
-        if (soTransactionsFlag != null ? !soTransactionsFlag.equals(that.soTransactionsFlag) : that.soTransactionsFlag != null)
+        }
+        if (segment5 != null ? !segment5.equals(that.segment5) : that.segment5 != null) {
             return false;
-        if (mtlTransactionsEnabledFlag != null ? !mtlTransactionsEnabledFlag.equals(that.mtlTransactionsEnabledFlag) : that.mtlTransactionsEnabledFlag != null)
+        }
+        if (segment6 != null ? !segment6.equals(that.segment6) : that.segment6 != null) {
             return false;
-        if (stockEnabledFlag != null ? !stockEnabledFlag.equals(that.stockEnabledFlag) : that.stockEnabledFlag != null)
+        }
+        if (segment7 != null ? !segment7.equals(that.segment7) : that.segment7 != null) {
             return false;
-        if (bomEnabledFlag != null ? !bomEnabledFlag.equals(that.bomEnabledFlag) : that.bomEnabledFlag != null)
+        }
+        if (segment8 != null ? !segment8.equals(that.segment8) : that.segment8 != null) {
             return false;
-        if (buildInWipFlag != null ? !buildInWipFlag.equals(that.buildInWipFlag) : that.buildInWipFlag != null)
+        }
+        if (segment9 != null ? !segment9.equals(that.segment9) : that.segment9 != null) {
             return false;
-        if (revisionQtyControlCode != null ? !revisionQtyControlCode.equals(that.revisionQtyControlCode) : that.revisionQtyControlCode != null)
+        }
+        if (segment10 != null ? !segment10.equals(that.segment10) : that.segment10 != null) {
             return false;
-        if (itemCatalogGroupId != null ? !itemCatalogGroupId.equals(that.itemCatalogGroupId) : that.itemCatalogGroupId != null)
+        }
+        if (segment11 != null ? !segment11.equals(that.segment11) : that.segment11 != null) {
             return false;
-        if (catalogStatusFlag != null ? !catalogStatusFlag.equals(that.catalogStatusFlag) : that.catalogStatusFlag != null)
+        }
+        if (segment12 != null ? !segment12.equals(that.segment12) : that.segment12 != null) {
             return false;
-        if (checkShortagesFlag != null ? !checkShortagesFlag.equals(that.checkShortagesFlag) : that.checkShortagesFlag != null)
+        }
+        if (segment13 != null ? !segment13.equals(that.segment13) : that.segment13 != null) {
             return false;
-        if (returnableFlag != null ? !returnableFlag.equals(that.returnableFlag) : that.returnableFlag != null)
+        }
+        if (segment14 != null ? !segment14.equals(that.segment14) : that.segment14 != null) {
             return false;
-        if (defaultShippingOrg != null ? !defaultShippingOrg.equals(that.defaultShippingOrg) : that.defaultShippingOrg != null)
+        }
+        if (segment15 != null ? !segment15.equals(that.segment15) : that.segment15 != null) {
             return false;
-        if (collateralFlag != null ? !collateralFlag.equals(that.collateralFlag) : that.collateralFlag != null)
+        }
+        if (segment16 != null ? !segment16.equals(that.segment16) : that.segment16 != null) {
             return false;
-        if (taxableFlag != null ? !taxableFlag.equals(that.taxableFlag) : that.taxableFlag != null) return false;
-        if (qtyRcvExceptionCode != null ? !qtyRcvExceptionCode.equals(that.qtyRcvExceptionCode) : that.qtyRcvExceptionCode != null)
+        }
+        if (segment17 != null ? !segment17.equals(that.segment17) : that.segment17 != null) {
             return false;
-        if (allowItemDescUpdateFlag != null ? !allowItemDescUpdateFlag.equals(that.allowItemDescUpdateFlag) : that.allowItemDescUpdateFlag != null)
+        }
+        if (segment18 != null ? !segment18.equals(that.segment18) : that.segment18 != null) {
             return false;
-        if (inspectionRequiredFlag != null ? !inspectionRequiredFlag.equals(that.inspectionRequiredFlag) : that.inspectionRequiredFlag != null)
+        }
+        if (segment19 != null ? !segment19.equals(that.segment19) : that.segment19 != null) {
             return false;
-        if (receiptRequiredFlag != null ? !receiptRequiredFlag.equals(that.receiptRequiredFlag) : that.receiptRequiredFlag != null)
+        }
+        if (segment20 != null ? !segment20.equals(that.segment20) : that.segment20 != null) {
             return false;
-        if (marketPrice != null ? !marketPrice.equals(that.marketPrice) : that.marketPrice != null) return false;
-        if (hazardClassId != null ? !hazardClassId.equals(that.hazardClassId) : that.hazardClassId != null)
+        }
+        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory)
+            : that.attributeCategory != null) {
             return false;
-        if (rfqRequiredFlag != null ? !rfqRequiredFlag.equals(that.rfqRequiredFlag) : that.rfqRequiredFlag != null)
+        }
+        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) {
             return false;
-        if (qtyRcvTolerance != null ? !qtyRcvTolerance.equals(that.qtyRcvTolerance) : that.qtyRcvTolerance != null)
+        }
+        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) {
             return false;
-        if (listPricePerUnit != null ? !listPricePerUnit.equals(that.listPricePerUnit) : that.listPricePerUnit != null)
+        }
+        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) {
             return false;
-        if (unNumberId != null ? !unNumberId.equals(that.unNumberId) : that.unNumberId != null) return false;
-        if (priceTolerancePercent != null ? !priceTolerancePercent.equals(that.priceTolerancePercent) : that.priceTolerancePercent != null)
+        }
+        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) {
             return false;
-        if (assetCategoryId != null ? !assetCategoryId.equals(that.assetCategoryId) : that.assetCategoryId != null)
+        }
+        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) {
             return false;
-        if (roundingFactor != null ? !roundingFactor.equals(that.roundingFactor) : that.roundingFactor != null)
+        }
+        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) {
             return false;
-        if (unitOfIssue != null ? !unitOfIssue.equals(that.unitOfIssue) : that.unitOfIssue != null) return false;
-        if (enforceShipToLocationCode != null ? !enforceShipToLocationCode.equals(that.enforceShipToLocationCode) : that.enforceShipToLocationCode != null)
+        }
+        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) {
             return false;
-        if (allowSubstituteReceiptsFlag != null ? !allowSubstituteReceiptsFlag.equals(that.allowSubstituteReceiptsFlag) : that.allowSubstituteReceiptsFlag != null)
+        }
+        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) {
             return false;
-        if (allowUnorderedReceiptsFlag != null ? !allowUnorderedReceiptsFlag.equals(that.allowUnorderedReceiptsFlag) : that.allowUnorderedReceiptsFlag != null)
+        }
+        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) {
             return false;
-        if (allowExpressDeliveryFlag != null ? !allowExpressDeliveryFlag.equals(that.allowExpressDeliveryFlag) : that.allowExpressDeliveryFlag != null)
+        }
+        if (attribute10 != null ? !attribute10.equals(that.attribute10)
+            : that.attribute10 != null) {
             return false;
-        if (daysEarlyReceiptAllowed != null ? !daysEarlyReceiptAllowed.equals(that.daysEarlyReceiptAllowed) : that.daysEarlyReceiptAllowed != null)
+        }
+        if (attribute11 != null ? !attribute11.equals(that.attribute11)
+            : that.attribute11 != null) {
             return false;
-        if (daysLateReceiptAllowed != null ? !daysLateReceiptAllowed.equals(that.daysLateReceiptAllowed) : that.daysLateReceiptAllowed != null)
+        }
+        if (attribute12 != null ? !attribute12.equals(that.attribute12)
+            : that.attribute12 != null) {
             return false;
-        if (receiptDaysExceptionCode != null ? !receiptDaysExceptionCode.equals(that.receiptDaysExceptionCode) : that.receiptDaysExceptionCode != null)
+        }
+        if (attribute13 != null ? !attribute13.equals(that.attribute13)
+            : that.attribute13 != null) {
             return false;
-        if (receivingRoutingId != null ? !receivingRoutingId.equals(that.receivingRoutingId) : that.receivingRoutingId != null)
+        }
+        if (attribute14 != null ? !attribute14.equals(that.attribute14)
+            : that.attribute14 != null) {
             return false;
-        if (invoiceCloseTolerance != null ? !invoiceCloseTolerance.equals(that.invoiceCloseTolerance) : that.invoiceCloseTolerance != null)
+        }
+        if (attribute15 != null ? !attribute15.equals(that.attribute15)
+            : that.attribute15 != null) {
             return false;
-        if (receiveCloseTolerance != null ? !receiveCloseTolerance.equals(that.receiveCloseTolerance) : that.receiveCloseTolerance != null)
+        }
+        if (purchasingItemFlag != null ? !purchasingItemFlag.equals(that.purchasingItemFlag)
+            : that.purchasingItemFlag != null) {
             return false;
-        if (autoLotAlphaPrefix != null ? !autoLotAlphaPrefix.equals(that.autoLotAlphaPrefix) : that.autoLotAlphaPrefix != null)
+        }
+        if (shippableItemFlag != null ? !shippableItemFlag.equals(that.shippableItemFlag)
+            : that.shippableItemFlag != null) {
             return false;
-        if (startAutoLotNumber != null ? !startAutoLotNumber.equals(that.startAutoLotNumber) : that.startAutoLotNumber != null)
+        }
+        if (customerOrderFlag != null ? !customerOrderFlag.equals(that.customerOrderFlag)
+            : that.customerOrderFlag != null) {
             return false;
-        if (lotControlCode != null ? !lotControlCode.equals(that.lotControlCode) : that.lotControlCode != null)
+        }
+        if (internalOrderFlag != null ? !internalOrderFlag.equals(that.internalOrderFlag)
+            : that.internalOrderFlag != null) {
             return false;
-        if (shelfLifeCode != null ? !shelfLifeCode.equals(that.shelfLifeCode) : that.shelfLifeCode != null)
+        }
+        if (serviceItemFlag != null ? !serviceItemFlag.equals(that.serviceItemFlag)
+            : that.serviceItemFlag != null) {
             return false;
-        if (shelfLifeDays != null ? !shelfLifeDays.equals(that.shelfLifeDays) : that.shelfLifeDays != null)
+        }
+        if (inventoryItemFlag != null ? !inventoryItemFlag.equals(that.inventoryItemFlag)
+            : that.inventoryItemFlag != null) {
             return false;
-        if (serialNumberControlCode != null ? !serialNumberControlCode.equals(that.serialNumberControlCode) : that.serialNumberControlCode != null)
+        }
+        if (engItemFlag != null ? !engItemFlag.equals(that.engItemFlag)
+            : that.engItemFlag != null) {
             return false;
-        if (startAutoSerialNumber != null ? !startAutoSerialNumber.equals(that.startAutoSerialNumber) : that.startAutoSerialNumber != null)
+        }
+        if (inventoryAssetFlag != null ? !inventoryAssetFlag.equals(that.inventoryAssetFlag)
+            : that.inventoryAssetFlag != null) {
             return false;
-        if (autoSerialAlphaPrefix != null ? !autoSerialAlphaPrefix.equals(that.autoSerialAlphaPrefix) : that.autoSerialAlphaPrefix != null)
+        }
+        if (purchasingEnabledFlag != null ? !purchasingEnabledFlag
+            .equals(that.purchasingEnabledFlag) : that.purchasingEnabledFlag != null) {
             return false;
-        if (sourceType != null ? !sourceType.equals(that.sourceType) : that.sourceType != null) return false;
-        if (sourceOrganizationId != null ? !sourceOrganizationId.equals(that.sourceOrganizationId) : that.sourceOrganizationId != null)
+        }
+        if (customerOrderEnabledFlag != null ? !customerOrderEnabledFlag
+            .equals(that.customerOrderEnabledFlag) : that.customerOrderEnabledFlag != null) {
             return false;
-        if (sourceSubinventory != null ? !sourceSubinventory.equals(that.sourceSubinventory) : that.sourceSubinventory != null)
+        }
+        if (internalOrderEnabledFlag != null ? !internalOrderEnabledFlag
+            .equals(that.internalOrderEnabledFlag) : that.internalOrderEnabledFlag != null) {
             return false;
-        if (expenseAccount != null ? !expenseAccount.equals(that.expenseAccount) : that.expenseAccount != null)
+        }
+        if (soTransactionsFlag != null ? !soTransactionsFlag.equals(that.soTransactionsFlag)
+            : that.soTransactionsFlag != null) {
             return false;
-        if (encumbranceAccount != null ? !encumbranceAccount.equals(that.encumbranceAccount) : that.encumbranceAccount != null)
+        }
+        if (mtlTransactionsEnabledFlag != null ? !mtlTransactionsEnabledFlag
+            .equals(that.mtlTransactionsEnabledFlag) : that.mtlTransactionsEnabledFlag != null) {
             return false;
-        if (restrictSubinventoriesCode != null ? !restrictSubinventoriesCode.equals(that.restrictSubinventoriesCode) : that.restrictSubinventoriesCode != null)
+        }
+        if (stockEnabledFlag != null ? !stockEnabledFlag.equals(that.stockEnabledFlag)
+            : that.stockEnabledFlag != null) {
             return false;
-        if (unitWeight != null ? !unitWeight.equals(that.unitWeight) : that.unitWeight != null) return false;
-        if (weightUomCode != null ? !weightUomCode.equals(that.weightUomCode) : that.weightUomCode != null)
+        }
+        if (bomEnabledFlag != null ? !bomEnabledFlag.equals(that.bomEnabledFlag)
+            : that.bomEnabledFlag != null) {
             return false;
-        if (volumeUomCode != null ? !volumeUomCode.equals(that.volumeUomCode) : that.volumeUomCode != null)
+        }
+        if (buildInWipFlag != null ? !buildInWipFlag.equals(that.buildInWipFlag)
+            : that.buildInWipFlag != null) {
             return false;
-        if (unitVolume != null ? !unitVolume.equals(that.unitVolume) : that.unitVolume != null) return false;
-        if (restrictLocatorsCode != null ? !restrictLocatorsCode.equals(that.restrictLocatorsCode) : that.restrictLocatorsCode != null)
+        }
+        if (revisionQtyControlCode != null ? !revisionQtyControlCode
+            .equals(that.revisionQtyControlCode) : that.revisionQtyControlCode != null) {
             return false;
-        if (locationControlCode != null ? !locationControlCode.equals(that.locationControlCode) : that.locationControlCode != null)
+        }
+        if (itemCatalogGroupId != null ? !itemCatalogGroupId.equals(that.itemCatalogGroupId)
+            : that.itemCatalogGroupId != null) {
             return false;
-        if (shrinkageRate != null ? !shrinkageRate.equals(that.shrinkageRate) : that.shrinkageRate != null)
+        }
+        if (catalogStatusFlag != null ? !catalogStatusFlag.equals(that.catalogStatusFlag)
+            : that.catalogStatusFlag != null) {
             return false;
-        if (acceptableEarlyDays != null ? !acceptableEarlyDays.equals(that.acceptableEarlyDays) : that.acceptableEarlyDays != null)
+        }
+        if (checkShortagesFlag != null ? !checkShortagesFlag.equals(that.checkShortagesFlag)
+            : that.checkShortagesFlag != null) {
             return false;
-        if (planningTimeFenceCode != null ? !planningTimeFenceCode.equals(that.planningTimeFenceCode) : that.planningTimeFenceCode != null)
+        }
+        if (returnableFlag != null ? !returnableFlag.equals(that.returnableFlag)
+            : that.returnableFlag != null) {
             return false;
-        if (demandTimeFenceCode != null ? !demandTimeFenceCode.equals(that.demandTimeFenceCode) : that.demandTimeFenceCode != null)
+        }
+        if (defaultShippingOrg != null ? !defaultShippingOrg.equals(that.defaultShippingOrg)
+            : that.defaultShippingOrg != null) {
             return false;
-        if (leadTimeLotSize != null ? !leadTimeLotSize.equals(that.leadTimeLotSize) : that.leadTimeLotSize != null)
+        }
+        if (collateralFlag != null ? !collateralFlag.equals(that.collateralFlag)
+            : that.collateralFlag != null) {
             return false;
-        if (stdLotSize != null ? !stdLotSize.equals(that.stdLotSize) : that.stdLotSize != null) return false;
-        if (cumManufacturingLeadTime != null ? !cumManufacturingLeadTime.equals(that.cumManufacturingLeadTime) : that.cumManufacturingLeadTime != null)
+        }
+        if (taxableFlag != null ? !taxableFlag.equals(that.taxableFlag)
+            : that.taxableFlag != null) {
             return false;
-        if (overrunPercentage != null ? !overrunPercentage.equals(that.overrunPercentage) : that.overrunPercentage != null)
+        }
+        if (qtyRcvExceptionCode != null ? !qtyRcvExceptionCode.equals(that.qtyRcvExceptionCode)
+            : that.qtyRcvExceptionCode != null) {
             return false;
-        if (mrpCalculateAtpFlag != null ? !mrpCalculateAtpFlag.equals(that.mrpCalculateAtpFlag) : that.mrpCalculateAtpFlag != null)
+        }
+        if (allowItemDescUpdateFlag != null ? !allowItemDescUpdateFlag
+            .equals(that.allowItemDescUpdateFlag) : that.allowItemDescUpdateFlag != null) {
             return false;
-        if (acceptableRateIncrease != null ? !acceptableRateIncrease.equals(that.acceptableRateIncrease) : that.acceptableRateIncrease != null)
+        }
+        if (inspectionRequiredFlag != null ? !inspectionRequiredFlag
+            .equals(that.inspectionRequiredFlag) : that.inspectionRequiredFlag != null) {
             return false;
-        if (acceptableRateDecrease != null ? !acceptableRateDecrease.equals(that.acceptableRateDecrease) : that.acceptableRateDecrease != null)
+        }
+        if (receiptRequiredFlag != null ? !receiptRequiredFlag.equals(that.receiptRequiredFlag)
+            : that.receiptRequiredFlag != null) {
             return false;
-        if (cumulativeTotalLeadTime != null ? !cumulativeTotalLeadTime.equals(that.cumulativeTotalLeadTime) : that.cumulativeTotalLeadTime != null)
+        }
+        if (marketPrice != null ? !marketPrice.equals(that.marketPrice)
+            : that.marketPrice != null) {
             return false;
-        if (planningTimeFenceDays != null ? !planningTimeFenceDays.equals(that.planningTimeFenceDays) : that.planningTimeFenceDays != null)
+        }
+        if (hazardClassId != null ? !hazardClassId.equals(that.hazardClassId)
+            : that.hazardClassId != null) {
             return false;
-        if (demandTimeFenceDays != null ? !demandTimeFenceDays.equals(that.demandTimeFenceDays) : that.demandTimeFenceDays != null)
+        }
+        if (rfqRequiredFlag != null ? !rfqRequiredFlag.equals(that.rfqRequiredFlag)
+            : that.rfqRequiredFlag != null) {
             return false;
-        if (endAssemblyPeggingFlag != null ? !endAssemblyPeggingFlag.equals(that.endAssemblyPeggingFlag) : that.endAssemblyPeggingFlag != null)
+        }
+        if (qtyRcvTolerance != null ? !qtyRcvTolerance.equals(that.qtyRcvTolerance)
+            : that.qtyRcvTolerance != null) {
             return false;
-        if (repetitivePlanningFlag != null ? !repetitivePlanningFlag.equals(that.repetitivePlanningFlag) : that.repetitivePlanningFlag != null)
+        }
+        if (listPricePerUnit != null ? !listPricePerUnit.equals(that.listPricePerUnit)
+            : that.listPricePerUnit != null) {
             return false;
-        if (planningExceptionSet != null ? !planningExceptionSet.equals(that.planningExceptionSet) : that.planningExceptionSet != null)
+        }
+        if (unNumberId != null ? !unNumberId.equals(that.unNumberId) : that.unNumberId != null) {
             return false;
-        if (bomItemType != null ? !bomItemType.equals(that.bomItemType) : that.bomItemType != null) return false;
-        if (pickComponentsFlag != null ? !pickComponentsFlag.equals(that.pickComponentsFlag) : that.pickComponentsFlag != null)
+        }
+        if (priceTolerancePercent != null ? !priceTolerancePercent
+            .equals(that.priceTolerancePercent) : that.priceTolerancePercent != null) {
             return false;
-        if (replenishToOrderFlag != null ? !replenishToOrderFlag.equals(that.replenishToOrderFlag) : that.replenishToOrderFlag != null)
+        }
+        if (assetCategoryId != null ? !assetCategoryId.equals(that.assetCategoryId)
+            : that.assetCategoryId != null) {
             return false;
-        if (baseItemId != null ? !baseItemId.equals(that.baseItemId) : that.baseItemId != null) return false;
-        if (atpComponentsFlag != null ? !atpComponentsFlag.equals(that.atpComponentsFlag) : that.atpComponentsFlag != null)
+        }
+        if (roundingFactor != null ? !roundingFactor.equals(that.roundingFactor)
+            : that.roundingFactor != null) {
             return false;
-        if (atpFlag != null ? !atpFlag.equals(that.atpFlag) : that.atpFlag != null) return false;
-        if (fixedLeadTime != null ? !fixedLeadTime.equals(that.fixedLeadTime) : that.fixedLeadTime != null)
+        }
+        if (unitOfIssue != null ? !unitOfIssue.equals(that.unitOfIssue)
+            : that.unitOfIssue != null) {
             return false;
-        if (variableLeadTime != null ? !variableLeadTime.equals(that.variableLeadTime) : that.variableLeadTime != null)
+        }
+        if (enforceShipToLocationCode != null ? !enforceShipToLocationCode
+            .equals(that.enforceShipToLocationCode) : that.enforceShipToLocationCode != null) {
             return false;
-        if (wipSupplyLocatorId != null ? !wipSupplyLocatorId.equals(that.wipSupplyLocatorId) : that.wipSupplyLocatorId != null)
+        }
+        if (allowSubstituteReceiptsFlag != null ? !allowSubstituteReceiptsFlag
+            .equals(that.allowSubstituteReceiptsFlag) : that.allowSubstituteReceiptsFlag != null) {
             return false;
-        if (wipSupplyType != null ? !wipSupplyType.equals(that.wipSupplyType) : that.wipSupplyType != null)
+        }
+        if (allowUnorderedReceiptsFlag != null ? !allowUnorderedReceiptsFlag
+            .equals(that.allowUnorderedReceiptsFlag) : that.allowUnorderedReceiptsFlag != null) {
             return false;
-        if (wipSupplySubinventory != null ? !wipSupplySubinventory.equals(that.wipSupplySubinventory) : that.wipSupplySubinventory != null)
+        }
+        if (allowExpressDeliveryFlag != null ? !allowExpressDeliveryFlag
+            .equals(that.allowExpressDeliveryFlag) : that.allowExpressDeliveryFlag != null) {
             return false;
-        if (primaryUomCode != null ? !primaryUomCode.equals(that.primaryUomCode) : that.primaryUomCode != null)
+        }
+        if (daysEarlyReceiptAllowed != null ? !daysEarlyReceiptAllowed
+            .equals(that.daysEarlyReceiptAllowed) : that.daysEarlyReceiptAllowed != null) {
             return false;
-        if (primaryUnitOfMeasure != null ? !primaryUnitOfMeasure.equals(that.primaryUnitOfMeasure) : that.primaryUnitOfMeasure != null)
+        }
+        if (daysLateReceiptAllowed != null ? !daysLateReceiptAllowed
+            .equals(that.daysLateReceiptAllowed) : that.daysLateReceiptAllowed != null) {
             return false;
-        if (allowedUnitsLookupCode != null ? !allowedUnitsLookupCode.equals(that.allowedUnitsLookupCode) : that.allowedUnitsLookupCode != null)
+        }
+        if (receiptDaysExceptionCode != null ? !receiptDaysExceptionCode
+            .equals(that.receiptDaysExceptionCode) : that.receiptDaysExceptionCode != null) {
             return false;
-        if (costOfSalesAccount != null ? !costOfSalesAccount.equals(that.costOfSalesAccount) : that.costOfSalesAccount != null)
+        }
+        if (receivingRoutingId != null ? !receivingRoutingId.equals(that.receivingRoutingId)
+            : that.receivingRoutingId != null) {
             return false;
-        if (salesAccount != null ? !salesAccount.equals(that.salesAccount) : that.salesAccount != null) return false;
-        if (defaultIncludeInRollupFlag != null ? !defaultIncludeInRollupFlag.equals(that.defaultIncludeInRollupFlag) : that.defaultIncludeInRollupFlag != null)
+        }
+        if (invoiceCloseTolerance != null ? !invoiceCloseTolerance
+            .equals(that.invoiceCloseTolerance) : that.invoiceCloseTolerance != null) {
             return false;
-        if (inventoryItemStatusCode != null ? !inventoryItemStatusCode.equals(that.inventoryItemStatusCode) : that.inventoryItemStatusCode != null)
+        }
+        if (receiveCloseTolerance != null ? !receiveCloseTolerance
+            .equals(that.receiveCloseTolerance) : that.receiveCloseTolerance != null) {
             return false;
-        if (inventoryPlanningCode != null ? !inventoryPlanningCode.equals(that.inventoryPlanningCode) : that.inventoryPlanningCode != null)
+        }
+        if (autoLotAlphaPrefix != null ? !autoLotAlphaPrefix.equals(that.autoLotAlphaPrefix)
+            : that.autoLotAlphaPrefix != null) {
             return false;
-        if (plannerCode != null ? !plannerCode.equals(that.plannerCode) : that.plannerCode != null) return false;
-        if (planningMakeBuyCode != null ? !planningMakeBuyCode.equals(that.planningMakeBuyCode) : that.planningMakeBuyCode != null)
+        }
+        if (startAutoLotNumber != null ? !startAutoLotNumber.equals(that.startAutoLotNumber)
+            : that.startAutoLotNumber != null) {
             return false;
-        if (fixedLotMultiplier != null ? !fixedLotMultiplier.equals(that.fixedLotMultiplier) : that.fixedLotMultiplier != null)
+        }
+        if (lotControlCode != null ? !lotControlCode.equals(that.lotControlCode)
+            : that.lotControlCode != null) {
             return false;
-        if (roundingControlType != null ? !roundingControlType.equals(that.roundingControlType) : that.roundingControlType != null)
+        }
+        if (shelfLifeCode != null ? !shelfLifeCode.equals(that.shelfLifeCode)
+            : that.shelfLifeCode != null) {
             return false;
-        if (carryingCost != null ? !carryingCost.equals(that.carryingCost) : that.carryingCost != null) return false;
-        if (postprocessingLeadTime != null ? !postprocessingLeadTime.equals(that.postprocessingLeadTime) : that.postprocessingLeadTime != null)
+        }
+        if (shelfLifeDays != null ? !shelfLifeDays.equals(that.shelfLifeDays)
+            : that.shelfLifeDays != null) {
             return false;
-        if (preprocessingLeadTime != null ? !preprocessingLeadTime.equals(that.preprocessingLeadTime) : that.preprocessingLeadTime != null)
+        }
+        if (serialNumberControlCode != null ? !serialNumberControlCode
+            .equals(that.serialNumberControlCode) : that.serialNumberControlCode != null) {
             return false;
-        if (fullLeadTime != null ? !fullLeadTime.equals(that.fullLeadTime) : that.fullLeadTime != null) return false;
-        if (orderCost != null ? !orderCost.equals(that.orderCost) : that.orderCost != null) return false;
-        if (mrpSafetyStockPercent != null ? !mrpSafetyStockPercent.equals(that.mrpSafetyStockPercent) : that.mrpSafetyStockPercent != null)
+        }
+        if (startAutoSerialNumber != null ? !startAutoSerialNumber
+            .equals(that.startAutoSerialNumber) : that.startAutoSerialNumber != null) {
             return false;
-        if (mrpSafetyStockCode != null ? !mrpSafetyStockCode.equals(that.mrpSafetyStockCode) : that.mrpSafetyStockCode != null)
+        }
+        if (autoSerialAlphaPrefix != null ? !autoSerialAlphaPrefix
+            .equals(that.autoSerialAlphaPrefix) : that.autoSerialAlphaPrefix != null) {
             return false;
-        if (minMinmaxQuantity != null ? !minMinmaxQuantity.equals(that.minMinmaxQuantity) : that.minMinmaxQuantity != null)
+        }
+        if (sourceType != null ? !sourceType.equals(that.sourceType) : that.sourceType != null) {
             return false;
-        if (maxMinmaxQuantity != null ? !maxMinmaxQuantity.equals(that.maxMinmaxQuantity) : that.maxMinmaxQuantity != null)
+        }
+        if (sourceOrganizationId != null ? !sourceOrganizationId.equals(that.sourceOrganizationId)
+            : that.sourceOrganizationId != null) {
             return false;
-        if (minimumOrderQuantity != null ? !minimumOrderQuantity.equals(that.minimumOrderQuantity) : that.minimumOrderQuantity != null)
+        }
+        if (sourceSubinventory != null ? !sourceSubinventory.equals(that.sourceSubinventory)
+            : that.sourceSubinventory != null) {
             return false;
-        if (fixedOrderQuantity != null ? !fixedOrderQuantity.equals(that.fixedOrderQuantity) : that.fixedOrderQuantity != null)
+        }
+        if (expenseAccount != null ? !expenseAccount.equals(that.expenseAccount)
+            : that.expenseAccount != null) {
             return false;
-        if (fixedDaysSupply != null ? !fixedDaysSupply.equals(that.fixedDaysSupply) : that.fixedDaysSupply != null)
+        }
+        if (encumbranceAccount != null ? !encumbranceAccount.equals(that.encumbranceAccount)
+            : that.encumbranceAccount != null) {
             return false;
-        if (maximumOrderQuantity != null ? !maximumOrderQuantity.equals(that.maximumOrderQuantity) : that.maximumOrderQuantity != null)
+        }
+        if (restrictSubinventoriesCode != null ? !restrictSubinventoriesCode
+            .equals(that.restrictSubinventoriesCode) : that.restrictSubinventoriesCode != null) {
             return false;
-        if (atpRuleId != null ? !atpRuleId.equals(that.atpRuleId) : that.atpRuleId != null) return false;
-        if (pickingRuleId != null ? !pickingRuleId.equals(that.pickingRuleId) : that.pickingRuleId != null)
+        }
+        if (unitWeight != null ? !unitWeight.equals(that.unitWeight) : that.unitWeight != null) {
             return false;
-        if (reservableType != null ? !reservableType.equals(that.reservableType) : that.reservableType != null)
+        }
+        if (weightUomCode != null ? !weightUomCode.equals(that.weightUomCode)
+            : that.weightUomCode != null) {
             return false;
-        if (positiveMeasurementError != null ? !positiveMeasurementError.equals(that.positiveMeasurementError) : that.positiveMeasurementError != null)
+        }
+        if (volumeUomCode != null ? !volumeUomCode.equals(that.volumeUomCode)
+            : that.volumeUomCode != null) {
             return false;
-        if (negativeMeasurementError != null ? !negativeMeasurementError.equals(that.negativeMeasurementError) : that.negativeMeasurementError != null)
+        }
+        if (unitVolume != null ? !unitVolume.equals(that.unitVolume) : that.unitVolume != null) {
             return false;
-        if (engineeringEcnCode != null ? !engineeringEcnCode.equals(that.engineeringEcnCode) : that.engineeringEcnCode != null)
+        }
+        if (restrictLocatorsCode != null ? !restrictLocatorsCode.equals(that.restrictLocatorsCode)
+            : that.restrictLocatorsCode != null) {
             return false;
-        if (engineeringItemId != null ? !engineeringItemId.equals(that.engineeringItemId) : that.engineeringItemId != null)
+        }
+        if (locationControlCode != null ? !locationControlCode.equals(that.locationControlCode)
+            : that.locationControlCode != null) {
             return false;
-        if (engineeringDate != null ? !engineeringDate.equals(that.engineeringDate) : that.engineeringDate != null)
+        }
+        if (shrinkageRate != null ? !shrinkageRate.equals(that.shrinkageRate)
+            : that.shrinkageRate != null) {
             return false;
-        if (serviceStartingDelay != null ? !serviceStartingDelay.equals(that.serviceStartingDelay) : that.serviceStartingDelay != null)
+        }
+        if (acceptableEarlyDays != null ? !acceptableEarlyDays.equals(that.acceptableEarlyDays)
+            : that.acceptableEarlyDays != null) {
             return false;
-        if (vendorWarrantyFlag != null ? !vendorWarrantyFlag.equals(that.vendorWarrantyFlag) : that.vendorWarrantyFlag != null)
+        }
+        if (planningTimeFenceCode != null ? !planningTimeFenceCode
+            .equals(that.planningTimeFenceCode) : that.planningTimeFenceCode != null) {
             return false;
-        if (serviceableComponentFlag != null ? !serviceableComponentFlag.equals(that.serviceableComponentFlag) : that.serviceableComponentFlag != null)
+        }
+        if (demandTimeFenceCode != null ? !demandTimeFenceCode.equals(that.demandTimeFenceCode)
+            : that.demandTimeFenceCode != null) {
             return false;
-        if (serviceableProductFlag != null ? !serviceableProductFlag.equals(that.serviceableProductFlag) : that.serviceableProductFlag != null)
+        }
+        if (leadTimeLotSize != null ? !leadTimeLotSize.equals(that.leadTimeLotSize)
+            : that.leadTimeLotSize != null) {
             return false;
-        if (baseWarrantyServiceId != null ? !baseWarrantyServiceId.equals(that.baseWarrantyServiceId) : that.baseWarrantyServiceId != null)
+        }
+        if (stdLotSize != null ? !stdLotSize.equals(that.stdLotSize) : that.stdLotSize != null) {
             return false;
-        if (paymentTermsId != null ? !paymentTermsId.equals(that.paymentTermsId) : that.paymentTermsId != null)
+        }
+        if (cumManufacturingLeadTime != null ? !cumManufacturingLeadTime
+            .equals(that.cumManufacturingLeadTime) : that.cumManufacturingLeadTime != null) {
             return false;
-        if (preventiveMaintenanceFlag != null ? !preventiveMaintenanceFlag.equals(that.preventiveMaintenanceFlag) : that.preventiveMaintenanceFlag != null)
+        }
+        if (overrunPercentage != null ? !overrunPercentage.equals(that.overrunPercentage)
+            : that.overrunPercentage != null) {
             return false;
-        if (primarySpecialistId != null ? !primarySpecialistId.equals(that.primarySpecialistId) : that.primarySpecialistId != null)
+        }
+        if (mrpCalculateAtpFlag != null ? !mrpCalculateAtpFlag.equals(that.mrpCalculateAtpFlag)
+            : that.mrpCalculateAtpFlag != null) {
             return false;
-        if (secondarySpecialistId != null ? !secondarySpecialistId.equals(that.secondarySpecialistId) : that.secondarySpecialistId != null)
+        }
+        if (acceptableRateIncrease != null ? !acceptableRateIncrease
+            .equals(that.acceptableRateIncrease) : that.acceptableRateIncrease != null) {
             return false;
-        if (serviceableItemClassId != null ? !serviceableItemClassId.equals(that.serviceableItemClassId) : that.serviceableItemClassId != null)
+        }
+        if (acceptableRateDecrease != null ? !acceptableRateDecrease
+            .equals(that.acceptableRateDecrease) : that.acceptableRateDecrease != null) {
             return false;
-        if (timeBillableFlag != null ? !timeBillableFlag.equals(that.timeBillableFlag) : that.timeBillableFlag != null)
+        }
+        if (cumulativeTotalLeadTime != null ? !cumulativeTotalLeadTime
+            .equals(that.cumulativeTotalLeadTime) : that.cumulativeTotalLeadTime != null) {
             return false;
-        if (materialBillableFlag != null ? !materialBillableFlag.equals(that.materialBillableFlag) : that.materialBillableFlag != null)
+        }
+        if (planningTimeFenceDays != null ? !planningTimeFenceDays
+            .equals(that.planningTimeFenceDays) : that.planningTimeFenceDays != null) {
             return false;
-        if (expenseBillableFlag != null ? !expenseBillableFlag.equals(that.expenseBillableFlag) : that.expenseBillableFlag != null)
+        }
+        if (demandTimeFenceDays != null ? !demandTimeFenceDays.equals(that.demandTimeFenceDays)
+            : that.demandTimeFenceDays != null) {
             return false;
-        if (prorateServiceFlag != null ? !prorateServiceFlag.equals(that.prorateServiceFlag) : that.prorateServiceFlag != null)
+        }
+        if (endAssemblyPeggingFlag != null ? !endAssemblyPeggingFlag
+            .equals(that.endAssemblyPeggingFlag) : that.endAssemblyPeggingFlag != null) {
             return false;
-        if (coverageScheduleId != null ? !coverageScheduleId.equals(that.coverageScheduleId) : that.coverageScheduleId != null)
+        }
+        if (repetitivePlanningFlag != null ? !repetitivePlanningFlag
+            .equals(that.repetitivePlanningFlag) : that.repetitivePlanningFlag != null) {
             return false;
-        if (serviceDurationPeriodCode != null ? !serviceDurationPeriodCode.equals(that.serviceDurationPeriodCode) : that.serviceDurationPeriodCode != null)
+        }
+        if (planningExceptionSet != null ? !planningExceptionSet.equals(that.planningExceptionSet)
+            : that.planningExceptionSet != null) {
             return false;
-        if (serviceDuration != null ? !serviceDuration.equals(that.serviceDuration) : that.serviceDuration != null)
+        }
+        if (bomItemType != null ? !bomItemType.equals(that.bomItemType)
+            : that.bomItemType != null) {
             return false;
-        if (warrantyVendorId != null ? !warrantyVendorId.equals(that.warrantyVendorId) : that.warrantyVendorId != null)
+        }
+        if (pickComponentsFlag != null ? !pickComponentsFlag.equals(that.pickComponentsFlag)
+            : that.pickComponentsFlag != null) {
             return false;
-        if (maxWarrantyAmount != null ? !maxWarrantyAmount.equals(that.maxWarrantyAmount) : that.maxWarrantyAmount != null)
+        }
+        if (replenishToOrderFlag != null ? !replenishToOrderFlag.equals(that.replenishToOrderFlag)
+            : that.replenishToOrderFlag != null) {
             return false;
-        if (responseTimePeriodCode != null ? !responseTimePeriodCode.equals(that.responseTimePeriodCode) : that.responseTimePeriodCode != null)
+        }
+        if (baseItemId != null ? !baseItemId.equals(that.baseItemId) : that.baseItemId != null) {
             return false;
-        if (responseTimeValue != null ? !responseTimeValue.equals(that.responseTimeValue) : that.responseTimeValue != null)
+        }
+        if (atpComponentsFlag != null ? !atpComponentsFlag.equals(that.atpComponentsFlag)
+            : that.atpComponentsFlag != null) {
             return false;
-        if (newRevisionCode != null ? !newRevisionCode.equals(that.newRevisionCode) : that.newRevisionCode != null)
+        }
+        if (atpFlag != null ? !atpFlag.equals(that.atpFlag) : that.atpFlag != null) {
             return false;
-        if (invoiceableItemFlag != null ? !invoiceableItemFlag.equals(that.invoiceableItemFlag) : that.invoiceableItemFlag != null)
+        }
+        if (fixedLeadTime != null ? !fixedLeadTime.equals(that.fixedLeadTime)
+            : that.fixedLeadTime != null) {
             return false;
-        if (taxCode != null ? !taxCode.equals(that.taxCode) : that.taxCode != null) return false;
-        if (invoiceEnabledFlag != null ? !invoiceEnabledFlag.equals(that.invoiceEnabledFlag) : that.invoiceEnabledFlag != null)
+        }
+        if (variableLeadTime != null ? !variableLeadTime.equals(that.variableLeadTime)
+            : that.variableLeadTime != null) {
             return false;
-        if (mustUseApprovedVendorFlag != null ? !mustUseApprovedVendorFlag.equals(that.mustUseApprovedVendorFlag) : that.mustUseApprovedVendorFlag != null)
+        }
+        if (wipSupplyLocatorId != null ? !wipSupplyLocatorId.equals(that.wipSupplyLocatorId)
+            : that.wipSupplyLocatorId != null) {
             return false;
-        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) return false;
-        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId) : that.programApplicationId != null)
+        }
+        if (wipSupplyType != null ? !wipSupplyType.equals(that.wipSupplyType)
+            : that.wipSupplyType != null) {
             return false;
-        if (programId != null ? !programId.equals(that.programId) : that.programId != null) return false;
-        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate) : that.programUpdateDate != null)
+        }
+        if (wipSupplySubinventory != null ? !wipSupplySubinventory
+            .equals(that.wipSupplySubinventory) : that.wipSupplySubinventory != null) {
             return false;
-        if (outsideOperationFlag != null ? !outsideOperationFlag.equals(that.outsideOperationFlag) : that.outsideOperationFlag != null)
+        }
+        if (primaryUomCode != null ? !primaryUomCode.equals(that.primaryUomCode)
+            : that.primaryUomCode != null) {
             return false;
-        if (outsideOperationUomType != null ? !outsideOperationUomType.equals(that.outsideOperationUomType) : that.outsideOperationUomType != null)
+        }
+        if (primaryUnitOfMeasure != null ? !primaryUnitOfMeasure.equals(that.primaryUnitOfMeasure)
+            : that.primaryUnitOfMeasure != null) {
             return false;
-        if (safetyStockBucketDays != null ? !safetyStockBucketDays.equals(that.safetyStockBucketDays) : that.safetyStockBucketDays != null)
+        }
+        if (allowedUnitsLookupCode != null ? !allowedUnitsLookupCode
+            .equals(that.allowedUnitsLookupCode) : that.allowedUnitsLookupCode != null) {
             return false;
-        if (autoReduceMps != null ? !autoReduceMps.equals(that.autoReduceMps) : that.autoReduceMps != null)
+        }
+        if (costOfSalesAccount != null ? !costOfSalesAccount.equals(that.costOfSalesAccount)
+            : that.costOfSalesAccount != null) {
             return false;
-        if (costingEnabledFlag != null ? !costingEnabledFlag.equals(that.costingEnabledFlag) : that.costingEnabledFlag != null)
+        }
+        if (salesAccount != null ? !salesAccount.equals(that.salesAccount)
+            : that.salesAccount != null) {
             return false;
-        if (cycleCountEnabledFlag != null ? !cycleCountEnabledFlag.equals(that.cycleCountEnabledFlag) : that.cycleCountEnabledFlag != null)
+        }
+        if (defaultIncludeInRollupFlag != null ? !defaultIncludeInRollupFlag
+            .equals(that.defaultIncludeInRollupFlag) : that.defaultIncludeInRollupFlag != null) {
             return false;
-        if (demandSourceLine != null ? !demandSourceLine.equals(that.demandSourceLine) : that.demandSourceLine != null)
+        }
+        if (inventoryItemStatusCode != null ? !inventoryItemStatusCode
+            .equals(that.inventoryItemStatusCode) : that.inventoryItemStatusCode != null) {
             return false;
-        if (copyItemId != null ? !copyItemId.equals(that.copyItemId) : that.copyItemId != null) return false;
-        if (setId != null ? !setId.equals(that.setId) : that.setId != null) return false;
-        if (revision != null ? !revision.equals(that.revision) : that.revision != null) return false;
-        if (autoCreatedConfigFlag != null ? !autoCreatedConfigFlag.equals(that.autoCreatedConfigFlag) : that.autoCreatedConfigFlag != null)
+        }
+        if (inventoryPlanningCode != null ? !inventoryPlanningCode
+            .equals(that.inventoryPlanningCode) : that.inventoryPlanningCode != null) {
             return false;
-        if (itemType != null ? !itemType.equals(that.itemType) : that.itemType != null) return false;
-        if (modelConfigClauseName != null ? !modelConfigClauseName.equals(that.modelConfigClauseName) : that.modelConfigClauseName != null)
+        }
+        if (plannerCode != null ? !plannerCode.equals(that.plannerCode)
+            : that.plannerCode != null) {
             return false;
-        if (shipModelCompleteFlag != null ? !shipModelCompleteFlag.equals(that.shipModelCompleteFlag) : that.shipModelCompleteFlag != null)
+        }
+        if (planningMakeBuyCode != null ? !planningMakeBuyCode.equals(that.planningMakeBuyCode)
+            : that.planningMakeBuyCode != null) {
             return false;
-        if (mrpPlanningCode != null ? !mrpPlanningCode.equals(that.mrpPlanningCode) : that.mrpPlanningCode != null)
+        }
+        if (fixedLotMultiplier != null ? !fixedLotMultiplier.equals(that.fixedLotMultiplier)
+            : that.fixedLotMultiplier != null) {
             return false;
-        if (returnInspectionRequirement != null ? !returnInspectionRequirement.equals(that.returnInspectionRequirement) : that.returnInspectionRequirement != null)
+        }
+        if (roundingControlType != null ? !roundingControlType.equals(that.roundingControlType)
+            : that.roundingControlType != null) {
             return false;
-        if (demandSourceType != null ? !demandSourceType.equals(that.demandSourceType) : that.demandSourceType != null)
+        }
+        if (carryingCost != null ? !carryingCost.equals(that.carryingCost)
+            : that.carryingCost != null) {
             return false;
-        if (demandSourceHeaderId != null ? !demandSourceHeaderId.equals(that.demandSourceHeaderId) : that.demandSourceHeaderId != null)
+        }
+        if (postprocessingLeadTime != null ? !postprocessingLeadTime
+            .equals(that.postprocessingLeadTime) : that.postprocessingLeadTime != null) {
             return false;
-        if (transactionId != null ? !transactionId.equals(that.transactionId) : that.transactionId != null)
+        }
+        if (preprocessingLeadTime != null ? !preprocessingLeadTime
+            .equals(that.preprocessingLeadTime) : that.preprocessingLeadTime != null) {
             return false;
-        if (processFlag != null ? !processFlag.equals(that.processFlag) : that.processFlag != null) return false;
-        if (organizationCode != null ? !organizationCode.equals(that.organizationCode) : that.organizationCode != null)
+        }
+        if (fullLeadTime != null ? !fullLeadTime.equals(that.fullLeadTime)
+            : that.fullLeadTime != null) {
             return false;
-        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) return false;
-        if (copyItemNumber != null ? !copyItemNumber.equals(that.copyItemNumber) : that.copyItemNumber != null)
+        }
+        if (orderCost != null ? !orderCost.equals(that.orderCost) : that.orderCost != null) {
             return false;
-        if (templateId != null ? !templateId.equals(that.templateId) : that.templateId != null) return false;
-        if (templateName != null ? !templateName.equals(that.templateName) : that.templateName != null) return false;
-        if (copyOrganizationId != null ? !copyOrganizationId.equals(that.copyOrganizationId) : that.copyOrganizationId != null)
+        }
+        if (mrpSafetyStockPercent != null ? !mrpSafetyStockPercent
+            .equals(that.mrpSafetyStockPercent) : that.mrpSafetyStockPercent != null) {
             return false;
-        if (copyOrganizationCode != null ? !copyOrganizationCode.equals(that.copyOrganizationCode) : that.copyOrganizationCode != null)
+        }
+        if (mrpSafetyStockCode != null ? !mrpSafetyStockCode.equals(that.mrpSafetyStockCode)
+            : that.mrpSafetyStockCode != null) {
             return false;
-        if (atoForecastControl != null ? !atoForecastControl.equals(that.atoForecastControl) : that.atoForecastControl != null)
+        }
+        if (minMinmaxQuantity != null ? !minMinmaxQuantity.equals(that.minMinmaxQuantity)
+            : that.minMinmaxQuantity != null) {
             return false;
-        if (transactionType != null ? !transactionType.equals(that.transactionType) : that.transactionType != null)
+        }
+        if (maxMinmaxQuantity != null ? !maxMinmaxQuantity.equals(that.maxMinmaxQuantity)
+            : that.maxMinmaxQuantity != null) {
             return false;
-        if (materialCost != null ? !materialCost.equals(that.materialCost) : that.materialCost != null) return false;
-        if (materialSubElem != null ? !materialSubElem.equals(that.materialSubElem) : that.materialSubElem != null)
+        }
+        if (minimumOrderQuantity != null ? !minimumOrderQuantity.equals(that.minimumOrderQuantity)
+            : that.minimumOrderQuantity != null) {
             return false;
-        if (materialOhRate != null ? !materialOhRate.equals(that.materialOhRate) : that.materialOhRate != null)
+        }
+        if (fixedOrderQuantity != null ? !fixedOrderQuantity.equals(that.fixedOrderQuantity)
+            : that.fixedOrderQuantity != null) {
             return false;
-        if (materialOhSubElem != null ? !materialOhSubElem.equals(that.materialOhSubElem) : that.materialOhSubElem != null)
+        }
+        if (fixedDaysSupply != null ? !fixedDaysSupply.equals(that.fixedDaysSupply)
+            : that.fixedDaysSupply != null) {
             return false;
-        if (materialSubElemId != null ? !materialSubElemId.equals(that.materialSubElemId) : that.materialSubElemId != null)
+        }
+        if (maximumOrderQuantity != null ? !maximumOrderQuantity.equals(that.maximumOrderQuantity)
+            : that.maximumOrderQuantity != null) {
             return false;
-        if (materialOhSubElemId != null ? !materialOhSubElemId.equals(that.materialOhSubElemId) : that.materialOhSubElemId != null)
+        }
+        if (atpRuleId != null ? !atpRuleId.equals(that.atpRuleId) : that.atpRuleId != null) {
             return false;
-        if (releaseTimeFenceCode != null ? !releaseTimeFenceCode.equals(that.releaseTimeFenceCode) : that.releaseTimeFenceCode != null)
+        }
+        if (pickingRuleId != null ? !pickingRuleId.equals(that.pickingRuleId)
+            : that.pickingRuleId != null) {
             return false;
-        if (releaseTimeFenceDays != null ? !releaseTimeFenceDays.equals(that.releaseTimeFenceDays) : that.releaseTimeFenceDays != null)
+        }
+        if (reservableType != null ? !reservableType.equals(that.reservableType)
+            : that.reservableType != null) {
             return false;
-        if (containerItemFlag != null ? !containerItemFlag.equals(that.containerItemFlag) : that.containerItemFlag != null)
+        }
+        if (positiveMeasurementError != null ? !positiveMeasurementError
+            .equals(that.positiveMeasurementError) : that.positiveMeasurementError != null) {
             return false;
-        if (vehicleItemFlag != null ? !vehicleItemFlag.equals(that.vehicleItemFlag) : that.vehicleItemFlag != null)
+        }
+        if (negativeMeasurementError != null ? !negativeMeasurementError
+            .equals(that.negativeMeasurementError) : that.negativeMeasurementError != null) {
             return false;
-        if (maximumLoadWeight != null ? !maximumLoadWeight.equals(that.maximumLoadWeight) : that.maximumLoadWeight != null)
+        }
+        if (engineeringEcnCode != null ? !engineeringEcnCode.equals(that.engineeringEcnCode)
+            : that.engineeringEcnCode != null) {
             return false;
-        if (minimumFillPercent != null ? !minimumFillPercent.equals(that.minimumFillPercent) : that.minimumFillPercent != null)
+        }
+        if (engineeringItemId != null ? !engineeringItemId.equals(that.engineeringItemId)
+            : that.engineeringItemId != null) {
             return false;
-        if (containerTypeCode != null ? !containerTypeCode.equals(that.containerTypeCode) : that.containerTypeCode != null)
+        }
+        if (engineeringDate != null ? !engineeringDate.equals(that.engineeringDate)
+            : that.engineeringDate != null) {
             return false;
-        if (internalVolume != null ? !internalVolume.equals(that.internalVolume) : that.internalVolume != null)
+        }
+        if (serviceStartingDelay != null ? !serviceStartingDelay.equals(that.serviceStartingDelay)
+            : that.serviceStartingDelay != null) {
             return false;
-        if (whUpdateDate != null ? !whUpdateDate.equals(that.whUpdateDate) : that.whUpdateDate != null) return false;
-        if (productFamilyItemId != null ? !productFamilyItemId.equals(that.productFamilyItemId) : that.productFamilyItemId != null)
+        }
+        if (vendorWarrantyFlag != null ? !vendorWarrantyFlag.equals(that.vendorWarrantyFlag)
+            : that.vendorWarrantyFlag != null) {
             return false;
-        if (purchasingTaxCode != null ? !purchasingTaxCode.equals(that.purchasingTaxCode) : that.purchasingTaxCode != null)
+        }
+        if (serviceableComponentFlag != null ? !serviceableComponentFlag
+            .equals(that.serviceableComponentFlag) : that.serviceableComponentFlag != null) {
             return false;
-        if (overcompletionToleranceType != null ? !overcompletionToleranceType.equals(that.overcompletionToleranceType) : that.overcompletionToleranceType != null)
+        }
+        if (serviceableProductFlag != null ? !serviceableProductFlag
+            .equals(that.serviceableProductFlag) : that.serviceableProductFlag != null) {
             return false;
-        if (overcompletionToleranceValue != null ? !overcompletionToleranceValue.equals(that.overcompletionToleranceValue) : that.overcompletionToleranceValue != null)
+        }
+        if (baseWarrantyServiceId != null ? !baseWarrantyServiceId
+            .equals(that.baseWarrantyServiceId) : that.baseWarrantyServiceId != null) {
             return false;
-        if (effectivityControl != null ? !effectivityControl.equals(that.effectivityControl) : that.effectivityControl != null)
+        }
+        if (paymentTermsId != null ? !paymentTermsId.equals(that.paymentTermsId)
+            : that.paymentTermsId != null) {
             return false;
-        if (globalAttributeCategory != null ? !globalAttributeCategory.equals(that.globalAttributeCategory) : that.globalAttributeCategory != null)
+        }
+        if (preventiveMaintenanceFlag != null ? !preventiveMaintenanceFlag
+            .equals(that.preventiveMaintenanceFlag) : that.preventiveMaintenanceFlag != null) {
             return false;
-        if (globalAttribute1 != null ? !globalAttribute1.equals(that.globalAttribute1) : that.globalAttribute1 != null)
+        }
+        if (primarySpecialistId != null ? !primarySpecialistId.equals(that.primarySpecialistId)
+            : that.primarySpecialistId != null) {
             return false;
-        if (globalAttribute2 != null ? !globalAttribute2.equals(that.globalAttribute2) : that.globalAttribute2 != null)
+        }
+        if (secondarySpecialistId != null ? !secondarySpecialistId
+            .equals(that.secondarySpecialistId) : that.secondarySpecialistId != null) {
             return false;
-        if (globalAttribute3 != null ? !globalAttribute3.equals(that.globalAttribute3) : that.globalAttribute3 != null)
+        }
+        if (serviceableItemClassId != null ? !serviceableItemClassId
+            .equals(that.serviceableItemClassId) : that.serviceableItemClassId != null) {
             return false;
-        if (globalAttribute4 != null ? !globalAttribute4.equals(that.globalAttribute4) : that.globalAttribute4 != null)
+        }
+        if (timeBillableFlag != null ? !timeBillableFlag.equals(that.timeBillableFlag)
+            : that.timeBillableFlag != null) {
             return false;
-        if (globalAttribute5 != null ? !globalAttribute5.equals(that.globalAttribute5) : that.globalAttribute5 != null)
+        }
+        if (materialBillableFlag != null ? !materialBillableFlag.equals(that.materialBillableFlag)
+            : that.materialBillableFlag != null) {
             return false;
-        if (globalAttribute6 != null ? !globalAttribute6.equals(that.globalAttribute6) : that.globalAttribute6 != null)
+        }
+        if (expenseBillableFlag != null ? !expenseBillableFlag.equals(that.expenseBillableFlag)
+            : that.expenseBillableFlag != null) {
             return false;
-        if (globalAttribute7 != null ? !globalAttribute7.equals(that.globalAttribute7) : that.globalAttribute7 != null)
+        }
+        if (prorateServiceFlag != null ? !prorateServiceFlag.equals(that.prorateServiceFlag)
+            : that.prorateServiceFlag != null) {
             return false;
-        if (globalAttribute8 != null ? !globalAttribute8.equals(that.globalAttribute8) : that.globalAttribute8 != null)
+        }
+        if (coverageScheduleId != null ? !coverageScheduleId.equals(that.coverageScheduleId)
+            : that.coverageScheduleId != null) {
             return false;
-        if (globalAttribute9 != null ? !globalAttribute9.equals(that.globalAttribute9) : that.globalAttribute9 != null)
+        }
+        if (serviceDurationPeriodCode != null ? !serviceDurationPeriodCode
+            .equals(that.serviceDurationPeriodCode) : that.serviceDurationPeriodCode != null) {
             return false;
-        if (globalAttribute10 != null ? !globalAttribute10.equals(that.globalAttribute10) : that.globalAttribute10 != null)
+        }
+        if (serviceDuration != null ? !serviceDuration.equals(that.serviceDuration)
+            : that.serviceDuration != null) {
             return false;
-        if (overShipmentTolerance != null ? !overShipmentTolerance.equals(that.overShipmentTolerance) : that.overShipmentTolerance != null)
+        }
+        if (warrantyVendorId != null ? !warrantyVendorId.equals(that.warrantyVendorId)
+            : that.warrantyVendorId != null) {
             return false;
-        if (underShipmentTolerance != null ? !underShipmentTolerance.equals(that.underShipmentTolerance) : that.underShipmentTolerance != null)
+        }
+        if (maxWarrantyAmount != null ? !maxWarrantyAmount.equals(that.maxWarrantyAmount)
+            : that.maxWarrantyAmount != null) {
             return false;
-        if (overReturnTolerance != null ? !overReturnTolerance.equals(that.overReturnTolerance) : that.overReturnTolerance != null)
+        }
+        if (responseTimePeriodCode != null ? !responseTimePeriodCode
+            .equals(that.responseTimePeriodCode) : that.responseTimePeriodCode != null) {
             return false;
-        if (underReturnTolerance != null ? !underReturnTolerance.equals(that.underReturnTolerance) : that.underReturnTolerance != null)
+        }
+        if (responseTimeValue != null ? !responseTimeValue.equals(that.responseTimeValue)
+            : that.responseTimeValue != null) {
             return false;
-        if (equipmentType != null ? !equipmentType.equals(that.equipmentType) : that.equipmentType != null)
+        }
+        if (newRevisionCode != null ? !newRevisionCode.equals(that.newRevisionCode)
+            : that.newRevisionCode != null) {
             return false;
-        if (recoveredPartDispCode != null ? !recoveredPartDispCode.equals(that.recoveredPartDispCode) : that.recoveredPartDispCode != null)
+        }
+        if (invoiceableItemFlag != null ? !invoiceableItemFlag.equals(that.invoiceableItemFlag)
+            : that.invoiceableItemFlag != null) {
             return false;
-        if (defectTrackingOnFlag != null ? !defectTrackingOnFlag.equals(that.defectTrackingOnFlag) : that.defectTrackingOnFlag != null)
+        }
+        if (taxCode != null ? !taxCode.equals(that.taxCode) : that.taxCode != null) {
             return false;
-        if (usageItemFlag != null ? !usageItemFlag.equals(that.usageItemFlag) : that.usageItemFlag != null)
+        }
+        if (invoiceEnabledFlag != null ? !invoiceEnabledFlag.equals(that.invoiceEnabledFlag)
+            : that.invoiceEnabledFlag != null) {
             return false;
-        if (eventFlag != null ? !eventFlag.equals(that.eventFlag) : that.eventFlag != null) return false;
-        if (electronicFlag != null ? !electronicFlag.equals(that.electronicFlag) : that.electronicFlag != null)
+        }
+        if (mustUseApprovedVendorFlag != null ? !mustUseApprovedVendorFlag
+            .equals(that.mustUseApprovedVendorFlag) : that.mustUseApprovedVendorFlag != null) {
             return false;
-        if (downloadableFlag != null ? !downloadableFlag.equals(that.downloadableFlag) : that.downloadableFlag != null)
+        }
+        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) {
             return false;
-        if (volDiscountExemptFlag != null ? !volDiscountExemptFlag.equals(that.volDiscountExemptFlag) : that.volDiscountExemptFlag != null)
+        }
+        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId)
+            : that.programApplicationId != null) {
             return false;
-        if (couponExemptFlag != null ? !couponExemptFlag.equals(that.couponExemptFlag) : that.couponExemptFlag != null)
+        }
+        if (programId != null ? !programId.equals(that.programId) : that.programId != null) {
             return false;
-        if (commsNlTrackableFlag != null ? !commsNlTrackableFlag.equals(that.commsNlTrackableFlag) : that.commsNlTrackableFlag != null)
+        }
+        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate)
+            : that.programUpdateDate != null) {
             return false;
-        if (assetCreationCode != null ? !assetCreationCode.equals(that.assetCreationCode) : that.assetCreationCode != null)
+        }
+        if (outsideOperationFlag != null ? !outsideOperationFlag.equals(that.outsideOperationFlag)
+            : that.outsideOperationFlag != null) {
             return false;
-        if (commsActivationReqdFlag != null ? !commsActivationReqdFlag.equals(that.commsActivationReqdFlag) : that.commsActivationReqdFlag != null)
+        }
+        if (outsideOperationUomType != null ? !outsideOperationUomType
+            .equals(that.outsideOperationUomType) : that.outsideOperationUomType != null) {
             return false;
-        if (orderableOnWebFlag != null ? !orderableOnWebFlag.equals(that.orderableOnWebFlag) : that.orderableOnWebFlag != null)
+        }
+        if (safetyStockBucketDays != null ? !safetyStockBucketDays
+            .equals(that.safetyStockBucketDays) : that.safetyStockBucketDays != null) {
             return false;
-        if (backOrderableFlag != null ? !backOrderableFlag.equals(that.backOrderableFlag) : that.backOrderableFlag != null)
+        }
+        if (autoReduceMps != null ? !autoReduceMps.equals(that.autoReduceMps)
+            : that.autoReduceMps != null) {
             return false;
-        if (webStatus != null ? !webStatus.equals(that.webStatus) : that.webStatus != null) return false;
-        if (indivisibleFlag != null ? !indivisibleFlag.equals(that.indivisibleFlag) : that.indivisibleFlag != null)
+        }
+        if (costingEnabledFlag != null ? !costingEnabledFlag.equals(that.costingEnabledFlag)
+            : that.costingEnabledFlag != null) {
             return false;
-        if (longDescription != null ? !longDescription.equals(that.longDescription) : that.longDescription != null)
+        }
+        if (cycleCountEnabledFlag != null ? !cycleCountEnabledFlag
+            .equals(that.cycleCountEnabledFlag) : that.cycleCountEnabledFlag != null) {
             return false;
-        if (dimensionUomCode != null ? !dimensionUomCode.equals(that.dimensionUomCode) : that.dimensionUomCode != null)
+        }
+        if (demandSourceLine != null ? !demandSourceLine.equals(that.demandSourceLine)
+            : that.demandSourceLine != null) {
             return false;
-        if (unitLength != null ? !unitLength.equals(that.unitLength) : that.unitLength != null) return false;
-        if (unitWidth != null ? !unitWidth.equals(that.unitWidth) : that.unitWidth != null) return false;
-        if (unitHeight != null ? !unitHeight.equals(that.unitHeight) : that.unitHeight != null) return false;
-        if (bulkPickedFlag != null ? !bulkPickedFlag.equals(that.bulkPickedFlag) : that.bulkPickedFlag != null)
+        }
+        if (copyItemId != null ? !copyItemId.equals(that.copyItemId) : that.copyItemId != null) {
             return false;
-        if (lotStatusEnabled != null ? !lotStatusEnabled.equals(that.lotStatusEnabled) : that.lotStatusEnabled != null)
+        }
+        if (setId != null ? !setId.equals(that.setId) : that.setId != null) {
             return false;
-        if (defaultLotStatusId != null ? !defaultLotStatusId.equals(that.defaultLotStatusId) : that.defaultLotStatusId != null)
+        }
+        if (revision != null ? !revision.equals(that.revision) : that.revision != null) {
             return false;
-        if (serialStatusEnabled != null ? !serialStatusEnabled.equals(that.serialStatusEnabled) : that.serialStatusEnabled != null)
+        }
+        if (autoCreatedConfigFlag != null ? !autoCreatedConfigFlag
+            .equals(that.autoCreatedConfigFlag) : that.autoCreatedConfigFlag != null) {
             return false;
-        if (defaultSerialStatusId != null ? !defaultSerialStatusId.equals(that.defaultSerialStatusId) : that.defaultSerialStatusId != null)
+        }
+        if (itemType != null ? !itemType.equals(that.itemType) : that.itemType != null) {
             return false;
-        if (lotSplitEnabled != null ? !lotSplitEnabled.equals(that.lotSplitEnabled) : that.lotSplitEnabled != null)
+        }
+        if (modelConfigClauseName != null ? !modelConfigClauseName
+            .equals(that.modelConfigClauseName) : that.modelConfigClauseName != null) {
             return false;
-        if (lotMergeEnabled != null ? !lotMergeEnabled.equals(that.lotMergeEnabled) : that.lotMergeEnabled != null)
+        }
+        if (shipModelCompleteFlag != null ? !shipModelCompleteFlag
+            .equals(that.shipModelCompleteFlag) : that.shipModelCompleteFlag != null) {
             return false;
-        if (inventoryCarryPenalty != null ? !inventoryCarryPenalty.equals(that.inventoryCarryPenalty) : that.inventoryCarryPenalty != null)
+        }
+        if (mrpPlanningCode != null ? !mrpPlanningCode.equals(that.mrpPlanningCode)
+            : that.mrpPlanningCode != null) {
             return false;
-        if (operationSlackPenalty != null ? !operationSlackPenalty.equals(that.operationSlackPenalty) : that.operationSlackPenalty != null)
+        }
+        if (returnInspectionRequirement != null ? !returnInspectionRequirement
+            .equals(that.returnInspectionRequirement) : that.returnInspectionRequirement != null) {
             return false;
-        if (financingAllowedFlag != null ? !financingAllowedFlag.equals(that.financingAllowedFlag) : that.financingAllowedFlag != null)
+        }
+        if (demandSourceType != null ? !demandSourceType.equals(that.demandSourceType)
+            : that.demandSourceType != null) {
             return false;
-        if (eamItemType != null ? !eamItemType.equals(that.eamItemType) : that.eamItemType != null) return false;
-        if (eamActivityTypeCode != null ? !eamActivityTypeCode.equals(that.eamActivityTypeCode) : that.eamActivityTypeCode != null)
+        }
+        if (demandSourceHeaderId != null ? !demandSourceHeaderId.equals(that.demandSourceHeaderId)
+            : that.demandSourceHeaderId != null) {
             return false;
-        if (eamActivityCauseCode != null ? !eamActivityCauseCode.equals(that.eamActivityCauseCode) : that.eamActivityCauseCode != null)
+        }
+        if (transactionId != null ? !transactionId.equals(that.transactionId)
+            : that.transactionId != null) {
             return false;
-        if (eamActNotificationFlag != null ? !eamActNotificationFlag.equals(that.eamActNotificationFlag) : that.eamActNotificationFlag != null)
+        }
+        if (processFlag != null ? !processFlag.equals(that.processFlag)
+            : that.processFlag != null) {
             return false;
-        if (eamActShutdownStatus != null ? !eamActShutdownStatus.equals(that.eamActShutdownStatus) : that.eamActShutdownStatus != null)
+        }
+        if (organizationCode != null ? !organizationCode.equals(that.organizationCode)
+            : that.organizationCode != null) {
             return false;
-        if (dualUomControl != null ? !dualUomControl.equals(that.dualUomControl) : that.dualUomControl != null)
+        }
+        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) {
             return false;
-        if (secondaryUomCode != null ? !secondaryUomCode.equals(that.secondaryUomCode) : that.secondaryUomCode != null)
+        }
+        if (copyItemNumber != null ? !copyItemNumber.equals(that.copyItemNumber)
+            : that.copyItemNumber != null) {
             return false;
-        if (dualUomDeviationHigh != null ? !dualUomDeviationHigh.equals(that.dualUomDeviationHigh) : that.dualUomDeviationHigh != null)
+        }
+        if (templateId != null ? !templateId.equals(that.templateId) : that.templateId != null) {
             return false;
-        if (dualUomDeviationLow != null ? !dualUomDeviationLow.equals(that.dualUomDeviationLow) : that.dualUomDeviationLow != null)
+        }
+        if (templateName != null ? !templateName.equals(that.templateName)
+            : that.templateName != null) {
             return false;
-        if (contractItemTypeCode != null ? !contractItemTypeCode.equals(that.contractItemTypeCode) : that.contractItemTypeCode != null)
+        }
+        if (copyOrganizationId != null ? !copyOrganizationId.equals(that.copyOrganizationId)
+            : that.copyOrganizationId != null) {
             return false;
-        if (subscriptionDependFlag != null ? !subscriptionDependFlag.equals(that.subscriptionDependFlag) : that.subscriptionDependFlag != null)
+        }
+        if (copyOrganizationCode != null ? !copyOrganizationCode.equals(that.copyOrganizationCode)
+            : that.copyOrganizationCode != null) {
             return false;
-        if (servReqEnabledCode != null ? !servReqEnabledCode.equals(that.servReqEnabledCode) : that.servReqEnabledCode != null)
+        }
+        if (atoForecastControl != null ? !atoForecastControl.equals(that.atoForecastControl)
+            : that.atoForecastControl != null) {
             return false;
-        if (servBillingEnabledFlag != null ? !servBillingEnabledFlag.equals(that.servBillingEnabledFlag) : that.servBillingEnabledFlag != null)
+        }
+        if (transactionType != null ? !transactionType.equals(that.transactionType)
+            : that.transactionType != null) {
             return false;
-        if (servImportanceLevel != null ? !servImportanceLevel.equals(that.servImportanceLevel) : that.servImportanceLevel != null)
+        }
+        if (materialCost != null ? !materialCost.equals(that.materialCost)
+            : that.materialCost != null) {
             return false;
-        if (plannedInvPointFlag != null ? !plannedInvPointFlag.equals(that.plannedInvPointFlag) : that.plannedInvPointFlag != null)
+        }
+        if (materialSubElem != null ? !materialSubElem.equals(that.materialSubElem)
+            : that.materialSubElem != null) {
             return false;
-        if (lotTranslateEnabled != null ? !lotTranslateEnabled.equals(that.lotTranslateEnabled) : that.lotTranslateEnabled != null)
+        }
+        if (materialOhRate != null ? !materialOhRate.equals(that.materialOhRate)
+            : that.materialOhRate != null) {
             return false;
-        if (defaultSoSourceType != null ? !defaultSoSourceType.equals(that.defaultSoSourceType) : that.defaultSoSourceType != null)
+        }
+        if (materialOhSubElem != null ? !materialOhSubElem.equals(that.materialOhSubElem)
+            : that.materialOhSubElem != null) {
             return false;
-        if (createSupplyFlag != null ? !createSupplyFlag.equals(that.createSupplyFlag) : that.createSupplyFlag != null)
+        }
+        if (materialSubElemId != null ? !materialSubElemId.equals(that.materialSubElemId)
+            : that.materialSubElemId != null) {
             return false;
-        if (substitutionWindowCode != null ? !substitutionWindowCode.equals(that.substitutionWindowCode) : that.substitutionWindowCode != null)
+        }
+        if (materialOhSubElemId != null ? !materialOhSubElemId.equals(that.materialOhSubElemId)
+            : that.materialOhSubElemId != null) {
             return false;
-        if (substitutionWindowDays != null ? !substitutionWindowDays.equals(that.substitutionWindowDays) : that.substitutionWindowDays != null)
+        }
+        if (releaseTimeFenceCode != null ? !releaseTimeFenceCode.equals(that.releaseTimeFenceCode)
+            : that.releaseTimeFenceCode != null) {
             return false;
-        if (ibItemInstanceClass != null ? !ibItemInstanceClass.equals(that.ibItemInstanceClass) : that.ibItemInstanceClass != null)
+        }
+        if (releaseTimeFenceDays != null ? !releaseTimeFenceDays.equals(that.releaseTimeFenceDays)
+            : that.releaseTimeFenceDays != null) {
             return false;
-        if (configModelType != null ? !configModelType.equals(that.configModelType) : that.configModelType != null)
+        }
+        if (containerItemFlag != null ? !containerItemFlag.equals(that.containerItemFlag)
+            : that.containerItemFlag != null) {
             return false;
-        if (lotSubstitutionEnabled != null ? !lotSubstitutionEnabled.equals(that.lotSubstitutionEnabled) : that.lotSubstitutionEnabled != null)
+        }
+        if (vehicleItemFlag != null ? !vehicleItemFlag.equals(that.vehicleItemFlag)
+            : that.vehicleItemFlag != null) {
             return false;
-        if (minimumLicenseQuantity != null ? !minimumLicenseQuantity.equals(that.minimumLicenseQuantity) : that.minimumLicenseQuantity != null)
+        }
+        if (maximumLoadWeight != null ? !maximumLoadWeight.equals(that.maximumLoadWeight)
+            : that.maximumLoadWeight != null) {
             return false;
-        if (eamActivitySourceCode != null ? !eamActivitySourceCode.equals(that.eamActivitySourceCode) : that.eamActivitySourceCode != null)
+        }
+        if (minimumFillPercent != null ? !minimumFillPercent.equals(that.minimumFillPercent)
+            : that.minimumFillPercent != null) {
             return false;
-        if (lifecycleId != null ? !lifecycleId.equals(that.lifecycleId) : that.lifecycleId != null) return false;
-        if (currentPhaseId != null ? !currentPhaseId.equals(that.currentPhaseId) : that.currentPhaseId != null)
+        }
+        if (containerTypeCode != null ? !containerTypeCode.equals(that.containerTypeCode)
+            : that.containerTypeCode != null) {
             return false;
-        if (trackingQuantityInd != null ? !trackingQuantityInd.equals(that.trackingQuantityInd) : that.trackingQuantityInd != null)
+        }
+        if (internalVolume != null ? !internalVolume.equals(that.internalVolume)
+            : that.internalVolume != null) {
             return false;
-        if (ontPricingQtySource != null ? !ontPricingQtySource.equals(that.ontPricingQtySource) : that.ontPricingQtySource != null)
+        }
+        if (whUpdateDate != null ? !whUpdateDate.equals(that.whUpdateDate)
+            : that.whUpdateDate != null) {
             return false;
-        if (secondaryDefaultInd != null ? !secondaryDefaultInd.equals(that.secondaryDefaultInd) : that.secondaryDefaultInd != null)
+        }
+        if (productFamilyItemId != null ? !productFamilyItemId.equals(that.productFamilyItemId)
+            : that.productFamilyItemId != null) {
             return false;
-        if (vmiMinimumUnits != null ? !vmiMinimumUnits.equals(that.vmiMinimumUnits) : that.vmiMinimumUnits != null)
+        }
+        if (purchasingTaxCode != null ? !purchasingTaxCode.equals(that.purchasingTaxCode)
+            : that.purchasingTaxCode != null) {
             return false;
-        if (vmiMinimumDays != null ? !vmiMinimumDays.equals(that.vmiMinimumDays) : that.vmiMinimumDays != null)
+        }
+        if (overcompletionToleranceType != null ? !overcompletionToleranceType
+            .equals(that.overcompletionToleranceType) : that.overcompletionToleranceType != null) {
             return false;
-        if (vmiMaximumUnits != null ? !vmiMaximumUnits.equals(that.vmiMaximumUnits) : that.vmiMaximumUnits != null)
+        }
+        if (overcompletionToleranceValue != null ? !overcompletionToleranceValue
+            .equals(that.overcompletionToleranceValue)
+            : that.overcompletionToleranceValue != null) {
             return false;
-        if (vmiMaximumDays != null ? !vmiMaximumDays.equals(that.vmiMaximumDays) : that.vmiMaximumDays != null)
+        }
+        if (effectivityControl != null ? !effectivityControl.equals(that.effectivityControl)
+            : that.effectivityControl != null) {
             return false;
-        if (vmiFixedOrderQuantity != null ? !vmiFixedOrderQuantity.equals(that.vmiFixedOrderQuantity) : that.vmiFixedOrderQuantity != null)
+        }
+        if (globalAttributeCategory != null ? !globalAttributeCategory
+            .equals(that.globalAttributeCategory) : that.globalAttributeCategory != null) {
             return false;
-        if (soAuthorizationFlag != null ? !soAuthorizationFlag.equals(that.soAuthorizationFlag) : that.soAuthorizationFlag != null)
+        }
+        if (globalAttribute1 != null ? !globalAttribute1.equals(that.globalAttribute1)
+            : that.globalAttribute1 != null) {
             return false;
-        if (consignedFlag != null ? !consignedFlag.equals(that.consignedFlag) : that.consignedFlag != null)
+        }
+        if (globalAttribute2 != null ? !globalAttribute2.equals(that.globalAttribute2)
+            : that.globalAttribute2 != null) {
             return false;
-        if (asnAutoexpireFlag != null ? !asnAutoexpireFlag.equals(that.asnAutoexpireFlag) : that.asnAutoexpireFlag != null)
+        }
+        if (globalAttribute3 != null ? !globalAttribute3.equals(that.globalAttribute3)
+            : that.globalAttribute3 != null) {
             return false;
-        if (vmiForecastType != null ? !vmiForecastType.equals(that.vmiForecastType) : that.vmiForecastType != null)
+        }
+        if (globalAttribute4 != null ? !globalAttribute4.equals(that.globalAttribute4)
+            : that.globalAttribute4 != null) {
             return false;
-        if (forecastHorizon != null ? !forecastHorizon.equals(that.forecastHorizon) : that.forecastHorizon != null)
+        }
+        if (globalAttribute5 != null ? !globalAttribute5.equals(that.globalAttribute5)
+            : that.globalAttribute5 != null) {
             return false;
-        if (excludeFromBudgetFlag != null ? !excludeFromBudgetFlag.equals(that.excludeFromBudgetFlag) : that.excludeFromBudgetFlag != null)
+        }
+        if (globalAttribute6 != null ? !globalAttribute6.equals(that.globalAttribute6)
+            : that.globalAttribute6 != null) {
             return false;
-        if (daysTgtInvSupply != null ? !daysTgtInvSupply.equals(that.daysTgtInvSupply) : that.daysTgtInvSupply != null)
+        }
+        if (globalAttribute7 != null ? !globalAttribute7.equals(that.globalAttribute7)
+            : that.globalAttribute7 != null) {
             return false;
-        if (daysTgtInvWindow != null ? !daysTgtInvWindow.equals(that.daysTgtInvWindow) : that.daysTgtInvWindow != null)
+        }
+        if (globalAttribute8 != null ? !globalAttribute8.equals(that.globalAttribute8)
+            : that.globalAttribute8 != null) {
             return false;
-        if (daysMaxInvSupply != null ? !daysMaxInvSupply.equals(that.daysMaxInvSupply) : that.daysMaxInvSupply != null)
+        }
+        if (globalAttribute9 != null ? !globalAttribute9.equals(that.globalAttribute9)
+            : that.globalAttribute9 != null) {
             return false;
-        if (daysMaxInvWindow != null ? !daysMaxInvWindow.equals(that.daysMaxInvWindow) : that.daysMaxInvWindow != null)
+        }
+        if (globalAttribute10 != null ? !globalAttribute10.equals(that.globalAttribute10)
+            : that.globalAttribute10 != null) {
             return false;
-        if (drpPlannedFlag != null ? !drpPlannedFlag.equals(that.drpPlannedFlag) : that.drpPlannedFlag != null)
+        }
+        if (overShipmentTolerance != null ? !overShipmentTolerance
+            .equals(that.overShipmentTolerance) : that.overShipmentTolerance != null) {
             return false;
-        if (criticalComponentFlag != null ? !criticalComponentFlag.equals(that.criticalComponentFlag) : that.criticalComponentFlag != null)
+        }
+        if (underShipmentTolerance != null ? !underShipmentTolerance
+            .equals(that.underShipmentTolerance) : that.underShipmentTolerance != null) {
             return false;
-        if (continousTransfer != null ? !continousTransfer.equals(that.continousTransfer) : that.continousTransfer != null)
+        }
+        if (overReturnTolerance != null ? !overReturnTolerance.equals(that.overReturnTolerance)
+            : that.overReturnTolerance != null) {
             return false;
-        if (convergence != null ? !convergence.equals(that.convergence) : that.convergence != null) return false;
-        if (divergence != null ? !divergence.equals(that.divergence) : that.divergence != null) return false;
-        if (configOrgs != null ? !configOrgs.equals(that.configOrgs) : that.configOrgs != null) return false;
-        if (configMatch != null ? !configMatch.equals(that.configMatch) : that.configMatch != null) return false;
+        }
+        if (underReturnTolerance != null ? !underReturnTolerance.equals(that.underReturnTolerance)
+            : that.underReturnTolerance != null) {
+            return false;
+        }
+        if (equipmentType != null ? !equipmentType.equals(that.equipmentType)
+            : that.equipmentType != null) {
+            return false;
+        }
+        if (recoveredPartDispCode != null ? !recoveredPartDispCode
+            .equals(that.recoveredPartDispCode) : that.recoveredPartDispCode != null) {
+            return false;
+        }
+        if (defectTrackingOnFlag != null ? !defectTrackingOnFlag.equals(that.defectTrackingOnFlag)
+            : that.defectTrackingOnFlag != null) {
+            return false;
+        }
+        if (usageItemFlag != null ? !usageItemFlag.equals(that.usageItemFlag)
+            : that.usageItemFlag != null) {
+            return false;
+        }
+        if (eventFlag != null ? !eventFlag.equals(that.eventFlag) : that.eventFlag != null) {
+            return false;
+        }
+        if (electronicFlag != null ? !electronicFlag.equals(that.electronicFlag)
+            : that.electronicFlag != null) {
+            return false;
+        }
+        if (downloadableFlag != null ? !downloadableFlag.equals(that.downloadableFlag)
+            : that.downloadableFlag != null) {
+            return false;
+        }
+        if (volDiscountExemptFlag != null ? !volDiscountExemptFlag
+            .equals(that.volDiscountExemptFlag) : that.volDiscountExemptFlag != null) {
+            return false;
+        }
+        if (couponExemptFlag != null ? !couponExemptFlag.equals(that.couponExemptFlag)
+            : that.couponExemptFlag != null) {
+            return false;
+        }
+        if (commsNlTrackableFlag != null ? !commsNlTrackableFlag.equals(that.commsNlTrackableFlag)
+            : that.commsNlTrackableFlag != null) {
+            return false;
+        }
+        if (assetCreationCode != null ? !assetCreationCode.equals(that.assetCreationCode)
+            : that.assetCreationCode != null) {
+            return false;
+        }
+        if (commsActivationReqdFlag != null ? !commsActivationReqdFlag
+            .equals(that.commsActivationReqdFlag) : that.commsActivationReqdFlag != null) {
+            return false;
+        }
+        if (orderableOnWebFlag != null ? !orderableOnWebFlag.equals(that.orderableOnWebFlag)
+            : that.orderableOnWebFlag != null) {
+            return false;
+        }
+        if (backOrderableFlag != null ? !backOrderableFlag.equals(that.backOrderableFlag)
+            : that.backOrderableFlag != null) {
+            return false;
+        }
+        if (webStatus != null ? !webStatus.equals(that.webStatus) : that.webStatus != null) {
+            return false;
+        }
+        if (indivisibleFlag != null ? !indivisibleFlag.equals(that.indivisibleFlag)
+            : that.indivisibleFlag != null) {
+            return false;
+        }
+        if (longDescription != null ? !longDescription.equals(that.longDescription)
+            : that.longDescription != null) {
+            return false;
+        }
+        if (dimensionUomCode != null ? !dimensionUomCode.equals(that.dimensionUomCode)
+            : that.dimensionUomCode != null) {
+            return false;
+        }
+        if (unitLength != null ? !unitLength.equals(that.unitLength) : that.unitLength != null) {
+            return false;
+        }
+        if (unitWidth != null ? !unitWidth.equals(that.unitWidth) : that.unitWidth != null) {
+            return false;
+        }
+        if (unitHeight != null ? !unitHeight.equals(that.unitHeight) : that.unitHeight != null) {
+            return false;
+        }
+        if (bulkPickedFlag != null ? !bulkPickedFlag.equals(that.bulkPickedFlag)
+            : that.bulkPickedFlag != null) {
+            return false;
+        }
+        if (lotStatusEnabled != null ? !lotStatusEnabled.equals(that.lotStatusEnabled)
+            : that.lotStatusEnabled != null) {
+            return false;
+        }
+        if (defaultLotStatusId != null ? !defaultLotStatusId.equals(that.defaultLotStatusId)
+            : that.defaultLotStatusId != null) {
+            return false;
+        }
+        if (serialStatusEnabled != null ? !serialStatusEnabled.equals(that.serialStatusEnabled)
+            : that.serialStatusEnabled != null) {
+            return false;
+        }
+        if (defaultSerialStatusId != null ? !defaultSerialStatusId
+            .equals(that.defaultSerialStatusId) : that.defaultSerialStatusId != null) {
+            return false;
+        }
+        if (lotSplitEnabled != null ? !lotSplitEnabled.equals(that.lotSplitEnabled)
+            : that.lotSplitEnabled != null) {
+            return false;
+        }
+        if (lotMergeEnabled != null ? !lotMergeEnabled.equals(that.lotMergeEnabled)
+            : that.lotMergeEnabled != null) {
+            return false;
+        }
+        if (inventoryCarryPenalty != null ? !inventoryCarryPenalty
+            .equals(that.inventoryCarryPenalty) : that.inventoryCarryPenalty != null) {
+            return false;
+        }
+        if (operationSlackPenalty != null ? !operationSlackPenalty
+            .equals(that.operationSlackPenalty) : that.operationSlackPenalty != null) {
+            return false;
+        }
+        if (financingAllowedFlag != null ? !financingAllowedFlag.equals(that.financingAllowedFlag)
+            : that.financingAllowedFlag != null) {
+            return false;
+        }
+        if (eamItemType != null ? !eamItemType.equals(that.eamItemType)
+            : that.eamItemType != null) {
+            return false;
+        }
+        if (eamActivityTypeCode != null ? !eamActivityTypeCode.equals(that.eamActivityTypeCode)
+            : that.eamActivityTypeCode != null) {
+            return false;
+        }
+        if (eamActivityCauseCode != null ? !eamActivityCauseCode.equals(that.eamActivityCauseCode)
+            : that.eamActivityCauseCode != null) {
+            return false;
+        }
+        if (eamActNotificationFlag != null ? !eamActNotificationFlag
+            .equals(that.eamActNotificationFlag) : that.eamActNotificationFlag != null) {
+            return false;
+        }
+        if (eamActShutdownStatus != null ? !eamActShutdownStatus.equals(that.eamActShutdownStatus)
+            : that.eamActShutdownStatus != null) {
+            return false;
+        }
+        if (dualUomControl != null ? !dualUomControl.equals(that.dualUomControl)
+            : that.dualUomControl != null) {
+            return false;
+        }
+        if (secondaryUomCode != null ? !secondaryUomCode.equals(that.secondaryUomCode)
+            : that.secondaryUomCode != null) {
+            return false;
+        }
+        if (dualUomDeviationHigh != null ? !dualUomDeviationHigh.equals(that.dualUomDeviationHigh)
+            : that.dualUomDeviationHigh != null) {
+            return false;
+        }
+        if (dualUomDeviationLow != null ? !dualUomDeviationLow.equals(that.dualUomDeviationLow)
+            : that.dualUomDeviationLow != null) {
+            return false;
+        }
+        if (contractItemTypeCode != null ? !contractItemTypeCode.equals(that.contractItemTypeCode)
+            : that.contractItemTypeCode != null) {
+            return false;
+        }
+        if (subscriptionDependFlag != null ? !subscriptionDependFlag
+            .equals(that.subscriptionDependFlag) : that.subscriptionDependFlag != null) {
+            return false;
+        }
+        if (servReqEnabledCode != null ? !servReqEnabledCode.equals(that.servReqEnabledCode)
+            : that.servReqEnabledCode != null) {
+            return false;
+        }
+        if (servBillingEnabledFlag != null ? !servBillingEnabledFlag
+            .equals(that.servBillingEnabledFlag) : that.servBillingEnabledFlag != null) {
+            return false;
+        }
+        if (servImportanceLevel != null ? !servImportanceLevel.equals(that.servImportanceLevel)
+            : that.servImportanceLevel != null) {
+            return false;
+        }
+        if (plannedInvPointFlag != null ? !plannedInvPointFlag.equals(that.plannedInvPointFlag)
+            : that.plannedInvPointFlag != null) {
+            return false;
+        }
+        if (lotTranslateEnabled != null ? !lotTranslateEnabled.equals(that.lotTranslateEnabled)
+            : that.lotTranslateEnabled != null) {
+            return false;
+        }
+        if (defaultSoSourceType != null ? !defaultSoSourceType.equals(that.defaultSoSourceType)
+            : that.defaultSoSourceType != null) {
+            return false;
+        }
+        if (createSupplyFlag != null ? !createSupplyFlag.equals(that.createSupplyFlag)
+            : that.createSupplyFlag != null) {
+            return false;
+        }
+        if (substitutionWindowCode != null ? !substitutionWindowCode
+            .equals(that.substitutionWindowCode) : that.substitutionWindowCode != null) {
+            return false;
+        }
+        if (substitutionWindowDays != null ? !substitutionWindowDays
+            .equals(that.substitutionWindowDays) : that.substitutionWindowDays != null) {
+            return false;
+        }
+        if (ibItemInstanceClass != null ? !ibItemInstanceClass.equals(that.ibItemInstanceClass)
+            : that.ibItemInstanceClass != null) {
+            return false;
+        }
+        if (configModelType != null ? !configModelType.equals(that.configModelType)
+            : that.configModelType != null) {
+            return false;
+        }
+        if (lotSubstitutionEnabled != null ? !lotSubstitutionEnabled
+            .equals(that.lotSubstitutionEnabled) : that.lotSubstitutionEnabled != null) {
+            return false;
+        }
+        if (minimumLicenseQuantity != null ? !minimumLicenseQuantity
+            .equals(that.minimumLicenseQuantity) : that.minimumLicenseQuantity != null) {
+            return false;
+        }
+        if (eamActivitySourceCode != null ? !eamActivitySourceCode
+            .equals(that.eamActivitySourceCode) : that.eamActivitySourceCode != null) {
+            return false;
+        }
+        if (lifecycleId != null ? !lifecycleId.equals(that.lifecycleId)
+            : that.lifecycleId != null) {
+            return false;
+        }
+        if (currentPhaseId != null ? !currentPhaseId.equals(that.currentPhaseId)
+            : that.currentPhaseId != null) {
+            return false;
+        }
+        if (trackingQuantityInd != null ? !trackingQuantityInd.equals(that.trackingQuantityInd)
+            : that.trackingQuantityInd != null) {
+            return false;
+        }
+        if (ontPricingQtySource != null ? !ontPricingQtySource.equals(that.ontPricingQtySource)
+            : that.ontPricingQtySource != null) {
+            return false;
+        }
+        if (secondaryDefaultInd != null ? !secondaryDefaultInd.equals(that.secondaryDefaultInd)
+            : that.secondaryDefaultInd != null) {
+            return false;
+        }
+        if (vmiMinimumUnits != null ? !vmiMinimumUnits.equals(that.vmiMinimumUnits)
+            : that.vmiMinimumUnits != null) {
+            return false;
+        }
+        if (vmiMinimumDays != null ? !vmiMinimumDays.equals(that.vmiMinimumDays)
+            : that.vmiMinimumDays != null) {
+            return false;
+        }
+        if (vmiMaximumUnits != null ? !vmiMaximumUnits.equals(that.vmiMaximumUnits)
+            : that.vmiMaximumUnits != null) {
+            return false;
+        }
+        if (vmiMaximumDays != null ? !vmiMaximumDays.equals(that.vmiMaximumDays)
+            : that.vmiMaximumDays != null) {
+            return false;
+        }
+        if (vmiFixedOrderQuantity != null ? !vmiFixedOrderQuantity
+            .equals(that.vmiFixedOrderQuantity) : that.vmiFixedOrderQuantity != null) {
+            return false;
+        }
+        if (soAuthorizationFlag != null ? !soAuthorizationFlag.equals(that.soAuthorizationFlag)
+            : that.soAuthorizationFlag != null) {
+            return false;
+        }
+        if (consignedFlag != null ? !consignedFlag.equals(that.consignedFlag)
+            : that.consignedFlag != null) {
+            return false;
+        }
+        if (asnAutoexpireFlag != null ? !asnAutoexpireFlag.equals(that.asnAutoexpireFlag)
+            : that.asnAutoexpireFlag != null) {
+            return false;
+        }
+        if (vmiForecastType != null ? !vmiForecastType.equals(that.vmiForecastType)
+            : that.vmiForecastType != null) {
+            return false;
+        }
+        if (forecastHorizon != null ? !forecastHorizon.equals(that.forecastHorizon)
+            : that.forecastHorizon != null) {
+            return false;
+        }
+        if (excludeFromBudgetFlag != null ? !excludeFromBudgetFlag
+            .equals(that.excludeFromBudgetFlag) : that.excludeFromBudgetFlag != null) {
+            return false;
+        }
+        if (daysTgtInvSupply != null ? !daysTgtInvSupply.equals(that.daysTgtInvSupply)
+            : that.daysTgtInvSupply != null) {
+            return false;
+        }
+        if (daysTgtInvWindow != null ? !daysTgtInvWindow.equals(that.daysTgtInvWindow)
+            : that.daysTgtInvWindow != null) {
+            return false;
+        }
+        if (daysMaxInvSupply != null ? !daysMaxInvSupply.equals(that.daysMaxInvSupply)
+            : that.daysMaxInvSupply != null) {
+            return false;
+        }
+        if (daysMaxInvWindow != null ? !daysMaxInvWindow.equals(that.daysMaxInvWindow)
+            : that.daysMaxInvWindow != null) {
+            return false;
+        }
+        if (drpPlannedFlag != null ? !drpPlannedFlag.equals(that.drpPlannedFlag)
+            : that.drpPlannedFlag != null) {
+            return false;
+        }
+        if (criticalComponentFlag != null ? !criticalComponentFlag
+            .equals(that.criticalComponentFlag) : that.criticalComponentFlag != null) {
+            return false;
+        }
+        if (continousTransfer != null ? !continousTransfer.equals(that.continousTransfer)
+            : that.continousTransfer != null) {
+            return false;
+        }
+        if (convergence != null ? !convergence.equals(that.convergence)
+            : that.convergence != null) {
+            return false;
+        }
+        if (divergence != null ? !divergence.equals(that.divergence) : that.divergence != null) {
+            return false;
+        }
+        if (configOrgs != null ? !configOrgs.equals(that.configOrgs) : that.configOrgs != null) {
+            return false;
+        }
+        if (configMatch != null ? !configMatch.equals(that.configMatch)
+            : that.configMatch != null) {
+            return false;
+        }
 
         return true;
     }
@@ -4654,15 +5403,22 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (inventoryItemFlag != null ? inventoryItemFlag.hashCode() : 0);
         result = 31 * result + (engItemFlag != null ? engItemFlag.hashCode() : 0);
         result = 31 * result + (inventoryAssetFlag != null ? inventoryAssetFlag.hashCode() : 0);
-        result = 31 * result + (purchasingEnabledFlag != null ? purchasingEnabledFlag.hashCode() : 0);
-        result = 31 * result + (customerOrderEnabledFlag != null ? customerOrderEnabledFlag.hashCode() : 0);
-        result = 31 * result + (internalOrderEnabledFlag != null ? internalOrderEnabledFlag.hashCode() : 0);
+        result =
+            31 * result + (purchasingEnabledFlag != null ? purchasingEnabledFlag.hashCode() : 0);
+        result =
+            31 * result + (customerOrderEnabledFlag != null ? customerOrderEnabledFlag.hashCode()
+                : 0);
+        result =
+            31 * result + (internalOrderEnabledFlag != null ? internalOrderEnabledFlag.hashCode()
+                : 0);
         result = 31 * result + (soTransactionsFlag != null ? soTransactionsFlag.hashCode() : 0);
-        result = 31 * result + (mtlTransactionsEnabledFlag != null ? mtlTransactionsEnabledFlag.hashCode() : 0);
+        result = 31 * result + (mtlTransactionsEnabledFlag != null ? mtlTransactionsEnabledFlag
+            .hashCode() : 0);
         result = 31 * result + (stockEnabledFlag != null ? stockEnabledFlag.hashCode() : 0);
         result = 31 * result + (bomEnabledFlag != null ? bomEnabledFlag.hashCode() : 0);
         result = 31 * result + (buildInWipFlag != null ? buildInWipFlag.hashCode() : 0);
-        result = 31 * result + (revisionQtyControlCode != null ? revisionQtyControlCode.hashCode() : 0);
+        result =
+            31 * result + (revisionQtyControlCode != null ? revisionQtyControlCode.hashCode() : 0);
         result = 31 * result + (itemCatalogGroupId != null ? itemCatalogGroupId.hashCode() : 0);
         result = 31 * result + (catalogStatusFlag != null ? catalogStatusFlag.hashCode() : 0);
         result = 31 * result + (checkShortagesFlag != null ? checkShortagesFlag.hashCode() : 0);
@@ -4671,8 +5427,10 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (collateralFlag != null ? collateralFlag.hashCode() : 0);
         result = 31 * result + (taxableFlag != null ? taxableFlag.hashCode() : 0);
         result = 31 * result + (qtyRcvExceptionCode != null ? qtyRcvExceptionCode.hashCode() : 0);
-        result = 31 * result + (allowItemDescUpdateFlag != null ? allowItemDescUpdateFlag.hashCode() : 0);
-        result = 31 * result + (inspectionRequiredFlag != null ? inspectionRequiredFlag.hashCode() : 0);
+        result = 31 * result + (allowItemDescUpdateFlag != null ? allowItemDescUpdateFlag.hashCode()
+            : 0);
+        result =
+            31 * result + (inspectionRequiredFlag != null ? inspectionRequiredFlag.hashCode() : 0);
         result = 31 * result + (receiptRequiredFlag != null ? receiptRequiredFlag.hashCode() : 0);
         result = 31 * result + (marketPrice != null ? marketPrice.hashCode() : 0);
         result = 31 * result + (hazardClassId != null ? hazardClassId.hashCode() : 0);
@@ -4680,34 +5438,51 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (qtyRcvTolerance != null ? qtyRcvTolerance.hashCode() : 0);
         result = 31 * result + (listPricePerUnit != null ? listPricePerUnit.hashCode() : 0);
         result = 31 * result + (unNumberId != null ? unNumberId.hashCode() : 0);
-        result = 31 * result + (priceTolerancePercent != null ? priceTolerancePercent.hashCode() : 0);
+        result =
+            31 * result + (priceTolerancePercent != null ? priceTolerancePercent.hashCode() : 0);
         result = 31 * result + (assetCategoryId != null ? assetCategoryId.hashCode() : 0);
         result = 31 * result + (roundingFactor != null ? roundingFactor.hashCode() : 0);
         result = 31 * result + (unitOfIssue != null ? unitOfIssue.hashCode() : 0);
-        result = 31 * result + (enforceShipToLocationCode != null ? enforceShipToLocationCode.hashCode() : 0);
-        result = 31 * result + (allowSubstituteReceiptsFlag != null ? allowSubstituteReceiptsFlag.hashCode() : 0);
-        result = 31 * result + (allowUnorderedReceiptsFlag != null ? allowUnorderedReceiptsFlag.hashCode() : 0);
-        result = 31 * result + (allowExpressDeliveryFlag != null ? allowExpressDeliveryFlag.hashCode() : 0);
-        result = 31 * result + (daysEarlyReceiptAllowed != null ? daysEarlyReceiptAllowed.hashCode() : 0);
-        result = 31 * result + (daysLateReceiptAllowed != null ? daysLateReceiptAllowed.hashCode() : 0);
-        result = 31 * result + (receiptDaysExceptionCode != null ? receiptDaysExceptionCode.hashCode() : 0);
+        result =
+            31 * result + (enforceShipToLocationCode != null ? enforceShipToLocationCode.hashCode()
+                : 0);
+        result = 31 * result + (allowSubstituteReceiptsFlag != null ? allowSubstituteReceiptsFlag
+            .hashCode() : 0);
+        result = 31 * result + (allowUnorderedReceiptsFlag != null ? allowUnorderedReceiptsFlag
+            .hashCode() : 0);
+        result =
+            31 * result + (allowExpressDeliveryFlag != null ? allowExpressDeliveryFlag.hashCode()
+                : 0);
+        result = 31 * result + (daysEarlyReceiptAllowed != null ? daysEarlyReceiptAllowed.hashCode()
+            : 0);
+        result =
+            31 * result + (daysLateReceiptAllowed != null ? daysLateReceiptAllowed.hashCode() : 0);
+        result =
+            31 * result + (receiptDaysExceptionCode != null ? receiptDaysExceptionCode.hashCode()
+                : 0);
         result = 31 * result + (receivingRoutingId != null ? receivingRoutingId.hashCode() : 0);
-        result = 31 * result + (invoiceCloseTolerance != null ? invoiceCloseTolerance.hashCode() : 0);
-        result = 31 * result + (receiveCloseTolerance != null ? receiveCloseTolerance.hashCode() : 0);
+        result =
+            31 * result + (invoiceCloseTolerance != null ? invoiceCloseTolerance.hashCode() : 0);
+        result =
+            31 * result + (receiveCloseTolerance != null ? receiveCloseTolerance.hashCode() : 0);
         result = 31 * result + (autoLotAlphaPrefix != null ? autoLotAlphaPrefix.hashCode() : 0);
         result = 31 * result + (startAutoLotNumber != null ? startAutoLotNumber.hashCode() : 0);
         result = 31 * result + (lotControlCode != null ? lotControlCode.hashCode() : 0);
         result = 31 * result + (shelfLifeCode != null ? shelfLifeCode.hashCode() : 0);
         result = 31 * result + (shelfLifeDays != null ? shelfLifeDays.hashCode() : 0);
-        result = 31 * result + (serialNumberControlCode != null ? serialNumberControlCode.hashCode() : 0);
-        result = 31 * result + (startAutoSerialNumber != null ? startAutoSerialNumber.hashCode() : 0);
-        result = 31 * result + (autoSerialAlphaPrefix != null ? autoSerialAlphaPrefix.hashCode() : 0);
+        result = 31 * result + (serialNumberControlCode != null ? serialNumberControlCode.hashCode()
+            : 0);
+        result =
+            31 * result + (startAutoSerialNumber != null ? startAutoSerialNumber.hashCode() : 0);
+        result =
+            31 * result + (autoSerialAlphaPrefix != null ? autoSerialAlphaPrefix.hashCode() : 0);
         result = 31 * result + (sourceType != null ? sourceType.hashCode() : 0);
         result = 31 * result + (sourceOrganizationId != null ? sourceOrganizationId.hashCode() : 0);
         result = 31 * result + (sourceSubinventory != null ? sourceSubinventory.hashCode() : 0);
         result = 31 * result + (expenseAccount != null ? expenseAccount.hashCode() : 0);
         result = 31 * result + (encumbranceAccount != null ? encumbranceAccount.hashCode() : 0);
-        result = 31 * result + (restrictSubinventoriesCode != null ? restrictSubinventoriesCode.hashCode() : 0);
+        result = 31 * result + (restrictSubinventoriesCode != null ? restrictSubinventoriesCode
+            .hashCode() : 0);
         result = 31 * result + (unitWeight != null ? unitWeight.hashCode() : 0);
         result = 31 * result + (weightUomCode != null ? weightUomCode.hashCode() : 0);
         result = 31 * result + (volumeUomCode != null ? volumeUomCode.hashCode() : 0);
@@ -4716,20 +5491,29 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (locationControlCode != null ? locationControlCode.hashCode() : 0);
         result = 31 * result + (shrinkageRate != null ? shrinkageRate.hashCode() : 0);
         result = 31 * result + (acceptableEarlyDays != null ? acceptableEarlyDays.hashCode() : 0);
-        result = 31 * result + (planningTimeFenceCode != null ? planningTimeFenceCode.hashCode() : 0);
+        result =
+            31 * result + (planningTimeFenceCode != null ? planningTimeFenceCode.hashCode() : 0);
         result = 31 * result + (demandTimeFenceCode != null ? demandTimeFenceCode.hashCode() : 0);
         result = 31 * result + (leadTimeLotSize != null ? leadTimeLotSize.hashCode() : 0);
         result = 31 * result + (stdLotSize != null ? stdLotSize.hashCode() : 0);
-        result = 31 * result + (cumManufacturingLeadTime != null ? cumManufacturingLeadTime.hashCode() : 0);
+        result =
+            31 * result + (cumManufacturingLeadTime != null ? cumManufacturingLeadTime.hashCode()
+                : 0);
         result = 31 * result + (overrunPercentage != null ? overrunPercentage.hashCode() : 0);
         result = 31 * result + (mrpCalculateAtpFlag != null ? mrpCalculateAtpFlag.hashCode() : 0);
-        result = 31 * result + (acceptableRateIncrease != null ? acceptableRateIncrease.hashCode() : 0);
-        result = 31 * result + (acceptableRateDecrease != null ? acceptableRateDecrease.hashCode() : 0);
-        result = 31 * result + (cumulativeTotalLeadTime != null ? cumulativeTotalLeadTime.hashCode() : 0);
-        result = 31 * result + (planningTimeFenceDays != null ? planningTimeFenceDays.hashCode() : 0);
+        result =
+            31 * result + (acceptableRateIncrease != null ? acceptableRateIncrease.hashCode() : 0);
+        result =
+            31 * result + (acceptableRateDecrease != null ? acceptableRateDecrease.hashCode() : 0);
+        result = 31 * result + (cumulativeTotalLeadTime != null ? cumulativeTotalLeadTime.hashCode()
+            : 0);
+        result =
+            31 * result + (planningTimeFenceDays != null ? planningTimeFenceDays.hashCode() : 0);
         result = 31 * result + (demandTimeFenceDays != null ? demandTimeFenceDays.hashCode() : 0);
-        result = 31 * result + (endAssemblyPeggingFlag != null ? endAssemblyPeggingFlag.hashCode() : 0);
-        result = 31 * result + (repetitivePlanningFlag != null ? repetitivePlanningFlag.hashCode() : 0);
+        result =
+            31 * result + (endAssemblyPeggingFlag != null ? endAssemblyPeggingFlag.hashCode() : 0);
+        result =
+            31 * result + (repetitivePlanningFlag != null ? repetitivePlanningFlag.hashCode() : 0);
         result = 31 * result + (planningExceptionSet != null ? planningExceptionSet.hashCode() : 0);
         result = 31 * result + (bomItemType != null ? bomItemType.hashCode() : 0);
         result = 31 * result + (pickComponentsFlag != null ? pickComponentsFlag.hashCode() : 0);
@@ -4741,25 +5525,33 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (variableLeadTime != null ? variableLeadTime.hashCode() : 0);
         result = 31 * result + (wipSupplyLocatorId != null ? wipSupplyLocatorId.hashCode() : 0);
         result = 31 * result + (wipSupplyType != null ? wipSupplyType.hashCode() : 0);
-        result = 31 * result + (wipSupplySubinventory != null ? wipSupplySubinventory.hashCode() : 0);
+        result =
+            31 * result + (wipSupplySubinventory != null ? wipSupplySubinventory.hashCode() : 0);
         result = 31 * result + (primaryUomCode != null ? primaryUomCode.hashCode() : 0);
         result = 31 * result + (primaryUnitOfMeasure != null ? primaryUnitOfMeasure.hashCode() : 0);
-        result = 31 * result + (allowedUnitsLookupCode != null ? allowedUnitsLookupCode.hashCode() : 0);
+        result =
+            31 * result + (allowedUnitsLookupCode != null ? allowedUnitsLookupCode.hashCode() : 0);
         result = 31 * result + (costOfSalesAccount != null ? costOfSalesAccount.hashCode() : 0);
         result = 31 * result + (salesAccount != null ? salesAccount.hashCode() : 0);
-        result = 31 * result + (defaultIncludeInRollupFlag != null ? defaultIncludeInRollupFlag.hashCode() : 0);
-        result = 31 * result + (inventoryItemStatusCode != null ? inventoryItemStatusCode.hashCode() : 0);
-        result = 31 * result + (inventoryPlanningCode != null ? inventoryPlanningCode.hashCode() : 0);
+        result = 31 * result + (defaultIncludeInRollupFlag != null ? defaultIncludeInRollupFlag
+            .hashCode() : 0);
+        result = 31 * result + (inventoryItemStatusCode != null ? inventoryItemStatusCode.hashCode()
+            : 0);
+        result =
+            31 * result + (inventoryPlanningCode != null ? inventoryPlanningCode.hashCode() : 0);
         result = 31 * result + (plannerCode != null ? plannerCode.hashCode() : 0);
         result = 31 * result + (planningMakeBuyCode != null ? planningMakeBuyCode.hashCode() : 0);
         result = 31 * result + (fixedLotMultiplier != null ? fixedLotMultiplier.hashCode() : 0);
         result = 31 * result + (roundingControlType != null ? roundingControlType.hashCode() : 0);
         result = 31 * result + (carryingCost != null ? carryingCost.hashCode() : 0);
-        result = 31 * result + (postprocessingLeadTime != null ? postprocessingLeadTime.hashCode() : 0);
-        result = 31 * result + (preprocessingLeadTime != null ? preprocessingLeadTime.hashCode() : 0);
+        result =
+            31 * result + (postprocessingLeadTime != null ? postprocessingLeadTime.hashCode() : 0);
+        result =
+            31 * result + (preprocessingLeadTime != null ? preprocessingLeadTime.hashCode() : 0);
         result = 31 * result + (fullLeadTime != null ? fullLeadTime.hashCode() : 0);
         result = 31 * result + (orderCost != null ? orderCost.hashCode() : 0);
-        result = 31 * result + (mrpSafetyStockPercent != null ? mrpSafetyStockPercent.hashCode() : 0);
+        result =
+            31 * result + (mrpSafetyStockPercent != null ? mrpSafetyStockPercent.hashCode() : 0);
         result = 31 * result + (mrpSafetyStockCode != null ? mrpSafetyStockCode.hashCode() : 0);
         result = 31 * result + (minMinmaxQuantity != null ? minMinmaxQuantity.hashCode() : 0);
         result = 31 * result + (maxMinmaxQuantity != null ? maxMinmaxQuantity.hashCode() : 0);
@@ -4770,57 +5562,81 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (atpRuleId != null ? atpRuleId.hashCode() : 0);
         result = 31 * result + (pickingRuleId != null ? pickingRuleId.hashCode() : 0);
         result = 31 * result + (reservableType != null ? reservableType.hashCode() : 0);
-        result = 31 * result + (positiveMeasurementError != null ? positiveMeasurementError.hashCode() : 0);
-        result = 31 * result + (negativeMeasurementError != null ? negativeMeasurementError.hashCode() : 0);
+        result =
+            31 * result + (positiveMeasurementError != null ? positiveMeasurementError.hashCode()
+                : 0);
+        result =
+            31 * result + (negativeMeasurementError != null ? negativeMeasurementError.hashCode()
+                : 0);
         result = 31 * result + (engineeringEcnCode != null ? engineeringEcnCode.hashCode() : 0);
         result = 31 * result + (engineeringItemId != null ? engineeringItemId.hashCode() : 0);
         result = 31 * result + (engineeringDate != null ? engineeringDate.hashCode() : 0);
         result = 31 * result + (serviceStartingDelay != null ? serviceStartingDelay.hashCode() : 0);
         result = 31 * result + (vendorWarrantyFlag != null ? vendorWarrantyFlag.hashCode() : 0);
-        result = 31 * result + (serviceableComponentFlag != null ? serviceableComponentFlag.hashCode() : 0);
-        result = 31 * result + (serviceableProductFlag != null ? serviceableProductFlag.hashCode() : 0);
-        result = 31 * result + (baseWarrantyServiceId != null ? baseWarrantyServiceId.hashCode() : 0);
+        result =
+            31 * result + (serviceableComponentFlag != null ? serviceableComponentFlag.hashCode()
+                : 0);
+        result =
+            31 * result + (serviceableProductFlag != null ? serviceableProductFlag.hashCode() : 0);
+        result =
+            31 * result + (baseWarrantyServiceId != null ? baseWarrantyServiceId.hashCode() : 0);
         result = 31 * result + (paymentTermsId != null ? paymentTermsId.hashCode() : 0);
-        result = 31 * result + (preventiveMaintenanceFlag != null ? preventiveMaintenanceFlag.hashCode() : 0);
+        result =
+            31 * result + (preventiveMaintenanceFlag != null ? preventiveMaintenanceFlag.hashCode()
+                : 0);
         result = 31 * result + (primarySpecialistId != null ? primarySpecialistId.hashCode() : 0);
-        result = 31 * result + (secondarySpecialistId != null ? secondarySpecialistId.hashCode() : 0);
-        result = 31 * result + (serviceableItemClassId != null ? serviceableItemClassId.hashCode() : 0);
+        result =
+            31 * result + (secondarySpecialistId != null ? secondarySpecialistId.hashCode() : 0);
+        result =
+            31 * result + (serviceableItemClassId != null ? serviceableItemClassId.hashCode() : 0);
         result = 31 * result + (timeBillableFlag != null ? timeBillableFlag.hashCode() : 0);
         result = 31 * result + (materialBillableFlag != null ? materialBillableFlag.hashCode() : 0);
         result = 31 * result + (expenseBillableFlag != null ? expenseBillableFlag.hashCode() : 0);
         result = 31 * result + (prorateServiceFlag != null ? prorateServiceFlag.hashCode() : 0);
         result = 31 * result + (coverageScheduleId != null ? coverageScheduleId.hashCode() : 0);
-        result = 31 * result + (serviceDurationPeriodCode != null ? serviceDurationPeriodCode.hashCode() : 0);
+        result =
+            31 * result + (serviceDurationPeriodCode != null ? serviceDurationPeriodCode.hashCode()
+                : 0);
         result = 31 * result + (serviceDuration != null ? serviceDuration.hashCode() : 0);
         result = 31 * result + (warrantyVendorId != null ? warrantyVendorId.hashCode() : 0);
         result = 31 * result + (maxWarrantyAmount != null ? maxWarrantyAmount.hashCode() : 0);
-        result = 31 * result + (responseTimePeriodCode != null ? responseTimePeriodCode.hashCode() : 0);
+        result =
+            31 * result + (responseTimePeriodCode != null ? responseTimePeriodCode.hashCode() : 0);
         result = 31 * result + (responseTimeValue != null ? responseTimeValue.hashCode() : 0);
         result = 31 * result + (newRevisionCode != null ? newRevisionCode.hashCode() : 0);
         result = 31 * result + (invoiceableItemFlag != null ? invoiceableItemFlag.hashCode() : 0);
         result = 31 * result + (taxCode != null ? taxCode.hashCode() : 0);
         result = 31 * result + (invoiceEnabledFlag != null ? invoiceEnabledFlag.hashCode() : 0);
-        result = 31 * result + (mustUseApprovedVendorFlag != null ? mustUseApprovedVendorFlag.hashCode() : 0);
+        result =
+            31 * result + (mustUseApprovedVendorFlag != null ? mustUseApprovedVendorFlag.hashCode()
+                : 0);
         result = 31 * result + (requestId != null ? requestId.hashCode() : 0);
         result = 31 * result + (programApplicationId != null ? programApplicationId.hashCode() : 0);
         result = 31 * result + (programId != null ? programId.hashCode() : 0);
         result = 31 * result + (programUpdateDate != null ? programUpdateDate.hashCode() : 0);
         result = 31 * result + (outsideOperationFlag != null ? outsideOperationFlag.hashCode() : 0);
-        result = 31 * result + (outsideOperationUomType != null ? outsideOperationUomType.hashCode() : 0);
-        result = 31 * result + (safetyStockBucketDays != null ? safetyStockBucketDays.hashCode() : 0);
+        result = 31 * result + (outsideOperationUomType != null ? outsideOperationUomType.hashCode()
+            : 0);
+        result =
+            31 * result + (safetyStockBucketDays != null ? safetyStockBucketDays.hashCode() : 0);
         result = 31 * result + (autoReduceMps != null ? autoReduceMps.hashCode() : 0);
         result = 31 * result + (costingEnabledFlag != null ? costingEnabledFlag.hashCode() : 0);
-        result = 31 * result + (cycleCountEnabledFlag != null ? cycleCountEnabledFlag.hashCode() : 0);
+        result =
+            31 * result + (cycleCountEnabledFlag != null ? cycleCountEnabledFlag.hashCode() : 0);
         result = 31 * result + (demandSourceLine != null ? demandSourceLine.hashCode() : 0);
         result = 31 * result + (copyItemId != null ? copyItemId.hashCode() : 0);
         result = 31 * result + (setId != null ? setId.hashCode() : 0);
         result = 31 * result + (revision != null ? revision.hashCode() : 0);
-        result = 31 * result + (autoCreatedConfigFlag != null ? autoCreatedConfigFlag.hashCode() : 0);
+        result =
+            31 * result + (autoCreatedConfigFlag != null ? autoCreatedConfigFlag.hashCode() : 0);
         result = 31 * result + (itemType != null ? itemType.hashCode() : 0);
-        result = 31 * result + (modelConfigClauseName != null ? modelConfigClauseName.hashCode() : 0);
-        result = 31 * result + (shipModelCompleteFlag != null ? shipModelCompleteFlag.hashCode() : 0);
+        result =
+            31 * result + (modelConfigClauseName != null ? modelConfigClauseName.hashCode() : 0);
+        result =
+            31 * result + (shipModelCompleteFlag != null ? shipModelCompleteFlag.hashCode() : 0);
         result = 31 * result + (mrpPlanningCode != null ? mrpPlanningCode.hashCode() : 0);
-        result = 31 * result + (returnInspectionRequirement != null ? returnInspectionRequirement.hashCode() : 0);
+        result = 31 * result + (returnInspectionRequirement != null ? returnInspectionRequirement
+            .hashCode() : 0);
         result = 31 * result + (demandSourceType != null ? demandSourceType.hashCode() : 0);
         result = 31 * result + (demandSourceHeaderId != null ? demandSourceHeaderId.hashCode() : 0);
         result = 31 * result + (transactionId != null ? transactionId.hashCode() : 0);
@@ -4852,10 +5668,13 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (whUpdateDate != null ? whUpdateDate.hashCode() : 0);
         result = 31 * result + (productFamilyItemId != null ? productFamilyItemId.hashCode() : 0);
         result = 31 * result + (purchasingTaxCode != null ? purchasingTaxCode.hashCode() : 0);
-        result = 31 * result + (overcompletionToleranceType != null ? overcompletionToleranceType.hashCode() : 0);
-        result = 31 * result + (overcompletionToleranceValue != null ? overcompletionToleranceValue.hashCode() : 0);
+        result = 31 * result + (overcompletionToleranceType != null ? overcompletionToleranceType
+            .hashCode() : 0);
+        result = 31 * result + (overcompletionToleranceValue != null ? overcompletionToleranceValue
+            .hashCode() : 0);
         result = 31 * result + (effectivityControl != null ? effectivityControl.hashCode() : 0);
-        result = 31 * result + (globalAttributeCategory != null ? globalAttributeCategory.hashCode() : 0);
+        result = 31 * result + (globalAttributeCategory != null ? globalAttributeCategory.hashCode()
+            : 0);
         result = 31 * result + (globalAttribute1 != null ? globalAttribute1.hashCode() : 0);
         result = 31 * result + (globalAttribute2 != null ? globalAttribute2.hashCode() : 0);
         result = 31 * result + (globalAttribute3 != null ? globalAttribute3.hashCode() : 0);
@@ -4866,22 +5685,27 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (globalAttribute8 != null ? globalAttribute8.hashCode() : 0);
         result = 31 * result + (globalAttribute9 != null ? globalAttribute9.hashCode() : 0);
         result = 31 * result + (globalAttribute10 != null ? globalAttribute10.hashCode() : 0);
-        result = 31 * result + (overShipmentTolerance != null ? overShipmentTolerance.hashCode() : 0);
-        result = 31 * result + (underShipmentTolerance != null ? underShipmentTolerance.hashCode() : 0);
+        result =
+            31 * result + (overShipmentTolerance != null ? overShipmentTolerance.hashCode() : 0);
+        result =
+            31 * result + (underShipmentTolerance != null ? underShipmentTolerance.hashCode() : 0);
         result = 31 * result + (overReturnTolerance != null ? overReturnTolerance.hashCode() : 0);
         result = 31 * result + (underReturnTolerance != null ? underReturnTolerance.hashCode() : 0);
         result = 31 * result + (equipmentType != null ? equipmentType.hashCode() : 0);
-        result = 31 * result + (recoveredPartDispCode != null ? recoveredPartDispCode.hashCode() : 0);
+        result =
+            31 * result + (recoveredPartDispCode != null ? recoveredPartDispCode.hashCode() : 0);
         result = 31 * result + (defectTrackingOnFlag != null ? defectTrackingOnFlag.hashCode() : 0);
         result = 31 * result + (usageItemFlag != null ? usageItemFlag.hashCode() : 0);
         result = 31 * result + (eventFlag != null ? eventFlag.hashCode() : 0);
         result = 31 * result + (electronicFlag != null ? electronicFlag.hashCode() : 0);
         result = 31 * result + (downloadableFlag != null ? downloadableFlag.hashCode() : 0);
-        result = 31 * result + (volDiscountExemptFlag != null ? volDiscountExemptFlag.hashCode() : 0);
+        result =
+            31 * result + (volDiscountExemptFlag != null ? volDiscountExemptFlag.hashCode() : 0);
         result = 31 * result + (couponExemptFlag != null ? couponExemptFlag.hashCode() : 0);
         result = 31 * result + (commsNlTrackableFlag != null ? commsNlTrackableFlag.hashCode() : 0);
         result = 31 * result + (assetCreationCode != null ? assetCreationCode.hashCode() : 0);
-        result = 31 * result + (commsActivationReqdFlag != null ? commsActivationReqdFlag.hashCode() : 0);
+        result = 31 * result + (commsActivationReqdFlag != null ? commsActivationReqdFlag.hashCode()
+            : 0);
         result = 31 * result + (orderableOnWebFlag != null ? orderableOnWebFlag.hashCode() : 0);
         result = 31 * result + (backOrderableFlag != null ? backOrderableFlag.hashCode() : 0);
         result = 31 * result + (webStatus != null ? webStatus.hashCode() : 0);
@@ -4895,37 +5719,48 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (lotStatusEnabled != null ? lotStatusEnabled.hashCode() : 0);
         result = 31 * result + (defaultLotStatusId != null ? defaultLotStatusId.hashCode() : 0);
         result = 31 * result + (serialStatusEnabled != null ? serialStatusEnabled.hashCode() : 0);
-        result = 31 * result + (defaultSerialStatusId != null ? defaultSerialStatusId.hashCode() : 0);
+        result =
+            31 * result + (defaultSerialStatusId != null ? defaultSerialStatusId.hashCode() : 0);
         result = 31 * result + (lotSplitEnabled != null ? lotSplitEnabled.hashCode() : 0);
         result = 31 * result + (lotMergeEnabled != null ? lotMergeEnabled.hashCode() : 0);
-        result = 31 * result + (inventoryCarryPenalty != null ? inventoryCarryPenalty.hashCode() : 0);
-        result = 31 * result + (operationSlackPenalty != null ? operationSlackPenalty.hashCode() : 0);
+        result =
+            31 * result + (inventoryCarryPenalty != null ? inventoryCarryPenalty.hashCode() : 0);
+        result =
+            31 * result + (operationSlackPenalty != null ? operationSlackPenalty.hashCode() : 0);
         result = 31 * result + (financingAllowedFlag != null ? financingAllowedFlag.hashCode() : 0);
         result = 31 * result + (eamItemType != null ? eamItemType.hashCode() : 0);
         result = 31 * result + (eamActivityTypeCode != null ? eamActivityTypeCode.hashCode() : 0);
         result = 31 * result + (eamActivityCauseCode != null ? eamActivityCauseCode.hashCode() : 0);
-        result = 31 * result + (eamActNotificationFlag != null ? eamActNotificationFlag.hashCode() : 0);
+        result =
+            31 * result + (eamActNotificationFlag != null ? eamActNotificationFlag.hashCode() : 0);
         result = 31 * result + (eamActShutdownStatus != null ? eamActShutdownStatus.hashCode() : 0);
         result = 31 * result + (dualUomControl != null ? dualUomControl.hashCode() : 0);
         result = 31 * result + (secondaryUomCode != null ? secondaryUomCode.hashCode() : 0);
         result = 31 * result + (dualUomDeviationHigh != null ? dualUomDeviationHigh.hashCode() : 0);
         result = 31 * result + (dualUomDeviationLow != null ? dualUomDeviationLow.hashCode() : 0);
         result = 31 * result + (contractItemTypeCode != null ? contractItemTypeCode.hashCode() : 0);
-        result = 31 * result + (subscriptionDependFlag != null ? subscriptionDependFlag.hashCode() : 0);
+        result =
+            31 * result + (subscriptionDependFlag != null ? subscriptionDependFlag.hashCode() : 0);
         result = 31 * result + (servReqEnabledCode != null ? servReqEnabledCode.hashCode() : 0);
-        result = 31 * result + (servBillingEnabledFlag != null ? servBillingEnabledFlag.hashCode() : 0);
+        result =
+            31 * result + (servBillingEnabledFlag != null ? servBillingEnabledFlag.hashCode() : 0);
         result = 31 * result + (servImportanceLevel != null ? servImportanceLevel.hashCode() : 0);
         result = 31 * result + (plannedInvPointFlag != null ? plannedInvPointFlag.hashCode() : 0);
         result = 31 * result + (lotTranslateEnabled != null ? lotTranslateEnabled.hashCode() : 0);
         result = 31 * result + (defaultSoSourceType != null ? defaultSoSourceType.hashCode() : 0);
         result = 31 * result + (createSupplyFlag != null ? createSupplyFlag.hashCode() : 0);
-        result = 31 * result + (substitutionWindowCode != null ? substitutionWindowCode.hashCode() : 0);
-        result = 31 * result + (substitutionWindowDays != null ? substitutionWindowDays.hashCode() : 0);
+        result =
+            31 * result + (substitutionWindowCode != null ? substitutionWindowCode.hashCode() : 0);
+        result =
+            31 * result + (substitutionWindowDays != null ? substitutionWindowDays.hashCode() : 0);
         result = 31 * result + (ibItemInstanceClass != null ? ibItemInstanceClass.hashCode() : 0);
         result = 31 * result + (configModelType != null ? configModelType.hashCode() : 0);
-        result = 31 * result + (lotSubstitutionEnabled != null ? lotSubstitutionEnabled.hashCode() : 0);
-        result = 31 * result + (minimumLicenseQuantity != null ? minimumLicenseQuantity.hashCode() : 0);
-        result = 31 * result + (eamActivitySourceCode != null ? eamActivitySourceCode.hashCode() : 0);
+        result =
+            31 * result + (lotSubstitutionEnabled != null ? lotSubstitutionEnabled.hashCode() : 0);
+        result =
+            31 * result + (minimumLicenseQuantity != null ? minimumLicenseQuantity.hashCode() : 0);
+        result =
+            31 * result + (eamActivitySourceCode != null ? eamActivitySourceCode.hashCode() : 0);
         result = 31 * result + (lifecycleId != null ? lifecycleId.hashCode() : 0);
         result = 31 * result + (currentPhaseId != null ? currentPhaseId.hashCode() : 0);
         result = 31 * result + (trackingQuantityInd != null ? trackingQuantityInd.hashCode() : 0);
@@ -4935,19 +5770,22 @@ public class MtlSystemItemsInterface {
         result = 31 * result + (vmiMinimumDays != null ? vmiMinimumDays.hashCode() : 0);
         result = 31 * result + (vmiMaximumUnits != null ? vmiMaximumUnits.hashCode() : 0);
         result = 31 * result + (vmiMaximumDays != null ? vmiMaximumDays.hashCode() : 0);
-        result = 31 * result + (vmiFixedOrderQuantity != null ? vmiFixedOrderQuantity.hashCode() : 0);
+        result =
+            31 * result + (vmiFixedOrderQuantity != null ? vmiFixedOrderQuantity.hashCode() : 0);
         result = 31 * result + (soAuthorizationFlag != null ? soAuthorizationFlag.hashCode() : 0);
         result = 31 * result + (consignedFlag != null ? consignedFlag.hashCode() : 0);
         result = 31 * result + (asnAutoexpireFlag != null ? asnAutoexpireFlag.hashCode() : 0);
         result = 31 * result + (vmiForecastType != null ? vmiForecastType.hashCode() : 0);
         result = 31 * result + (forecastHorizon != null ? forecastHorizon.hashCode() : 0);
-        result = 31 * result + (excludeFromBudgetFlag != null ? excludeFromBudgetFlag.hashCode() : 0);
+        result =
+            31 * result + (excludeFromBudgetFlag != null ? excludeFromBudgetFlag.hashCode() : 0);
         result = 31 * result + (daysTgtInvSupply != null ? daysTgtInvSupply.hashCode() : 0);
         result = 31 * result + (daysTgtInvWindow != null ? daysTgtInvWindow.hashCode() : 0);
         result = 31 * result + (daysMaxInvSupply != null ? daysMaxInvSupply.hashCode() : 0);
         result = 31 * result + (daysMaxInvWindow != null ? daysMaxInvWindow.hashCode() : 0);
         result = 31 * result + (drpPlannedFlag != null ? drpPlannedFlag.hashCode() : 0);
-        result = 31 * result + (criticalComponentFlag != null ? criticalComponentFlag.hashCode() : 0);
+        result =
+            31 * result + (criticalComponentFlag != null ? criticalComponentFlag.hashCode() : 0);
         result = 31 * result + (continousTransfer != null ? continousTransfer.hashCode() : 0);
         result = 31 * result + (convergence != null ? convergence.hashCode() : 0);
         result = 31 * result + (divergence != null ? divergence.hashCode() : 0);

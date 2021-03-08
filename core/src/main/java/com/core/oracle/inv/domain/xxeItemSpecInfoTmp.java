@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "XXE_ITEM_SPEC_INFO_TMP", schema = "XXE", catalog = "")
 @IdClass(xxeItemSpecInfoTmp.class)
 public class xxeItemSpecInfoTmp implements Serializable {
+
     @Id
     private Long groupId;
     @Id
@@ -266,40 +267,94 @@ public class xxeItemSpecInfoTmp implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         xxeItemSpecInfoTmp that = (xxeItemSpecInfoTmp) o;
 
-        if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) return false;
-        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) return false;
-        if (beforeNumber != null ? !beforeNumber.equals(that.beforeNumber) : that.beforeNumber != null) return false;
-        if (beforeCompatible != null ? !beforeCompatible.equals(that.beforeCompatible) : that.beforeCompatible != null)
+        if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) {
             return false;
-        if (beforeEffectiveDate != null ? !beforeEffectiveDate.equals(that.beforeEffectiveDate) : that.beforeEffectiveDate != null)
+        }
+        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) {
             return false;
-        if (afterNumber != null ? !afterNumber.equals(that.afterNumber) : that.afterNumber != null) return false;
-        if (afterCompatible != null ? !afterCompatible.equals(that.afterCompatible) : that.afterCompatible != null)
+        }
+        if (beforeNumber != null ? !beforeNumber.equals(that.beforeNumber)
+            : that.beforeNumber != null) {
             return false;
-        if (afterEffectiveDate != null ? !afterEffectiveDate.equals(that.afterEffectiveDate) : that.afterEffectiveDate != null)
+        }
+        if (beforeCompatible != null ? !beforeCompatible.equals(that.beforeCompatible)
+            : that.beforeCompatible != null) {
             return false;
-        if (ifflag != null ? !ifflag.equals(that.ifflag) : that.ifflag != null) return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
+        }
+        if (beforeEffectiveDate != null ? !beforeEffectiveDate.equals(that.beforeEffectiveDate)
+            : that.beforeEffectiveDate != null) {
             return false;
-        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy) : that.lastUpdatedBy != null)
+        }
+        if (afterNumber != null ? !afterNumber.equals(that.afterNumber)
+            : that.afterNumber != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(that.attribute10) : that.attribute10 != null) return false;
+        }
+        if (afterCompatible != null ? !afterCompatible.equals(that.afterCompatible)
+            : that.afterCompatible != null) {
+            return false;
+        }
+        if (afterEffectiveDate != null ? !afterEffectiveDate.equals(that.afterEffectiveDate)
+            : that.afterEffectiveDate != null) {
+            return false;
+        }
+        if (ifflag != null ? !ifflag.equals(that.ifflag) : that.ifflag != null) {
+            return false;
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
+            return false;
+        }
+        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) {
+            return false;
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
+            return false;
+        }
+        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy)
+            : that.lastUpdatedBy != null) {
+            return false;
+        }
+        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) {
+            return false;
+        }
+        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) {
+            return false;
+        }
+        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) {
+            return false;
+        }
+        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) {
+            return false;
+        }
+        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) {
+            return false;
+        }
+        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) {
+            return false;
+        }
+        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) {
+            return false;
+        }
+        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) {
+            return false;
+        }
+        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) {
+            return false;
+        }
+        if (attribute10 != null ? !attribute10.equals(that.attribute10)
+            : that.attribute10 != null) {
+            return false;
+        }
 
         return true;
     }

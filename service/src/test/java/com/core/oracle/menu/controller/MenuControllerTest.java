@@ -42,7 +42,7 @@ class MenuControllerTest {
         userPermissions = userPermissionRepositorySupport.findByPermissionName("재고");
 
         Assert.assertNotNull(
-                userPermissionRepositorySupport.findByName(respName)
+            userPermissionRepositorySupport.findByName(respName)
         );
 
     }

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class Xxe_inv_pur_disabled_history {
+
     @Id
     private String itemNumber;
     private String inventoryItemStatusCode;

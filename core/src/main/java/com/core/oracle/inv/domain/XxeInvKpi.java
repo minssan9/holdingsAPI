@@ -12,7 +12,8 @@ import java.sql.Time;
 @Entity
 @Table(name = "XXE_INV_KPI", schema = "XXE", catalog = "")
 @IdClass(XxeInvKpi.class)
-public class XxeInvKpi  implements Serializable {
+public class XxeInvKpi implements Serializable {
+
     @Id
     private long organizationId;
     private String periodType;
@@ -393,62 +394,144 @@ public class XxeInvKpi  implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         XxeInvKpi xxeInvKpi = (XxeInvKpi) o;
 
-        if (organizationId != xxeInvKpi.organizationId) return false;
-        if (lastUpdatedBy != xxeInvKpi.lastUpdatedBy) return false;
-        if (createdBy != xxeInvKpi.createdBy) return false;
-        if (periodType != null ? !periodType.equals(xxeInvKpi.periodType) : xxeInvKpi.periodType != null) return false;
-        if (kpiType != null ? !kpiType.equals(xxeInvKpi.kpiType) : xxeInvKpi.kpiType != null) return false;
-        if (categorySegment1 != null ? !categorySegment1.equals(xxeInvKpi.categorySegment1) : xxeInvKpi.categorySegment1 != null)
+        if (organizationId != xxeInvKpi.organizationId) {
             return false;
-        if (categorySegment2Id != null ? !categorySegment2Id.equals(xxeInvKpi.categorySegment2Id) : xxeInvKpi.categorySegment2Id != null)
+        }
+        if (lastUpdatedBy != xxeInvKpi.lastUpdatedBy) {
             return false;
-        if (transactionDate != null ? !transactionDate.equals(xxeInvKpi.transactionDate) : xxeInvKpi.transactionDate != null)
+        }
+        if (createdBy != xxeInvKpi.createdBy) {
             return false;
-        if (target != null ? !target.equals(xxeInvKpi.target) : xxeInvKpi.target != null) return false;
-        if (actual != null ? !actual.equals(xxeInvKpi.actual) : xxeInvKpi.actual != null) return false;
-        if (percent != null ? !percent.equals(xxeInvKpi.percent) : xxeInvKpi.percent != null) return false;
-        if (inventoryAmount != null ? !inventoryAmount.equals(xxeInvKpi.inventoryAmount) : xxeInvKpi.inventoryAmount != null)
+        }
+        if (periodType != null ? !periodType.equals(xxeInvKpi.periodType)
+            : xxeInvKpi.periodType != null) {
             return false;
-        if (longTermAmount != null ? !longTermAmount.equals(xxeInvKpi.longTermAmount) : xxeInvKpi.longTermAmount != null)
+        }
+        if (kpiType != null ? !kpiType.equals(xxeInvKpi.kpiType) : xxeInvKpi.kpiType != null) {
             return false;
-        if (productionAmount != null ? !productionAmount.equals(xxeInvKpi.productionAmount) : xxeInvKpi.productionAmount != null)
+        }
+        if (categorySegment1 != null ? !categorySegment1.equals(xxeInvKpi.categorySegment1)
+            : xxeInvKpi.categorySegment1 != null) {
             return false;
-        if (salesAmount != null ? !salesAmount.equals(xxeInvKpi.salesAmount) : xxeInvKpi.salesAmount != null)
+        }
+        if (categorySegment2Id != null ? !categorySegment2Id.equals(xxeInvKpi.categorySegment2Id)
+            : xxeInvKpi.categorySegment2Id != null) {
             return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(xxeInvKpi.lastUpdateDate) : xxeInvKpi.lastUpdateDate != null)
+        }
+        if (transactionDate != null ? !transactionDate.equals(xxeInvKpi.transactionDate)
+            : xxeInvKpi.transactionDate != null) {
             return false;
-        if (creationDate != null ? !creationDate.equals(xxeInvKpi.creationDate) : xxeInvKpi.creationDate != null)
+        }
+        if (target != null ? !target.equals(xxeInvKpi.target) : xxeInvKpi.target != null) {
             return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(xxeInvKpi.lastUpdateLogin) : xxeInvKpi.lastUpdateLogin != null)
+        }
+        if (actual != null ? !actual.equals(xxeInvKpi.actual) : xxeInvKpi.actual != null) {
             return false;
-        if (attributeCategory != null ? !attributeCategory.equals(xxeInvKpi.attributeCategory) : xxeInvKpi.attributeCategory != null)
+        }
+        if (percent != null ? !percent.equals(xxeInvKpi.percent) : xxeInvKpi.percent != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(xxeInvKpi.attribute1) : xxeInvKpi.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(xxeInvKpi.attribute2) : xxeInvKpi.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(xxeInvKpi.attribute3) : xxeInvKpi.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(xxeInvKpi.attribute4) : xxeInvKpi.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(xxeInvKpi.attribute5) : xxeInvKpi.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(xxeInvKpi.attribute6) : xxeInvKpi.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(xxeInvKpi.attribute7) : xxeInvKpi.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(xxeInvKpi.attribute8) : xxeInvKpi.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(xxeInvKpi.attribute9) : xxeInvKpi.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(xxeInvKpi.attribute10) : xxeInvKpi.attribute10 != null)
+        }
+        if (inventoryAmount != null ? !inventoryAmount.equals(xxeInvKpi.inventoryAmount)
+            : xxeInvKpi.inventoryAmount != null) {
             return false;
-        if (attribute11 != null ? !attribute11.equals(xxeInvKpi.attribute11) : xxeInvKpi.attribute11 != null)
+        }
+        if (longTermAmount != null ? !longTermAmount.equals(xxeInvKpi.longTermAmount)
+            : xxeInvKpi.longTermAmount != null) {
             return false;
-        if (attribute12 != null ? !attribute12.equals(xxeInvKpi.attribute12) : xxeInvKpi.attribute12 != null)
+        }
+        if (productionAmount != null ? !productionAmount.equals(xxeInvKpi.productionAmount)
+            : xxeInvKpi.productionAmount != null) {
             return false;
-        if (attribute13 != null ? !attribute13.equals(xxeInvKpi.attribute13) : xxeInvKpi.attribute13 != null)
+        }
+        if (salesAmount != null ? !salesAmount.equals(xxeInvKpi.salesAmount)
+            : xxeInvKpi.salesAmount != null) {
             return false;
-        if (attribute14 != null ? !attribute14.equals(xxeInvKpi.attribute14) : xxeInvKpi.attribute14 != null)
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(xxeInvKpi.lastUpdateDate)
+            : xxeInvKpi.lastUpdateDate != null) {
             return false;
-        if (attribute15 != null ? !attribute15.equals(xxeInvKpi.attribute15) : xxeInvKpi.attribute15 != null)
+        }
+        if (creationDate != null ? !creationDate.equals(xxeInvKpi.creationDate)
+            : xxeInvKpi.creationDate != null) {
             return false;
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(xxeInvKpi.lastUpdateLogin)
+            : xxeInvKpi.lastUpdateLogin != null) {
+            return false;
+        }
+        if (attributeCategory != null ? !attributeCategory.equals(xxeInvKpi.attributeCategory)
+            : xxeInvKpi.attributeCategory != null) {
+            return false;
+        }
+        if (attribute1 != null ? !attribute1.equals(xxeInvKpi.attribute1)
+            : xxeInvKpi.attribute1 != null) {
+            return false;
+        }
+        if (attribute2 != null ? !attribute2.equals(xxeInvKpi.attribute2)
+            : xxeInvKpi.attribute2 != null) {
+            return false;
+        }
+        if (attribute3 != null ? !attribute3.equals(xxeInvKpi.attribute3)
+            : xxeInvKpi.attribute3 != null) {
+            return false;
+        }
+        if (attribute4 != null ? !attribute4.equals(xxeInvKpi.attribute4)
+            : xxeInvKpi.attribute4 != null) {
+            return false;
+        }
+        if (attribute5 != null ? !attribute5.equals(xxeInvKpi.attribute5)
+            : xxeInvKpi.attribute5 != null) {
+            return false;
+        }
+        if (attribute6 != null ? !attribute6.equals(xxeInvKpi.attribute6)
+            : xxeInvKpi.attribute6 != null) {
+            return false;
+        }
+        if (attribute7 != null ? !attribute7.equals(xxeInvKpi.attribute7)
+            : xxeInvKpi.attribute7 != null) {
+            return false;
+        }
+        if (attribute8 != null ? !attribute8.equals(xxeInvKpi.attribute8)
+            : xxeInvKpi.attribute8 != null) {
+            return false;
+        }
+        if (attribute9 != null ? !attribute9.equals(xxeInvKpi.attribute9)
+            : xxeInvKpi.attribute9 != null) {
+            return false;
+        }
+        if (attribute10 != null ? !attribute10.equals(xxeInvKpi.attribute10)
+            : xxeInvKpi.attribute10 != null) {
+            return false;
+        }
+        if (attribute11 != null ? !attribute11.equals(xxeInvKpi.attribute11)
+            : xxeInvKpi.attribute11 != null) {
+            return false;
+        }
+        if (attribute12 != null ? !attribute12.equals(xxeInvKpi.attribute12)
+            : xxeInvKpi.attribute12 != null) {
+            return false;
+        }
+        if (attribute13 != null ? !attribute13.equals(xxeInvKpi.attribute13)
+            : xxeInvKpi.attribute13 != null) {
+            return false;
+        }
+        if (attribute14 != null ? !attribute14.equals(xxeInvKpi.attribute14)
+            : xxeInvKpi.attribute14 != null) {
+            return false;
+        }
+        if (attribute15 != null ? !attribute15.equals(xxeInvKpi.attribute15)
+            : xxeInvKpi.attribute15 != null) {
+            return false;
+        }
 
         return true;
     }

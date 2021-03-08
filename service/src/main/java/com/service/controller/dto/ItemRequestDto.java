@@ -8,5 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @NoArgsConstructor
 public class ItemRequestDto {
+
     MultipartFile files;
 }

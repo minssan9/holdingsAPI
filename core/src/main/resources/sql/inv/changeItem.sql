@@ -42,7 +42,9 @@ from (
            ISSUE_AMOUNT,
            ENDING_QUANTITY,
            ENDING_AMOUNT,
-           CASE WHEN ENDING_QUANTITY = 0 THEN 0 ELSE (ENDING_AMOUNT / ENDING_QUANTITY) END AS UNIT_PRICE
+           CASE
+               WHEN ENDING_QUANTITY = 0 THEN 0
+               ELSE (ENDING_AMOUNT / ENDING_QUANTITY) END AS UNIT_PRICE
     FROM XXE_INV_MONTHLY_BALANCES xib
              inner join (
         SELECT ACCT_PERIOD_ID, ORGANIZATION_ID
@@ -64,7 +66,11 @@ from (
 ) MOT on msi.segment1 = MOT.ITEM
          left outer join (
     -- WMS 주문 존재 여부 확인
-    select itemcd, otherlot1, min(orderdate) orderdate, sum(expectqty1) expectqty1, sum(shippedqty1) shippedqty1
+    select itemcd,
+           otherlot1,
+           min(orderdate)   orderdate,
+           sum(expectqty1)  expectqty1,
+           sum(shippedqty1) shippedqty1
     from alexam.trso@alexam a
              inner join alexam.trsodetail@alexam b on a.sokey = b.sokey
     where to_char(orderdate, 'yyyyMM') >= :연월

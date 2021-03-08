@@ -10,6 +10,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "MTL_TRANSACTIONS_INTERFACE", schema = "INV", catalog = "")
 public class MtlTransactionsInterface {
+
     @Id
     private Long transactionInterfaceId;
     private Long transactionHeaderId;
@@ -3325,461 +3326,1184 @@ public class MtlTransactionsInterface {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         MtlTransactionsInterface that = (MtlTransactionsInterface) o;
 
-        if (sourceLineId != that.sourceLineId) return false;
-        if (sourceHeaderId != that.sourceHeaderId) return false;
-        if (processFlag != that.processFlag) return false;
-        if (transactionMode != that.transactionMode) return false;
-        if (lastUpdatedBy != that.lastUpdatedBy) return false;
-        if (createdBy != that.createdBy) return false;
-        if (organizationId != that.organizationId) return false;
-        if (transactionQuantity != that.transactionQuantity) return false;
-        if (transactionTypeId != that.transactionTypeId) return false;
-        if (transactionInterfaceId != null ? !transactionInterfaceId.equals(that.transactionInterfaceId) : that.transactionInterfaceId != null)
-            return false;
-        if (transactionHeaderId != null ? !transactionHeaderId.equals(that.transactionHeaderId) : that.transactionHeaderId != null)
-            return false;
-        if (sourceCode != null ? !sourceCode.equals(that.sourceCode) : that.sourceCode != null) return false;
-        if (validationRequired != null ? !validationRequired.equals(that.validationRequired) : that.validationRequired != null)
-            return false;
-        if (lockFlag != null ? !lockFlag.equals(that.lockFlag) : that.lockFlag != null) return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
-            return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin) : that.lastUpdateLogin != null)
-            return false;
-        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) return false;
-        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId) : that.programApplicationId != null)
-            return false;
-        if (programId != null ? !programId.equals(that.programId) : that.programId != null) return false;
-        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate) : that.programUpdateDate != null)
-            return false;
-        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId) : that.inventoryItemId != null)
-            return false;
-        if (itemSegment1 != null ? !itemSegment1.equals(that.itemSegment1) : that.itemSegment1 != null) return false;
-        if (itemSegment2 != null ? !itemSegment2.equals(that.itemSegment2) : that.itemSegment2 != null) return false;
-        if (itemSegment3 != null ? !itemSegment3.equals(that.itemSegment3) : that.itemSegment3 != null) return false;
-        if (itemSegment4 != null ? !itemSegment4.equals(that.itemSegment4) : that.itemSegment4 != null) return false;
-        if (itemSegment5 != null ? !itemSegment5.equals(that.itemSegment5) : that.itemSegment5 != null) return false;
-        if (itemSegment6 != null ? !itemSegment6.equals(that.itemSegment6) : that.itemSegment6 != null) return false;
-        if (itemSegment7 != null ? !itemSegment7.equals(that.itemSegment7) : that.itemSegment7 != null) return false;
-        if (itemSegment8 != null ? !itemSegment8.equals(that.itemSegment8) : that.itemSegment8 != null) return false;
-        if (itemSegment9 != null ? !itemSegment9.equals(that.itemSegment9) : that.itemSegment9 != null) return false;
-        if (itemSegment10 != null ? !itemSegment10.equals(that.itemSegment10) : that.itemSegment10 != null)
-            return false;
-        if (itemSegment11 != null ? !itemSegment11.equals(that.itemSegment11) : that.itemSegment11 != null)
-            return false;
-        if (itemSegment12 != null ? !itemSegment12.equals(that.itemSegment12) : that.itemSegment12 != null)
-            return false;
-        if (itemSegment13 != null ? !itemSegment13.equals(that.itemSegment13) : that.itemSegment13 != null)
-            return false;
-        if (itemSegment14 != null ? !itemSegment14.equals(that.itemSegment14) : that.itemSegment14 != null)
-            return false;
-        if (itemSegment15 != null ? !itemSegment15.equals(that.itemSegment15) : that.itemSegment15 != null)
-            return false;
-        if (itemSegment16 != null ? !itemSegment16.equals(that.itemSegment16) : that.itemSegment16 != null)
-            return false;
-        if (itemSegment17 != null ? !itemSegment17.equals(that.itemSegment17) : that.itemSegment17 != null)
-            return false;
-        if (itemSegment18 != null ? !itemSegment18.equals(that.itemSegment18) : that.itemSegment18 != null)
-            return false;
-        if (itemSegment19 != null ? !itemSegment19.equals(that.itemSegment19) : that.itemSegment19 != null)
-            return false;
-        if (itemSegment20 != null ? !itemSegment20.equals(that.itemSegment20) : that.itemSegment20 != null)
-            return false;
-        if (revision != null ? !revision.equals(that.revision) : that.revision != null) return false;
-        if (primaryQuantity != null ? !primaryQuantity.equals(that.primaryQuantity) : that.primaryQuantity != null)
-            return false;
-        if (transactionUom != null ? !transactionUom.equals(that.transactionUom) : that.transactionUom != null)
-            return false;
-        if (transactionDate != null ? !transactionDate.equals(that.transactionDate) : that.transactionDate != null)
-            return false;
-        if (acctPeriodId != null ? !acctPeriodId.equals(that.acctPeriodId) : that.acctPeriodId != null) return false;
-        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode) : that.subinventoryCode != null)
-            return false;
-        if (locatorId != null ? !locatorId.equals(that.locatorId) : that.locatorId != null) return false;
-        if (locSegment1 != null ? !locSegment1.equals(that.locSegment1) : that.locSegment1 != null) return false;
-        if (locSegment2 != null ? !locSegment2.equals(that.locSegment2) : that.locSegment2 != null) return false;
-        if (locSegment3 != null ? !locSegment3.equals(that.locSegment3) : that.locSegment3 != null) return false;
-        if (locSegment4 != null ? !locSegment4.equals(that.locSegment4) : that.locSegment4 != null) return false;
-        if (locSegment5 != null ? !locSegment5.equals(that.locSegment5) : that.locSegment5 != null) return false;
-        if (locSegment6 != null ? !locSegment6.equals(that.locSegment6) : that.locSegment6 != null) return false;
-        if (locSegment7 != null ? !locSegment7.equals(that.locSegment7) : that.locSegment7 != null) return false;
-        if (locSegment8 != null ? !locSegment8.equals(that.locSegment8) : that.locSegment8 != null) return false;
-        if (locSegment9 != null ? !locSegment9.equals(that.locSegment9) : that.locSegment9 != null) return false;
-        if (locSegment10 != null ? !locSegment10.equals(that.locSegment10) : that.locSegment10 != null) return false;
-        if (locSegment11 != null ? !locSegment11.equals(that.locSegment11) : that.locSegment11 != null) return false;
-        if (locSegment12 != null ? !locSegment12.equals(that.locSegment12) : that.locSegment12 != null) return false;
-        if (locSegment13 != null ? !locSegment13.equals(that.locSegment13) : that.locSegment13 != null) return false;
-        if (locSegment14 != null ? !locSegment14.equals(that.locSegment14) : that.locSegment14 != null) return false;
-        if (locSegment15 != null ? !locSegment15.equals(that.locSegment15) : that.locSegment15 != null) return false;
-        if (locSegment16 != null ? !locSegment16.equals(that.locSegment16) : that.locSegment16 != null) return false;
-        if (locSegment17 != null ? !locSegment17.equals(that.locSegment17) : that.locSegment17 != null) return false;
-        if (locSegment18 != null ? !locSegment18.equals(that.locSegment18) : that.locSegment18 != null) return false;
-        if (locSegment19 != null ? !locSegment19.equals(that.locSegment19) : that.locSegment19 != null) return false;
-        if (locSegment20 != null ? !locSegment20.equals(that.locSegment20) : that.locSegment20 != null) return false;
-        if (transactionSourceId != null ? !transactionSourceId.equals(that.transactionSourceId) : that.transactionSourceId != null)
-            return false;
-        if (dspSegment1 != null ? !dspSegment1.equals(that.dspSegment1) : that.dspSegment1 != null) return false;
-        if (dspSegment2 != null ? !dspSegment2.equals(that.dspSegment2) : that.dspSegment2 != null) return false;
-        if (dspSegment3 != null ? !dspSegment3.equals(that.dspSegment3) : that.dspSegment3 != null) return false;
-        if (dspSegment4 != null ? !dspSegment4.equals(that.dspSegment4) : that.dspSegment4 != null) return false;
-        if (dspSegment5 != null ? !dspSegment5.equals(that.dspSegment5) : that.dspSegment5 != null) return false;
-        if (dspSegment6 != null ? !dspSegment6.equals(that.dspSegment6) : that.dspSegment6 != null) return false;
-        if (dspSegment7 != null ? !dspSegment7.equals(that.dspSegment7) : that.dspSegment7 != null) return false;
-        if (dspSegment8 != null ? !dspSegment8.equals(that.dspSegment8) : that.dspSegment8 != null) return false;
-        if (dspSegment9 != null ? !dspSegment9.equals(that.dspSegment9) : that.dspSegment9 != null) return false;
-        if (dspSegment10 != null ? !dspSegment10.equals(that.dspSegment10) : that.dspSegment10 != null) return false;
-        if (dspSegment11 != null ? !dspSegment11.equals(that.dspSegment11) : that.dspSegment11 != null) return false;
-        if (dspSegment12 != null ? !dspSegment12.equals(that.dspSegment12) : that.dspSegment12 != null) return false;
-        if (dspSegment13 != null ? !dspSegment13.equals(that.dspSegment13) : that.dspSegment13 != null) return false;
-        if (dspSegment14 != null ? !dspSegment14.equals(that.dspSegment14) : that.dspSegment14 != null) return false;
-        if (dspSegment15 != null ? !dspSegment15.equals(that.dspSegment15) : that.dspSegment15 != null) return false;
-        if (dspSegment16 != null ? !dspSegment16.equals(that.dspSegment16) : that.dspSegment16 != null) return false;
-        if (dspSegment17 != null ? !dspSegment17.equals(that.dspSegment17) : that.dspSegment17 != null) return false;
-        if (dspSegment18 != null ? !dspSegment18.equals(that.dspSegment18) : that.dspSegment18 != null) return false;
-        if (dspSegment19 != null ? !dspSegment19.equals(that.dspSegment19) : that.dspSegment19 != null) return false;
-        if (dspSegment20 != null ? !dspSegment20.equals(that.dspSegment20) : that.dspSegment20 != null) return false;
-        if (dspSegment21 != null ? !dspSegment21.equals(that.dspSegment21) : that.dspSegment21 != null) return false;
-        if (dspSegment22 != null ? !dspSegment22.equals(that.dspSegment22) : that.dspSegment22 != null) return false;
-        if (dspSegment23 != null ? !dspSegment23.equals(that.dspSegment23) : that.dspSegment23 != null) return false;
-        if (dspSegment24 != null ? !dspSegment24.equals(that.dspSegment24) : that.dspSegment24 != null) return false;
-        if (dspSegment25 != null ? !dspSegment25.equals(that.dspSegment25) : that.dspSegment25 != null) return false;
-        if (dspSegment26 != null ? !dspSegment26.equals(that.dspSegment26) : that.dspSegment26 != null) return false;
-        if (dspSegment27 != null ? !dspSegment27.equals(that.dspSegment27) : that.dspSegment27 != null) return false;
-        if (dspSegment28 != null ? !dspSegment28.equals(that.dspSegment28) : that.dspSegment28 != null) return false;
-        if (dspSegment29 != null ? !dspSegment29.equals(that.dspSegment29) : that.dspSegment29 != null) return false;
-        if (dspSegment30 != null ? !dspSegment30.equals(that.dspSegment30) : that.dspSegment30 != null) return false;
-        if (transactionSourceName != null ? !transactionSourceName.equals(that.transactionSourceName) : that.transactionSourceName != null)
-            return false;
-        if (transactionSourceTypeId != null ? !transactionSourceTypeId.equals(that.transactionSourceTypeId) : that.transactionSourceTypeId != null)
+        if (sourceLineId != that.sourceLineId) {
             return false;
-        if (transactionActionId != null ? !transactionActionId.equals(that.transactionActionId) : that.transactionActionId != null)
+        }
+        if (sourceHeaderId != that.sourceHeaderId) {
             return false;
-        if (reasonId != null ? !reasonId.equals(that.reasonId) : that.reasonId != null) return false;
-        if (transactionReference != null ? !transactionReference.equals(that.transactionReference) : that.transactionReference != null)
+        }
+        if (processFlag != that.processFlag) {
             return false;
-        if (transactionCost != null ? !transactionCost.equals(that.transactionCost) : that.transactionCost != null)
+        }
+        if (transactionMode != that.transactionMode) {
             return false;
-        if (distributionAccountId != null ? !distributionAccountId.equals(that.distributionAccountId) : that.distributionAccountId != null)
+        }
+        if (lastUpdatedBy != that.lastUpdatedBy) {
             return false;
-        if (dstSegment1 != null ? !dstSegment1.equals(that.dstSegment1) : that.dstSegment1 != null) return false;
-        if (dstSegment2 != null ? !dstSegment2.equals(that.dstSegment2) : that.dstSegment2 != null) return false;
-        if (dstSegment3 != null ? !dstSegment3.equals(that.dstSegment3) : that.dstSegment3 != null) return false;
-        if (dstSegment4 != null ? !dstSegment4.equals(that.dstSegment4) : that.dstSegment4 != null) return false;
-        if (dstSegment5 != null ? !dstSegment5.equals(that.dstSegment5) : that.dstSegment5 != null) return false;
-        if (dstSegment6 != null ? !dstSegment6.equals(that.dstSegment6) : that.dstSegment6 != null) return false;
-        if (dstSegment7 != null ? !dstSegment7.equals(that.dstSegment7) : that.dstSegment7 != null) return false;
-        if (dstSegment8 != null ? !dstSegment8.equals(that.dstSegment8) : that.dstSegment8 != null) return false;
-        if (dstSegment9 != null ? !dstSegment9.equals(that.dstSegment9) : that.dstSegment9 != null) return false;
-        if (dstSegment10 != null ? !dstSegment10.equals(that.dstSegment10) : that.dstSegment10 != null) return false;
-        if (dstSegment11 != null ? !dstSegment11.equals(that.dstSegment11) : that.dstSegment11 != null) return false;
-        if (dstSegment12 != null ? !dstSegment12.equals(that.dstSegment12) : that.dstSegment12 != null) return false;
-        if (dstSegment13 != null ? !dstSegment13.equals(that.dstSegment13) : that.dstSegment13 != null) return false;
-        if (dstSegment14 != null ? !dstSegment14.equals(that.dstSegment14) : that.dstSegment14 != null) return false;
-        if (dstSegment15 != null ? !dstSegment15.equals(that.dstSegment15) : that.dstSegment15 != null) return false;
-        if (dstSegment16 != null ? !dstSegment16.equals(that.dstSegment16) : that.dstSegment16 != null) return false;
-        if (dstSegment17 != null ? !dstSegment17.equals(that.dstSegment17) : that.dstSegment17 != null) return false;
-        if (dstSegment18 != null ? !dstSegment18.equals(that.dstSegment18) : that.dstSegment18 != null) return false;
-        if (dstSegment19 != null ? !dstSegment19.equals(that.dstSegment19) : that.dstSegment19 != null) return false;
-        if (dstSegment20 != null ? !dstSegment20.equals(that.dstSegment20) : that.dstSegment20 != null) return false;
-        if (dstSegment21 != null ? !dstSegment21.equals(that.dstSegment21) : that.dstSegment21 != null) return false;
-        if (dstSegment22 != null ? !dstSegment22.equals(that.dstSegment22) : that.dstSegment22 != null) return false;
-        if (dstSegment23 != null ? !dstSegment23.equals(that.dstSegment23) : that.dstSegment23 != null) return false;
-        if (dstSegment24 != null ? !dstSegment24.equals(that.dstSegment24) : that.dstSegment24 != null) return false;
-        if (dstSegment25 != null ? !dstSegment25.equals(that.dstSegment25) : that.dstSegment25 != null) return false;
-        if (dstSegment26 != null ? !dstSegment26.equals(that.dstSegment26) : that.dstSegment26 != null) return false;
-        if (dstSegment27 != null ? !dstSegment27.equals(that.dstSegment27) : that.dstSegment27 != null) return false;
-        if (dstSegment28 != null ? !dstSegment28.equals(that.dstSegment28) : that.dstSegment28 != null) return false;
-        if (dstSegment29 != null ? !dstSegment29.equals(that.dstSegment29) : that.dstSegment29 != null) return false;
-        if (dstSegment30 != null ? !dstSegment30.equals(that.dstSegment30) : that.dstSegment30 != null) return false;
-        if (requisitionLineId != null ? !requisitionLineId.equals(that.requisitionLineId) : that.requisitionLineId != null)
+        }
+        if (createdBy != that.createdBy) {
             return false;
-        if (currencyCode != null ? !currencyCode.equals(that.currencyCode) : that.currencyCode != null) return false;
-        if (currencyConversionDate != null ? !currencyConversionDate.equals(that.currencyConversionDate) : that.currencyConversionDate != null)
+        }
+        if (organizationId != that.organizationId) {
             return false;
-        if (currencyConversionType != null ? !currencyConversionType.equals(that.currencyConversionType) : that.currencyConversionType != null)
+        }
+        if (transactionQuantity != that.transactionQuantity) {
             return false;
-        if (currencyConversionRate != null ? !currencyConversionRate.equals(that.currencyConversionRate) : that.currencyConversionRate != null)
+        }
+        if (transactionTypeId != that.transactionTypeId) {
             return false;
-        if (ussglTransactionCode != null ? !ussglTransactionCode.equals(that.ussglTransactionCode) : that.ussglTransactionCode != null)
+        }
+        if (transactionInterfaceId != null ? !transactionInterfaceId
+            .equals(that.transactionInterfaceId) : that.transactionInterfaceId != null) {
             return false;
-        if (wipEntityType != null ? !wipEntityType.equals(that.wipEntityType) : that.wipEntityType != null)
+        }
+        if (transactionHeaderId != null ? !transactionHeaderId.equals(that.transactionHeaderId)
+            : that.transactionHeaderId != null) {
             return false;
-        if (scheduleId != null ? !scheduleId.equals(that.scheduleId) : that.scheduleId != null) return false;
-        if (employeeCode != null ? !employeeCode.equals(that.employeeCode) : that.employeeCode != null) return false;
-        if (departmentId != null ? !departmentId.equals(that.departmentId) : that.departmentId != null) return false;
-        if (scheduleUpdateCode != null ? !scheduleUpdateCode.equals(that.scheduleUpdateCode) : that.scheduleUpdateCode != null)
+        }
+        if (sourceCode != null ? !sourceCode.equals(that.sourceCode) : that.sourceCode != null) {
             return false;
-        if (setupTeardownCode != null ? !setupTeardownCode.equals(that.setupTeardownCode) : that.setupTeardownCode != null)
+        }
+        if (validationRequired != null ? !validationRequired.equals(that.validationRequired)
+            : that.validationRequired != null) {
             return false;
-        if (primarySwitch != null ? !primarySwitch.equals(that.primarySwitch) : that.primarySwitch != null)
+        }
+        if (lockFlag != null ? !lockFlag.equals(that.lockFlag) : that.lockFlag != null) {
             return false;
-        if (mrpCode != null ? !mrpCode.equals(that.mrpCode) : that.mrpCode != null) return false;
-        if (operationSeqNum != null ? !operationSeqNum.equals(that.operationSeqNum) : that.operationSeqNum != null)
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
             return false;
-        if (repetitiveLineId != null ? !repetitiveLineId.equals(that.repetitiveLineId) : that.repetitiveLineId != null)
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
             return false;
-        if (pickingLineId != null ? !pickingLineId.equals(that.pickingLineId) : that.pickingLineId != null)
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin)
+            : that.lastUpdateLogin != null) {
             return false;
-        if (trxSourceLineId != null ? !trxSourceLineId.equals(that.trxSourceLineId) : that.trxSourceLineId != null)
+        }
+        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) {
             return false;
-        if (trxSourceDeliveryId != null ? !trxSourceDeliveryId.equals(that.trxSourceDeliveryId) : that.trxSourceDeliveryId != null)
+        }
+        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId)
+            : that.programApplicationId != null) {
             return false;
-        if (demandId != null ? !demandId.equals(that.demandId) : that.demandId != null) return false;
-        if (customerShipId != null ? !customerShipId.equals(that.customerShipId) : that.customerShipId != null)
+        }
+        if (programId != null ? !programId.equals(that.programId) : that.programId != null) {
             return false;
-        if (lineItemNum != null ? !lineItemNum.equals(that.lineItemNum) : that.lineItemNum != null) return false;
-        if (receivingDocument != null ? !receivingDocument.equals(that.receivingDocument) : that.receivingDocument != null)
+        }
+        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate)
+            : that.programUpdateDate != null) {
             return false;
-        if (rcvTransactionId != null ? !rcvTransactionId.equals(that.rcvTransactionId) : that.rcvTransactionId != null)
+        }
+        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId)
+            : that.inventoryItemId != null) {
             return false;
-        if (shipToLocationId != null ? !shipToLocationId.equals(that.shipToLocationId) : that.shipToLocationId != null)
+        }
+        if (itemSegment1 != null ? !itemSegment1.equals(that.itemSegment1)
+            : that.itemSegment1 != null) {
             return false;
-        if (encumbranceAccount != null ? !encumbranceAccount.equals(that.encumbranceAccount) : that.encumbranceAccount != null)
+        }
+        if (itemSegment2 != null ? !itemSegment2.equals(that.itemSegment2)
+            : that.itemSegment2 != null) {
             return false;
-        if (encumbranceAmount != null ? !encumbranceAmount.equals(that.encumbranceAmount) : that.encumbranceAmount != null)
+        }
+        if (itemSegment3 != null ? !itemSegment3.equals(that.itemSegment3)
+            : that.itemSegment3 != null) {
             return false;
-        if (vendorLotNumber != null ? !vendorLotNumber.equals(that.vendorLotNumber) : that.vendorLotNumber != null)
+        }
+        if (itemSegment4 != null ? !itemSegment4.equals(that.itemSegment4)
+            : that.itemSegment4 != null) {
             return false;
-        if (transferSubinventory != null ? !transferSubinventory.equals(that.transferSubinventory) : that.transferSubinventory != null)
+        }
+        if (itemSegment5 != null ? !itemSegment5.equals(that.itemSegment5)
+            : that.itemSegment5 != null) {
             return false;
-        if (transferOrganization != null ? !transferOrganization.equals(that.transferOrganization) : that.transferOrganization != null)
+        }
+        if (itemSegment6 != null ? !itemSegment6.equals(that.itemSegment6)
+            : that.itemSegment6 != null) {
             return false;
-        if (transferLocator != null ? !transferLocator.equals(that.transferLocator) : that.transferLocator != null)
+        }
+        if (itemSegment7 != null ? !itemSegment7.equals(that.itemSegment7)
+            : that.itemSegment7 != null) {
             return false;
-        if (xferLocSegment1 != null ? !xferLocSegment1.equals(that.xferLocSegment1) : that.xferLocSegment1 != null)
+        }
+        if (itemSegment8 != null ? !itemSegment8.equals(that.itemSegment8)
+            : that.itemSegment8 != null) {
             return false;
-        if (xferLocSegment2 != null ? !xferLocSegment2.equals(that.xferLocSegment2) : that.xferLocSegment2 != null)
+        }
+        if (itemSegment9 != null ? !itemSegment9.equals(that.itemSegment9)
+            : that.itemSegment9 != null) {
             return false;
-        if (xferLocSegment3 != null ? !xferLocSegment3.equals(that.xferLocSegment3) : that.xferLocSegment3 != null)
+        }
+        if (itemSegment10 != null ? !itemSegment10.equals(that.itemSegment10)
+            : that.itemSegment10 != null) {
             return false;
-        if (xferLocSegment4 != null ? !xferLocSegment4.equals(that.xferLocSegment4) : that.xferLocSegment4 != null)
+        }
+        if (itemSegment11 != null ? !itemSegment11.equals(that.itemSegment11)
+            : that.itemSegment11 != null) {
             return false;
-        if (xferLocSegment5 != null ? !xferLocSegment5.equals(that.xferLocSegment5) : that.xferLocSegment5 != null)
+        }
+        if (itemSegment12 != null ? !itemSegment12.equals(that.itemSegment12)
+            : that.itemSegment12 != null) {
             return false;
-        if (xferLocSegment6 != null ? !xferLocSegment6.equals(that.xferLocSegment6) : that.xferLocSegment6 != null)
+        }
+        if (itemSegment13 != null ? !itemSegment13.equals(that.itemSegment13)
+            : that.itemSegment13 != null) {
             return false;
-        if (xferLocSegment7 != null ? !xferLocSegment7.equals(that.xferLocSegment7) : that.xferLocSegment7 != null)
+        }
+        if (itemSegment14 != null ? !itemSegment14.equals(that.itemSegment14)
+            : that.itemSegment14 != null) {
             return false;
-        if (xferLocSegment8 != null ? !xferLocSegment8.equals(that.xferLocSegment8) : that.xferLocSegment8 != null)
+        }
+        if (itemSegment15 != null ? !itemSegment15.equals(that.itemSegment15)
+            : that.itemSegment15 != null) {
             return false;
-        if (xferLocSegment9 != null ? !xferLocSegment9.equals(that.xferLocSegment9) : that.xferLocSegment9 != null)
+        }
+        if (itemSegment16 != null ? !itemSegment16.equals(that.itemSegment16)
+            : that.itemSegment16 != null) {
             return false;
-        if (xferLocSegment10 != null ? !xferLocSegment10.equals(that.xferLocSegment10) : that.xferLocSegment10 != null)
+        }
+        if (itemSegment17 != null ? !itemSegment17.equals(that.itemSegment17)
+            : that.itemSegment17 != null) {
             return false;
-        if (xferLocSegment11 != null ? !xferLocSegment11.equals(that.xferLocSegment11) : that.xferLocSegment11 != null)
+        }
+        if (itemSegment18 != null ? !itemSegment18.equals(that.itemSegment18)
+            : that.itemSegment18 != null) {
             return false;
-        if (xferLocSegment12 != null ? !xferLocSegment12.equals(that.xferLocSegment12) : that.xferLocSegment12 != null)
+        }
+        if (itemSegment19 != null ? !itemSegment19.equals(that.itemSegment19)
+            : that.itemSegment19 != null) {
             return false;
-        if (xferLocSegment13 != null ? !xferLocSegment13.equals(that.xferLocSegment13) : that.xferLocSegment13 != null)
+        }
+        if (itemSegment20 != null ? !itemSegment20.equals(that.itemSegment20)
+            : that.itemSegment20 != null) {
             return false;
-        if (xferLocSegment14 != null ? !xferLocSegment14.equals(that.xferLocSegment14) : that.xferLocSegment14 != null)
+        }
+        if (revision != null ? !revision.equals(that.revision) : that.revision != null) {
             return false;
-        if (xferLocSegment15 != null ? !xferLocSegment15.equals(that.xferLocSegment15) : that.xferLocSegment15 != null)
+        }
+        if (primaryQuantity != null ? !primaryQuantity.equals(that.primaryQuantity)
+            : that.primaryQuantity != null) {
             return false;
-        if (xferLocSegment16 != null ? !xferLocSegment16.equals(that.xferLocSegment16) : that.xferLocSegment16 != null)
+        }
+        if (transactionUom != null ? !transactionUom.equals(that.transactionUom)
+            : that.transactionUom != null) {
             return false;
-        if (xferLocSegment17 != null ? !xferLocSegment17.equals(that.xferLocSegment17) : that.xferLocSegment17 != null)
+        }
+        if (transactionDate != null ? !transactionDate.equals(that.transactionDate)
+            : that.transactionDate != null) {
             return false;
-        if (xferLocSegment18 != null ? !xferLocSegment18.equals(that.xferLocSegment18) : that.xferLocSegment18 != null)
+        }
+        if (acctPeriodId != null ? !acctPeriodId.equals(that.acctPeriodId)
+            : that.acctPeriodId != null) {
             return false;
-        if (xferLocSegment19 != null ? !xferLocSegment19.equals(that.xferLocSegment19) : that.xferLocSegment19 != null)
+        }
+        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode)
+            : that.subinventoryCode != null) {
             return false;
-        if (xferLocSegment20 != null ? !xferLocSegment20.equals(that.xferLocSegment20) : that.xferLocSegment20 != null)
+        }
+        if (locatorId != null ? !locatorId.equals(that.locatorId) : that.locatorId != null) {
             return false;
-        if (shipmentNumber != null ? !shipmentNumber.equals(that.shipmentNumber) : that.shipmentNumber != null)
+        }
+        if (locSegment1 != null ? !locSegment1.equals(that.locSegment1)
+            : that.locSegment1 != null) {
             return false;
-        if (transportationCost != null ? !transportationCost.equals(that.transportationCost) : that.transportationCost != null)
+        }
+        if (locSegment2 != null ? !locSegment2.equals(that.locSegment2)
+            : that.locSegment2 != null) {
             return false;
-        if (transportationAccount != null ? !transportationAccount.equals(that.transportationAccount) : that.transportationAccount != null)
+        }
+        if (locSegment3 != null ? !locSegment3.equals(that.locSegment3)
+            : that.locSegment3 != null) {
             return false;
-        if (transferCost != null ? !transferCost.equals(that.transferCost) : that.transferCost != null) return false;
-        if (freightCode != null ? !freightCode.equals(that.freightCode) : that.freightCode != null) return false;
-        if (containers != null ? !containers.equals(that.containers) : that.containers != null) return false;
-        if (waybillAirbill != null ? !waybillAirbill.equals(that.waybillAirbill) : that.waybillAirbill != null)
+        }
+        if (locSegment4 != null ? !locSegment4.equals(that.locSegment4)
+            : that.locSegment4 != null) {
             return false;
-        if (expectedArrivalDate != null ? !expectedArrivalDate.equals(that.expectedArrivalDate) : that.expectedArrivalDate != null)
+        }
+        if (locSegment5 != null ? !locSegment5.equals(that.locSegment5)
+            : that.locSegment5 != null) {
             return false;
-        if (newAverageCost != null ? !newAverageCost.equals(that.newAverageCost) : that.newAverageCost != null)
+        }
+        if (locSegment6 != null ? !locSegment6.equals(that.locSegment6)
+            : that.locSegment6 != null) {
             return false;
-        if (valueChange != null ? !valueChange.equals(that.valueChange) : that.valueChange != null) return false;
-        if (percentageChange != null ? !percentageChange.equals(that.percentageChange) : that.percentageChange != null)
+        }
+        if (locSegment7 != null ? !locSegment7.equals(that.locSegment7)
+            : that.locSegment7 != null) {
             return false;
-        if (demandSourceHeaderId != null ? !demandSourceHeaderId.equals(that.demandSourceHeaderId) : that.demandSourceHeaderId != null)
+        }
+        if (locSegment8 != null ? !locSegment8.equals(that.locSegment8)
+            : that.locSegment8 != null) {
             return false;
-        if (demandSourceLine != null ? !demandSourceLine.equals(that.demandSourceLine) : that.demandSourceLine != null)
+        }
+        if (locSegment9 != null ? !locSegment9.equals(that.locSegment9)
+            : that.locSegment9 != null) {
             return false;
-        if (demandSourceDelivery != null ? !demandSourceDelivery.equals(that.demandSourceDelivery) : that.demandSourceDelivery != null)
+        }
+        if (locSegment10 != null ? !locSegment10.equals(that.locSegment10)
+            : that.locSegment10 != null) {
             return false;
-        if (negativeReqFlag != null ? !negativeReqFlag.equals(that.negativeReqFlag) : that.negativeReqFlag != null)
+        }
+        if (locSegment11 != null ? !locSegment11.equals(that.locSegment11)
+            : that.locSegment11 != null) {
             return false;
-        if (errorExplanation != null ? !errorExplanation.equals(that.errorExplanation) : that.errorExplanation != null)
+        }
+        if (locSegment12 != null ? !locSegment12.equals(that.locSegment12)
+            : that.locSegment12 != null) {
             return false;
-        if (shippableFlag != null ? !shippableFlag.equals(that.shippableFlag) : that.shippableFlag != null)
+        }
+        if (locSegment13 != null ? !locSegment13.equals(that.locSegment13)
+            : that.locSegment13 != null) {
             return false;
-        if (errorCode != null ? !errorCode.equals(that.errorCode) : that.errorCode != null) return false;
-        if (requiredFlag != null ? !requiredFlag.equals(that.requiredFlag) : that.requiredFlag != null) return false;
-        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory) : that.attributeCategory != null)
+        }
+        if (locSegment14 != null ? !locSegment14.equals(that.locSegment14)
+            : that.locSegment14 != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(that.attribute10) : that.attribute10 != null) return false;
-        if (attribute11 != null ? !attribute11.equals(that.attribute11) : that.attribute11 != null) return false;
-        if (attribute12 != null ? !attribute12.equals(that.attribute12) : that.attribute12 != null) return false;
-        if (attribute13 != null ? !attribute13.equals(that.attribute13) : that.attribute13 != null) return false;
-        if (attribute14 != null ? !attribute14.equals(that.attribute14) : that.attribute14 != null) return false;
-        if (attribute15 != null ? !attribute15.equals(that.attribute15) : that.attribute15 != null) return false;
-        if (requisitionDistributionId != null ? !requisitionDistributionId.equals(that.requisitionDistributionId) : that.requisitionDistributionId != null)
+        }
+        if (locSegment15 != null ? !locSegment15.equals(that.locSegment15)
+            : that.locSegment15 != null) {
             return false;
-        if (movementId != null ? !movementId.equals(that.movementId) : that.movementId != null) return false;
-        if (reservationQuantity != null ? !reservationQuantity.equals(that.reservationQuantity) : that.reservationQuantity != null)
+        }
+        if (locSegment16 != null ? !locSegment16.equals(that.locSegment16)
+            : that.locSegment16 != null) {
             return false;
-        if (shippedQuantity != null ? !shippedQuantity.equals(that.shippedQuantity) : that.shippedQuantity != null)
+        }
+        if (locSegment17 != null ? !locSegment17.equals(that.locSegment17)
+            : that.locSegment17 != null) {
             return false;
-        if (inventoryItem != null ? !inventoryItem.equals(that.inventoryItem) : that.inventoryItem != null)
+        }
+        if (locSegment18 != null ? !locSegment18.equals(that.locSegment18)
+            : that.locSegment18 != null) {
             return false;
-        if (locatorName != null ? !locatorName.equals(that.locatorName) : that.locatorName != null) return false;
-        if (taskId != null ? !taskId.equals(that.taskId) : that.taskId != null) return false;
-        if (toTaskId != null ? !toTaskId.equals(that.toTaskId) : that.toTaskId != null) return false;
-        if (sourceTaskId != null ? !sourceTaskId.equals(that.sourceTaskId) : that.sourceTaskId != null) return false;
-        if (projectId != null ? !projectId.equals(that.projectId) : that.projectId != null) return false;
-        if (toProjectId != null ? !toProjectId.equals(that.toProjectId) : that.toProjectId != null) return false;
-        if (sourceProjectId != null ? !sourceProjectId.equals(that.sourceProjectId) : that.sourceProjectId != null)
+        }
+        if (locSegment19 != null ? !locSegment19.equals(that.locSegment19)
+            : that.locSegment19 != null) {
             return false;
-        if (paExpenditureOrgId != null ? !paExpenditureOrgId.equals(that.paExpenditureOrgId) : that.paExpenditureOrgId != null)
+        }
+        if (locSegment20 != null ? !locSegment20.equals(that.locSegment20)
+            : that.locSegment20 != null) {
             return false;
-        if (expenditureType != null ? !expenditureType.equals(that.expenditureType) : that.expenditureType != null)
+        }
+        if (transactionSourceId != null ? !transactionSourceId.equals(that.transactionSourceId)
+            : that.transactionSourceId != null) {
             return false;
-        if (finalCompletionFlag != null ? !finalCompletionFlag.equals(that.finalCompletionFlag) : that.finalCompletionFlag != null)
+        }
+        if (dspSegment1 != null ? !dspSegment1.equals(that.dspSegment1)
+            : that.dspSegment1 != null) {
             return false;
-        if (transferPercentage != null ? !transferPercentage.equals(that.transferPercentage) : that.transferPercentage != null)
+        }
+        if (dspSegment2 != null ? !dspSegment2.equals(that.dspSegment2)
+            : that.dspSegment2 != null) {
             return false;
-        if (transactionSequenceId != null ? !transactionSequenceId.equals(that.transactionSequenceId) : that.transactionSequenceId != null)
+        }
+        if (dspSegment3 != null ? !dspSegment3.equals(that.dspSegment3)
+            : that.dspSegment3 != null) {
             return false;
-        if (materialAccount != null ? !materialAccount.equals(that.materialAccount) : that.materialAccount != null)
+        }
+        if (dspSegment4 != null ? !dspSegment4.equals(that.dspSegment4)
+            : that.dspSegment4 != null) {
             return false;
-        if (materialOverheadAccount != null ? !materialOverheadAccount.equals(that.materialOverheadAccount) : that.materialOverheadAccount != null)
+        }
+        if (dspSegment5 != null ? !dspSegment5.equals(that.dspSegment5)
+            : that.dspSegment5 != null) {
             return false;
-        if (resourceAccount != null ? !resourceAccount.equals(that.resourceAccount) : that.resourceAccount != null)
+        }
+        if (dspSegment6 != null ? !dspSegment6.equals(that.dspSegment6)
+            : that.dspSegment6 != null) {
             return false;
-        if (outsideProcessingAccount != null ? !outsideProcessingAccount.equals(that.outsideProcessingAccount) : that.outsideProcessingAccount != null)
+        }
+        if (dspSegment7 != null ? !dspSegment7.equals(that.dspSegment7)
+            : that.dspSegment7 != null) {
             return false;
-        if (overheadAccount != null ? !overheadAccount.equals(that.overheadAccount) : that.overheadAccount != null)
+        }
+        if (dspSegment8 != null ? !dspSegment8.equals(that.dspSegment8)
+            : that.dspSegment8 != null) {
             return false;
-        if (bomRevision != null ? !bomRevision.equals(that.bomRevision) : that.bomRevision != null) return false;
-        if (routingRevision != null ? !routingRevision.equals(that.routingRevision) : that.routingRevision != null)
+        }
+        if (dspSegment9 != null ? !dspSegment9.equals(that.dspSegment9)
+            : that.dspSegment9 != null) {
             return false;
-        if (bomRevisionDate != null ? !bomRevisionDate.equals(that.bomRevisionDate) : that.bomRevisionDate != null)
+        }
+        if (dspSegment10 != null ? !dspSegment10.equals(that.dspSegment10)
+            : that.dspSegment10 != null) {
             return false;
-        if (routingRevisionDate != null ? !routingRevisionDate.equals(that.routingRevisionDate) : that.routingRevisionDate != null)
+        }
+        if (dspSegment11 != null ? !dspSegment11.equals(that.dspSegment11)
+            : that.dspSegment11 != null) {
             return false;
-        if (alternateBomDesignator != null ? !alternateBomDesignator.equals(that.alternateBomDesignator) : that.alternateBomDesignator != null)
+        }
+        if (dspSegment12 != null ? !dspSegment12.equals(that.dspSegment12)
+            : that.dspSegment12 != null) {
             return false;
-        if (alternateRoutingDesignator != null ? !alternateRoutingDesignator.equals(that.alternateRoutingDesignator) : that.alternateRoutingDesignator != null)
+        }
+        if (dspSegment13 != null ? !dspSegment13.equals(that.dspSegment13)
+            : that.dspSegment13 != null) {
             return false;
-        if (accountingClass != null ? !accountingClass.equals(that.accountingClass) : that.accountingClass != null)
+        }
+        if (dspSegment14 != null ? !dspSegment14.equals(that.dspSegment14)
+            : that.dspSegment14 != null) {
             return false;
-        if (demandClass != null ? !demandClass.equals(that.demandClass) : that.demandClass != null) return false;
-        if (parentId != null ? !parentId.equals(that.parentId) : that.parentId != null) return false;
-        if (substitutionTypeId != null ? !substitutionTypeId.equals(that.substitutionTypeId) : that.substitutionTypeId != null)
+        }
+        if (dspSegment15 != null ? !dspSegment15.equals(that.dspSegment15)
+            : that.dspSegment15 != null) {
             return false;
-        if (substitutionItemId != null ? !substitutionItemId.equals(that.substitutionItemId) : that.substitutionItemId != null)
+        }
+        if (dspSegment16 != null ? !dspSegment16.equals(that.dspSegment16)
+            : that.dspSegment16 != null) {
             return false;
-        if (scheduleGroup != null ? !scheduleGroup.equals(that.scheduleGroup) : that.scheduleGroup != null)
+        }
+        if (dspSegment17 != null ? !dspSegment17.equals(that.dspSegment17)
+            : that.dspSegment17 != null) {
             return false;
-        if (buildSequence != null ? !buildSequence.equals(that.buildSequence) : that.buildSequence != null)
+        }
+        if (dspSegment18 != null ? !dspSegment18.equals(that.dspSegment18)
+            : that.dspSegment18 != null) {
             return false;
-        if (scheduleNumber != null ? !scheduleNumber.equals(that.scheduleNumber) : that.scheduleNumber != null)
+        }
+        if (dspSegment19 != null ? !dspSegment19.equals(that.dspSegment19)
+            : that.dspSegment19 != null) {
             return false;
-        if (scheduledFlag != null ? !scheduledFlag.equals(that.scheduledFlag) : that.scheduledFlag != null)
+        }
+        if (dspSegment20 != null ? !dspSegment20.equals(that.dspSegment20)
+            : that.dspSegment20 != null) {
             return false;
-        if (flowSchedule != null ? !flowSchedule.equals(that.flowSchedule) : that.flowSchedule != null) return false;
-        if (costGroupId != null ? !costGroupId.equals(that.costGroupId) : that.costGroupId != null) return false;
-        if (kanbanCardId != null ? !kanbanCardId.equals(that.kanbanCardId) : that.kanbanCardId != null) return false;
-        if (qaCollectionId != null ? !qaCollectionId.equals(that.qaCollectionId) : that.qaCollectionId != null)
+        }
+        if (dspSegment21 != null ? !dspSegment21.equals(that.dspSegment21)
+            : that.dspSegment21 != null) {
             return false;
-        if (overcompletionTransactionQty != null ? !overcompletionTransactionQty.equals(that.overcompletionTransactionQty) : that.overcompletionTransactionQty != null)
+        }
+        if (dspSegment22 != null ? !dspSegment22.equals(that.dspSegment22)
+            : that.dspSegment22 != null) {
             return false;
-        if (overcompletionPrimaryQty != null ? !overcompletionPrimaryQty.equals(that.overcompletionPrimaryQty) : that.overcompletionPrimaryQty != null)
+        }
+        if (dspSegment23 != null ? !dspSegment23.equals(that.dspSegment23)
+            : that.dspSegment23 != null) {
             return false;
-        if (overcompletionTransactionId != null ? !overcompletionTransactionId.equals(that.overcompletionTransactionId) : that.overcompletionTransactionId != null)
+        }
+        if (dspSegment24 != null ? !dspSegment24.equals(that.dspSegment24)
+            : that.dspSegment24 != null) {
             return false;
-        if (endItemUnitNumber != null ? !endItemUnitNumber.equals(that.endItemUnitNumber) : that.endItemUnitNumber != null)
+        }
+        if (dspSegment25 != null ? !dspSegment25.equals(that.dspSegment25)
+            : that.dspSegment25 != null) {
             return false;
-        if (scheduledPaybackDate != null ? !scheduledPaybackDate.equals(that.scheduledPaybackDate) : that.scheduledPaybackDate != null)
+        }
+        if (dspSegment26 != null ? !dspSegment26.equals(that.dspSegment26)
+            : that.dspSegment26 != null) {
             return false;
-        if (orgCostGroupId != null ? !orgCostGroupId.equals(that.orgCostGroupId) : that.orgCostGroupId != null)
+        }
+        if (dspSegment27 != null ? !dspSegment27.equals(that.dspSegment27)
+            : that.dspSegment27 != null) {
             return false;
-        if (costTypeId != null ? !costTypeId.equals(that.costTypeId) : that.costTypeId != null) return false;
-        if (sourceLotNumber != null ? !sourceLotNumber.equals(that.sourceLotNumber) : that.sourceLotNumber != null)
+        }
+        if (dspSegment28 != null ? !dspSegment28.equals(that.dspSegment28)
+            : that.dspSegment28 != null) {
             return false;
-        if (transferCostGroupId != null ? !transferCostGroupId.equals(that.transferCostGroupId) : that.transferCostGroupId != null)
+        }
+        if (dspSegment29 != null ? !dspSegment29.equals(that.dspSegment29)
+            : that.dspSegment29 != null) {
             return false;
-        if (lpnId != null ? !lpnId.equals(that.lpnId) : that.lpnId != null) return false;
-        if (transferLpnId != null ? !transferLpnId.equals(that.transferLpnId) : that.transferLpnId != null)
+        }
+        if (dspSegment30 != null ? !dspSegment30.equals(that.dspSegment30)
+            : that.dspSegment30 != null) {
             return false;
-        if (contentLpnId != null ? !contentLpnId.equals(that.contentLpnId) : that.contentLpnId != null) return false;
-        if (xmlDocumentId != null ? !xmlDocumentId.equals(that.xmlDocumentId) : that.xmlDocumentId != null)
+        }
+        if (transactionSourceName != null ? !transactionSourceName
+            .equals(that.transactionSourceName) : that.transactionSourceName != null) {
             return false;
-        if (organizationType != null ? !organizationType.equals(that.organizationType) : that.organizationType != null)
+        }
+        if (transactionSourceTypeId != null ? !transactionSourceTypeId
+            .equals(that.transactionSourceTypeId) : that.transactionSourceTypeId != null) {
             return false;
-        if (transferOrganizationType != null ? !transferOrganizationType.equals(that.transferOrganizationType) : that.transferOrganizationType != null)
+        }
+        if (transactionActionId != null ? !transactionActionId.equals(that.transactionActionId)
+            : that.transactionActionId != null) {
             return false;
-        if (owningOrganizationId != null ? !owningOrganizationId.equals(that.owningOrganizationId) : that.owningOrganizationId != null)
+        }
+        if (reasonId != null ? !reasonId.equals(that.reasonId) : that.reasonId != null) {
             return false;
-        if (owningTpType != null ? !owningTpType.equals(that.owningTpType) : that.owningTpType != null) return false;
-        if (xfrOwningOrganizationId != null ? !xfrOwningOrganizationId.equals(that.xfrOwningOrganizationId) : that.xfrOwningOrganizationId != null)
+        }
+        if (transactionReference != null ? !transactionReference.equals(that.transactionReference)
+            : that.transactionReference != null) {
             return false;
-        if (transferOwningTpType != null ? !transferOwningTpType.equals(that.transferOwningTpType) : that.transferOwningTpType != null)
+        }
+        if (transactionCost != null ? !transactionCost.equals(that.transactionCost)
+            : that.transactionCost != null) {
             return false;
-        if (planningOrganizationId != null ? !planningOrganizationId.equals(that.planningOrganizationId) : that.planningOrganizationId != null)
+        }
+        if (distributionAccountId != null ? !distributionAccountId
+            .equals(that.distributionAccountId) : that.distributionAccountId != null) {
             return false;
-        if (planningTpType != null ? !planningTpType.equals(that.planningTpType) : that.planningTpType != null)
+        }
+        if (dstSegment1 != null ? !dstSegment1.equals(that.dstSegment1)
+            : that.dstSegment1 != null) {
             return false;
-        if (xfrPlanningOrganizationId != null ? !xfrPlanningOrganizationId.equals(that.xfrPlanningOrganizationId) : that.xfrPlanningOrganizationId != null)
+        }
+        if (dstSegment2 != null ? !dstSegment2.equals(that.dstSegment2)
+            : that.dstSegment2 != null) {
             return false;
-        if (transferPlanningTpType != null ? !transferPlanningTpType.equals(that.transferPlanningTpType) : that.transferPlanningTpType != null)
+        }
+        if (dstSegment3 != null ? !dstSegment3.equals(that.dstSegment3)
+            : that.dstSegment3 != null) {
             return false;
-        if (secondaryUomCode != null ? !secondaryUomCode.equals(that.secondaryUomCode) : that.secondaryUomCode != null)
+        }
+        if (dstSegment4 != null ? !dstSegment4.equals(that.dstSegment4)
+            : that.dstSegment4 != null) {
             return false;
-        if (secondaryTransactionQuantity != null ? !secondaryTransactionQuantity.equals(that.secondaryTransactionQuantity) : that.secondaryTransactionQuantity != null)
+        }
+        if (dstSegment5 != null ? !dstSegment5.equals(that.dstSegment5)
+            : that.dstSegment5 != null) {
             return false;
-        if (transactionGroupId != null ? !transactionGroupId.equals(that.transactionGroupId) : that.transactionGroupId != null)
+        }
+        if (dstSegment6 != null ? !dstSegment6.equals(that.dstSegment6)
+            : that.dstSegment6 != null) {
             return false;
-        if (transactionGroupSeq != null ? !transactionGroupSeq.equals(that.transactionGroupSeq) : that.transactionGroupSeq != null)
+        }
+        if (dstSegment7 != null ? !dstSegment7.equals(that.dstSegment7)
+            : that.dstSegment7 != null) {
             return false;
-        if (representativeLotNumber != null ? !representativeLotNumber.equals(that.representativeLotNumber) : that.representativeLotNumber != null)
+        }
+        if (dstSegment8 != null ? !dstSegment8.equals(that.dstSegment8)
+            : that.dstSegment8 != null) {
             return false;
-        if (transactionBatchId != null ? !transactionBatchId.equals(that.transactionBatchId) : that.transactionBatchId != null)
+        }
+        if (dstSegment9 != null ? !dstSegment9.equals(that.dstSegment9)
+            : that.dstSegment9 != null) {
             return false;
-        if (transactionBatchSeq != null ? !transactionBatchSeq.equals(that.transactionBatchSeq) : that.transactionBatchSeq != null)
+        }
+        if (dstSegment10 != null ? !dstSegment10.equals(that.dstSegment10)
+            : that.dstSegment10 != null) {
             return false;
-        if (rebuildItemId != null ? !rebuildItemId.equals(that.rebuildItemId) : that.rebuildItemId != null)
+        }
+        if (dstSegment11 != null ? !dstSegment11.equals(that.dstSegment11)
+            : that.dstSegment11 != null) {
             return false;
-        if (rebuildSerialNumber != null ? !rebuildSerialNumber.equals(that.rebuildSerialNumber) : that.rebuildSerialNumber != null)
+        }
+        if (dstSegment12 != null ? !dstSegment12.equals(that.dstSegment12)
+            : that.dstSegment12 != null) {
             return false;
-        if (rebuildActivityId != null ? !rebuildActivityId.equals(that.rebuildActivityId) : that.rebuildActivityId != null)
+        }
+        if (dstSegment13 != null ? !dstSegment13.equals(that.dstSegment13)
+            : that.dstSegment13 != null) {
             return false;
-        if (rebuildJobName != null ? !rebuildJobName.equals(that.rebuildJobName) : that.rebuildJobName != null)
+        }
+        if (dstSegment14 != null ? !dstSegment14.equals(that.dstSegment14)
+            : that.dstSegment14 != null) {
             return false;
-        if (moveTransactionId != null ? !moveTransactionId.equals(that.moveTransactionId) : that.moveTransactionId != null)
+        }
+        if (dstSegment15 != null ? !dstSegment15.equals(that.dstSegment15)
+            : that.dstSegment15 != null) {
             return false;
-        if (completionTransactionId != null ? !completionTransactionId.equals(that.completionTransactionId) : that.completionTransactionId != null)
+        }
+        if (dstSegment16 != null ? !dstSegment16.equals(that.dstSegment16)
+            : that.dstSegment16 != null) {
             return false;
-        if (wipSupplyType != null ? !wipSupplyType.equals(that.wipSupplyType) : that.wipSupplyType != null)
+        }
+        if (dstSegment17 != null ? !dstSegment17.equals(that.dstSegment17)
+            : that.dstSegment17 != null) {
             return false;
+        }
+        if (dstSegment18 != null ? !dstSegment18.equals(that.dstSegment18)
+            : that.dstSegment18 != null) {
+            return false;
+        }
+        if (dstSegment19 != null ? !dstSegment19.equals(that.dstSegment19)
+            : that.dstSegment19 != null) {
+            return false;
+        }
+        if (dstSegment20 != null ? !dstSegment20.equals(that.dstSegment20)
+            : that.dstSegment20 != null) {
+            return false;
+        }
+        if (dstSegment21 != null ? !dstSegment21.equals(that.dstSegment21)
+            : that.dstSegment21 != null) {
+            return false;
+        }
+        if (dstSegment22 != null ? !dstSegment22.equals(that.dstSegment22)
+            : that.dstSegment22 != null) {
+            return false;
+        }
+        if (dstSegment23 != null ? !dstSegment23.equals(that.dstSegment23)
+            : that.dstSegment23 != null) {
+            return false;
+        }
+        if (dstSegment24 != null ? !dstSegment24.equals(that.dstSegment24)
+            : that.dstSegment24 != null) {
+            return false;
+        }
+        if (dstSegment25 != null ? !dstSegment25.equals(that.dstSegment25)
+            : that.dstSegment25 != null) {
+            return false;
+        }
+        if (dstSegment26 != null ? !dstSegment26.equals(that.dstSegment26)
+            : that.dstSegment26 != null) {
+            return false;
+        }
+        if (dstSegment27 != null ? !dstSegment27.equals(that.dstSegment27)
+            : that.dstSegment27 != null) {
+            return false;
+        }
+        if (dstSegment28 != null ? !dstSegment28.equals(that.dstSegment28)
+            : that.dstSegment28 != null) {
+            return false;
+        }
+        if (dstSegment29 != null ? !dstSegment29.equals(that.dstSegment29)
+            : that.dstSegment29 != null) {
+            return false;
+        }
+        if (dstSegment30 != null ? !dstSegment30.equals(that.dstSegment30)
+            : that.dstSegment30 != null) {
+            return false;
+        }
+        if (requisitionLineId != null ? !requisitionLineId.equals(that.requisitionLineId)
+            : that.requisitionLineId != null) {
+            return false;
+        }
+        if (currencyCode != null ? !currencyCode.equals(that.currencyCode)
+            : that.currencyCode != null) {
+            return false;
+        }
+        if (currencyConversionDate != null ? !currencyConversionDate
+            .equals(that.currencyConversionDate) : that.currencyConversionDate != null) {
+            return false;
+        }
+        if (currencyConversionType != null ? !currencyConversionType
+            .equals(that.currencyConversionType) : that.currencyConversionType != null) {
+            return false;
+        }
+        if (currencyConversionRate != null ? !currencyConversionRate
+            .equals(that.currencyConversionRate) : that.currencyConversionRate != null) {
+            return false;
+        }
+        if (ussglTransactionCode != null ? !ussglTransactionCode.equals(that.ussglTransactionCode)
+            : that.ussglTransactionCode != null) {
+            return false;
+        }
+        if (wipEntityType != null ? !wipEntityType.equals(that.wipEntityType)
+            : that.wipEntityType != null) {
+            return false;
+        }
+        if (scheduleId != null ? !scheduleId.equals(that.scheduleId) : that.scheduleId != null) {
+            return false;
+        }
+        if (employeeCode != null ? !employeeCode.equals(that.employeeCode)
+            : that.employeeCode != null) {
+            return false;
+        }
+        if (departmentId != null ? !departmentId.equals(that.departmentId)
+            : that.departmentId != null) {
+            return false;
+        }
+        if (scheduleUpdateCode != null ? !scheduleUpdateCode.equals(that.scheduleUpdateCode)
+            : that.scheduleUpdateCode != null) {
+            return false;
+        }
+        if (setupTeardownCode != null ? !setupTeardownCode.equals(that.setupTeardownCode)
+            : that.setupTeardownCode != null) {
+            return false;
+        }
+        if (primarySwitch != null ? !primarySwitch.equals(that.primarySwitch)
+            : that.primarySwitch != null) {
+            return false;
+        }
+        if (mrpCode != null ? !mrpCode.equals(that.mrpCode) : that.mrpCode != null) {
+            return false;
+        }
+        if (operationSeqNum != null ? !operationSeqNum.equals(that.operationSeqNum)
+            : that.operationSeqNum != null) {
+            return false;
+        }
+        if (repetitiveLineId != null ? !repetitiveLineId.equals(that.repetitiveLineId)
+            : that.repetitiveLineId != null) {
+            return false;
+        }
+        if (pickingLineId != null ? !pickingLineId.equals(that.pickingLineId)
+            : that.pickingLineId != null) {
+            return false;
+        }
+        if (trxSourceLineId != null ? !trxSourceLineId.equals(that.trxSourceLineId)
+            : that.trxSourceLineId != null) {
+            return false;
+        }
+        if (trxSourceDeliveryId != null ? !trxSourceDeliveryId.equals(that.trxSourceDeliveryId)
+            : that.trxSourceDeliveryId != null) {
+            return false;
+        }
+        if (demandId != null ? !demandId.equals(that.demandId) : that.demandId != null) {
+            return false;
+        }
+        if (customerShipId != null ? !customerShipId.equals(that.customerShipId)
+            : that.customerShipId != null) {
+            return false;
+        }
+        if (lineItemNum != null ? !lineItemNum.equals(that.lineItemNum)
+            : that.lineItemNum != null) {
+            return false;
+        }
+        if (receivingDocument != null ? !receivingDocument.equals(that.receivingDocument)
+            : that.receivingDocument != null) {
+            return false;
+        }
+        if (rcvTransactionId != null ? !rcvTransactionId.equals(that.rcvTransactionId)
+            : that.rcvTransactionId != null) {
+            return false;
+        }
+        if (shipToLocationId != null ? !shipToLocationId.equals(that.shipToLocationId)
+            : that.shipToLocationId != null) {
+            return false;
+        }
+        if (encumbranceAccount != null ? !encumbranceAccount.equals(that.encumbranceAccount)
+            : that.encumbranceAccount != null) {
+            return false;
+        }
+        if (encumbranceAmount != null ? !encumbranceAmount.equals(that.encumbranceAmount)
+            : that.encumbranceAmount != null) {
+            return false;
+        }
+        if (vendorLotNumber != null ? !vendorLotNumber.equals(that.vendorLotNumber)
+            : that.vendorLotNumber != null) {
+            return false;
+        }
+        if (transferSubinventory != null ? !transferSubinventory.equals(that.transferSubinventory)
+            : that.transferSubinventory != null) {
+            return false;
+        }
+        if (transferOrganization != null ? !transferOrganization.equals(that.transferOrganization)
+            : that.transferOrganization != null) {
+            return false;
+        }
+        if (transferLocator != null ? !transferLocator.equals(that.transferLocator)
+            : that.transferLocator != null) {
+            return false;
+        }
+        if (xferLocSegment1 != null ? !xferLocSegment1.equals(that.xferLocSegment1)
+            : that.xferLocSegment1 != null) {
+            return false;
+        }
+        if (xferLocSegment2 != null ? !xferLocSegment2.equals(that.xferLocSegment2)
+            : that.xferLocSegment2 != null) {
+            return false;
+        }
+        if (xferLocSegment3 != null ? !xferLocSegment3.equals(that.xferLocSegment3)
+            : that.xferLocSegment3 != null) {
+            return false;
+        }
+        if (xferLocSegment4 != null ? !xferLocSegment4.equals(that.xferLocSegment4)
+            : that.xferLocSegment4 != null) {
+            return false;
+        }
+        if (xferLocSegment5 != null ? !xferLocSegment5.equals(that.xferLocSegment5)
+            : that.xferLocSegment5 != null) {
+            return false;
+        }
+        if (xferLocSegment6 != null ? !xferLocSegment6.equals(that.xferLocSegment6)
+            : that.xferLocSegment6 != null) {
+            return false;
+        }
+        if (xferLocSegment7 != null ? !xferLocSegment7.equals(that.xferLocSegment7)
+            : that.xferLocSegment7 != null) {
+            return false;
+        }
+        if (xferLocSegment8 != null ? !xferLocSegment8.equals(that.xferLocSegment8)
+            : that.xferLocSegment8 != null) {
+            return false;
+        }
+        if (xferLocSegment9 != null ? !xferLocSegment9.equals(that.xferLocSegment9)
+            : that.xferLocSegment9 != null) {
+            return false;
+        }
+        if (xferLocSegment10 != null ? !xferLocSegment10.equals(that.xferLocSegment10)
+            : that.xferLocSegment10 != null) {
+            return false;
+        }
+        if (xferLocSegment11 != null ? !xferLocSegment11.equals(that.xferLocSegment11)
+            : that.xferLocSegment11 != null) {
+            return false;
+        }
+        if (xferLocSegment12 != null ? !xferLocSegment12.equals(that.xferLocSegment12)
+            : that.xferLocSegment12 != null) {
+            return false;
+        }
+        if (xferLocSegment13 != null ? !xferLocSegment13.equals(that.xferLocSegment13)
+            : that.xferLocSegment13 != null) {
+            return false;
+        }
+        if (xferLocSegment14 != null ? !xferLocSegment14.equals(that.xferLocSegment14)
+            : that.xferLocSegment14 != null) {
+            return false;
+        }
+        if (xferLocSegment15 != null ? !xferLocSegment15.equals(that.xferLocSegment15)
+            : that.xferLocSegment15 != null) {
+            return false;
+        }
+        if (xferLocSegment16 != null ? !xferLocSegment16.equals(that.xferLocSegment16)
+            : that.xferLocSegment16 != null) {
+            return false;
+        }
+        if (xferLocSegment17 != null ? !xferLocSegment17.equals(that.xferLocSegment17)
+            : that.xferLocSegment17 != null) {
+            return false;
+        }
+        if (xferLocSegment18 != null ? !xferLocSegment18.equals(that.xferLocSegment18)
+            : that.xferLocSegment18 != null) {
+            return false;
+        }
+        if (xferLocSegment19 != null ? !xferLocSegment19.equals(that.xferLocSegment19)
+            : that.xferLocSegment19 != null) {
+            return false;
+        }
+        if (xferLocSegment20 != null ? !xferLocSegment20.equals(that.xferLocSegment20)
+            : that.xferLocSegment20 != null) {
+            return false;
+        }
+        if (shipmentNumber != null ? !shipmentNumber.equals(that.shipmentNumber)
+            : that.shipmentNumber != null) {
+            return false;
+        }
+        if (transportationCost != null ? !transportationCost.equals(that.transportationCost)
+            : that.transportationCost != null) {
+            return false;
+        }
+        if (transportationAccount != null ? !transportationAccount
+            .equals(that.transportationAccount) : that.transportationAccount != null) {
+            return false;
+        }
+        if (transferCost != null ? !transferCost.equals(that.transferCost)
+            : that.transferCost != null) {
+            return false;
+        }
+        if (freightCode != null ? !freightCode.equals(that.freightCode)
+            : that.freightCode != null) {
+            return false;
+        }
+        if (containers != null ? !containers.equals(that.containers) : that.containers != null) {
+            return false;
+        }
+        if (waybillAirbill != null ? !waybillAirbill.equals(that.waybillAirbill)
+            : that.waybillAirbill != null) {
+            return false;
+        }
+        if (expectedArrivalDate != null ? !expectedArrivalDate.equals(that.expectedArrivalDate)
+            : that.expectedArrivalDate != null) {
+            return false;
+        }
+        if (newAverageCost != null ? !newAverageCost.equals(that.newAverageCost)
+            : that.newAverageCost != null) {
+            return false;
+        }
+        if (valueChange != null ? !valueChange.equals(that.valueChange)
+            : that.valueChange != null) {
+            return false;
+        }
+        if (percentageChange != null ? !percentageChange.equals(that.percentageChange)
+            : that.percentageChange != null) {
+            return false;
+        }
+        if (demandSourceHeaderId != null ? !demandSourceHeaderId.equals(that.demandSourceHeaderId)
+            : that.demandSourceHeaderId != null) {
+            return false;
+        }
+        if (demandSourceLine != null ? !demandSourceLine.equals(that.demandSourceLine)
+            : that.demandSourceLine != null) {
+            return false;
+        }
+        if (demandSourceDelivery != null ? !demandSourceDelivery.equals(that.demandSourceDelivery)
+            : that.demandSourceDelivery != null) {
+            return false;
+        }
+        if (negativeReqFlag != null ? !negativeReqFlag.equals(that.negativeReqFlag)
+            : that.negativeReqFlag != null) {
+            return false;
+        }
+        if (errorExplanation != null ? !errorExplanation.equals(that.errorExplanation)
+            : that.errorExplanation != null) {
+            return false;
+        }
+        if (shippableFlag != null ? !shippableFlag.equals(that.shippableFlag)
+            : that.shippableFlag != null) {
+            return false;
+        }
+        if (errorCode != null ? !errorCode.equals(that.errorCode) : that.errorCode != null) {
+            return false;
+        }
+        if (requiredFlag != null ? !requiredFlag.equals(that.requiredFlag)
+            : that.requiredFlag != null) {
+            return false;
+        }
+        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory)
+            : that.attributeCategory != null) {
+            return false;
+        }
+        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) {
+            return false;
+        }
+        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) {
+            return false;
+        }
+        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) {
+            return false;
+        }
+        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) {
+            return false;
+        }
+        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) {
+            return false;
+        }
+        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) {
+            return false;
+        }
+        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) {
+            return false;
+        }
+        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) {
+            return false;
+        }
+        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) {
+            return false;
+        }
+        if (attribute10 != null ? !attribute10.equals(that.attribute10)
+            : that.attribute10 != null) {
+            return false;
+        }
+        if (attribute11 != null ? !attribute11.equals(that.attribute11)
+            : that.attribute11 != null) {
+            return false;
+        }
+        if (attribute12 != null ? !attribute12.equals(that.attribute12)
+            : that.attribute12 != null) {
+            return false;
+        }
+        if (attribute13 != null ? !attribute13.equals(that.attribute13)
+            : that.attribute13 != null) {
+            return false;
+        }
+        if (attribute14 != null ? !attribute14.equals(that.attribute14)
+            : that.attribute14 != null) {
+            return false;
+        }
+        if (attribute15 != null ? !attribute15.equals(that.attribute15)
+            : that.attribute15 != null) {
+            return false;
+        }
+        if (requisitionDistributionId != null ? !requisitionDistributionId
+            .equals(that.requisitionDistributionId) : that.requisitionDistributionId != null) {
+            return false;
+        }
+        if (movementId != null ? !movementId.equals(that.movementId) : that.movementId != null) {
+            return false;
+        }
+        if (reservationQuantity != null ? !reservationQuantity.equals(that.reservationQuantity)
+            : that.reservationQuantity != null) {
+            return false;
+        }
+        if (shippedQuantity != null ? !shippedQuantity.equals(that.shippedQuantity)
+            : that.shippedQuantity != null) {
+            return false;
+        }
+        if (inventoryItem != null ? !inventoryItem.equals(that.inventoryItem)
+            : that.inventoryItem != null) {
+            return false;
+        }
+        if (locatorName != null ? !locatorName.equals(that.locatorName)
+            : that.locatorName != null) {
+            return false;
+        }
+        if (taskId != null ? !taskId.equals(that.taskId) : that.taskId != null) {
+            return false;
+        }
+        if (toTaskId != null ? !toTaskId.equals(that.toTaskId) : that.toTaskId != null) {
+            return false;
+        }
+        if (sourceTaskId != null ? !sourceTaskId.equals(that.sourceTaskId)
+            : that.sourceTaskId != null) {
+            return false;
+        }
+        if (projectId != null ? !projectId.equals(that.projectId) : that.projectId != null) {
+            return false;
+        }
+        if (toProjectId != null ? !toProjectId.equals(that.toProjectId)
+            : that.toProjectId != null) {
+            return false;
+        }
+        if (sourceProjectId != null ? !sourceProjectId.equals(that.sourceProjectId)
+            : that.sourceProjectId != null) {
+            return false;
+        }
+        if (paExpenditureOrgId != null ? !paExpenditureOrgId.equals(that.paExpenditureOrgId)
+            : that.paExpenditureOrgId != null) {
+            return false;
+        }
+        if (expenditureType != null ? !expenditureType.equals(that.expenditureType)
+            : that.expenditureType != null) {
+            return false;
+        }
+        if (finalCompletionFlag != null ? !finalCompletionFlag.equals(that.finalCompletionFlag)
+            : that.finalCompletionFlag != null) {
+            return false;
+        }
+        if (transferPercentage != null ? !transferPercentage.equals(that.transferPercentage)
+            : that.transferPercentage != null) {
+            return false;
+        }
+        if (transactionSequenceId != null ? !transactionSequenceId
+            .equals(that.transactionSequenceId) : that.transactionSequenceId != null) {
+            return false;
+        }
+        if (materialAccount != null ? !materialAccount.equals(that.materialAccount)
+            : that.materialAccount != null) {
+            return false;
+        }
+        if (materialOverheadAccount != null ? !materialOverheadAccount
+            .equals(that.materialOverheadAccount) : that.materialOverheadAccount != null) {
+            return false;
+        }
+        if (resourceAccount != null ? !resourceAccount.equals(that.resourceAccount)
+            : that.resourceAccount != null) {
+            return false;
+        }
+        if (outsideProcessingAccount != null ? !outsideProcessingAccount
+            .equals(that.outsideProcessingAccount) : that.outsideProcessingAccount != null) {
+            return false;
+        }
+        if (overheadAccount != null ? !overheadAccount.equals(that.overheadAccount)
+            : that.overheadAccount != null) {
+            return false;
+        }
+        if (bomRevision != null ? !bomRevision.equals(that.bomRevision)
+            : that.bomRevision != null) {
+            return false;
+        }
+        if (routingRevision != null ? !routingRevision.equals(that.routingRevision)
+            : that.routingRevision != null) {
+            return false;
+        }
+        if (bomRevisionDate != null ? !bomRevisionDate.equals(that.bomRevisionDate)
+            : that.bomRevisionDate != null) {
+            return false;
+        }
+        if (routingRevisionDate != null ? !routingRevisionDate.equals(that.routingRevisionDate)
+            : that.routingRevisionDate != null) {
+            return false;
+        }
+        if (alternateBomDesignator != null ? !alternateBomDesignator
+            .equals(that.alternateBomDesignator) : that.alternateBomDesignator != null) {
+            return false;
+        }
+        if (alternateRoutingDesignator != null ? !alternateRoutingDesignator
+            .equals(that.alternateRoutingDesignator) : that.alternateRoutingDesignator != null) {
+            return false;
+        }
+        if (accountingClass != null ? !accountingClass.equals(that.accountingClass)
+            : that.accountingClass != null) {
+            return false;
+        }
+        if (demandClass != null ? !demandClass.equals(that.demandClass)
+            : that.demandClass != null) {
+            return false;
+        }
+        if (parentId != null ? !parentId.equals(that.parentId) : that.parentId != null) {
+            return false;
+        }
+        if (substitutionTypeId != null ? !substitutionTypeId.equals(that.substitutionTypeId)
+            : that.substitutionTypeId != null) {
+            return false;
+        }
+        if (substitutionItemId != null ? !substitutionItemId.equals(that.substitutionItemId)
+            : that.substitutionItemId != null) {
+            return false;
+        }
+        if (scheduleGroup != null ? !scheduleGroup.equals(that.scheduleGroup)
+            : that.scheduleGroup != null) {
+            return false;
+        }
+        if (buildSequence != null ? !buildSequence.equals(that.buildSequence)
+            : that.buildSequence != null) {
+            return false;
+        }
+        if (scheduleNumber != null ? !scheduleNumber.equals(that.scheduleNumber)
+            : that.scheduleNumber != null) {
+            return false;
+        }
+        if (scheduledFlag != null ? !scheduledFlag.equals(that.scheduledFlag)
+            : that.scheduledFlag != null) {
+            return false;
+        }
+        if (flowSchedule != null ? !flowSchedule.equals(that.flowSchedule)
+            : that.flowSchedule != null) {
+            return false;
+        }
+        if (costGroupId != null ? !costGroupId.equals(that.costGroupId)
+            : that.costGroupId != null) {
+            return false;
+        }
+        if (kanbanCardId != null ? !kanbanCardId.equals(that.kanbanCardId)
+            : that.kanbanCardId != null) {
+            return false;
+        }
+        if (qaCollectionId != null ? !qaCollectionId.equals(that.qaCollectionId)
+            : that.qaCollectionId != null) {
+            return false;
+        }
+        if (overcompletionTransactionQty != null ? !overcompletionTransactionQty
+            .equals(that.overcompletionTransactionQty)
+            : that.overcompletionTransactionQty != null) {
+            return false;
+        }
+        if (overcompletionPrimaryQty != null ? !overcompletionPrimaryQty
+            .equals(that.overcompletionPrimaryQty) : that.overcompletionPrimaryQty != null) {
+            return false;
+        }
+        if (overcompletionTransactionId != null ? !overcompletionTransactionId
+            .equals(that.overcompletionTransactionId) : that.overcompletionTransactionId != null) {
+            return false;
+        }
+        if (endItemUnitNumber != null ? !endItemUnitNumber.equals(that.endItemUnitNumber)
+            : that.endItemUnitNumber != null) {
+            return false;
+        }
+        if (scheduledPaybackDate != null ? !scheduledPaybackDate.equals(that.scheduledPaybackDate)
+            : that.scheduledPaybackDate != null) {
+            return false;
+        }
+        if (orgCostGroupId != null ? !orgCostGroupId.equals(that.orgCostGroupId)
+            : that.orgCostGroupId != null) {
+            return false;
+        }
+        if (costTypeId != null ? !costTypeId.equals(that.costTypeId) : that.costTypeId != null) {
+            return false;
+        }
+        if (sourceLotNumber != null ? !sourceLotNumber.equals(that.sourceLotNumber)
+            : that.sourceLotNumber != null) {
+            return false;
+        }
+        if (transferCostGroupId != null ? !transferCostGroupId.equals(that.transferCostGroupId)
+            : that.transferCostGroupId != null) {
+            return false;
+        }
+        if (lpnId != null ? !lpnId.equals(that.lpnId) : that.lpnId != null) {
+            return false;
+        }
+        if (transferLpnId != null ? !transferLpnId.equals(that.transferLpnId)
+            : that.transferLpnId != null) {
+            return false;
+        }
+        if (contentLpnId != null ? !contentLpnId.equals(that.contentLpnId)
+            : that.contentLpnId != null) {
+            return false;
+        }
+        if (xmlDocumentId != null ? !xmlDocumentId.equals(that.xmlDocumentId)
+            : that.xmlDocumentId != null) {
+            return false;
+        }
+        if (organizationType != null ? !organizationType.equals(that.organizationType)
+            : that.organizationType != null) {
+            return false;
+        }
+        if (transferOrganizationType != null ? !transferOrganizationType
+            .equals(that.transferOrganizationType) : that.transferOrganizationType != null) {
+            return false;
+        }
+        if (owningOrganizationId != null ? !owningOrganizationId.equals(that.owningOrganizationId)
+            : that.owningOrganizationId != null) {
+            return false;
+        }
+        if (owningTpType != null ? !owningTpType.equals(that.owningTpType)
+            : that.owningTpType != null) {
+            return false;
+        }
+        if (xfrOwningOrganizationId != null ? !xfrOwningOrganizationId
+            .equals(that.xfrOwningOrganizationId) : that.xfrOwningOrganizationId != null) {
+            return false;
+        }
+        if (transferOwningTpType != null ? !transferOwningTpType.equals(that.transferOwningTpType)
+            : that.transferOwningTpType != null) {
+            return false;
+        }
+        if (planningOrganizationId != null ? !planningOrganizationId
+            .equals(that.planningOrganizationId) : that.planningOrganizationId != null) {
+            return false;
+        }
+        if (planningTpType != null ? !planningTpType.equals(that.planningTpType)
+            : that.planningTpType != null) {
+            return false;
+        }
+        if (xfrPlanningOrganizationId != null ? !xfrPlanningOrganizationId
+            .equals(that.xfrPlanningOrganizationId) : that.xfrPlanningOrganizationId != null) {
+            return false;
+        }
+        if (transferPlanningTpType != null ? !transferPlanningTpType
+            .equals(that.transferPlanningTpType) : that.transferPlanningTpType != null) {
+            return false;
+        }
+        if (secondaryUomCode != null ? !secondaryUomCode.equals(that.secondaryUomCode)
+            : that.secondaryUomCode != null) {
+            return false;
+        }
+        if (secondaryTransactionQuantity != null ? !secondaryTransactionQuantity
+            .equals(that.secondaryTransactionQuantity)
+            : that.secondaryTransactionQuantity != null) {
+            return false;
+        }
+        if (transactionGroupId != null ? !transactionGroupId.equals(that.transactionGroupId)
+            : that.transactionGroupId != null) {
+            return false;
+        }
+        if (transactionGroupSeq != null ? !transactionGroupSeq.equals(that.transactionGroupSeq)
+            : that.transactionGroupSeq != null) {
+            return false;
+        }
+        if (representativeLotNumber != null ? !representativeLotNumber
+            .equals(that.representativeLotNumber) : that.representativeLotNumber != null) {
+            return false;
+        }
+        if (transactionBatchId != null ? !transactionBatchId.equals(that.transactionBatchId)
+            : that.transactionBatchId != null) {
+            return false;
+        }
+        if (transactionBatchSeq != null ? !transactionBatchSeq.equals(that.transactionBatchSeq)
+            : that.transactionBatchSeq != null) {
+            return false;
+        }
+        if (rebuildItemId != null ? !rebuildItemId.equals(that.rebuildItemId)
+            : that.rebuildItemId != null) {
+            return false;
+        }
+        if (rebuildSerialNumber != null ? !rebuildSerialNumber.equals(that.rebuildSerialNumber)
+            : that.rebuildSerialNumber != null) {
+            return false;
+        }
+        if (rebuildActivityId != null ? !rebuildActivityId.equals(that.rebuildActivityId)
+            : that.rebuildActivityId != null) {
+            return false;
+        }
+        if (rebuildJobName != null ? !rebuildJobName.equals(that.rebuildJobName)
+            : that.rebuildJobName != null) {
+            return false;
+        }
+        if (moveTransactionId != null ? !moveTransactionId.equals(that.moveTransactionId)
+            : that.moveTransactionId != null) {
+            return false;
+        }
+        if (completionTransactionId != null ? !completionTransactionId
+            .equals(that.completionTransactionId) : that.completionTransactionId != null) {
+            return false;
+        }
+        if (wipSupplyType != null ? !wipSupplyType.equals(that.wipSupplyType)
+            : that.wipSupplyType != null) {
+            return false;
+        }
 
         return true;
     }
@@ -3885,14 +4609,17 @@ public class MtlTransactionsInterface {
         result = 31 * result + (dspSegment28 != null ? dspSegment28.hashCode() : 0);
         result = 31 * result + (dspSegment29 != null ? dspSegment29.hashCode() : 0);
         result = 31 * result + (dspSegment30 != null ? dspSegment30.hashCode() : 0);
-        result = 31 * result + (transactionSourceName != null ? transactionSourceName.hashCode() : 0);
-        result = 31 * result + (transactionSourceTypeId != null ? transactionSourceTypeId.hashCode() : 0);
+        result =
+            31 * result + (transactionSourceName != null ? transactionSourceName.hashCode() : 0);
+        result = 31 * result + (transactionSourceTypeId != null ? transactionSourceTypeId.hashCode()
+            : 0);
         result = 31 * result + (transactionActionId != null ? transactionActionId.hashCode() : 0);
         result = 31 * result + (int) (transactionTypeId ^ (transactionTypeId >>> 32));
         result = 31 * result + (reasonId != null ? reasonId.hashCode() : 0);
         result = 31 * result + (transactionReference != null ? transactionReference.hashCode() : 0);
         result = 31 * result + (transactionCost != null ? transactionCost.hashCode() : 0);
-        result = 31 * result + (distributionAccountId != null ? distributionAccountId.hashCode() : 0);
+        result =
+            31 * result + (distributionAccountId != null ? distributionAccountId.hashCode() : 0);
         result = 31 * result + (dstSegment1 != null ? dstSegment1.hashCode() : 0);
         result = 31 * result + (dstSegment2 != null ? dstSegment2.hashCode() : 0);
         result = 31 * result + (dstSegment3 != null ? dstSegment3.hashCode() : 0);
@@ -3925,9 +4652,12 @@ public class MtlTransactionsInterface {
         result = 31 * result + (dstSegment30 != null ? dstSegment30.hashCode() : 0);
         result = 31 * result + (requisitionLineId != null ? requisitionLineId.hashCode() : 0);
         result = 31 * result + (currencyCode != null ? currencyCode.hashCode() : 0);
-        result = 31 * result + (currencyConversionDate != null ? currencyConversionDate.hashCode() : 0);
-        result = 31 * result + (currencyConversionType != null ? currencyConversionType.hashCode() : 0);
-        result = 31 * result + (currencyConversionRate != null ? currencyConversionRate.hashCode() : 0);
+        result =
+            31 * result + (currencyConversionDate != null ? currencyConversionDate.hashCode() : 0);
+        result =
+            31 * result + (currencyConversionType != null ? currencyConversionType.hashCode() : 0);
+        result =
+            31 * result + (currencyConversionRate != null ? currencyConversionRate.hashCode() : 0);
         result = 31 * result + (ussglTransactionCode != null ? ussglTransactionCode.hashCode() : 0);
         result = 31 * result + (wipEntityType != null ? wipEntityType.hashCode() : 0);
         result = 31 * result + (scheduleId != null ? scheduleId.hashCode() : 0);
@@ -3976,7 +4706,8 @@ public class MtlTransactionsInterface {
         result = 31 * result + (xferLocSegment20 != null ? xferLocSegment20.hashCode() : 0);
         result = 31 * result + (shipmentNumber != null ? shipmentNumber.hashCode() : 0);
         result = 31 * result + (transportationCost != null ? transportationCost.hashCode() : 0);
-        result = 31 * result + (transportationAccount != null ? transportationAccount.hashCode() : 0);
+        result =
+            31 * result + (transportationAccount != null ? transportationAccount.hashCode() : 0);
         result = 31 * result + (transferCost != null ? transferCost.hashCode() : 0);
         result = 31 * result + (freightCode != null ? freightCode.hashCode() : 0);
         result = 31 * result + (containers != null ? containers.hashCode() : 0);
@@ -4009,7 +4740,9 @@ public class MtlTransactionsInterface {
         result = 31 * result + (attribute13 != null ? attribute13.hashCode() : 0);
         result = 31 * result + (attribute14 != null ? attribute14.hashCode() : 0);
         result = 31 * result + (attribute15 != null ? attribute15.hashCode() : 0);
-        result = 31 * result + (requisitionDistributionId != null ? requisitionDistributionId.hashCode() : 0);
+        result =
+            31 * result + (requisitionDistributionId != null ? requisitionDistributionId.hashCode()
+                : 0);
         result = 31 * result + (movementId != null ? movementId.hashCode() : 0);
         result = 31 * result + (reservationQuantity != null ? reservationQuantity.hashCode() : 0);
         result = 31 * result + (shippedQuantity != null ? shippedQuantity.hashCode() : 0);
@@ -4025,18 +4758,24 @@ public class MtlTransactionsInterface {
         result = 31 * result + (expenditureType != null ? expenditureType.hashCode() : 0);
         result = 31 * result + (finalCompletionFlag != null ? finalCompletionFlag.hashCode() : 0);
         result = 31 * result + (transferPercentage != null ? transferPercentage.hashCode() : 0);
-        result = 31 * result + (transactionSequenceId != null ? transactionSequenceId.hashCode() : 0);
+        result =
+            31 * result + (transactionSequenceId != null ? transactionSequenceId.hashCode() : 0);
         result = 31 * result + (materialAccount != null ? materialAccount.hashCode() : 0);
-        result = 31 * result + (materialOverheadAccount != null ? materialOverheadAccount.hashCode() : 0);
+        result = 31 * result + (materialOverheadAccount != null ? materialOverheadAccount.hashCode()
+            : 0);
         result = 31 * result + (resourceAccount != null ? resourceAccount.hashCode() : 0);
-        result = 31 * result + (outsideProcessingAccount != null ? outsideProcessingAccount.hashCode() : 0);
+        result =
+            31 * result + (outsideProcessingAccount != null ? outsideProcessingAccount.hashCode()
+                : 0);
         result = 31 * result + (overheadAccount != null ? overheadAccount.hashCode() : 0);
         result = 31 * result + (bomRevision != null ? bomRevision.hashCode() : 0);
         result = 31 * result + (routingRevision != null ? routingRevision.hashCode() : 0);
         result = 31 * result + (bomRevisionDate != null ? bomRevisionDate.hashCode() : 0);
         result = 31 * result + (routingRevisionDate != null ? routingRevisionDate.hashCode() : 0);
-        result = 31 * result + (alternateBomDesignator != null ? alternateBomDesignator.hashCode() : 0);
-        result = 31 * result + (alternateRoutingDesignator != null ? alternateRoutingDesignator.hashCode() : 0);
+        result =
+            31 * result + (alternateBomDesignator != null ? alternateBomDesignator.hashCode() : 0);
+        result = 31 * result + (alternateRoutingDesignator != null ? alternateRoutingDesignator
+            .hashCode() : 0);
         result = 31 * result + (accountingClass != null ? accountingClass.hashCode() : 0);
         result = 31 * result + (demandClass != null ? demandClass.hashCode() : 0);
         result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
@@ -4050,9 +4789,13 @@ public class MtlTransactionsInterface {
         result = 31 * result + (costGroupId != null ? costGroupId.hashCode() : 0);
         result = 31 * result + (kanbanCardId != null ? kanbanCardId.hashCode() : 0);
         result = 31 * result + (qaCollectionId != null ? qaCollectionId.hashCode() : 0);
-        result = 31 * result + (overcompletionTransactionQty != null ? overcompletionTransactionQty.hashCode() : 0);
-        result = 31 * result + (overcompletionPrimaryQty != null ? overcompletionPrimaryQty.hashCode() : 0);
-        result = 31 * result + (overcompletionTransactionId != null ? overcompletionTransactionId.hashCode() : 0);
+        result = 31 * result + (overcompletionTransactionQty != null ? overcompletionTransactionQty
+            .hashCode() : 0);
+        result =
+            31 * result + (overcompletionPrimaryQty != null ? overcompletionPrimaryQty.hashCode()
+                : 0);
+        result = 31 * result + (overcompletionTransactionId != null ? overcompletionTransactionId
+            .hashCode() : 0);
         result = 31 * result + (endItemUnitNumber != null ? endItemUnitNumber.hashCode() : 0);
         result = 31 * result + (scheduledPaybackDate != null ? scheduledPaybackDate.hashCode() : 0);
         result = 31 * result + (orgCostGroupId != null ? orgCostGroupId.hashCode() : 0);
@@ -4064,20 +4807,29 @@ public class MtlTransactionsInterface {
         result = 31 * result + (contentLpnId != null ? contentLpnId.hashCode() : 0);
         result = 31 * result + (xmlDocumentId != null ? xmlDocumentId.hashCode() : 0);
         result = 31 * result + (organizationType != null ? organizationType.hashCode() : 0);
-        result = 31 * result + (transferOrganizationType != null ? transferOrganizationType.hashCode() : 0);
+        result =
+            31 * result + (transferOrganizationType != null ? transferOrganizationType.hashCode()
+                : 0);
         result = 31 * result + (owningOrganizationId != null ? owningOrganizationId.hashCode() : 0);
         result = 31 * result + (owningTpType != null ? owningTpType.hashCode() : 0);
-        result = 31 * result + (xfrOwningOrganizationId != null ? xfrOwningOrganizationId.hashCode() : 0);
+        result = 31 * result + (xfrOwningOrganizationId != null ? xfrOwningOrganizationId.hashCode()
+            : 0);
         result = 31 * result + (transferOwningTpType != null ? transferOwningTpType.hashCode() : 0);
-        result = 31 * result + (planningOrganizationId != null ? planningOrganizationId.hashCode() : 0);
+        result =
+            31 * result + (planningOrganizationId != null ? planningOrganizationId.hashCode() : 0);
         result = 31 * result + (planningTpType != null ? planningTpType.hashCode() : 0);
-        result = 31 * result + (xfrPlanningOrganizationId != null ? xfrPlanningOrganizationId.hashCode() : 0);
-        result = 31 * result + (transferPlanningTpType != null ? transferPlanningTpType.hashCode() : 0);
+        result =
+            31 * result + (xfrPlanningOrganizationId != null ? xfrPlanningOrganizationId.hashCode()
+                : 0);
+        result =
+            31 * result + (transferPlanningTpType != null ? transferPlanningTpType.hashCode() : 0);
         result = 31 * result + (secondaryUomCode != null ? secondaryUomCode.hashCode() : 0);
-        result = 31 * result + (secondaryTransactionQuantity != null ? secondaryTransactionQuantity.hashCode() : 0);
+        result = 31 * result + (secondaryTransactionQuantity != null ? secondaryTransactionQuantity
+            .hashCode() : 0);
         result = 31 * result + (transactionGroupId != null ? transactionGroupId.hashCode() : 0);
         result = 31 * result + (transactionGroupSeq != null ? transactionGroupSeq.hashCode() : 0);
-        result = 31 * result + (representativeLotNumber != null ? representativeLotNumber.hashCode() : 0);
+        result = 31 * result + (representativeLotNumber != null ? representativeLotNumber.hashCode()
+            : 0);
         result = 31 * result + (transactionBatchId != null ? transactionBatchId.hashCode() : 0);
         result = 31 * result + (transactionBatchSeq != null ? transactionBatchSeq.hashCode() : 0);
         result = 31 * result + (rebuildItemId != null ? rebuildItemId.hashCode() : 0);
@@ -4085,7 +4837,8 @@ public class MtlTransactionsInterface {
         result = 31 * result + (rebuildActivityId != null ? rebuildActivityId.hashCode() : 0);
         result = 31 * result + (rebuildJobName != null ? rebuildJobName.hashCode() : 0);
         result = 31 * result + (moveTransactionId != null ? moveTransactionId.hashCode() : 0);
-        result = 31 * result + (completionTransactionId != null ? completionTransactionId.hashCode() : 0);
+        result = 31 * result + (completionTransactionId != null ? completionTransactionId.hashCode()
+            : 0);
         result = 31 * result + (wipSupplyType != null ? wipSupplyType.hashCode() : 0);
         return result;
     }

@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/item/upload")
 public class ItemUploadController {
+
     @Autowired
     ItemSpecService itemSpecService;
     @Autowired
@@ -37,6 +38,7 @@ public class ItemUploadController {
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public static class ResourceNotFoundException extends RuntimeException {
+
         public ResourceNotFoundException(String message) {
             super(message);
         }
@@ -57,15 +59,33 @@ public class ItemUploadController {
             if (index > 0) {
                 XSSFRow row = worksheet.getRow(index);                // 생성자로 만들기
                 XxeItemsImportTemp xxeItemsImportTemp = new XxeItemsImportTemp();
-                xxeItemsImportTemp.setSegment1(row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setDescription(row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setPrimaryUomCode(row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setTemplateName(row.getCell(4, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setEngItemFlag(row.getCell(5, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setWeightUomCode(row.getCell(6, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setUnitWeight( row.getCell(7, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
-                xxeItemsImportTemp.setVolumeUomCode(row.getCell(8, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue());
-                xxeItemsImportTemp.setUnitVolume(row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getNumericCellValue());
+                xxeItemsImportTemp.setSegment1(
+                    row.getCell(1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setDescription(
+                    row.getCell(2, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setPrimaryUomCode(
+                    row.getCell(3, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setTemplateName(
+                    row.getCell(4, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setEngItemFlag(
+                    row.getCell(5, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setWeightUomCode(
+                    row.getCell(6, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setUnitWeight(
+                    row.getCell(7, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
+                xxeItemsImportTemp.setVolumeUomCode(
+                    row.getCell(8, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getStringCellValue());
+                xxeItemsImportTemp.setUnitVolume(
+                    row.getCell(9, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK)
+                        .getNumericCellValue());
 //                    .(row.getCell(10, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
 //                    .(row.getCell(11, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())
 //                    .(row.getCell(12, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue())

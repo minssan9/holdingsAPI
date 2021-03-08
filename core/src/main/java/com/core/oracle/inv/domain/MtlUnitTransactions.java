@@ -10,6 +10,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "MTL_UNIT_TRANSACTIONS", schema = "INV", catalog = "")
 public class MtlUnitTransactions {
+
     @Id
     private long transactionId;
     private Time lastUpdateDate;
@@ -1576,175 +1577,563 @@ public class MtlUnitTransactions {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         MtlUnitTransactions that = (MtlUnitTransactions) o;
 
-        if (transactionId != that.transactionId) return false;
-        if (lastUpdatedBy != that.lastUpdatedBy) return false;
-        if (createdBy != that.createdBy) return false;
-        if (inventoryItemId != that.inventoryItemId) return false;
-        if (organizationId != that.organizationId) return false;
-        if (transactionSourceTypeId != that.transactionSourceTypeId) return false;
-        if (receiptIssueType != that.receiptIssueType) return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
+        if (transactionId != that.transactionId) {
             return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin) : that.lastUpdateLogin != null)
+        }
+        if (lastUpdatedBy != that.lastUpdatedBy) {
             return false;
-        if (serialNumber != null ? !serialNumber.equals(that.serialNumber) : that.serialNumber != null) return false;
-        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode) : that.subinventoryCode != null)
+        }
+        if (createdBy != that.createdBy) {
             return false;
-        if (locatorId != null ? !locatorId.equals(that.locatorId) : that.locatorId != null) return false;
-        if (transactionDate != null ? !transactionDate.equals(that.transactionDate) : that.transactionDate != null)
+        }
+        if (inventoryItemId != that.inventoryItemId) {
             return false;
-        if (transactionSourceId != null ? !transactionSourceId.equals(that.transactionSourceId) : that.transactionSourceId != null)
+        }
+        if (organizationId != that.organizationId) {
             return false;
-        if (transactionSourceName != null ? !transactionSourceName.equals(that.transactionSourceName) : that.transactionSourceName != null)
+        }
+        if (transactionSourceTypeId != that.transactionSourceTypeId) {
             return false;
-        if (customerId != null ? !customerId.equals(that.customerId) : that.customerId != null) return false;
-        if (shipId != null ? !shipId.equals(that.shipId) : that.shipId != null) return false;
-        if (serialAttributeCategory != null ? !serialAttributeCategory.equals(that.serialAttributeCategory) : that.serialAttributeCategory != null)
+        }
+        if (receiptIssueType != that.receiptIssueType) {
             return false;
-        if (countryOfOrigin != null ? !countryOfOrigin.equals(that.countryOfOrigin) : that.countryOfOrigin != null)
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
             return false;
-        if (originationDate != null ? !originationDate.equals(that.originationDate) : that.originationDate != null)
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
             return false;
-        if (cAttribute1 != null ? !cAttribute1.equals(that.cAttribute1) : that.cAttribute1 != null) return false;
-        if (cAttribute2 != null ? !cAttribute2.equals(that.cAttribute2) : that.cAttribute2 != null) return false;
-        if (cAttribute3 != null ? !cAttribute3.equals(that.cAttribute3) : that.cAttribute3 != null) return false;
-        if (cAttribute4 != null ? !cAttribute4.equals(that.cAttribute4) : that.cAttribute4 != null) return false;
-        if (cAttribute5 != null ? !cAttribute5.equals(that.cAttribute5) : that.cAttribute5 != null) return false;
-        if (cAttribute6 != null ? !cAttribute6.equals(that.cAttribute6) : that.cAttribute6 != null) return false;
-        if (cAttribute7 != null ? !cAttribute7.equals(that.cAttribute7) : that.cAttribute7 != null) return false;
-        if (cAttribute8 != null ? !cAttribute8.equals(that.cAttribute8) : that.cAttribute8 != null) return false;
-        if (cAttribute9 != null ? !cAttribute9.equals(that.cAttribute9) : that.cAttribute9 != null) return false;
-        if (cAttribute10 != null ? !cAttribute10.equals(that.cAttribute10) : that.cAttribute10 != null) return false;
-        if (cAttribute11 != null ? !cAttribute11.equals(that.cAttribute11) : that.cAttribute11 != null) return false;
-        if (cAttribute12 != null ? !cAttribute12.equals(that.cAttribute12) : that.cAttribute12 != null) return false;
-        if (cAttribute13 != null ? !cAttribute13.equals(that.cAttribute13) : that.cAttribute13 != null) return false;
-        if (cAttribute14 != null ? !cAttribute14.equals(that.cAttribute14) : that.cAttribute14 != null) return false;
-        if (cAttribute15 != null ? !cAttribute15.equals(that.cAttribute15) : that.cAttribute15 != null) return false;
-        if (cAttribute16 != null ? !cAttribute16.equals(that.cAttribute16) : that.cAttribute16 != null) return false;
-        if (cAttribute17 != null ? !cAttribute17.equals(that.cAttribute17) : that.cAttribute17 != null) return false;
-        if (cAttribute18 != null ? !cAttribute18.equals(that.cAttribute18) : that.cAttribute18 != null) return false;
-        if (cAttribute19 != null ? !cAttribute19.equals(that.cAttribute19) : that.cAttribute19 != null) return false;
-        if (cAttribute20 != null ? !cAttribute20.equals(that.cAttribute20) : that.cAttribute20 != null) return false;
-        if (cAttribute21 != null ? !cAttribute21.equals(that.cAttribute21) : that.cAttribute21 != null) return false;
-        if (cAttribute22 != null ? !cAttribute22.equals(that.cAttribute22) : that.cAttribute22 != null) return false;
-        if (cAttribute23 != null ? !cAttribute23.equals(that.cAttribute23) : that.cAttribute23 != null) return false;
-        if (cAttribute24 != null ? !cAttribute24.equals(that.cAttribute24) : that.cAttribute24 != null) return false;
-        if (cAttribute25 != null ? !cAttribute25.equals(that.cAttribute25) : that.cAttribute25 != null) return false;
-        if (cAttribute26 != null ? !cAttribute26.equals(that.cAttribute26) : that.cAttribute26 != null) return false;
-        if (cAttribute27 != null ? !cAttribute27.equals(that.cAttribute27) : that.cAttribute27 != null) return false;
-        if (cAttribute28 != null ? !cAttribute28.equals(that.cAttribute28) : that.cAttribute28 != null) return false;
-        if (cAttribute29 != null ? !cAttribute29.equals(that.cAttribute29) : that.cAttribute29 != null) return false;
-        if (cAttribute30 != null ? !cAttribute30.equals(that.cAttribute30) : that.cAttribute30 != null) return false;
-        if (dAttribute1 != null ? !dAttribute1.equals(that.dAttribute1) : that.dAttribute1 != null) return false;
-        if (dAttribute2 != null ? !dAttribute2.equals(that.dAttribute2) : that.dAttribute2 != null) return false;
-        if (dAttribute3 != null ? !dAttribute3.equals(that.dAttribute3) : that.dAttribute3 != null) return false;
-        if (dAttribute4 != null ? !dAttribute4.equals(that.dAttribute4) : that.dAttribute4 != null) return false;
-        if (dAttribute5 != null ? !dAttribute5.equals(that.dAttribute5) : that.dAttribute5 != null) return false;
-        if (dAttribute6 != null ? !dAttribute6.equals(that.dAttribute6) : that.dAttribute6 != null) return false;
-        if (dAttribute7 != null ? !dAttribute7.equals(that.dAttribute7) : that.dAttribute7 != null) return false;
-        if (dAttribute8 != null ? !dAttribute8.equals(that.dAttribute8) : that.dAttribute8 != null) return false;
-        if (dAttribute9 != null ? !dAttribute9.equals(that.dAttribute9) : that.dAttribute9 != null) return false;
-        if (dAttribute10 != null ? !dAttribute10.equals(that.dAttribute10) : that.dAttribute10 != null) return false;
-        if (dAttribute11 != null ? !dAttribute11.equals(that.dAttribute11) : that.dAttribute11 != null) return false;
-        if (dAttribute12 != null ? !dAttribute12.equals(that.dAttribute12) : that.dAttribute12 != null) return false;
-        if (dAttribute13 != null ? !dAttribute13.equals(that.dAttribute13) : that.dAttribute13 != null) return false;
-        if (dAttribute14 != null ? !dAttribute14.equals(that.dAttribute14) : that.dAttribute14 != null) return false;
-        if (dAttribute15 != null ? !dAttribute15.equals(that.dAttribute15) : that.dAttribute15 != null) return false;
-        if (dAttribute16 != null ? !dAttribute16.equals(that.dAttribute16) : that.dAttribute16 != null) return false;
-        if (dAttribute17 != null ? !dAttribute17.equals(that.dAttribute17) : that.dAttribute17 != null) return false;
-        if (dAttribute18 != null ? !dAttribute18.equals(that.dAttribute18) : that.dAttribute18 != null) return false;
-        if (dAttribute19 != null ? !dAttribute19.equals(that.dAttribute19) : that.dAttribute19 != null) return false;
-        if (dAttribute20 != null ? !dAttribute20.equals(that.dAttribute20) : that.dAttribute20 != null) return false;
-        if (dAttribute21 != null ? !dAttribute21.equals(that.dAttribute21) : that.dAttribute21 != null) return false;
-        if (dAttribute22 != null ? !dAttribute22.equals(that.dAttribute22) : that.dAttribute22 != null) return false;
-        if (dAttribute23 != null ? !dAttribute23.equals(that.dAttribute23) : that.dAttribute23 != null) return false;
-        if (dAttribute24 != null ? !dAttribute24.equals(that.dAttribute24) : that.dAttribute24 != null) return false;
-        if (dAttribute25 != null ? !dAttribute25.equals(that.dAttribute25) : that.dAttribute25 != null) return false;
-        if (dAttribute26 != null ? !dAttribute26.equals(that.dAttribute26) : that.dAttribute26 != null) return false;
-        if (dAttribute27 != null ? !dAttribute27.equals(that.dAttribute27) : that.dAttribute27 != null) return false;
-        if (dAttribute28 != null ? !dAttribute28.equals(that.dAttribute28) : that.dAttribute28 != null) return false;
-        if (dAttribute29 != null ? !dAttribute29.equals(that.dAttribute29) : that.dAttribute29 != null) return false;
-        if (dAttribute30 != null ? !dAttribute30.equals(that.dAttribute30) : that.dAttribute30 != null) return false;
-        if (nAttribute1 != null ? !nAttribute1.equals(that.nAttribute1) : that.nAttribute1 != null) return false;
-        if (nAttribute2 != null ? !nAttribute2.equals(that.nAttribute2) : that.nAttribute2 != null) return false;
-        if (nAttribute3 != null ? !nAttribute3.equals(that.nAttribute3) : that.nAttribute3 != null) return false;
-        if (nAttribute4 != null ? !nAttribute4.equals(that.nAttribute4) : that.nAttribute4 != null) return false;
-        if (nAttribute5 != null ? !nAttribute5.equals(that.nAttribute5) : that.nAttribute5 != null) return false;
-        if (nAttribute6 != null ? !nAttribute6.equals(that.nAttribute6) : that.nAttribute6 != null) return false;
-        if (nAttribute7 != null ? !nAttribute7.equals(that.nAttribute7) : that.nAttribute7 != null) return false;
-        if (nAttribute8 != null ? !nAttribute8.equals(that.nAttribute8) : that.nAttribute8 != null) return false;
-        if (nAttribute9 != null ? !nAttribute9.equals(that.nAttribute9) : that.nAttribute9 != null) return false;
-        if (nAttribute10 != null ? !nAttribute10.equals(that.nAttribute10) : that.nAttribute10 != null) return false;
-        if (nAttribute11 != null ? !nAttribute11.equals(that.nAttribute11) : that.nAttribute11 != null) return false;
-        if (nAttribute12 != null ? !nAttribute12.equals(that.nAttribute12) : that.nAttribute12 != null) return false;
-        if (nAttribute13 != null ? !nAttribute13.equals(that.nAttribute13) : that.nAttribute13 != null) return false;
-        if (nAttribute14 != null ? !nAttribute14.equals(that.nAttribute14) : that.nAttribute14 != null) return false;
-        if (nAttribute15 != null ? !nAttribute15.equals(that.nAttribute15) : that.nAttribute15 != null) return false;
-        if (nAttribute16 != null ? !nAttribute16.equals(that.nAttribute16) : that.nAttribute16 != null) return false;
-        if (nAttribute17 != null ? !nAttribute17.equals(that.nAttribute17) : that.nAttribute17 != null) return false;
-        if (nAttribute18 != null ? !nAttribute18.equals(that.nAttribute18) : that.nAttribute18 != null) return false;
-        if (nAttribute19 != null ? !nAttribute19.equals(that.nAttribute19) : that.nAttribute19 != null) return false;
-        if (nAttribute20 != null ? !nAttribute20.equals(that.nAttribute20) : that.nAttribute20 != null) return false;
-        if (nAttribute21 != null ? !nAttribute21.equals(that.nAttribute21) : that.nAttribute21 != null) return false;
-        if (nAttribute22 != null ? !nAttribute22.equals(that.nAttribute22) : that.nAttribute22 != null) return false;
-        if (nAttribute23 != null ? !nAttribute23.equals(that.nAttribute23) : that.nAttribute23 != null) return false;
-        if (nAttribute24 != null ? !nAttribute24.equals(that.nAttribute24) : that.nAttribute24 != null) return false;
-        if (nAttribute25 != null ? !nAttribute25.equals(that.nAttribute25) : that.nAttribute25 != null) return false;
-        if (nAttribute26 != null ? !nAttribute26.equals(that.nAttribute26) : that.nAttribute26 != null) return false;
-        if (nAttribute27 != null ? !nAttribute27.equals(that.nAttribute27) : that.nAttribute27 != null) return false;
-        if (nAttribute28 != null ? !nAttribute28.equals(that.nAttribute28) : that.nAttribute28 != null) return false;
-        if (nAttribute29 != null ? !nAttribute29.equals(that.nAttribute29) : that.nAttribute29 != null) return false;
-        if (nAttribute30 != null ? !nAttribute30.equals(that.nAttribute30) : that.nAttribute30 != null) return false;
-        if (statusId != null ? !statusId.equals(that.statusId) : that.statusId != null) return false;
-        if (territoryCode != null ? !territoryCode.equals(that.territoryCode) : that.territoryCode != null)
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin)
+            : that.lastUpdateLogin != null) {
             return false;
-        if (timeSinceNew != null ? !timeSinceNew.equals(that.timeSinceNew) : that.timeSinceNew != null) return false;
-        if (cyclesSinceNew != null ? !cyclesSinceNew.equals(that.cyclesSinceNew) : that.cyclesSinceNew != null)
+        }
+        if (serialNumber != null ? !serialNumber.equals(that.serialNumber)
+            : that.serialNumber != null) {
             return false;
-        if (timeSinceOverhaul != null ? !timeSinceOverhaul.equals(that.timeSinceOverhaul) : that.timeSinceOverhaul != null)
+        }
+        if (subinventoryCode != null ? !subinventoryCode.equals(that.subinventoryCode)
+            : that.subinventoryCode != null) {
             return false;
-        if (cyclesSinceOverhaul != null ? !cyclesSinceOverhaul.equals(that.cyclesSinceOverhaul) : that.cyclesSinceOverhaul != null)
+        }
+        if (locatorId != null ? !locatorId.equals(that.locatorId) : that.locatorId != null) {
             return false;
-        if (timeSinceRepair != null ? !timeSinceRepair.equals(that.timeSinceRepair) : that.timeSinceRepair != null)
+        }
+        if (transactionDate != null ? !transactionDate.equals(that.transactionDate)
+            : that.transactionDate != null) {
             return false;
-        if (cyclesSinceRepair != null ? !cyclesSinceRepair.equals(that.cyclesSinceRepair) : that.cyclesSinceRepair != null)
+        }
+        if (transactionSourceId != null ? !transactionSourceId.equals(that.transactionSourceId)
+            : that.transactionSourceId != null) {
             return false;
-        if (timeSinceVisit != null ? !timeSinceVisit.equals(that.timeSinceVisit) : that.timeSinceVisit != null)
+        }
+        if (transactionSourceName != null ? !transactionSourceName
+            .equals(that.transactionSourceName) : that.transactionSourceName != null) {
             return false;
-        if (cyclesSinceVisit != null ? !cyclesSinceVisit.equals(that.cyclesSinceVisit) : that.cyclesSinceVisit != null)
+        }
+        if (customerId != null ? !customerId.equals(that.customerId) : that.customerId != null) {
             return false;
-        if (timeSinceMark != null ? !timeSinceMark.equals(that.timeSinceMark) : that.timeSinceMark != null)
+        }
+        if (shipId != null ? !shipId.equals(that.shipId) : that.shipId != null) {
             return false;
-        if (cyclesSinceMark != null ? !cyclesSinceMark.equals(that.cyclesSinceMark) : that.cyclesSinceMark != null)
+        }
+        if (serialAttributeCategory != null ? !serialAttributeCategory
+            .equals(that.serialAttributeCategory) : that.serialAttributeCategory != null) {
             return false;
-        if (numberOfRepairs != null ? !numberOfRepairs.equals(that.numberOfRepairs) : that.numberOfRepairs != null)
+        }
+        if (countryOfOrigin != null ? !countryOfOrigin.equals(that.countryOfOrigin)
+            : that.countryOfOrigin != null) {
             return false;
-        if (productCode != null ? !productCode.equals(that.productCode) : that.productCode != null) return false;
-        if (productTransactionId != null ? !productTransactionId.equals(that.productTransactionId) : that.productTransactionId != null)
+        }
+        if (originationDate != null ? !originationDate.equals(that.originationDate)
+            : that.originationDate != null) {
             return false;
-        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory) : that.attributeCategory != null)
+        }
+        if (cAttribute1 != null ? !cAttribute1.equals(that.cAttribute1)
+            : that.cAttribute1 != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(that.attribute10) : that.attribute10 != null) return false;
-        if (attribute11 != null ? !attribute11.equals(that.attribute11) : that.attribute11 != null) return false;
-        if (attribute12 != null ? !attribute12.equals(that.attribute12) : that.attribute12 != null) return false;
-        if (attribute13 != null ? !attribute13.equals(that.attribute13) : that.attribute13 != null) return false;
-        if (attribute14 != null ? !attribute14.equals(that.attribute14) : that.attribute14 != null) return false;
-        if (attribute15 != null ? !attribute15.equals(that.attribute15) : that.attribute15 != null) return false;
+        }
+        if (cAttribute2 != null ? !cAttribute2.equals(that.cAttribute2)
+            : that.cAttribute2 != null) {
+            return false;
+        }
+        if (cAttribute3 != null ? !cAttribute3.equals(that.cAttribute3)
+            : that.cAttribute3 != null) {
+            return false;
+        }
+        if (cAttribute4 != null ? !cAttribute4.equals(that.cAttribute4)
+            : that.cAttribute4 != null) {
+            return false;
+        }
+        if (cAttribute5 != null ? !cAttribute5.equals(that.cAttribute5)
+            : that.cAttribute5 != null) {
+            return false;
+        }
+        if (cAttribute6 != null ? !cAttribute6.equals(that.cAttribute6)
+            : that.cAttribute6 != null) {
+            return false;
+        }
+        if (cAttribute7 != null ? !cAttribute7.equals(that.cAttribute7)
+            : that.cAttribute7 != null) {
+            return false;
+        }
+        if (cAttribute8 != null ? !cAttribute8.equals(that.cAttribute8)
+            : that.cAttribute8 != null) {
+            return false;
+        }
+        if (cAttribute9 != null ? !cAttribute9.equals(that.cAttribute9)
+            : that.cAttribute9 != null) {
+            return false;
+        }
+        if (cAttribute10 != null ? !cAttribute10.equals(that.cAttribute10)
+            : that.cAttribute10 != null) {
+            return false;
+        }
+        if (cAttribute11 != null ? !cAttribute11.equals(that.cAttribute11)
+            : that.cAttribute11 != null) {
+            return false;
+        }
+        if (cAttribute12 != null ? !cAttribute12.equals(that.cAttribute12)
+            : that.cAttribute12 != null) {
+            return false;
+        }
+        if (cAttribute13 != null ? !cAttribute13.equals(that.cAttribute13)
+            : that.cAttribute13 != null) {
+            return false;
+        }
+        if (cAttribute14 != null ? !cAttribute14.equals(that.cAttribute14)
+            : that.cAttribute14 != null) {
+            return false;
+        }
+        if (cAttribute15 != null ? !cAttribute15.equals(that.cAttribute15)
+            : that.cAttribute15 != null) {
+            return false;
+        }
+        if (cAttribute16 != null ? !cAttribute16.equals(that.cAttribute16)
+            : that.cAttribute16 != null) {
+            return false;
+        }
+        if (cAttribute17 != null ? !cAttribute17.equals(that.cAttribute17)
+            : that.cAttribute17 != null) {
+            return false;
+        }
+        if (cAttribute18 != null ? !cAttribute18.equals(that.cAttribute18)
+            : that.cAttribute18 != null) {
+            return false;
+        }
+        if (cAttribute19 != null ? !cAttribute19.equals(that.cAttribute19)
+            : that.cAttribute19 != null) {
+            return false;
+        }
+        if (cAttribute20 != null ? !cAttribute20.equals(that.cAttribute20)
+            : that.cAttribute20 != null) {
+            return false;
+        }
+        if (cAttribute21 != null ? !cAttribute21.equals(that.cAttribute21)
+            : that.cAttribute21 != null) {
+            return false;
+        }
+        if (cAttribute22 != null ? !cAttribute22.equals(that.cAttribute22)
+            : that.cAttribute22 != null) {
+            return false;
+        }
+        if (cAttribute23 != null ? !cAttribute23.equals(that.cAttribute23)
+            : that.cAttribute23 != null) {
+            return false;
+        }
+        if (cAttribute24 != null ? !cAttribute24.equals(that.cAttribute24)
+            : that.cAttribute24 != null) {
+            return false;
+        }
+        if (cAttribute25 != null ? !cAttribute25.equals(that.cAttribute25)
+            : that.cAttribute25 != null) {
+            return false;
+        }
+        if (cAttribute26 != null ? !cAttribute26.equals(that.cAttribute26)
+            : that.cAttribute26 != null) {
+            return false;
+        }
+        if (cAttribute27 != null ? !cAttribute27.equals(that.cAttribute27)
+            : that.cAttribute27 != null) {
+            return false;
+        }
+        if (cAttribute28 != null ? !cAttribute28.equals(that.cAttribute28)
+            : that.cAttribute28 != null) {
+            return false;
+        }
+        if (cAttribute29 != null ? !cAttribute29.equals(that.cAttribute29)
+            : that.cAttribute29 != null) {
+            return false;
+        }
+        if (cAttribute30 != null ? !cAttribute30.equals(that.cAttribute30)
+            : that.cAttribute30 != null) {
+            return false;
+        }
+        if (dAttribute1 != null ? !dAttribute1.equals(that.dAttribute1)
+            : that.dAttribute1 != null) {
+            return false;
+        }
+        if (dAttribute2 != null ? !dAttribute2.equals(that.dAttribute2)
+            : that.dAttribute2 != null) {
+            return false;
+        }
+        if (dAttribute3 != null ? !dAttribute3.equals(that.dAttribute3)
+            : that.dAttribute3 != null) {
+            return false;
+        }
+        if (dAttribute4 != null ? !dAttribute4.equals(that.dAttribute4)
+            : that.dAttribute4 != null) {
+            return false;
+        }
+        if (dAttribute5 != null ? !dAttribute5.equals(that.dAttribute5)
+            : that.dAttribute5 != null) {
+            return false;
+        }
+        if (dAttribute6 != null ? !dAttribute6.equals(that.dAttribute6)
+            : that.dAttribute6 != null) {
+            return false;
+        }
+        if (dAttribute7 != null ? !dAttribute7.equals(that.dAttribute7)
+            : that.dAttribute7 != null) {
+            return false;
+        }
+        if (dAttribute8 != null ? !dAttribute8.equals(that.dAttribute8)
+            : that.dAttribute8 != null) {
+            return false;
+        }
+        if (dAttribute9 != null ? !dAttribute9.equals(that.dAttribute9)
+            : that.dAttribute9 != null) {
+            return false;
+        }
+        if (dAttribute10 != null ? !dAttribute10.equals(that.dAttribute10)
+            : that.dAttribute10 != null) {
+            return false;
+        }
+        if (dAttribute11 != null ? !dAttribute11.equals(that.dAttribute11)
+            : that.dAttribute11 != null) {
+            return false;
+        }
+        if (dAttribute12 != null ? !dAttribute12.equals(that.dAttribute12)
+            : that.dAttribute12 != null) {
+            return false;
+        }
+        if (dAttribute13 != null ? !dAttribute13.equals(that.dAttribute13)
+            : that.dAttribute13 != null) {
+            return false;
+        }
+        if (dAttribute14 != null ? !dAttribute14.equals(that.dAttribute14)
+            : that.dAttribute14 != null) {
+            return false;
+        }
+        if (dAttribute15 != null ? !dAttribute15.equals(that.dAttribute15)
+            : that.dAttribute15 != null) {
+            return false;
+        }
+        if (dAttribute16 != null ? !dAttribute16.equals(that.dAttribute16)
+            : that.dAttribute16 != null) {
+            return false;
+        }
+        if (dAttribute17 != null ? !dAttribute17.equals(that.dAttribute17)
+            : that.dAttribute17 != null) {
+            return false;
+        }
+        if (dAttribute18 != null ? !dAttribute18.equals(that.dAttribute18)
+            : that.dAttribute18 != null) {
+            return false;
+        }
+        if (dAttribute19 != null ? !dAttribute19.equals(that.dAttribute19)
+            : that.dAttribute19 != null) {
+            return false;
+        }
+        if (dAttribute20 != null ? !dAttribute20.equals(that.dAttribute20)
+            : that.dAttribute20 != null) {
+            return false;
+        }
+        if (dAttribute21 != null ? !dAttribute21.equals(that.dAttribute21)
+            : that.dAttribute21 != null) {
+            return false;
+        }
+        if (dAttribute22 != null ? !dAttribute22.equals(that.dAttribute22)
+            : that.dAttribute22 != null) {
+            return false;
+        }
+        if (dAttribute23 != null ? !dAttribute23.equals(that.dAttribute23)
+            : that.dAttribute23 != null) {
+            return false;
+        }
+        if (dAttribute24 != null ? !dAttribute24.equals(that.dAttribute24)
+            : that.dAttribute24 != null) {
+            return false;
+        }
+        if (dAttribute25 != null ? !dAttribute25.equals(that.dAttribute25)
+            : that.dAttribute25 != null) {
+            return false;
+        }
+        if (dAttribute26 != null ? !dAttribute26.equals(that.dAttribute26)
+            : that.dAttribute26 != null) {
+            return false;
+        }
+        if (dAttribute27 != null ? !dAttribute27.equals(that.dAttribute27)
+            : that.dAttribute27 != null) {
+            return false;
+        }
+        if (dAttribute28 != null ? !dAttribute28.equals(that.dAttribute28)
+            : that.dAttribute28 != null) {
+            return false;
+        }
+        if (dAttribute29 != null ? !dAttribute29.equals(that.dAttribute29)
+            : that.dAttribute29 != null) {
+            return false;
+        }
+        if (dAttribute30 != null ? !dAttribute30.equals(that.dAttribute30)
+            : that.dAttribute30 != null) {
+            return false;
+        }
+        if (nAttribute1 != null ? !nAttribute1.equals(that.nAttribute1)
+            : that.nAttribute1 != null) {
+            return false;
+        }
+        if (nAttribute2 != null ? !nAttribute2.equals(that.nAttribute2)
+            : that.nAttribute2 != null) {
+            return false;
+        }
+        if (nAttribute3 != null ? !nAttribute3.equals(that.nAttribute3)
+            : that.nAttribute3 != null) {
+            return false;
+        }
+        if (nAttribute4 != null ? !nAttribute4.equals(that.nAttribute4)
+            : that.nAttribute4 != null) {
+            return false;
+        }
+        if (nAttribute5 != null ? !nAttribute5.equals(that.nAttribute5)
+            : that.nAttribute5 != null) {
+            return false;
+        }
+        if (nAttribute6 != null ? !nAttribute6.equals(that.nAttribute6)
+            : that.nAttribute6 != null) {
+            return false;
+        }
+        if (nAttribute7 != null ? !nAttribute7.equals(that.nAttribute7)
+            : that.nAttribute7 != null) {
+            return false;
+        }
+        if (nAttribute8 != null ? !nAttribute8.equals(that.nAttribute8)
+            : that.nAttribute8 != null) {
+            return false;
+        }
+        if (nAttribute9 != null ? !nAttribute9.equals(that.nAttribute9)
+            : that.nAttribute9 != null) {
+            return false;
+        }
+        if (nAttribute10 != null ? !nAttribute10.equals(that.nAttribute10)
+            : that.nAttribute10 != null) {
+            return false;
+        }
+        if (nAttribute11 != null ? !nAttribute11.equals(that.nAttribute11)
+            : that.nAttribute11 != null) {
+            return false;
+        }
+        if (nAttribute12 != null ? !nAttribute12.equals(that.nAttribute12)
+            : that.nAttribute12 != null) {
+            return false;
+        }
+        if (nAttribute13 != null ? !nAttribute13.equals(that.nAttribute13)
+            : that.nAttribute13 != null) {
+            return false;
+        }
+        if (nAttribute14 != null ? !nAttribute14.equals(that.nAttribute14)
+            : that.nAttribute14 != null) {
+            return false;
+        }
+        if (nAttribute15 != null ? !nAttribute15.equals(that.nAttribute15)
+            : that.nAttribute15 != null) {
+            return false;
+        }
+        if (nAttribute16 != null ? !nAttribute16.equals(that.nAttribute16)
+            : that.nAttribute16 != null) {
+            return false;
+        }
+        if (nAttribute17 != null ? !nAttribute17.equals(that.nAttribute17)
+            : that.nAttribute17 != null) {
+            return false;
+        }
+        if (nAttribute18 != null ? !nAttribute18.equals(that.nAttribute18)
+            : that.nAttribute18 != null) {
+            return false;
+        }
+        if (nAttribute19 != null ? !nAttribute19.equals(that.nAttribute19)
+            : that.nAttribute19 != null) {
+            return false;
+        }
+        if (nAttribute20 != null ? !nAttribute20.equals(that.nAttribute20)
+            : that.nAttribute20 != null) {
+            return false;
+        }
+        if (nAttribute21 != null ? !nAttribute21.equals(that.nAttribute21)
+            : that.nAttribute21 != null) {
+            return false;
+        }
+        if (nAttribute22 != null ? !nAttribute22.equals(that.nAttribute22)
+            : that.nAttribute22 != null) {
+            return false;
+        }
+        if (nAttribute23 != null ? !nAttribute23.equals(that.nAttribute23)
+            : that.nAttribute23 != null) {
+            return false;
+        }
+        if (nAttribute24 != null ? !nAttribute24.equals(that.nAttribute24)
+            : that.nAttribute24 != null) {
+            return false;
+        }
+        if (nAttribute25 != null ? !nAttribute25.equals(that.nAttribute25)
+            : that.nAttribute25 != null) {
+            return false;
+        }
+        if (nAttribute26 != null ? !nAttribute26.equals(that.nAttribute26)
+            : that.nAttribute26 != null) {
+            return false;
+        }
+        if (nAttribute27 != null ? !nAttribute27.equals(that.nAttribute27)
+            : that.nAttribute27 != null) {
+            return false;
+        }
+        if (nAttribute28 != null ? !nAttribute28.equals(that.nAttribute28)
+            : that.nAttribute28 != null) {
+            return false;
+        }
+        if (nAttribute29 != null ? !nAttribute29.equals(that.nAttribute29)
+            : that.nAttribute29 != null) {
+            return false;
+        }
+        if (nAttribute30 != null ? !nAttribute30.equals(that.nAttribute30)
+            : that.nAttribute30 != null) {
+            return false;
+        }
+        if (statusId != null ? !statusId.equals(that.statusId) : that.statusId != null) {
+            return false;
+        }
+        if (territoryCode != null ? !territoryCode.equals(that.territoryCode)
+            : that.territoryCode != null) {
+            return false;
+        }
+        if (timeSinceNew != null ? !timeSinceNew.equals(that.timeSinceNew)
+            : that.timeSinceNew != null) {
+            return false;
+        }
+        if (cyclesSinceNew != null ? !cyclesSinceNew.equals(that.cyclesSinceNew)
+            : that.cyclesSinceNew != null) {
+            return false;
+        }
+        if (timeSinceOverhaul != null ? !timeSinceOverhaul.equals(that.timeSinceOverhaul)
+            : that.timeSinceOverhaul != null) {
+            return false;
+        }
+        if (cyclesSinceOverhaul != null ? !cyclesSinceOverhaul.equals(that.cyclesSinceOverhaul)
+            : that.cyclesSinceOverhaul != null) {
+            return false;
+        }
+        if (timeSinceRepair != null ? !timeSinceRepair.equals(that.timeSinceRepair)
+            : that.timeSinceRepair != null) {
+            return false;
+        }
+        if (cyclesSinceRepair != null ? !cyclesSinceRepair.equals(that.cyclesSinceRepair)
+            : that.cyclesSinceRepair != null) {
+            return false;
+        }
+        if (timeSinceVisit != null ? !timeSinceVisit.equals(that.timeSinceVisit)
+            : that.timeSinceVisit != null) {
+            return false;
+        }
+        if (cyclesSinceVisit != null ? !cyclesSinceVisit.equals(that.cyclesSinceVisit)
+            : that.cyclesSinceVisit != null) {
+            return false;
+        }
+        if (timeSinceMark != null ? !timeSinceMark.equals(that.timeSinceMark)
+            : that.timeSinceMark != null) {
+            return false;
+        }
+        if (cyclesSinceMark != null ? !cyclesSinceMark.equals(that.cyclesSinceMark)
+            : that.cyclesSinceMark != null) {
+            return false;
+        }
+        if (numberOfRepairs != null ? !numberOfRepairs.equals(that.numberOfRepairs)
+            : that.numberOfRepairs != null) {
+            return false;
+        }
+        if (productCode != null ? !productCode.equals(that.productCode)
+            : that.productCode != null) {
+            return false;
+        }
+        if (productTransactionId != null ? !productTransactionId.equals(that.productTransactionId)
+            : that.productTransactionId != null) {
+            return false;
+        }
+        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory)
+            : that.attributeCategory != null) {
+            return false;
+        }
+        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) {
+            return false;
+        }
+        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) {
+            return false;
+        }
+        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) {
+            return false;
+        }
+        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) {
+            return false;
+        }
+        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) {
+            return false;
+        }
+        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) {
+            return false;
+        }
+        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) {
+            return false;
+        }
+        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) {
+            return false;
+        }
+        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) {
+            return false;
+        }
+        if (attribute10 != null ? !attribute10.equals(that.attribute10)
+            : that.attribute10 != null) {
+            return false;
+        }
+        if (attribute11 != null ? !attribute11.equals(that.attribute11)
+            : that.attribute11 != null) {
+            return false;
+        }
+        if (attribute12 != null ? !attribute12.equals(that.attribute12)
+            : that.attribute12 != null) {
+            return false;
+        }
+        if (attribute13 != null ? !attribute13.equals(that.attribute13)
+            : that.attribute13 != null) {
+            return false;
+        }
+        if (attribute14 != null ? !attribute14.equals(that.attribute14)
+            : that.attribute14 != null) {
+            return false;
+        }
+        if (attribute15 != null ? !attribute15.equals(that.attribute15)
+            : that.attribute15 != null) {
+            return false;
+        }
 
         return true;
     }
@@ -1765,11 +2154,13 @@ public class MtlUnitTransactions {
         result = 31 * result + (transactionDate != null ? transactionDate.hashCode() : 0);
         result = 31 * result + (transactionSourceId != null ? transactionSourceId.hashCode() : 0);
         result = 31 * result + (int) (transactionSourceTypeId ^ (transactionSourceTypeId >>> 32));
-        result = 31 * result + (transactionSourceName != null ? transactionSourceName.hashCode() : 0);
+        result =
+            31 * result + (transactionSourceName != null ? transactionSourceName.hashCode() : 0);
         result = 31 * result + (int) (receiptIssueType ^ (receiptIssueType >>> 32));
         result = 31 * result + (customerId != null ? customerId.hashCode() : 0);
         result = 31 * result + (shipId != null ? shipId.hashCode() : 0);
-        result = 31 * result + (serialAttributeCategory != null ? serialAttributeCategory.hashCode() : 0);
+        result = 31 * result + (serialAttributeCategory != null ? serialAttributeCategory.hashCode()
+            : 0);
         result = 31 * result + (countryOfOrigin != null ? countryOfOrigin.hashCode() : 0);
         result = 31 * result + (originationDate != null ? originationDate.hashCode() : 0);
         result = 31 * result + (cAttribute1 != null ? cAttribute1.hashCode() : 0);

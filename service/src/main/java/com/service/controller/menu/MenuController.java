@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("menu")
 @Slf4j
 public class MenuController {
+
     @Autowired
     private UserPermissionRepositorySupport userPermissionRepositorySupport;
 
@@ -26,7 +27,8 @@ public class MenuController {
 
     @GetMapping("/resp/{respName}")
     public ResponseEntity getAllList(@PathVariable String respName) {
-        return new ResponseEntity(userPermissionRepositorySupport.findByName(respName), HttpStatus.OK);
+        return new ResponseEntity(userPermissionRepositorySupport.findByName(respName),
+            HttpStatus.OK);
 //        return new ResponseEntity(userPermissionRepository.findByFndResponsibility_Responsibility_name(respName), HttpStatus.OK);
     }
 }

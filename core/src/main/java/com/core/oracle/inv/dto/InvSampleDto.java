@@ -1,6 +1,7 @@
 package com.core.oracle.inv.dto;
 
 public class InvSampleDto {
+
     private String num;
     private String name;
     private String title;

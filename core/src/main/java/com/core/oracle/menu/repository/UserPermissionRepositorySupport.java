@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserPermissionRepositorySupport  extends QuerydslRepositorySupport   {
+public class UserPermissionRepositorySupport extends QuerydslRepositorySupport {
 
     QAccount account = QAccount.account;
     QUserPermission userPermission = QUserPermission.userPermission;
@@ -20,17 +20,17 @@ public class UserPermissionRepositorySupport  extends QuerydslRepositorySupport 
     }
 
     public List<UserPermission> findByName(String description) {
-        List<UserPermission> userPermissions =   from(userPermission)
-                .leftJoin(account).on(userPermission.user_id.eq(account.userId))
-                .where(account.description.eq(description))
-                .fetch();
+        List<UserPermission> userPermissions = from(userPermission)
+            .leftJoin(account).on(userPermission.user_id.eq(account.userId))
+            .where(account.description.eq(description))
+            .fetch();
 
         return userPermissions;
     }
 
     public List<UserPermission> findByPermissionName(String description) {
         return from(userPermission)
-                .where(userPermission.description.like(description))
-                .fetch();
+            .where(userPermission.description.like(description))
+            .fetch();
     }
 }

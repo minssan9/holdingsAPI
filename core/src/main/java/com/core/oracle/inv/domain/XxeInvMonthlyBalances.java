@@ -12,7 +12,8 @@ import java.sql.Time;
 @Entity
 @Table(name = "XXE_INV_MONTHLY_BALANCES", schema = "XXE", catalog = "")
 @IdClass(XxeInvMonthlyBalances.class)
-public class XxeInvMonthlyBalances  implements Serializable {
+public class XxeInvMonthlyBalances implements Serializable {
+
     @Id
     private long organizationId;
     @Id
@@ -416,56 +417,144 @@ public class XxeInvMonthlyBalances  implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         XxeInvMonthlyBalances that = (XxeInvMonthlyBalances) o;
 
-        if (organizationId != that.organizationId) return false;
-        if (acctPeriodId != that.acctPeriodId) return false;
-        if (inventoryItemId != that.inventoryItemId) return false;
-        if (lastUpdatedBy != that.lastUpdatedBy) return false;
-        if (createdBy != that.createdBy) return false;
-        if (balanceType != null ? !balanceType.equals(that.balanceType) : that.balanceType != null) return false;
-        if (itemRevision != null ? !itemRevision.equals(that.itemRevision) : that.itemRevision != null) return false;
-        if (itemSegment != null ? !itemSegment.equals(that.itemSegment) : that.itemSegment != null) return false;
-        if (primaryUom != null ? !primaryUom.equals(that.primaryUom) : that.primaryUom != null) return false;
-        if (beginingQuantity != null ? !beginingQuantity.equals(that.beginingQuantity) : that.beginingQuantity != null)
+        if (organizationId != that.organizationId) {
             return false;
-        if (beginingAmount != null ? !beginingAmount.equals(that.beginingAmount) : that.beginingAmount != null)
+        }
+        if (acctPeriodId != that.acctPeriodId) {
             return false;
-        if (receiptsQuantity != null ? !receiptsQuantity.equals(that.receiptsQuantity) : that.receiptsQuantity != null)
+        }
+        if (inventoryItemId != that.inventoryItemId) {
             return false;
-        if (receiptsAmount != null ? !receiptsAmount.equals(that.receiptsAmount) : that.receiptsAmount != null)
+        }
+        if (lastUpdatedBy != that.lastUpdatedBy) {
             return false;
-        if (issueQuantity != null ? !issueQuantity.equals(that.issueQuantity) : that.issueQuantity != null)
+        }
+        if (createdBy != that.createdBy) {
             return false;
-        if (issueAmount != null ? !issueAmount.equals(that.issueAmount) : that.issueAmount != null) return false;
-        if (endingQuantity != null ? !endingQuantity.equals(that.endingQuantity) : that.endingQuantity != null)
+        }
+        if (balanceType != null ? !balanceType.equals(that.balanceType)
+            : that.balanceType != null) {
             return false;
-        if (endingAmount != null ? !endingAmount.equals(that.endingAmount) : that.endingAmount != null) return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
+        }
+        if (itemRevision != null ? !itemRevision.equals(that.itemRevision)
+            : that.itemRevision != null) {
             return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin) : that.lastUpdateLogin != null)
+        }
+        if (itemSegment != null ? !itemSegment.equals(that.itemSegment)
+            : that.itemSegment != null) {
             return false;
-        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory) : that.attributeCategory != null)
+        }
+        if (primaryUom != null ? !primaryUom.equals(that.primaryUom) : that.primaryUom != null) {
             return false;
-        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) return false;
-        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) return false;
-        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) return false;
-        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) return false;
-        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) return false;
-        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) return false;
-        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) return false;
-        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) return false;
-        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) return false;
-        if (attribute10 != null ? !attribute10.equals(that.attribute10) : that.attribute10 != null) return false;
-        if (attribute11 != null ? !attribute11.equals(that.attribute11) : that.attribute11 != null) return false;
-        if (attribute12 != null ? !attribute12.equals(that.attribute12) : that.attribute12 != null) return false;
-        if (attribute13 != null ? !attribute13.equals(that.attribute13) : that.attribute13 != null) return false;
-        if (attribute14 != null ? !attribute14.equals(that.attribute14) : that.attribute14 != null) return false;
-        if (attribute15 != null ? !attribute15.equals(that.attribute15) : that.attribute15 != null) return false;
+        }
+        if (beginingQuantity != null ? !beginingQuantity.equals(that.beginingQuantity)
+            : that.beginingQuantity != null) {
+            return false;
+        }
+        if (beginingAmount != null ? !beginingAmount.equals(that.beginingAmount)
+            : that.beginingAmount != null) {
+            return false;
+        }
+        if (receiptsQuantity != null ? !receiptsQuantity.equals(that.receiptsQuantity)
+            : that.receiptsQuantity != null) {
+            return false;
+        }
+        if (receiptsAmount != null ? !receiptsAmount.equals(that.receiptsAmount)
+            : that.receiptsAmount != null) {
+            return false;
+        }
+        if (issueQuantity != null ? !issueQuantity.equals(that.issueQuantity)
+            : that.issueQuantity != null) {
+            return false;
+        }
+        if (issueAmount != null ? !issueAmount.equals(that.issueAmount)
+            : that.issueAmount != null) {
+            return false;
+        }
+        if (endingQuantity != null ? !endingQuantity.equals(that.endingQuantity)
+            : that.endingQuantity != null) {
+            return false;
+        }
+        if (endingAmount != null ? !endingAmount.equals(that.endingAmount)
+            : that.endingAmount != null) {
+            return false;
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
+            return false;
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
+            return false;
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin)
+            : that.lastUpdateLogin != null) {
+            return false;
+        }
+        if (attributeCategory != null ? !attributeCategory.equals(that.attributeCategory)
+            : that.attributeCategory != null) {
+            return false;
+        }
+        if (attribute1 != null ? !attribute1.equals(that.attribute1) : that.attribute1 != null) {
+            return false;
+        }
+        if (attribute2 != null ? !attribute2.equals(that.attribute2) : that.attribute2 != null) {
+            return false;
+        }
+        if (attribute3 != null ? !attribute3.equals(that.attribute3) : that.attribute3 != null) {
+            return false;
+        }
+        if (attribute4 != null ? !attribute4.equals(that.attribute4) : that.attribute4 != null) {
+            return false;
+        }
+        if (attribute5 != null ? !attribute5.equals(that.attribute5) : that.attribute5 != null) {
+            return false;
+        }
+        if (attribute6 != null ? !attribute6.equals(that.attribute6) : that.attribute6 != null) {
+            return false;
+        }
+        if (attribute7 != null ? !attribute7.equals(that.attribute7) : that.attribute7 != null) {
+            return false;
+        }
+        if (attribute8 != null ? !attribute8.equals(that.attribute8) : that.attribute8 != null) {
+            return false;
+        }
+        if (attribute9 != null ? !attribute9.equals(that.attribute9) : that.attribute9 != null) {
+            return false;
+        }
+        if (attribute10 != null ? !attribute10.equals(that.attribute10)
+            : that.attribute10 != null) {
+            return false;
+        }
+        if (attribute11 != null ? !attribute11.equals(that.attribute11)
+            : that.attribute11 != null) {
+            return false;
+        }
+        if (attribute12 != null ? !attribute12.equals(that.attribute12)
+            : that.attribute12 != null) {
+            return false;
+        }
+        if (attribute13 != null ? !attribute13.equals(that.attribute13)
+            : that.attribute13 != null) {
+            return false;
+        }
+        if (attribute14 != null ? !attribute14.equals(that.attribute14)
+            : that.attribute14 != null) {
+            return false;
+        }
+        if (attribute15 != null ? !attribute15.equals(that.attribute15)
+            : that.attribute15 != null) {
+            return false;
+        }
 
         return true;
     }

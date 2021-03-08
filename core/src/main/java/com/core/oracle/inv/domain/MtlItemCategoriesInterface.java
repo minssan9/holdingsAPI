@@ -6,6 +6,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "MTL_ITEM_CATEGORIES_INTERFACE", schema = "INV", catalog = "")
 public class MtlItemCategoriesInterface {
+
     @Id
     private Long inventoryItemId;
     private Long categorySetId;
@@ -263,48 +264,101 @@ public class MtlItemCategoriesInterface {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         MtlItemCategoriesInterface that = (MtlItemCategoriesInterface) o;
 
-        if (setProcessId != that.setProcessId) return false;
-        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId) : that.inventoryItemId != null)
+        if (setProcessId != that.setProcessId) {
             return false;
-        if (categorySetId != null ? !categorySetId.equals(that.categorySetId) : that.categorySetId != null)
+        }
+        if (inventoryItemId != null ? !inventoryItemId.equals(that.inventoryItemId)
+            : that.inventoryItemId != null) {
             return false;
-        if (categoryId != null ? !categoryId.equals(that.categoryId) : that.categoryId != null) return false;
-        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate) : that.lastUpdateDate != null)
+        }
+        if (categorySetId != null ? !categorySetId.equals(that.categorySetId)
+            : that.categorySetId != null) {
             return false;
-        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy) : that.lastUpdatedBy != null)
+        }
+        if (categoryId != null ? !categoryId.equals(that.categoryId) : that.categoryId != null) {
             return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) return false;
-        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin) : that.lastUpdateLogin != null)
+        }
+        if (lastUpdateDate != null ? !lastUpdateDate.equals(that.lastUpdateDate)
+            : that.lastUpdateDate != null) {
             return false;
-        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) return false;
-        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId) : that.programApplicationId != null)
+        }
+        if (lastUpdatedBy != null ? !lastUpdatedBy.equals(that.lastUpdatedBy)
+            : that.lastUpdatedBy != null) {
             return false;
-        if (programId != null ? !programId.equals(that.programId) : that.programId != null) return false;
-        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate) : that.programUpdateDate != null)
+        }
+        if (creationDate != null ? !creationDate.equals(that.creationDate)
+            : that.creationDate != null) {
             return false;
-        if (organizationId != null ? !organizationId.equals(that.organizationId) : that.organizationId != null)
+        }
+        if (createdBy != null ? !createdBy.equals(that.createdBy) : that.createdBy != null) {
             return false;
-        if (transactionId != null ? !transactionId.equals(that.transactionId) : that.transactionId != null)
+        }
+        if (lastUpdateLogin != null ? !lastUpdateLogin.equals(that.lastUpdateLogin)
+            : that.lastUpdateLogin != null) {
             return false;
-        if (processFlag != null ? !processFlag.equals(that.processFlag) : that.processFlag != null) return false;
-        if (categorySetName != null ? !categorySetName.equals(that.categorySetName) : that.categorySetName != null)
+        }
+        if (requestId != null ? !requestId.equals(that.requestId) : that.requestId != null) {
             return false;
-        if (categoryName != null ? !categoryName.equals(that.categoryName) : that.categoryName != null) return false;
-        if (organizationCode != null ? !organizationCode.equals(that.organizationCode) : that.organizationCode != null)
+        }
+        if (programApplicationId != null ? !programApplicationId.equals(that.programApplicationId)
+            : that.programApplicationId != null) {
             return false;
-        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) return false;
-        if (transactionType != null ? !transactionType.equals(that.transactionType) : that.transactionType != null)
+        }
+        if (programId != null ? !programId.equals(that.programId) : that.programId != null) {
             return false;
-        if (oldCategoryId != null ? !oldCategoryId.equals(that.oldCategoryId) : that.oldCategoryId != null)
+        }
+        if (programUpdateDate != null ? !programUpdateDate.equals(that.programUpdateDate)
+            : that.programUpdateDate != null) {
             return false;
-        if (oldCategoryName != null ? !oldCategoryName.equals(that.oldCategoryName) : that.oldCategoryName != null)
+        }
+        if (organizationId != null ? !organizationId.equals(that.organizationId)
+            : that.organizationId != null) {
             return false;
+        }
+        if (transactionId != null ? !transactionId.equals(that.transactionId)
+            : that.transactionId != null) {
+            return false;
+        }
+        if (processFlag != null ? !processFlag.equals(that.processFlag)
+            : that.processFlag != null) {
+            return false;
+        }
+        if (categorySetName != null ? !categorySetName.equals(that.categorySetName)
+            : that.categorySetName != null) {
+            return false;
+        }
+        if (categoryName != null ? !categoryName.equals(that.categoryName)
+            : that.categoryName != null) {
+            return false;
+        }
+        if (organizationCode != null ? !organizationCode.equals(that.organizationCode)
+            : that.organizationCode != null) {
+            return false;
+        }
+        if (itemNumber != null ? !itemNumber.equals(that.itemNumber) : that.itemNumber != null) {
+            return false;
+        }
+        if (transactionType != null ? !transactionType.equals(that.transactionType)
+            : that.transactionType != null) {
+            return false;
+        }
+        if (oldCategoryId != null ? !oldCategoryId.equals(that.oldCategoryId)
+            : that.oldCategoryId != null) {
+            return false;
+        }
+        if (oldCategoryName != null ? !oldCategoryName.equals(that.oldCategoryName)
+            : that.oldCategoryName != null) {
+            return false;
+        }
 
         return true;
     }
