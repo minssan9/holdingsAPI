@@ -1,6 +1,6 @@
 package com.service.controller.inv;
 
-import com.core.oracle.inv.service.InvService;
+import com.inv.service.InvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

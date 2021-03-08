@@ -5,7 +5,11 @@ plugins {
 apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
 group 'com.hallahds'
-version '1.0'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
 
 bootJar { enabled = false }
 jar { enabled = true }
@@ -17,7 +21,6 @@ dependencies {
     implementation 'com.querydsl:querydsl-jpa'
     implementation 'com.querydsl:querydsl-apt'
 }
-
 
 def querydslGenratedSrc = "$buildDir/generated/queryDsl"
 querydsl {

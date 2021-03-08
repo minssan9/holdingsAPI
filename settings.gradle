@@ -1,4 +1,5 @@
-rootProject.name = 'holdings'
+rootProject.name = 'hallahds'
 include 'core'
 include 'service'
 include 'batch'
+include 'inv'

@@ -4,8 +4,8 @@ package com.service.controller.inv;
 import static com.core.config.StaticConfig.DATE_STRING_FORMAT;
 
 import com.service.file.service.FileStorageService;
-import com.core.oracle.inv.domain.XxeErpOtherTrxs;
-import com.core.oracle.inv.repository.XxeErpOtherTrxsRepository;
+import com.inv.domain.XxeErpOtherTrxs;
+import com.inv.repository.XxeErpOtherTrxsRepository;
 //import io.swagger.v3.oas.annotations.tags.Tag;
 import java.io.IOException;
 import java.time.LocalDateTime;

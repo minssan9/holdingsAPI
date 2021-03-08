@@ -7,7 +7,6 @@ import java.util.Objects;
 import java.util.Properties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
     entityManagerFactoryRef = "oracleEntityManagerFactory",
     transactionManagerRef = "oracleTransactionManager",
-    basePackages = "com.core.oracle.*.repository"
+    basePackages = {"com.*.repository", "com.core.oracle.*.repository"}
 )
 public class OracleDatabaseConfig {
 
@@ -68,7 +67,7 @@ public class OracleDatabaseConfig {
 
         return builder.dataSource(oracleDataSource())
             .properties(properties)
-            .packages("com.core.oracle.*.domain")
+            .packages(new String[]{"com.core.oracle.*.domain", "com.*.domain"})
             .persistenceUnit("oracle")
             .build();
     }

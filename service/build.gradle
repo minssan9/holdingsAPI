@@ -1,8 +1,12 @@
 plugins {
+    id 'org.springframework.boot'
 }
 
 ext {
 }
+
+group 'com.hallahds'
+version '1.0-SNAPSHOT'
 
 bootJar {
     manifest {
@@ -12,8 +16,7 @@ bootJar {
 
 dependencies {
     compile project(':core')
-
-//    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile project(':inv')
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.5.3'
 

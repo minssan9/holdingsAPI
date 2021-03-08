@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication(scanBasePackages = {"com.core", "com.service"})
-@Configuration
+@SpringBootApplication(scanBasePackages = {"com.core", "com.inv","com.service"})
 //@CrossOrigin(origins = {"http://localhost:8091", "http://localhost:8090", "http://localhost"})
 public class HoldingsApiApplication {
 

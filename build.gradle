@@ -11,7 +11,7 @@ repositories {
     maven { url "https://plugins.gradle.org/m2/" }
 }
 ext {
-    projectGroup = 'halla.hds'
+    projectGroup = 'com.hallahds'
     lombokVersion = '1.18.18'
     springBootVersion = '2.4.2'
     queryDslVersion = '4.2.1'
@@ -24,7 +24,7 @@ allprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-    group = 'halla.hds'
+    group = 'com.hallahds'
     version '1.0'
     sourceCompatibility = 1.8
     configurations { compileOnly { extendsFrom annotationProcessor } }
