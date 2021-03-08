@@ -2,6 +2,7 @@ package com.core.oracle.inv.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "XXE_INV_BALANCE_INTERFACE", schema = "XXE", catalog = "")
