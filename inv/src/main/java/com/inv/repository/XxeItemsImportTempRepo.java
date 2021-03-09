@@ -10,31 +10,16 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface XxeItemsImportTempRepo extends JpaRepository<XxeItemsImportTemp, Long> {
-
-    @Query(value = " fnd_request.submit_request( "
-        + " 'INV'              "
-        + " ,'INCOIN'          "
-        + " ,NULL              "
-        + " ,NULL              "
-        + " ,FALSE             "
-        + " ,1                 "
-        + " ,1                 "
-        + " ,1                  "
-        + " ,1                   "
-        + " ,V_SET_PROCESS_ID_C     "
-        + " ,1          "
+    @Query(value = " fnd_request.submit_request(:application,:program, NULL, NULL, FALSE, 1 ,1 ,1 ,1 ,:processId, 1 "
         + " ,fnd_global.local_chr(0)"
-        + " ,NULL"
-        + " ,NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
-        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL )", nativeQuery = true)
-    void executeConcurrent();
+        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL "
+        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
+        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
+        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL"
+        + " ,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL ) ",
+        nativeQuery = true)
+    long executeConcurrent(String application, String program, long orgId, long processId);
+
+
 
 }

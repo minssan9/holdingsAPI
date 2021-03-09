@@ -97,7 +97,7 @@ public class XxeItemImportTempServiceImpl implements XxeItemImportTempService {
 //        V_VALID_FLAG :='E';
 //        V_VALID_MSG  := V_VALID_MSG||' 유효하지 않은 조직.';
 //        END IF;
-        xxeItemsImportTempRepo.executeConcurrent();
+        xxeItemsImportTempRepo.executeConcurrent("INV", "INCOIN", 87, 7232);
         return xxeItemsImportTemps;
     }
 
