@@ -12,8 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelFileType {
 
     /**
-     * 엑셀파일을 읽어서 Workbook 객체에 리턴한다.
-     * XLS와 XLSX 확장자를 비교한다.
+     * 엑셀파일을 읽어서 Workbook 객체에 리턴한다. XLS와 XLSX 확장자를 비교한다.
      *
      * @param filePath
      * @return

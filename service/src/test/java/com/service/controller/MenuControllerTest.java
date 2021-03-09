@@ -18,7 +18,8 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Slf4j
 class MenuControllerTest {
-//    @Autowired UserPermissionRepository  userPermissionRepository;
+
+    //    @Autowired UserPermissionRepository  userPermissionRepository;
     @Autowired
     UserPermissionRepositorySupport userPermissionRepositorySupport;
 
@@ -38,10 +39,11 @@ class MenuControllerTest {
         userPermissions = userPermissionRepositorySupport.findByPermissionName("재고");
 
         Assert.assertNotNull(
-                userPermissionRepositorySupport.findByName(respName)
+            userPermissionRepositorySupport.findByName(respName)
         );
 
     }
+
     @Test
     void getDataQueryAnnotation() {
 //        Assert.assertnotnull(

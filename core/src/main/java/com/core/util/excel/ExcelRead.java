@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 
 public class ExcelRead {
+
     public static List<Map<String, String>> read(ExcelReadOption excelReadOption) {
         //엑셀 파일 자체
         //엑셀파일을 읽어 들인다.
@@ -105,7 +106,6 @@ public class ExcelRead {
         return result;
 
     }
-
 
 //        public static void main(String[] args) {
 //

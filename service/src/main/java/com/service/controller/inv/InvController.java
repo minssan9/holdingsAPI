@@ -1,17 +1,13 @@
 package com.service.controller.inv;
 
-import com.core.oracle.inv.service.InvService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/inv")
+@RequestMapping("/item")
 class InvController {
 //    @Autowired
 //    private InvMapper invMapper;
-
-    @Autowired
-    private InvService invService;
 
 //    @GetMapping("/params")
 //    public ResponseEntity getAllList(@PathVariable String qDate) throws Exception {

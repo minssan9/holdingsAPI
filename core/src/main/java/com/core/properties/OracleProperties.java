@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class OracleProperties {
+
     String url;
     String username;
     String password;

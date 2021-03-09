@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserPermissionRepository extends JpaRepository<UserPermission, Long> {
+
     List<UserPermission> findByDescriptionContaining(String respName);
 
     List<UserPermission> findByDescription(String 재고_일반사용자_권한);

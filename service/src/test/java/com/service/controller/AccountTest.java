@@ -16,8 +16,9 @@ public class AccountTest {
 
     @Autowired
     AccountRepository accountRepository;
+
     @Test
-    void getAccountTest(){
+    void getAccountTest() {
         log.trace(accountRepository.findByUserName("P14394").toString());
         List<Account> accounts = accountRepository.findByUserName("P14394");
         accounts = accountRepository.findByDescriptionLike("%민상%");

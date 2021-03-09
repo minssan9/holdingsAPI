@@ -17,16 +17,26 @@ FROM (
                 PO_LINE_ID,
                 PO_RELEASE_ID,
                 RELEASE_NUM,
-                SUM(CASE WHEN PERIOD_DATE < 0 THEN PO_PRICE * RP_QTY ELSE 0 END)                         D0,
-                SUM(CASE WHEN PERIOD_DATE >= 0 AND PERIOD_DATE <= 30 THEN PO_PRICE * RP_QTY ELSE 0 END)  D30,
-                SUM(CASE WHEN PERIOD_DATE > 30 AND PERIOD_DATE <= 45 THEN PO_PRICE * RP_QTY ELSE 0 END)  D45,
-                SUM(CASE WHEN PERIOD_DATE > 45 AND PERIOD_DATE <= 60 THEN PO_PRICE * RP_QTY ELSE 0 END)  D60,
-                SUM(CASE WHEN PERIOD_DATE > 60 AND PERIOD_DATE <= 90 THEN PO_PRICE * RP_QTY ELSE 0 END)  D90,
-                SUM(CASE WHEN PERIOD_DATE > 90 AND PERIOD_DATE <= 120 THEN PO_PRICE * RP_QTY ELSE 0 END) D120,
-                SUM(CASE WHEN PERIOD_DATE > 120 THEN PO_PRICE * RP_QTY ELSE 0 END)                       D120_OVER,
-                SUM(PO_PRICE * RM_QTY)                                                                   RM_MONEY,
-                SUM(PO_PRICE * RP_QTY)                                                                   RP_MONEY,
-                CASE WHEN sum(RP_QTY) = 0 THEN 0 ELSE PO_PRICE * A.PO_QTY END                            PO_MONEY
+                SUM(CASE WHEN PERIOD_DATE < 0 THEN PO_PRICE * RP_QTY ELSE 0 END)   D0,
+                SUM(CASE
+                        WHEN PERIOD_DATE >= 0 AND PERIOD_DATE <= 30 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D30,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 30 AND PERIOD_DATE <= 45 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D45,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 45 AND PERIOD_DATE <= 60 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D60,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 60 AND PERIOD_DATE <= 90 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D90,
+                SUM(CASE
+                        WHEN PERIOD_DATE > 90 AND PERIOD_DATE <= 120 THEN PO_PRICE * RP_QTY
+                        ELSE 0 END)                                                D120,
+                SUM(CASE WHEN PERIOD_DATE > 120 THEN PO_PRICE * RP_QTY ELSE 0 END) D120_OVER,
+                SUM(PO_PRICE * RM_QTY)                                             RM_MONEY,
+                SUM(PO_PRICE * RP_QTY)                                             RP_MONEY,
+                CASE WHEN sum(RP_QTY) = 0 THEN 0 ELSE PO_PRICE * A.PO_QTY END      PO_MONEY
          FROM (
                   SELECT A.RELEASE_NUM,
                          a.PO_HEADER_ID,
@@ -60,7 +70,8 @@ FROM (
                                              'RETURN TO VENDOR', -RT.PRIMARY_QUANTITY), 0) RP_QTY,
                                   PLLA.QUANTITY - NVL(DECODE(RT.TRANSACTION_TYPE,
                                                              'RECEIVE', RT.PRIMARY_QUANTITY,
-                                                             'RETURN TO VENDOR', -RT.PRIMARY_QUANTITY),
+                                                             'RETURN TO VENDOR',
+                                                             -RT.PRIMARY_QUANTITY),
                                                       0)                                   RM_QTY,
                                   NVL(TO_CHAR(RT.TRANSACTION_DATE), '미입고')                 RP_DATE,
                                   NVL(TRUNC(RT.TRANSACTION_DATE - PLLA.APPROVED_DATE), 0)  PERIOD_DATE
@@ -96,7 +107,8 @@ FROM (
                         AND CANCEL_FLAG = 'N'
                         --         AND PO_HEADER_ID = 259435 AND PO_LINE_ID = 6274753
                       GROUP BY PO_HEADER_ID, PO_LINE_ID, PO_RELEASE_ID
-                  ) PLLAQTY ON A.PO_HEADER_ID = PLLAQTY.PO_HEADER_ID AND A.PO_LINE_ID = PLLAQTY.PO_LINE_ID AND
+                  ) PLLAQTY ON A.PO_HEADER_ID = PLLAQTY.PO_HEADER_ID AND
+                               A.PO_LINE_ID = PLLAQTY.PO_LINE_ID AND
                                A.PO_RELEASE_ID = PLLAQTY.PO_RELEASE_ID
                   WHERE RP_QTY <> 0
               ) A

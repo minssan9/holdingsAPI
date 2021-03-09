@@ -89,15 +89,18 @@ FROM (
          GROUP BY ORGANIZATION_ID, INVENTORY_ITEM_ID, SUBINVENTORY_CODE, LOCATOR_ID
      ) TEMP
          inner join xxe_system_items_B msi
-                    on MSI.INVENTORY_ITEM_ID = TEMP.INVENTORY_ITEM_ID AND MSI.ORGANIZATION_ID = TEMP.ORGANIZATION_ID
+                    on MSI.INVENTORY_ITEM_ID = TEMP.INVENTORY_ITEM_ID AND
+                       MSI.ORGANIZATION_ID = TEMP.ORGANIZATION_ID
          inner join MTL_ITEM_CATEGORIES_V micv
-                    on micv.ORGANIZATION_ID = MSI.ORGANIZATION_ID AND micv.INVENTORY_ITEM_ID = MSI.INVENTORY_ITEM_ID AND
+                    on micv.ORGANIZATION_ID = MSI.ORGANIZATION_ID AND
+                       micv.INVENTORY_ITEM_ID = MSI.INVENTORY_ITEM_ID AND
                        micv.category_set_id = 1100000004
          left outer join XXE_INV_DW_ITEM_ANALYSIS_H_V xida
                          on xida.ANALYSIS_TYPE = 'FIN' AND xida.ITEM_NUMBER = MSI.SEGMENT1 AND
                             xida.ORGANIZATION_ID = TEMP.ORGANIZATION_ID
          left outer join mtl_item_locations mil
-                         on mil.inventory_location_id = TEMP.locator_id AND mil.organization_id = TEMP.organization_id
+                         on mil.inventory_location_id = TEMP.locator_id AND
+                            mil.organization_id = TEMP.organization_id
          left outer join PER_PEOPLE_F PPF on mil.attribute15 = ppf.person_id
          left outer join (
     select MIC.ORGANIZATION_ID, MIC.INVENTORY_ITEM_ID, MCSV.CATEGORY_SET_NAME, MCB.SEGMENT3 maker
@@ -110,21 +113,26 @@ FROM (
       AND MCSV.CATEGORY_SET_NAME = 'PO Category'
       AND MCB.ENABLED_FLAG = 'Y'
       and ORGANIZATION_ID in (::조직)
-) catpo on msi.organization_id = catpo.organization_id and msi.inventory_item_id = catpo.inventory_item_id
+) catpo on msi.organization_id = catpo.organization_id and
+           msi.inventory_item_id = catpo.inventory_item_id
          left outer join (
-    SELECT INVENTORY_ITEM_ID, ROUND(MONTHS_BETWEEN(SYSDATE, NVL(LAST_ISSUE_DATE, SYSDATE)), 1) stagingDays
+    SELECT INVENTORY_ITEM_ID,
+           ROUND(MONTHS_BETWEEN(SYSDATE, NVL(LAST_ISSUE_DATE, SYSDATE)), 1) stagingDays
     FROM XXE_INV_DW_ITEM_ISSUE_MST A
              INNER JOIN XXE_INV_DW_RPT_GROUP_ID_CTL C ON A.RPT_GROUP_ID = C.RPT_GROUP_ID
-             INNER JOIN MTL_SYSTEM_ITEMS_B B ON A.INVENTORY_ITEM_ID = B.INVENTORY_ITEM_ID AND B.ORGANIZATION_ID = 83
+             INNER JOIN MTL_SYSTEM_ITEMS_B B
+                        ON A.INVENTORY_ITEM_ID = B.INVENTORY_ITEM_ID AND B.ORGANIZATION_ID = 83
     WHERE ORGANIZATION_ID in (::조직)
       and ANALYSIS_TYPE = 'FIN'
       AND C.DEPT_CODE = 'A0018' -- 국내영업2팀만 해당 되도록 쿼리 수정
 ) xidi on xidi.INVENTORY_ITEM_ID = MSI.INVENTORY_ITEM_ID
          left outer join (
     SELECT INVENTORY_ITEM_ID,
-           (NVL(SUM(SALES_QUANTITY_M11 + SALES_QUANTITY_M10 + SALES_QUANTITY_M9 + SALES_QUANTITY_M8 +
+           (NVL(SUM(SALES_QUANTITY_M11 + SALES_QUANTITY_M10 + SALES_QUANTITY_M9 +
+                    SALES_QUANTITY_M8 +
                     SALES_QUANTITY_M7 + SALES_QUANTITY_M6
-               + SALES_QUANTITY_M5 + SALES_QUANTITY_M4 + SALES_QUANTITY_M3 + SALES_QUANTITY_M2 + SALES_QUANTITY_M1 +
+               + SALES_QUANTITY_M5 + SALES_QUANTITY_M4 + SALES_QUANTITY_M3 + SALES_QUANTITY_M2 +
+                    SALES_QUANTITY_M1 +
                     SALES_QUANTITY_M), 0) / 12) sum_salesqty
     FROM XXE_INV_DW_SALES_PER_MONTH_H
     WHERE BASE_YYYYMM = TO_CHAR(ADD_MONTHS(SYSDATE, -1), 'YYYYMM')

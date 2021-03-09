@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 
 @Configuration
 public class OracleQuerydslConfig {
+
     @PersistenceContext(unitName = "oracle")
     private EntityManager oracleEntityManager;
 
